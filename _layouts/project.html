@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="project-detail">
+  <a href="{{ '/' | relative_url }}" class="back-link">← Back to Projects</a>
+  
+  <h1>{{ page.title }}</h1>
+  
+  {% if page.date %}
+  <div class="project-meta">
+    <p><strong>Date:</strong> {{ page.date | date: "%B %Y" }}</p>
+    {% if page.category %}
+    <p><strong>Category:</strong> {{ page.category }}</p>
+    {% endif %}
+    {% if page.tools %}
+    <p><strong>Tools & Technologies:</strong> {{ page.tools }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  {% endif %}
+  
+  {{ content }}
+</div>

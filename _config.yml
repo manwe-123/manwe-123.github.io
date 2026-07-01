@@ -1,9 +1,25 @@
+# Welcome to Manwe's Engineering Portfolio
+
 theme: jekyll-theme-minimal
-title: Manwe's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: Manwe's Engineering Portfolio
+description: A collection of my undergraduate engineering projects and research.
+
+# Enable collections for projects
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default settings for files
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
 lsi: false
 safe: true
-source: [your repo's top level directory]
 incremental: false
 highlighter: rouge
 gist:
