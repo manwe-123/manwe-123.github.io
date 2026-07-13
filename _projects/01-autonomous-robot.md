@@ -1,134 +1,142 @@
 ---
-title: "Autonomous Mobile Robot Platform"
-subtitle: "A self-navigating robot for indoor warehouse inventory management"
-date: 2024-05-15
-role: "Lead Mechanical Designer"
-timeline: "Jan 2024 - May 2024"
-team: "3-person team"
+title: "Mental Health Robotics System for Isolated Environments"
+subtitle: "A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants"
+date: 2024-12-09
+role: "Design and Prototyping Lead"
+timeline: "August 2024 - December 2024"
+team: "4-person team"
 tags:
   - Robotics
-  - CAD
   - Arduino
-  - 3D Printing
-image: "assets/images/14F375D7-0896-49FB-9C8B-10815BAE71DA.JPG"
-excerpt: "Designed and built an autonomous mobile robot capable of navigating warehouse environments and scanning RFID tags for inventory tracking."
+  - Laser Cutting
+  - Mechatronics
+  - Prototyping
+image: "assets/images/mars-robot-hero.jpg"
+excerpt: "Designed and built a semi-autonomous companion robot that tracks user proximity and dispenses medical supplies to alleviate mental health struggles in isolated environments."
 
-problem: "Warehouses require efficient inventory tracking systems. Manual counting is time-consuming and error-prone. We needed a low-cost autonomous solution that could navigate between shelving units and scan RFID tags."
+problem: "Mars colony inhabitants face severe mental health challenges, including isolation, loneliness, and sensory deprivation due to confined living conditions. They need an automated, low-cost companion to provide mental enrichment, medical access, and a sense of home."
 
-solution: "Developed a differential-drive mobile robot with LIDAR-based SLAM navigation, equipped with an RFID reader and camera system. The robot autonomously patrols predefined routes and uploads inventory data to a central database."
+solution: "Developed an semi-autonomous mobile robot equipped with an ultrasonic sensor for user tracking, a photoresistor-triggered medical drawer, and an LCD screen for positive messaging, fabricated from lightweight, recyclable materials."
 
 requirements: |
-  - Navigate corridors 1.5m wide with ±10cm accuracy
-  - Operate for 4+ hours on single battery charge
-  - Support payload of 5kg for sensors and electronics
-  - Total cost under $500 for prototype
+  - Improve overall mental health metrics by at least 5%
+  - Fully automated operation for user tracking and medical dispensing
+  - Withstand low atmospheric pressure and normal base living conditions
+  - Total prototype cost under $75
+  - Low weight and constructed from recyclable materials
 
 constraints: |
-  - Limited to undergraduate lab equipment for fabrication
-  - Battery capacity restricted by weight budget
-  - 3-month development timeline
+  - Must simulate Mars resource constraints using accessible, recyclable materials
+  - Limited to undergraduate lab equipment for fabrication (laser cutter, basic electronics)
+  - 1-semester development timeline from concept to final acceptance testing
 
 metrics:
-  - name: "Navigation Accuracy"
-    target: "±10 cm"
-    achieved: "±5 cm"
-  - name: "Battery Life"
-    target: "4 hours"
-    achieved: "4.5 hours"
-  - name: "Total Cost"
-    target: "$500"
-    achieved: "$475"
+  - name: "Prototype Cost"
+    target: "< $75.00"
+    achieved: "$44.20"
+  - name: "Proximity Tracking"
+    target: "< 15 cm"
+    achieved: "15 cm"
+  - name: "Drawer Actuation"
+    target: "< 25 light value"
+    achieved: "< 25 light value"
 
 sensing: |
-  - **LIDAR**: RPLIDAR A1M8 for 360° range finding and SLAM
-  - **IMU**: MPU6050 for orientation and acceleration
-  - **Wheel Encoders**: Quadrature encoders for odometry
+  - **Ultrasonic Sensor**: HC-SR04 equivalent for 15cm proximity tracking and semi-autonomous navigation
+  - **Photoresistor**: Light dependent resistor (LDR) for shadow detection to trigger the medical drawer
 
 actuation: |
-  - **Drive Motors**: 2× NEMA 17 stepper motors with A4988 drivers
-  - **Wheel Configuration**: Differential drive with caster support
-  - **Power System**: 3S LiPo battery (11.1V, 5000mAh)
+  - **Drive Motors**: 2x Hobby gear motors with wheels for forward user tracking
+  - **Servo Motor**: Micro servo for automated medical drawer lid actuation
+  - **Power System**: 2x 9V batteries for independent logic and motor power distribution
 
 mechanical: |
-  - **Chassis**: 6061-T6 aluminum frame with laser-cut acrylic panels
-  - **Wheel Mounts**: 3D printed PETG housings with ball bearings
-  - **Sensor Brackets**: Parametric Fusion 360 designs
+  - **Chassis**: 6x6x6 inch cube fabricated from 1/8" balsa wood and plywood
+  - **Fabrication Method**: Laser cut components for precise mechanical fit and structural rigidity
+  - **Medical Drawer**: Top-mounted compartment with servo-actuated lid for automated dispensing
 
 components:
-  - name: "Arduino Mega 2560"
-    spec: "Main controller"
-  - name: "Raspberry Pi 4"
-    spec: "SLAM processing"
-  - name: "RPLIDAR A1M8"
-    spec: "360° LIDAR sensor"
+  - name: "Arduino Uno"
+    spec: "Main microcontroller for sensor processing and actuation"
+  - name: "16-Pin Motor Driver Controller"
+    spec: "H-bridge for hobby gear motor control"
+  - name: "LCD Screen"
+    spec: "User interface for displaying positive messages"
 
 fabrication: |
-  **Frame Construction:**
-  - Aluminum extrusions cut to length on bandsaw
-  - Drill press used for mounting holes
+  **Laser Cutting & Assembly:**
+  - Cut 1/8" balsa and plywood components using the laser cutter
+  - Sanded internal corners to prevent wheel friction and ensure smooth mechanical movement
   
-  **3D Printed Components:**
-  - Wheel hubs and motor mounts printed in PETG
-  - Total print time: ~40 hours
+  **Electronics Integration:**
+  - Mounted Arduino, breadboard, and motor driver inside the wooden chassis
+  - Routed wiring for ultrasonic sensor, photoresistor, and servo motor
 
 gallery:
-  - src: "/assets/images/projects/robot-cad.jpg"
-    caption: "CAD assembly in SolidWorks"
-  - src: "/assets/images/projects/robot-frame.jpg"
-    caption: "Aluminum frame during assembly"
-  - src: "/assets/images/projects/robot-final.jpg"
-    caption: "Completed robot platform"
+  - src: "/assets/images/projects/mars-robot-cad.jpg"
+    caption: "CAD model of the robotic enclosure"
+  - src: "/assets/images/projects/mars-robot-laser.jpg"
+    caption: "Laser-cut wooden chassis components prior to assembly"
+  - src: "/assets/images/projects/mars-robot-wiring.jpg"
+    caption: "Internal Arduino wiring and breadboard layout"
+  - src: "/assets/images/projects/mars-robot-final.jpg"
+    caption: "Completed semi-autonomous prototype"
 
 testing: |
-  Testing was conducted in three phases: component testing, subsystem testing, and integration testing.
+  Formal acceptance testing was conducted in three phases (Nov 21, Nov 24, Nov 26) to verify sensor accuracy, motor response, and automated dispensing mechanisms under operational conditions.
 
 test_results:
-  - name: "Straight Line Accuracy"
-    procedure: "Drive 10m straight, measure deviation"
-    result: "±3 cm over 10m"
+  - name: "Proximity Tracking"
+    procedure: "Move robot away from user and measure stopping distance"
+    result: "Hobby motors engaged and stopped exactly at 15 cm"
     status: "Pass"
-  - name: "Battery Endurance"
-    procedure: "Continuous operation until cutoff"
-    result: "4.5 hours"
+  - name: "Drawer Actuation"
+    procedure: "Hover hand over photoresistor to cast a shadow"
+    result: "Servo motor triggered and opened lid when light value dropped below 25"
     status: "Pass"
+  - name: "Continuous Operation"
+    procedure: "Run full system during final presentation"
+    result: "System failed due to overheating wire"
+    status: "Fail"
 
 worked: |
-  - **Modular Design**: Made troubleshooting much easier
-  - **Parametric CAD**: Quick adjustments saved significant time
+  - **Sensor Integration**: Ultrasonic and photoresistor logic worked seamlessly for semi-autonomous tracking and automated dispensing
+  - **Mechanical Fit**: Laser-cut wooden components provided precise structural rigidity for the electronic modules
 
 failed: |
-  - **Initial Wheel Choice**: Slipped on smooth concrete; redesigned with rubber coating
-  - **Undersized Battery Connector**: XT30 overheated; upgraded to XT60
+  - **Power Management**: Exposed wiring on the battery connection overheated and melted during the final presentation due to poor soldering
+  - **Mobility**: Robot could only move forward and lacked differential steering for omnidirectional movement
 
 next_steps: |
-  - Implement dynamic path planning
-  - Add wireless charging capability
+  - Implement proper wire gauge selection and inline fuses for high-current battery connections
+  - Add differential drive steering to allow the robot to turn and follow users dynamically
+  - Integrate planned aromatherapy diffuser and audio speakers for multi-sensory therapy
 
 specs:
   software:
-    - name: "SolidWorks"
-      version: "2023"
     - name: "Arduino IDE"
       version: "2.0"
+    - name: "TinkerCAD"
+      version: "2024"
   hardware:
     - component: "Microcontroller"
-      model: "Arduino Mega 2560"
+      model: "Arduino Uno"
     - component: "Motors"
-      model: "NEMA 17 Stepper"
+      model: "Hobby Gear Motors"
+    - component: "Sensor"
+      model: "Ultrasonic Sensor HC-SR04"
   materials:
-    - type: "Frame"
-      grade: "6061-T6 Aluminum"
-    - type: "Printed Parts"
-      grade: "PETG"
+    - type: "Chassis"
+      grade: "1/8 inch Balsa Wood and Plywood"
   dimensions:
     - axis: "Length"
-      value: "380 mm"
+      value: "6 inches"
     - axis: "Width"
-      value: "280 mm"
+      value: "6 inches"
     - axis: "Height"
-      value: "250 mm"
-  weight: "8.2 kg"
-  cost: "$475 USD"
+      value: "6 inches"
+  weight: "Optimized for low weight (< 1 kg)"
+  cost: "$44.20 USD"
 ---
 
-This project demonstrates the integration of mechanical design, electronics, and embedded programming to solve a real-world logistics challenge.
+This project demonstrates the integration of mechanical design, electronics, and embedded programming to solve a real-world human factors challenge in isolated environments.
