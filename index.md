@@ -111,7 +111,7 @@ title: Home
   <div class="container text-center">
     <h2 style="margin-bottom: 1rem;">Interested in Collaboration?</h2>
     <p style="max-width: 600px; margin: 0 auto 2rem; color: #6b7280;">
-      I'm actively seeking internship opportunities for Summer 2026. 
+      I'm actively seeking internship opportunities for Summer 2027. 
       Let's discuss how I can contribute to your team.
     </p>
     <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get In Touch</a>
