@@ -2,26 +2,370 @@
 layout: default
 ---
 
-<div class="project-detail">
-  <a href="{{ '/' | relative_url }}" class="back-link">← Back to Projects</a>
-  
-  <h1>{{ page.title }}</h1>
-  
-  {% if page.date %}
-  <div class="project-meta">
-    <p><strong>Date:</strong> {{ page.date | date: "%B %Y" }}</p>
-    {% if page.category %}
-    <p><strong>Category:</strong> {{ page.category }}</p>
+<!-- Project Header -->
+<header class="page-header">
+  <div class="container">
+    <a href="{{ '/projects.html' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+    
+    <h1 class="page-title">{{ page.title }}</h1>
+    
+    {% if page.subtitle %}
+    <p class="page-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    {% if page.tools %}
-    <p><strong>Tools & Technologies:</strong> {{ page.tools }}</p>
+    
+    <!-- Project Meta Row -->
+    <div class="mt-6" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+      {% if page.role %}
+      <span class="tag">Role: {{ page.role }}</span>
+      {% endif %}
+      
+      {% if page.timeline %}
+      <span class="tag">Timeline: {{ page.timeline }}</span>
+      {% endif %}
+      
+      {% if page.team %}
+      <span class="tag">Team: {{ page.team }}</span>
+      {% endif %}
+    </div>
+    
+    <!-- Technical Tags -->
+    {% if page.tags %}
+    <div class="project-card-tags mt-4">
+      {% for tag in page.tags %}
+      <span class="tag tag-primary">{{ tag }}</span>
+      {% endfor %}
+    </div>
     {% endif %}
   </div>
-  {% endif %}
-  
-  {% if page.image %}
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-  {% endif %}
-  
-  {{ content }}
+</header>
+
+<!-- Two Column Layout -->
+<div class="container section">
+  <div class="layout-two-col">
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      
+      <!-- Section 1: Project Overview -->
+      <section class="content-section" id="overview">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="section-content">
+          {% if page.problem %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem;">Problem Statement</h4>
+            <p>{{ page.problem }}</p>
+          </div>
+          {% endif %}
+          
+          {% if page.solution %}
+          <div>
+            <h4 style="margin-bottom: 0.5rem;">Solution</h4>
+            <p>{{ page.solution }}</p>
+          </div>
+          {% endif %}
+          
+          {{ content }}
+        </div>
+      </section>
+      
+      <!-- Section 2: Design Requirements & Constraints -->
+      {% if page.requirements or page.constraints %}
+      <section class="content-section" id="requirements">
+        <h2 class="section-title">Design Requirements & Constraints</h2>
+        <div class="section-content">
+          {% if page.requirements %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem;">Requirements</h4>
+            {{ page.requirements | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if page.constraints %}
+          <div>
+            <h4 style="margin-bottom: 0.5rem;">Constraints</h4>
+            {{ page.constraints | markdownify }}
+          </div>
+          {% endif %}
+          
+          <!-- Metrics Table -->
+          {% if page.metrics %}
+          <table class="table mt-4">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Target</th>
+                <th>Achieved</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for metric in page.metrics %}
+              <tr>
+                <td>{{ metric.name }}</td>
+                <td class="mono">{{ metric.target }}</td>
+                <td class="mono">{{ metric.achieved }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      
+      <!-- Section 3: Technical Architecture -->
+      {% if page.sensing or page.actuation or page.mechanical %}
+      <section class="content-section" id="architecture">
+        <h2 class="section-title">Technical Architecture</h2>
+        <div class="section-content">
+          
+          {% if page.sensing %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem;">Sensing & Control</h4>
+            {{ page.sensing | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if page.actuation %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem;">Actuation</h4>
+            {{ page.actuation | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if page.mechanical %}
+          <div>
+            <h4 style="margin-bottom: 0.5rem;">Mechanical Design</h4>
+            {{ page.mechanical | markdownify }}
+          </div>
+          {% endif %}
+          
+          <!-- Hardware Components Grid -->
+          {% if page.components %}
+          <div class="icon-grid mt-6">
+            {% for component in page.components %}
+            <div class="icon-card">
+              <div class="icon-card-icon">⚙</div>
+              <div class="icon-card-title">{{ component.name }}</div>
+              <div class="icon-card-desc">{{ component.spec }}</div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      
+      <!-- Section 4: Fabrication & Assembly -->
+      {% if page.fabrication %}
+      <section class="content-section" id="fabrication">
+        <h2 class="section-title">Fabrication & Assembly</h2>
+        <div class="section-content">
+          {{ page.fabrication | markdownify }}
+          
+          <!-- Photo Gallery -->
+          {% if page.gallery %}
+          <div class="image-gallery mt-6">
+            {% for image in page.gallery %}
+            <div class="gallery-item" onclick="openLightbox('{{ image.src }}', '{{ image.caption }}')">
+              <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+              <div class="gallery-caption">{{ image.caption }}</div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      
+      <!-- Section 5: Testing & Validation -->
+      {% if page.testing %}
+      <section class="content-section" id="testing">
+        <h2 class="section-title">Testing & Validation</h2>
+        <div class="section-content">
+          {{ page.testing | markdownify }}
+          
+          <!-- Test Results Table -->
+          {% if page.test_results %}
+          <table class="table mt-6">
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>Procedure</th>
+                <th>Result</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for test in page.test_results %}
+              <tr>
+                <td>{{ test.name }}</td>
+                <td>{{ test.procedure }}</td>
+                <td class="mono">{{ test.result }}</td>
+                <td>
+                  {% if test.status == 'Pass' %}
+                  <span class="tag tag-primary" style="background-color: #059669; color: white; border-color: #059669;">{{ test.status }}</span>
+                  {% elsif test.status == 'Fail' %}
+                  <span class="tag" style="background-color: #dc2626; color: white; border-color: #dc2626;">{{ test.status }}</span>
+                  {% else %}
+                  <span class="tag">{{ test.status }}</span>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      
+      <!-- Section 6: Lessons Learned -->
+      {% if page.worked or page.failed or page.next_steps %}
+      <section class="content-section" id="lessons">
+        <h2 class="section-title">Lessons Learned & Future Iterations</h2>
+        <div class="section-content">
+          
+          {% if page.worked %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem; color: #059669;">✓ What Worked</h4>
+            {{ page.worked | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if page.failed %}
+          <div class="mb-6">
+            <h4 style="margin-bottom: 0.5rem; color: #dc2626;">✗ What Failed</h4>
+            {{ page.failed | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if page.next_steps %}
+          <div>
+            <h4 style="margin-bottom: 0.5rem; color: #2563eb;">→ Next Steps</h4>
+            {{ page.next_steps | markdownify }}
+          </div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      
+    </div>
+    
+    <!-- Sidebar: Technical Specifications -->
+    <aside class="sidebar">
+      <div class="specs-sidebar">
+        <h3 class="specs-title">Technical Specifications</h3>
+        
+        {% if page.specs.software %}
+        <div class="mb-4">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem; color: #6b7280;">Software</h4>
+          <ul class="specs-list">
+            {% for tool in page.specs.software %}
+            <li class="spec-item">
+              <span class="spec-label">{{ tool.name }}</span>
+              <span class="spec-value">{{ tool.version }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.specs.hardware %}
+        <div class="mb-4">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem; color: #6b7280;">Hardware</h4>
+          <ul class="specs-list">
+            {% for hw in page.specs.hardware %}
+            <li class="spec-item">
+              <span class="spec-label">{{ hw.component }}</span>
+              <span class="spec-value mono">{{ hw.model }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.specs.materials %}
+        <div class="mb-4">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem; color: #6b7280;">Materials</h4>
+          <ul class="specs-list">
+            {% for mat in page.specs.materials %}
+            <li class="spec-item">
+              <span class="spec-label">{{ mat.type }}</span>
+              <span class="spec-value mono">{{ mat.grade }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.specs.dimensions %}
+        <div>
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem; color: #6b7280;">Dimensions</h4>
+          <ul class="specs-list">
+            {% for dim in page.specs.dimensions %}
+            <li class="spec-item">
+              <span class="spec-label">{{ dim.axis }}</span>
+              <span class="spec-value mono">{{ dim.value }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.specs.weight %}
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dotted #e5e7eb;">
+          <div class="spec-item">
+            <span class="spec-label">Total Weight</span>
+            <span class="spec-value mono">{{ page.specs.weight }}</span>
+          </div>
+        </div>
+        {% endif %}
+        
+        {% if page.specs.cost %}
+        <div class="spec-item">
+          <span class="spec-label">Total Cost</span>
+          <span class="spec-value mono">{{ page.specs.cost }}</span>
+        </div>
+        {% endif %}
+      </div>
+      
+      <!-- Quick Links -->
+      <nav class="specs-sidebar">
+        <h3 class="specs-title">Quick Navigation</h3>
+        <ul class="specs-list">
+          <li class="spec-item">
+            <a href="#overview" class="spec-label">Overview</a>
+          </li>
+          {% if page.requirements %}
+          <li class="spec-item">
+            <a href="#requirements" class="spec-label">Requirements</a>
+          </li>
+          {% endif %}
+          {% if page.sensing or page.actuation or page.mechanical %}
+          <li class="spec-item">
+            <a href="#architecture" class="spec-label">Architecture</a>
+          </li>
+          {% endif %}
+          {% if page.fabrication %}
+          <li class="spec-item">
+            <a href="#fabrication" class="spec-label">Fabrication</a>
+          </li>
+          {% endif %}
+          {% if page.testing %}
+          <li class="spec-item">
+            <a href="#testing" class="spec-label">Testing</a>
+          </li>
+          {% endif %}
+          {% if page.worked or page.failed or page.next_steps %}
+          <li class="spec-item">
+            <a href="#lessons" class="spec-label">Lessons Learned</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </aside>
+    
+  </div>
 </div>

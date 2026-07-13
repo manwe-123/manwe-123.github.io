@@ -1,0 +1,16 @@
+// ==========================================================================
+// MAIN STYLESHEET - Mechanical Engineering Portfolio
+// Import all SCSS partials
+// ==========================================================================
+
+// Base styles (variables, reset, typography)
+@import 'base/variables';
+@import 'base/reset';
+
+// Components (header, footer, cards, etc.)
+@import 'components/components';
+
+// Layouts (page-specific layouts)
+// @import 'layouts/home';
+// @import 'layouts/project';
+// @import 'layouts/about';
