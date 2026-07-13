@@ -6,14 +6,14 @@ title: Home
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <h1 class="hero-title">Your Name</h1>
+    <h1 class="hero-title">Manwe Castro</h1>
     <p class="hero-subtitle">Mechanical Engineering Student | CAD, Robotics & Prototyping</p>
     <p class="hero-description">
       Passionate about designing and building innovative mechanical systems. 
       Seeking hands-on internships in design, manufacturing, robotics, and prototyping.
     </p>
     <div class="hero-actions">
-      <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary">View Projects</a>
+      <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View Projects</a>
       <a href="{{ site.resume_url | default: '/assets/resume.pdf' | relative_url }}" class="btn btn-secondary" download>Download Resume</a>
     </div>
   </div>
@@ -111,7 +111,7 @@ title: Home
   <div class="container text-center">
     <h2 style="margin-bottom: 1rem;">Interested in Collaboration?</h2>
     <p style="max-width: 600px; margin: 0 auto 2rem; color: #6b7280;">
-      I'm actively seeking internship opportunities for [Season/Year]. 
+      I'm actively seeking internship opportunities for Summer 2026. 
       Let's discuss how I can contribute to your team.
     </p>
     <a href="{{ '/contact.html' | relative_url }}" class="btn btn-primary">Get In Touch</a>
