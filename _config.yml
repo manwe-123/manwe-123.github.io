@@ -7,11 +7,11 @@ url: ""
 
 # Personal Information
 email: "manwe123@asu.edu"
-github_username: ""  # Add your GitHub username here
-linkedin_username: ""  # Add your LinkedIn username here
+github_username: "manwe-123"  # Add your GitHub username here
+linkedin_username: "manwecastro"  # Add your LinkedIn username here
 location: "Tempe, AZ"  # Update with your location
-phone: ""  # Add your phone number if desired
-resume_url: "/assets/resume.pdf"  # Path to your resume PDF
+phone: "6023503164"  # Add your phone number if desired
+resume_url: "assets/Resume Jul 2026 Draft 2.pdf"  # Path to your resume PDF
 
 # Build Settings for GitHub Pages
 markdown: kramdown
