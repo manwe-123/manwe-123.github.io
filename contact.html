@@ -30,39 +30,17 @@ title: Contact
             
             <!-- Contact Details Grid -->
             <div class="grid grid-2" style="margin-bottom: 2rem;">
-              {% if site.email %}
               <div style="padding: 1.5rem; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px;">
                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📧</div>
                 <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Email</h4>
-                <a href="mailto:{{ site.email }}" style="color: #2563eb;">{{ site.email }}</a>
+                <a href="mailto:manwe123@asu.edu" style="color: #2563eb;">manwe123@asu.edu</a>
               </div>
-              {% endif %}
               
-              {% if site.phone %}
-              <div style="padding: 1.5rem; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px;">
-                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📱</div>
-                <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Phone</h4>
-                <a href="tel:{{ site.phone }}" style="color: #2563eb;">{{ site.phone }}</a>
-              </div>
-              {% endif %}
-              
-              {% if site.location %}
               <div style="padding: 1.5rem; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px;">
                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📍</div>
                 <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Location</h4>
-                <span style="color: #4b5563;">{{ site.location }}</span>
+                <span style="color: #4b5563;">Tempe, AZ</span>
               </div>
-              {% endif %}
-              
-              {% if site.linkedin_username %}
-              <div style="padding: 1.5rem; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px;">
-                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💼</div>
-                <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">LinkedIn</h4>
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" style="color: #2563eb;">
-                  linkedin.com/in/{{ site.linkedin_username }}
-                </a>
-              </div>
-              {% endif %}
             </div>
             
           </div>
@@ -113,7 +91,7 @@ title: Contact
             <a href="{{ site.resume_url | default: '/assets/resume.pdf' | relative_url }}" class="btn btn-primary" download style="text-align: center;">
               ↓ Download Resume
             </a>
-            <a href="mailto:{{ site.email }}" class="btn btn-outline" style="text-align: center;">
+            <a href="mailto:manwe123@asu.edu" class="btn btn-primary" style="text-align: center;">
               ✉ Send Email
             </a>
           </div>
@@ -123,20 +101,21 @@ title: Contact
         <div class="specs-sidebar">
           <h3 class="specs-title">Professional Profiles</h3>
           <ul class="specs-list">
-            {% if site.github_username %}
             <li class="spec-item">
-              <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="spec-label">
-                GitHub →
+              <a href="mailto:manwe123@asu.edu" class="spec-label">
+                Email →
               </a>
             </li>
-            {% endif %}
-            {% if site.linkedin_username %}
             <li class="spec-item">
-              <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" class="spec-label">
-                LinkedIn →
-              </a>
+              <span class="spec-label" style="color: #6b7280;">
+                GitHub: Add your username in _config.yml
+              </span>
             </li>
-            {% endif %}
+            <li class="spec-item">
+              <span class="spec-label" style="color: #6b7280;">
+                LinkedIn: Add your username in _config.yml
+              </span>
+            </li>
           </ul>
         </div>
         

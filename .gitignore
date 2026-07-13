@@ -1,20 +1,4 @@
-# Compiled and build artifacts
-*.css.map
-*.scss
-*.sass
-
-# Dependencies
-node_modules/
-
-# Editors
-.vscode/
-.idea/
-
-# Logs and temp files
-*.log
-*.tmp
-
-# Environment
-.env
-.env.local
-.env.*
+```yaml
+# Configuration files for Jekyll/GitHub Pages
+_config.yml
+```
