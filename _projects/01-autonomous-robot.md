@@ -10,7 +10,7 @@ tags:
   - CAD
   - Arduino
   - 3D Printing
-image: "/assets/images/projects/robot-platform.jpg"
+image: "assets/images/14F375D7-0896-49FB-9C8B-10815BAE71DA.JPG"
 excerpt: "Designed and built an autonomous mobile robot capable of navigating warehouse environments and scanning RFID tags for inventory tracking."
 
 problem: "Warehouses require efficient inventory tracking systems. Manual counting is time-consuming and error-prone. We needed a low-cost autonomous solution that could navigate between shelving units and scan RFID tags."
