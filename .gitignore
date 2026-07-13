@@ -5,11 +5,16 @@ node_modules/
 # Build artifacts
 _dist/
 _site/
+.jekyll-cache/
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
+
+# Editors
+.vscode/
+.idea/
 
 # Logs
 *.log
@@ -18,31 +23,30 @@ _site/
 .DS_Store
 Thumbs.db
 
-# Editor files
-.vscode/
-.idea/
+# Temporary files
+*.tmp
 *.swp
 *.swo
-*.tmp
 
-# Python
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Python specific
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
 *.so
-.coverage
-coverage/
-htmlcov/
-.pytest_cache/
-.mypy_cache/
+*.egg-info/
+.eggs/
 
-# Jekyll/Site build
-_site/
-.sass-cache/
-.jekyll-metadata
-.jekyll-cache/
+# Ruby specific (for Jekyll)
+.bundle/
+vendor/bundle/
+Gemfile.lock
 
 # Compressed files
 *.zip

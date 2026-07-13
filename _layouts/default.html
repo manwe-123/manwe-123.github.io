@@ -1,135 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-
-    {% seo %}
-    
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <style>
-      /* Custom Portfolio Styles */
-      .portfolio-header {
-        text-align: center;
-        padding: 2rem 0;
-        border-bottom: 1px solid #eaecef;
-        margin-bottom: 2rem;
-      }
-      
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-      
-      .project-card {
-        border: 1px solid #eaecef;
-        border-radius: 6px;
-        overflow: hidden;
-        transition: box-shadow 0.3s ease;
-        background: white;
-      }
-      
-      .project-card:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      }
-      
-      .project-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        background-color: #f6f8fa;
-      }
-      
-      .project-card-content {
-        padding: 1.5rem;
-      }
-      
-      .project-card h3 {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-      
-      .project-card p {
-        color: #586069;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      
-      .project-card a {
-        display: inline-block;
-        margin-top: 1rem;
-        color: #0366d6;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      
-      .project-card a:hover {
-        text-decoration: underline;
-      }
-      
-      .project-detail {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      
-      .project-detail img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 6px;
-        margin: 1rem 0;
-      }
-      
-      .project-meta {
-        background: #f6f8fa;
-        padding: 1rem;
-        border-radius: 6px;
-        margin-bottom: 2rem;
-      }
-      
-      .project-meta strong {
-        color: #24292e;
-      }
-      
-      .back-link {
-        display: inline-block;
-        margin-bottom: 2rem;
-        color: #0366d6;
-        text-decoration: none;
-      }
-      
-      .back-link:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
-        
-        {% if site.logo %}
-          <img src="{{ site.logo | relative_url }}" alt="Logo" />
-        {% endif %}
-
-        <p>{{ site.description }}</p>
-
-        {% if site.github_username %}
-          <p class="view"><a href="https://github.com/{{ site.github_username }}">View on GitHub</a></p>
-        {% endif %}
-      </header>
-      
-      <section>
-        {{ content }}
-      </section>
-      
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/pages-themes/minimal">minimal</a></small></p>
-      </footer>
-    </div>
-  </body>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+  
+  <!-- Header -->
+  {% include header.html %}
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    {{ content }}
+  </main>
+  
+  <!-- Footer -->
+  {% include footer.html %}
+  
+  <!-- Lightbox for image gallery -->
+  {% include lightbox.html %}
+  
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
 </html>

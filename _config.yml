@@ -1,16 +1,25 @@
-# Welcome to Manwe's Engineering Portfolio
+# Mechanical Engineering Portfolio Configuration
 
-theme: jekyll-theme-minimal
-title: Manwe's Engineering Portfolio
-description: A collection of my undergraduate engineering projects and research.
+title: "Mechanical Engineering Portfolio"
+description: "CAD, Robotics & Prototyping Portfolio"
+baseurl: "" 
+url: "" 
 
-# Enable collections for projects
+# Theme settings - we're using custom CSS
+theme: null
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /projects/:title/
+
+# Collections
 collections:
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:title/
 
-# Default settings for files
+# Defaults
 defaults:
   - scope:
       path: ""
@@ -18,12 +27,17 @@ defaults:
     values:
       layout: "project"
 
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+
 lsi: false
 safe: true
 incremental: false
-highlighter: rouge
-gist:
-  noscript: false
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge

@@ -1,0 +1,54 @@
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          {% if site.email %}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {% endif %}
+          {% if site.phone %}
+          <li>{{ site.phone }}</li>
+          {% endif %}
+          {% if site.location %}
+          <li>{{ site.location }}</li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          {% if site.github_username %}
+          <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a></li>
+          {% endif %}
+          {% if site.linkedin_username %}
+          <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a></li>
+          {% endif %}
+          {% if site.resume_url %}
+          <li><a href="{{ site.resume_url | relative_url }}" download>Download Resume</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
