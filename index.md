@@ -114,6 +114,6 @@ title: Home
       I'm actively seeking internship opportunities for Summer 2026. 
       Let's discuss how I can contribute to your team.
     </p>
-    <a href="{{ '/contact.html' | relative_url }}" class="btn btn-primary">Get In Touch</a>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get In Touch</a>
   </div>
 </section>
