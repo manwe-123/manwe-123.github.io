@@ -53,7 +53,7 @@ title: Home
     </div>
     
     <div style="text-align: center; margin-top: 3rem;">
-      <a href="{{ '/projects.html' | relative_url }}" class="btn btn-outline">View All Projects →</a>
+      <a href="{{ '/projects' | relative_url }}" class="btn btn-outline">View All Projects →</a>
     </div>
   </div>
 </section>
