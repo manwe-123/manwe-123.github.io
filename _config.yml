@@ -5,10 +5,7 @@ description: "CAD, Robotics & Prototyping Portfolio"
 baseurl: "" 
 url: "" 
 
-# Theme settings - we're using custom CSS
-theme: null
-
-# Build Settings
+# Build Settings for GitHub Pages
 markdown: kramdown
 highlighter: rouge
 permalink: /projects/:title/
@@ -29,11 +26,11 @@ defaults:
 
 # Exclude from processing
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - README.md
   - vendor
   - node_modules
+  - Gemfile
+  - Gemfile.lock
 
 lsi: false
 safe: true
