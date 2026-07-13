@@ -1,5 +1,5 @@
 ---
-title: "Autonomous Mobile Robot Platform"
+title: "other project"
 subtitle: "A self-navigating robot for indoor warehouse inventory management"
 date: 2024-05-15
 role: "Lead Mechanical Designer"
