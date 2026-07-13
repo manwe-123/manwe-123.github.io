@@ -71,9 +71,6 @@ title: Home
           <li class="skill-item">SolidWorks</li>
           <li class="skill-item">AutoCAD Fusion 360</li>
           <li class="skill-item">2D Drafting</li>
-          <li class="skill-item">ANSYS</li>
-          <li class="skill-item">GD&T</li>
-          <li class="skill-item">DFM/DFA</li>
         </ul>
       </div>
       
@@ -86,7 +83,6 @@ title: Home
           <li class="skill-item">Orca Slicer</li>
           <li class="skill-item">Electronics Assembly</li>
           <li class="skill-item">Automotive Repair</li>
-          <li class="skill-item"></li>
         </ul>
       </div>
       
@@ -98,8 +94,6 @@ title: Home
           <li class="skill-item">MATLAB</li>
           <li class="skill-item">Arduino/C++</li>
           <li class="skill-item">Unity Game Engine</li>
-          <li class="skill-item"></li>
-          <li class="skill-item"></li>
         </ul>
       </div>
     </div>
