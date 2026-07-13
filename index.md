@@ -69,8 +69,8 @@ title: Home
         <h3 class="skill-category-title">CAD & Design</h3>
         <ul class="skill-list">
           <li class="skill-item">SolidWorks</li>
-          <li class="skill-item">AutoCAD</li>
-          <li class="skill-item">Fusion 360</li>
+          <li class="skill-item">AutoCAD Fusion 360</li>
+          <li class="skill-item">2D Drafting</li>
           <li class="skill-item">ANSYS</li>
           <li class="skill-item">GD&T</li>
           <li class="skill-item">DFM/DFA</li>
@@ -83,10 +83,10 @@ title: Home
         <ul class="skill-list">
           <li class="skill-item">3D Printing (FDM/SLA)</li>
           <li class="skill-item">Laser Cutting</li>
-          <li class="skill-item">CNC Machining</li>
-          <li class="skill-item">Manual Machining</li>
-          <li class="skill-item">Welding (MIG/TIG)</li>
+          <li class="skill-item">Orca Slicer</li>
           <li class="skill-item">Electronics Assembly</li>
+          <li class="skill-item">Automotive Repair</li>
+          <li class="skill-item"></li>
         </ul>
       </div>
       
@@ -97,9 +97,9 @@ title: Home
           <li class="skill-item">Python</li>
           <li class="skill-item">MATLAB</li>
           <li class="skill-item">Arduino/C++</li>
-          <li class="skill-item">ROS</li>
-          <li class="skill-item">PLC Programming</li>
-          <li class="skill-item">Embedded Systems</li>
+          <li class="skill-item">Unity Game Engine</li>
+          <li class="skill-item"></li>
+          <li class="skill-item"></li>
         </ul>
       </div>
     </div>
