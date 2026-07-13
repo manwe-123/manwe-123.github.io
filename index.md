@@ -14,7 +14,7 @@ title: Home
     </p>
     <div class="hero-actions">
       <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View Projects</a>
-      <a href="{{ site.resume_url | default: '/assets/resume.pdf' | relative_url }}" class="btn btn-secondary" download>Download Resume</a>
+      <a href="{{ site.resume_url | default: 'assets/Resume Jul 2026 Draft 2.pdf' | relative_url }}" class="btn btn-secondary" download>Download Resume</a>
     </div>
   </div>
 </section>
