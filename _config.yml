@@ -5,6 +5,14 @@ description: "CAD, Robotics & Prototyping Portfolio"
 baseurl: "" 
 url: "" 
 
+# Personal Information
+email: "manwe123@asu.edu"
+github_username: ""  # Add your GitHub username here
+linkedin_username: ""  # Add your LinkedIn username here
+location: "Tempe, AZ"  # Update with your location
+phone: ""  # Add your phone number if desired
+resume_url: "/assets/resume.pdf"  # Path to your resume PDF
+
 # Build Settings for GitHub Pages
 markdown: kramdown
 highlighter: rouge
