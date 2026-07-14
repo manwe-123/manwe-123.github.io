@@ -3,9 +3,9 @@ layout: project-vr
 title: "VR Rapid Prototyping Application"
 subtitle: "An immersive virtual reality curriculum and prototyping environment for introductory engineering students"
 date: 2025-12-01
-role: "Prototyping Lead (Modeling) & Documentation Lead"
-timeline: "March 2025 - December 2025"
-team: "12-person EPICS team"
+role: "Prototyping Lead & Documentation Lead"
+timeline: "January 2025 - December 2025"
+team: "12-person team"
 tags:
   - VR/AR
   - Unity
@@ -15,9 +15,9 @@ tags:
 image: "assets/images/vr-hero.jpg"
 excerpt: "Engineered a virtual reality rapid prototyping environment for Meta Quest headsets, integrating over 100 interactive 3D assets and developing a 2-week curriculum to teach the engineering design process."
 
-problem: "Following a donation of 30+ Meta Quest headsets by Honeywell, ASU's Fulton Schools of Engineering lacked the curriculum and software to utilize them. We needed an interactive, engaging VR application to teach the 6-step engineering design process to FSE 100 students, bridging the gap between theoretical concepts and immersive, hands-on prototyping."
+problem: "Following a donation of 30+ Meta Quest headsets by Honeywell, ASU's Fulton Schools of Engineering lacked the curriculum and software to utilize them. The objective was to develop an interactive VR application to teach the 6-step engineering design process to FSE 100 students, bridging the gap between theoretical concepts and immersive, hands-on prototyping."
 
-solution: "Developed an interactive AR/VR-based engineering design activity where students use VR headsets to visualize, construct, and prototype virtual objects (such as a bookshelf) in a simulated environment. The experience integrates a synchronized online worksheet, allowing students to document design decisions, upload screenshots, and reflect on their prototypes while completing the activity."
+solution: "Developed an interactive VR-based engineering design activity where students use headsets to visualize, construct, and prototype virtual objects in a simulated environment. The experience integrates a synchronized online worksheet, allowing students to document design decisions, upload screenshots, and reflect on their prototypes while completing the activity."
 
 requirements: |
   - Function like a video game with 3-4 levels and colorful assets to maximize engagement
@@ -40,13 +40,13 @@ metrics:
     achieved: "30+ Meta Quest 3S units"
   - name: "Activity Completion Time"
     target: "50 - 75 mins"
-    achieved: "Validated within class period"
+    achieved: "Validated within 65-min class period"
   - name: "Student Engagement Score"
     target: "6 - 10 / 10"
-    achieved: "Survey pending final deployment"
+    achieved: "Prototype validated; full deployment pending"
   - name: "Knowledge Retention"
     target: "75% of students"
-    achieved: "Curriculum aligned to target"
+    achieved: "Curriculum aligned to target metric"
 
 hardware_platform: |
   - **VR Headsets**: 30+ Meta Quest 3S (Donated by Honeywell)
@@ -62,14 +62,14 @@ software_stack: |
 core_features: |
   - **Interactive 3D Environment**: Over 100 interactive assets with simulated physics and collision mechanics
   - **User Input Tracking**: Hand controller integration for grabbing, rotating, and snapping components
-  - **Real-Time Analytics**: In-game scripts logging completion time, errors, and hints used
+  - **Real-Time Analytics**: In-game C# scripts logging completion time, errors, and hints used
   - **Multi-Station Collaboration**: Allowing students to co-design virtual objects from different headset stations
   - **Synchronized Worksheets**: Prompts appearing in-headset and on external screens to guide the design process
 
 decision_matrix: |
   Evaluated three core concepts against curriculum relevance, ease of implementation, student engagement, and educational value:
-  - **Interactive Block Coding**: Scored 440. High educational value, but lower engagement.
-  - **FSE Assembly Line**: Scored 650. Highly engaging, but complex setup and less relevant to current careers.
+  - **Interactive Block Coding**: Scored 440. High educational value, but lower engagement and relevance.
+  - **FSE Assembly Line**: Scored 650. Highly engaging, but complex setup and less relevant to modern workflows.
   - **3D Object Construction (Selected)**: Scored 780. Highest overall score. Simple to deliver, highly immersive, and easily scalable across multiple semesters.
 
 development_process: |
@@ -128,12 +128,12 @@ test_results:
 worked: |
   - **3D Object Construction Concept**: The decision matrix proved highly accurate; this concept was the easiest to deliver and most engaging for students.
   - **Modular Adaptability**: The Unity environment was designed so future EPICS teams can easily swap out assets (e.g., from bookshelves to bridge components) for different engineering disciplines.
-  - **Analytics Integration**: Successfully implemented C# scripts that track user actions without disrupting the VR experience.
+  - **Analytics Integration**: Successfully implemented C# scripts that track user actions without disrupting the VR experience or frame rate.
 
 failed: |
-  - **Headset Logistics**: Underestimated the time required to transport, pair, and sanitize 30+ headsets across campus. Required the creation of a strict TA maintenance checklist.
-  - **Wi-Fi Dependencies**: Classroom Wi-Fi dead zones caused delays in loading the synchronized online worksheets. Mitigated by implementing offline fallback modes for the VR app.
-  - **VR Motion Sensitivity**: Initial high-detail environments caused minor discomfort for some users. Resolved by locking to medium detail, optimizing frame rates, and adding comfort vignetting settings.
+  - **Headset Logistics**: *Challenge*: Underestimated the time required to transport, pair, and sanitize 30+ headsets. *Resolution*: Developed a strict pre-class TA maintenance and pairing checklist, significantly reducing setup time.
+  - **Wi-Fi Dependencies**: *Challenge*: Classroom dead zones delayed synchronized worksheet loading. *Resolution*: Implemented an offline fallback mode in the Unity build to cache worksheet data locally.
+  - **VR Motion Sensitivity**: *Challenge*: Initial high-detail environments caused minor user discomfort. *Resolution*: Locked rendering to medium detail, optimized frame rates, and implemented comfort vignetting settings.
 
 next_steps: |
   - Fully integrate the 2-week curriculum directly into the VR program's guided tutorial.
