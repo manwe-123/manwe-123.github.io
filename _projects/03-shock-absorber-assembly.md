@@ -13,109 +13,114 @@ tags:
   - 3rd Angle Projection
 
 # Project Scenario & Overview
-objective: "Initiate the design of a shock absorber for the Mercedes C-Class, creating all parts and a fully constrained assembly."
-engineering_mandate: "Be an engineer and amend areas that are not correct, specifically focusing on resolving physical interferences and identifying missing parts."
+objective: "Initiate the design of a fully functional shock absorber assembly for the Mercedes-Benz C-Class, modeling all custom components and integrating standard hardware to create a fully constrained, interference-free mechanical system."
+engineering_mandate: "Act as a Design Engineer to critically evaluate initial reference dimensions, amending part geometries to eliminate physical interferences, identify missing components, and ensure the assembly functions as a proper dynamic suspension system."
 
 # Design Constraints & Interference Management
 interference_constraints:
   threaded_allowance: "0.02 in³"
   other_components: "Zero interferences allowed"
 
-# Amendment process steps (optional - leave empty to hide)
+# Amendment process steps
 amendment_steps:
   - step: 1
-    description: ""
+    description: "Analyzed initial reference dimensions and identified physical clashes between the shaft, spacer, and U-support during virtual assembly."
   - step: 2
-    description: ""
+    description: "Adjusted the shaft length and spacer thickness to eliminate axial interferences while maintaining the required overall assembly length."
   - step: 3
-    description: ""
+    description: "Verified radial clearances between the bronze bushings and the steel shaft, ensuring smooth linear motion without binding."
   - step: 4
-    description: ""
+    description: "Ran SolidWorks Interference Detection to confirm zero interferences across all non-threaded components, strictly adhering to the 0.02 in³ allowance for threaded fasteners."
 
 # Spring specifications
 spring_specs:
-  height: ""
-  pitch: ""
-  revolutions: ""
+  height: "1.845 inches"
+  pitch: "0.50 inches"
+  revolutions: "3.69"
 
 # Key Design Features (3-column grid)
 key_features:
-  - title: ""
-    description: ""
-  - title: ""
-    description: ""
-  - title: ""
-    description: ""
+  - title: "Shaft Geometry"
+    description: "Features a 0.75-10 thread specification and a precise 0.125\" x 0.125\" keyway for secure torque transmission and component alignment."
+  - title: "Bronze Bushings"
+    description: "Utilizes SAE bronze bushings to provide a low coefficient of friction and high wear resistance against the steel shaft, eliminating the need for continuous lubrication."
+  - title: "Custom Compression Spring"
+    description: "Modeled from scratch with specific geometric parameters (1.845\" free height, 0.50\" pitch, 3.69 revolutions) to ensure accurate dynamic suspension behavior."
 
-# Optional: Custom BOM (if not provided, defaults will be used)
-# bom:
-#   - number: 1
-#     name: "Shock Body (Outer Tube)"
-#     type: "custom"
-#     material: "Steel AISI 1018"
-#     quantity: 1
-#   - number: 2
-#     name: "Piston Rod"
-#     type: "custom"
-#     material: "Steel AISI 1045, Chrome Plated"
-#     quantity: 1
-#   - number: 3
-#     name: "Socket Head Cap Screw"
-#     type: "standard"
-#     material: "Steel"
-#     quantity: 1
-#     mcmaster_carr: "91292A***"
-objective: "Design a fully constrained automotive shock absorber assembly with complete manufacturing documentation, including fully dimensioned 2D drawings, section views, thread and keyway callouts, and GD&T per ASME Y14.5 standards."
-
+# Bill of Materials
 bom:
   - number: 1
     name: "Self Locking Nut"
+    type: "standard"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "Yes"
   - number: 2
     name: "Hex Head Bolt"
+    type: "standard"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "Yes"
   - number: 3
     name: "Pivot"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 4
     name: "Cotter Pin"
+    type: "standard"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "Yes"
   - number: 5
     name: "Castle Nut"
+    type: "standard"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "Yes"
   - number: 6
     name: "Bushing"
+    type: "custom"
     material: "Bronze"
     quantity: 2
+    mcmaster_carr: "No"
   - number: 7
     name: "U-Support"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 8
     name: "Spring"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 9
     name: "Shaft"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 10
     name: "Spacer"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 11
     name: "Bracket"
+    type: "custom"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "No"
   - number: 12
     name: "Washer"
+    type: "standard"
     material: "Steel"
     quantity: 1
+    mcmaster_carr: "Yes"
 
 drawing_pairs:
   - title: "Shaft Assembly Detail"
@@ -140,35 +145,6 @@ material_selection: |
   
   **Bronze Bushings:** Specified for bearing surfaces to provide a low coefficient of friction and high wear resistance against the rotating steel shaft, eliminating the need for continuous external lubrication.
 
-# Optional: Custom manufacturing processes
-# manufacturing_processes: |
-#   - **CNC Turning:** Used for cylindrical parts...
-#   - **CNC Milling:** Employed for flat features...
-#   - **McMaster-Carr Sourcing:** Standard fasteners downloaded from library...
-
-# Optional: Custom lessons learned
-# lessons_learned:
-#   - challenge: "Interference Resolution: Initial dimensions caused physical clashes in the assembly."
-#     resolution: "Systematically applied mechanical mates, utilized SolidWorks interference detection, and amended part dimensions to achieve zero interferences outside of the threaded allowance."
-#   - challenge: ""
-#     resolution: ""
-
-# Optional: Custom skills list
-# skills:
-#   - SolidWorks Part Modeling
-#   - GD&T
-#   - Section Views
-#   - Interference Detection
-#   - Dimensional Analysis
-
-# Optional: Custom resource links
-# resources:
-#   - label: "📄 Download Compilation Document (PDF)"
-#     url: "/path/to/pdf"
-#   - label: "🔧 View SolidWorks Files"
-#     url: "https://github.com/your-repo"
-#   - label: "📐 ASME Y14.5 Reference"
-#     url: "https://www.asme.org/"
 manufacturing_processes: |
   - **CNC Turning & Milling:** Required for custom machined components like the shaft, spacer, and pivot to achieve tight dimensional tolerances and precise surface finishes.
   - **Fabrication:** The U-support and bracket utilize milled or laser-cut profiles with drilled mounting holes.
@@ -209,25 +185,6 @@ resources:
 <!-- 
   This is the Shock Absorber Assembly project page (Mercedes-Benz C-Class).
   The layout handles all the content structure automatically.
-  
-  REQUIRED FIELDS TO FILL IN:
-  - objective: Brief description of the design objective
-  - engineering_mandate: The mandate to amend incorrect areas
-  - interference_constraints.threaded_allowance: Allowed interference for threaded parts
-  - interference_constraints.other_components: Interference rule for other parts
-  - amendment_steps: 4 steps describing the amendment process
-  - spring_specs: Height, pitch, and revolutions of the compression spring
-  - key_features: 3 key design features with titles and descriptions
-  
-  OPTIONAL SECTIONS (uncomment to use):
-  - bom: Custom Bill of Materials (type: "custom" or "standard")
-  - drawing_pairs: Side-by-side 3D/2D comparisons
-  - gallery: Additional image gallery
-  - material_selection: Custom material details
-  - manufacturing_processes: Custom manufacturing details
-  - lessons_learned: Challenge/Resolution pairs
-  - skills: Technical skills demonstrated
-  - resources: Download/view links
   
   The page includes:
   - Constraint Callout Box (interference rules)
