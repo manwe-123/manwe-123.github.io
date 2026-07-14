@@ -1,35 +1,11 @@
-# Project-specific ignores
-_projects/02-VR-Rapid-Prototyping-Application/
-
 # Compiled and build artifacts
 *.pyc
 __pycache__/
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
 
 # Dependencies
-.venv/
-venv/
 node_modules/
-dist/
-build/
-target/
-.gradle/
-.mypy_cache/
-.pytest_cache/
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-
-# Environment
+venv/
+.venv/
 .env
 .env.local
 *.env.*
@@ -37,6 +13,11 @@ target/
 # Editors
 .vscode/
 .idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
 
 # System files
 .DS_Store
@@ -46,6 +27,18 @@ Thumbs.db
 coverage/
 htmlcov/
 .coverage
+
+# Build directories
+dist/
+build/
+target/
+.gradle/
+
+# Python specific
+*.pyc
+__pycache__/
+.mypy_cache/
+.pytest_cache/
 
 # Compressed files
 *.zip
