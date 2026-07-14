@@ -719,10 +719,20 @@ blockquote {
    PAGE HEADER
    -------------------------------------------------------------------------- */
 
+/* ==========================================================================
+   PROJECT PAGE STYLES - Unified Design System
+   Consistent styling across all project types for cohesive portfolio aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Project Header - Base Styles (All Projects)
+   -------------------------------------------------------------------------- */
+
 .page-header {
   padding: var(--spacing-12) 0;
   border-bottom: var(--border-width) solid var(--color-gray-200);
   margin-bottom: var(--spacing-8);
+  background-color: var(--color-gray-50);
 }
 
 .page-title {
@@ -730,11 +740,60 @@ blockquote {
   font-weight: 700;
   color: var(--color-gray-900);
   margin-bottom: var(--spacing-2);
+  letter-spacing: -0.02em;
 }
 
 .page-subtitle {
   font-size: 1.125rem;
   color: var(--color-gray-600);
+  max-width: 800px;
+}
+
+/* Project Meta Row - Consistent across all project types */
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-6);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.meta-value {
+  color: var(--color-gray-700);
+}
+
+/* Technical Tags Row */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+.tag-pill {
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+/* Subtle type-specific accent borders for differentiation without inconsistency */
+.page-header-vr {
+  border-left: 4px solid var(--color-primary);
+}
+
+.page-header-cad {
+  border-left: 4px solid var(--color-gray-700);
 }
 
 /* --------------------------------------------------------------------------
@@ -1512,43 +1571,9 @@ blockquote {
 /* ==========================================================================
    VR PROJECT PAGE SPECIFIC STYLES
    Custom components for VR Rapid Prototyping Application page
+   Note: Only VR-specific unique styles remain here. Base project styles
+   are in the unified section above for consistency.
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   Project Header Enhancements
-   -------------------------------------------------------------------------- */
-
-.page-header-vr {
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-}
-
-.project-meta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-4);
-  font-size: 0.875rem;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-}
-
-.meta-label {
-  color: var(--color-gray-500);
-  font-weight: 500;
-}
-
-.meta-value {
-  color: var(--color-gray-700);
-}
-
-.tag-pill {
-  border-radius: 9999px;
-  padding: var(--spacing-1) var(--spacing-3);
-  font-size: 0.75rem;
-}
 
 /* --------------------------------------------------------------------------
    Overview Section Layout
@@ -2254,30 +2279,11 @@ blockquote {
 }
 
 /* ==========================================================================
-   CAD PROJECT PAGE STYLES - Shock Absorber Assembly
+   CAD PROJECT PAGE SPECIFIC STYLES - Shock Absorber Assembly
    Precision-engineered aesthetic for mechanical design documentation
+   Note: Only CAD-specific unique styles remain here. Base project styles
+   are in the unified section above for consistency.
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   CAD Page Header
-   -------------------------------------------------------------------------- */
-
-.page-header-cad {
-  background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
-  border-bottom: 3px solid var(--color-primary);
-}
-
-.page-header-cad .page-title {
-  color: var(--color-white);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.page-header-cad .page-subtitle {
-  color: var(--color-gray-300);
-  font-family: var(--font-family-mono);
-  font-size: 0.95rem;
-}
 
 /* --------------------------------------------------------------------------
    BOM Table - Engineering Bill of Materials Style
