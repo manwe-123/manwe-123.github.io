@@ -53,17 +53,17 @@ layout: default
 <!-- Main Content Area -->
 <div class="container section">
   
-  <!-- Section 1: Project Overview & Requirements -->
+  <!-- Section 1: Project Scenario & Overview -->
   <section class="content-section" id="overview">
-    <h2 class="section-title">Project Overview & Requirements</h2>
+    <h2 class="section-title">Project Scenario & Overview</h2>
     <div class="section-content">
       <div class="layout-two-col overview-layout">
         
-        <!-- Left Column: Objective -->
+        <!-- Left Column: The Objective -->
         <div class="overview-left">
           <div class="cad-objective-block mb-6">
             <h3 class="subsection-title subsection-objective">
-              <span class="icon-circle">🎯</span> Objective
+              <span class="icon-circle">🎯</span> The Objective
             </h3>
             {% if page.objective %}
             <p>{{ page.objective }}</p>
@@ -71,18 +71,15 @@ layout: default
           </div>
         </div>
         
-        <!-- Right Column: Documentation Requirements -->
+        <!-- Right Column: The Engineering Mandate -->
         <div class="overview-right">
-          <div class="requirements-card">
-            <h3 class="subsection-title">Documentation Requirements</h3>
-            <ul class="custom-bullet-list">
-              <li>Fully dimensioned 2D engineering drawings</li>
-              <li>Section views revealing internal features</li>
-              <li>Thread callouts per ASME B1.1 standards</li>
-              <li>Keyway dimensions with appropriate tolerances</li>
-              <li>Geometric Dimensioning & Tolerancing (GD&T) per ASME Y14.5</li>
-              <li>Surface finish specifications where applicable</li>
-            </ul>
+          <div class="requirements-card engineering-mandate-card">
+            <h3 class="subsection-title">The Engineering Mandate</h3>
+            {% if page.engineering_mandate %}
+            <p class="mandate-text">{{ page.engineering_mandate }}</p>
+            {% else %}
+            <p>Be an engineer and amend areas that are not correct. Resolve physical interferences and identify missing parts to achieve a properly functioning assembly.</p>
+            {% endif %}
           </div>
         </div>
         
@@ -90,114 +87,269 @@ layout: default
     </div>
   </section>
   
-  <!-- Section 2: Assembly Architecture & BOM -->
+  <!-- Section 2: Design Constraints & Interference Management -->
+  <section class="content-section" id="constraints">
+    <h2 class="section-title">Design Constraints & Interference Management</h2>
+    <div class="section-content">
+      
+      <!-- Constraint Callout Box - Critical Component -->
+      <div class="callout callout-constraint constraint-callout mb-8">
+        <div class="callout-header">
+          <span class="callout-icon">⚠</span>
+          <strong>Strict Interference Rules</strong>
+        </div>
+        <div class="callout-body">
+          <div class="constraint-grid">
+            <div class="constraint-item constraint-threaded">
+              <div class="constraint-label">Threaded Components</div>
+              <div class="constraint-value mono">
+                {% if page.interference_constraints %}
+                {{ page.interference_constraints.threaded_allowance }}
+                {% else %}
+                0.02 in³
+                {% endif %}
+              </div>
+              <div class="constraint-note">Allowed interference volume</div>
+            </div>
+            <div class="constraint-item constraint-other">
+              <div class="constraint-label">All Other Components</div>
+              <div class="constraint-value mono">
+                {% if page.interference_constraints %}
+                {{ page.interference_constraints.other_components }}
+                {% else %}
+                Zero interferences allowed
+                {% endif %}
+              </div>
+              <div class="constraint-note">Must achieve perfect fit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Amendment Process -->
+      <div>
+        <h3 class="subsection-title">Dimension Amendment Process</h3>
+        <p class="mb-4">Initial reference dimensions were systematically amended to achieve a properly functioning shock absorber:</p>
+        <div class="amendment-steps">
+          <div class="amendment-step">
+            <span class="step-number mono">1</span>
+            <div class="step-content">
+              <strong>Initial Assembly:</strong> Created all components using provided reference dimensions
+            </div>
+          </div>
+          <div class="amendment-step">
+            <span class="step-number mono">2</span>
+            <div class="step-content">
+              <strong>Interference Detection:</strong> Ran SolidWorks interference detection to identify clashes
+            </div>
+          </div>
+          <div class="amendment-step">
+            <span class="step-number mono">3</span>
+            <div class="step-content">
+              <strong>Systematic Amendment:</strong> Adjusted part dimensions while maintaining design intent
+            </div>
+          </div>
+          <div class="amendment-step">
+            <span class="step-number mono">4</span>
+            <div class="step-content">
+              <strong>Verification:</strong> Confirmed zero interferences (except threaded allowance) and proper function
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Section 3: Assembly Architecture & BOM -->
   <section class="content-section" id="assembly">
     <h2 class="section-title">Assembly Architecture & Bill of Materials</h2>
     <div class="section-content">
       
-      <!-- BOM Table - Critical Component -->
+      <!-- BOM Table - Critical Component with Custom/Standard Distinction -->
       <div class="mb-8">
         <h3 class="subsection-title">Bill of Materials (BOM)</h3>
-        <p class="mb-4">Complete parts list for the shock absorber assembly with materials and quantities.</p>
+        <p class="mb-4">Complete parts list for the shock absorber assembly. <strong>Custom machined parts</strong> require engineering drawings; <strong>standard fasteners</strong> are sourced from McMaster-Carr.</p>
         
         <div class="table-responsive">
-          <table class="table bom-table">
+          <table class="table bom-table bom-table-extended">
             <thead>
               <tr>
                 <th class="mono">Item No.</th>
                 <th>Part Name</th>
                 <th>Material</th>
                 <th class="mono">Qty</th>
+                <th>Type</th>
               </tr>
             </thead>
             <tbody>
               {% if page.bom %}
               {% for item in page.bom %}
-              <tr>
+              <tr class="{% if item.type == 'custom' %}bom-row-custom{% elsif item.type == 'standard' %}bom-row-standard{% endif %}">
                 <td class="mono bom-item-no">{{ item.number }}</td>
-                <td><strong>{{ item.name }}</strong></td>
+                <td>
+                  <strong>{{ item.name }}</strong>
+                  {% if item.type == 'custom' %}
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                  {% endif %}
+                </td>
                 <td>{{ item.material }}</td>
                 <td class="mono bom-qty">{{ item.quantity }}</td>
+                <td class="mono">
+                  {% if item.type == 'custom' %}
+                  <span class="part-type-badge part-type-custom">Custom</span>
+                  {% elsif item.type == 'standard' %}
+                  <span class="part-type-badge part-type-standard">Standard</span>
+                  {% else %}
+                  <span class="part-type-badge part-type-custom">Custom</span>
+                  {% endif %}
+                </td>
               </tr>
               {% endfor %}
               {% else %}
               <!-- Default BOM rows if not provided in front matter -->
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">1</td>
-                <td><strong>Shock Body (Outer Tube)</strong></td>
+                <td>
+                  <strong>Shock Body (Outer Tube)</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1018</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">2</td>
-                <td><strong>Piston Rod</strong></td>
+                <td>
+                  <strong>Piston Rod</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1045, Chrome Plated</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">3</td>
-                <td><strong>Piston Head</strong></td>
+                <td>
+                  <strong>Piston Head</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1018</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">4</td>
-                <td><strong>Compression Spring</strong></td>
+                <td>
+                  <strong>Compression Spring</strong>
+                  <span class="spring-highlight-badge" title="Modeled from scratch">↯ Modeled from Scratch</span>
+                </td>
                 <td>Music Wire ASTM A228</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">5</td>
-                <td><strong>Upper Bushing</strong></td>
+                <td>
+                  <strong>Upper Bushing</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Bronze SAE 841</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">6</td>
-                <td><strong>Lower Bushing</strong></td>
+                <td>
+                  <strong>Lower Bushing</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Bronze SAE 841</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">7</td>
-                <td><strong>End Cap (Top)</strong></td>
+                <td>
+                  <strong>End Cap (Top)</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1018</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">8</td>
-                <td><strong>End Cap (Bottom)</strong></td>
+                <td>
+                  <strong>End Cap (Bottom)</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1018</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-standard">
                 <td class="mono bom-item-no">9</td>
                 <td><strong>Retaining Ring</strong></td>
                 <td>Spring Steel 1075</td>
                 <td class="mono bom-qty">2</td>
+                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-standard">
                 <td class="mono bom-item-no">10</td>
                 <td><strong>Set Screw</strong></td>
                 <td>Alloy Steel Grade 8</td>
                 <td class="mono bom-qty">2</td>
+                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-standard">
                 <td class="mono bom-item-no">11</td>
                 <td><strong>O-Ring Seal</strong></td>
                 <td>Viton Fluoroelastomer</td>
                 <td class="mono bom-qty">2</td>
+                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
               </tr>
-              <tr>
+              <tr class="bom-row-custom">
                 <td class="mono bom-item-no">12</td>
-                <td><strong>Mounting Bracket</strong></td>
+                <td>
+                  <strong>Mounting Bracket</strong>
+                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
+                </td>
                 <td>Steel AISI 1018</td>
                 <td class="mono bom-qty">1</td>
+                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
               </tr>
               {% endif %}
             </tbody>
           </table>
         </div>
+        
+        <!-- Spring Specification Highlight -->
+        {% if page.spring_specs %}
+        <div class="spring-spec-callout mt-4">
+          <div class="callout-header">
+            <span class="callout-icon">↯</span>
+            <strong>Compression Spring Specifications</strong>
+          </div>
+          <div class="callout-body">
+            <div class="spring-specs-grid">
+              <div class="spring-spec-item">
+                <span class="spec-label">Free Height:</span>
+                <span class="spec-value mono">{{ page.spring_specs.height }}</span>
+              </div>
+              <div class="spring-spec-item">
+                <span class="spec-label">Pitch:</span>
+                <span class="spec-value mono">{{ page.spring_specs.pitch }}</span>
+              </div>
+              <div class="spring-spec-item">
+                <span class="spec-label">Revolutions:</span>
+                <span class="spec-value mono">{{ page.spring_specs.revolutions }}</span>
+              </div>
+            </div>
+            <p class="spring-note mt-2">Spring was modeled from scratch using helical sweep feature (not downloaded from library).</p>
+          </div>
+        </div>
+        {% endif %}
       </div>
       
       <!-- Key Design Features Grid -->
@@ -205,6 +357,23 @@ layout: default
         <h3 class="subsection-title">Key Design Features</h3>
         <div class="grid-3 key-features-grid">
           
+          {% if page.key_features %}
+          {% for feature in page.key_features %}
+          <div class="feature-card feature-{{ feature.name | downcase | replace: ' ', '-' }}">
+            <div class="feature-card-header">
+              <span class="feature-icon">{% if feature.name contains 'Shaft' %}⚙{% elsif feature.name contains 'Bushing' %}◉{% else %}↯{% endif %}</span>
+              <h4 class="feature-title mono">{{ feature.name }}</h4>
+            </div>
+            <div class="feature-card-body">
+              <ul class="feature-spec-list">
+                {% for spec in feature.specs %}
+                <li>{{ spec }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
           <div class="feature-card feature-shaft">
             <div class="feature-card-header">
               <span class="feature-icon">⚙</span>
@@ -213,7 +382,7 @@ layout: default
             <div class="feature-card-body">
               <ul class="feature-spec-list">
                 <li><strong>Thread:</strong> 0.75-10 UNC-2A</li>
-                <li><strong>Keyway:</strong> 0.125" × 0.0625"</li>
+                <li><strong>Keyway:</strong> 0.125" × 0.125"</li>
                 <li><strong>Diameter:</strong> 0.750" nominal</li>
                 <li><strong>Finish:</strong> Chrome plated for corrosion resistance</li>
               </ul>
@@ -249,6 +418,7 @@ layout: default
               </ul>
             </div>
           </div>
+          {% endif %}
           
         </div>
       </div>
