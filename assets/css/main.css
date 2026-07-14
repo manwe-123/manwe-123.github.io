@@ -1508,3 +1508,747 @@ blockquote {
     break-inside: avoid;
   }
 }
+
+/* ==========================================================================
+   VR PROJECT PAGE SPECIFIC STYLES
+   Custom components for VR Rapid Prototyping Application page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Project Header Enhancements
+   -------------------------------------------------------------------------- */
+
+.page-header-vr {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.meta-value {
+  color: var(--color-gray-700);
+}
+
+.tag-pill {
+  border-radius: 9999px;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Overview Section Layout
+   -------------------------------------------------------------------------- */
+
+.overview-layout {
+  gap: var(--spacing-8);
+}
+
+.overview-left,
+.overview-right {
+  min-width: 0;
+}
+
+.problem-solution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: var(--border-width-2) solid var(--color-primary);
+}
+
+.subsection-problem {
+  color: var(--color-error);
+}
+
+.subsection-solution {
+  color: var(--color-success);
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: currentColor;
+  color: white;
+  font-size: 0.75rem;
+  margin-right: var(--spacing-2);
+}
+
+.stakeholders-card {
+  padding: var(--spacing-5);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-primary);
+}
+
+.custom-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.custom-bullet-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+}
+
+.custom-bullet-list li::before {
+  content: "▸";
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   Technical Architecture Cards
+   -------------------------------------------------------------------------- */
+
+.tech-architecture-grid {
+  gap: var(--spacing-5);
+}
+
+.tech-card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.tech-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.tech-card-icon {
+  font-size: 1.5rem;
+}
+
+.tech-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.tech-card-body {
+  padding: var(--spacing-4);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.tech-card-body ul {
+  margin: 0;
+  padding-left: var(--spacing-4);
+}
+
+.tech-card-body li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* System Architecture Diagram Placeholder */
+
+.system-architecture-block {
+  margin-top: var(--spacing-8);
+}
+
+.diagram-placeholder {
+  background-color: var(--color-gray-100);
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-12);
+  text-align: center;
+}
+
+.diagram-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.diagram-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.diagram-placeholder-content p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.diagram-note {
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   Decision Matrix Table
+   -------------------------------------------------------------------------- */
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.decision-matrix-table {
+  min-width: 800px;
+}
+
+.decision-matrix-table th {
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.decision-matrix-table td.mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.winner-row {
+  background-color: var(--color-primary-light) !important;
+  border: 2px solid var(--color-primary);
+}
+
+.winner-row td {
+  border-top-color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.winner-score {
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Visual
+   -------------------------------------------------------------------------- */
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.timeline-phase {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.timeline-phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-100);
+}
+
+.phase-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.phase-spring {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.phase-summer {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.phase-fall {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.timeline-phase-header h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-gray-900);
+}
+
+.timeline-phase-body {
+  padding: var(--spacing-4);
+}
+
+.timeline-arrow {
+  font-size: 1.5rem;
+  color: var(--color-gray-400);
+}
+
+/* --------------------------------------------------------------------------
+   Contributions Section
+   -------------------------------------------------------------------------- */
+
+.contributions-grid {
+  gap: var(--spacing-6);
+}
+
+.contribution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.contribution-title-lead {
+  color: var(--color-primary);
+}
+
+.contribution-title-docs {
+  color: var(--color-warning);
+}
+
+.role-icon {
+  margin-right: var(--spacing-2);
+}
+
+.achievement-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.achievement-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.achievement-lead li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.achievement-docs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-warning);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Image Gallery Enhancements
+   -------------------------------------------------------------------------- */
+
+.image-gallery-vr {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.gallery-item-vr {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item-vr img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Accordion Component (Research Questions)
+   -------------------------------------------------------------------------- */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.accordion-item {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  transition: background-color var(--transition-fast);
+}
+
+.accordion-header:hover {
+  background-color: var(--color-gray-100);
+}
+
+.accordion-title {
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.25rem;
+  color: var(--color-gray-500);
+  transition: transform var(--transition-base);
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-body {
+  padding: var(--spacing-5);
+  border-top: var(--border-width) solid var(--color-gray-200);
+}
+
+.rq-detail {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.rq-detail p {
+  margin-bottom: var(--spacing-4);
+}
+
+.rq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .rq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rq-detail-item h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.rq-detail-item ul,
+.rq-detail-item ol {
+  margin: 0;
+  padding-left: var(--spacing-4);
+  font-size: 0.8rem;
+}
+
+.results-list li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   Test Results Status Badges
+   -------------------------------------------------------------------------- */
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.status-pass {
+  background-color: #ecfdf5;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.status-fail {
+  background-color: #fef2f2;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.status-pending {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+}
+
+/* --------------------------------------------------------------------------
+   Lessons Learned Grid
+   -------------------------------------------------------------------------- */
+
+.lessons-grid-vr {
+  gap: var(--spacing-6);
+}
+
+.lesson-column {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid;
+}
+
+.lesson-success {
+  background-color: #ecfdf5;
+  border-color: var(--color-success);
+}
+
+.lesson-warning {
+  background-color: #fffbeb;
+  border-color: var(--color-warning);
+}
+
+.lesson-title-success,
+.lesson-title-warning {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-title-success {
+  color: var(--color-success);
+}
+
+.lesson-title-warning {
+  color: var(--color-warning);
+}
+
+.lesson-icon {
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Roadmap Container
+   -------------------------------------------------------------------------- */
+
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-item {
+  display: flex;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.roadmap-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.roadmap-content h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-900);
+}
+
+.roadmap-content p {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.625;
+}
+
+/* --------------------------------------------------------------------------
+   Skills Tag Grid
+   -------------------------------------------------------------------------- */
+
+.skills-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Resource Links
+   -------------------------------------------------------------------------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.resource-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Callout Box Variants
+   -------------------------------------------------------------------------- */
+
+.callout {
+  padding: var(--spacing-4);
+  border-left: var(--border-width-2) solid var(--color-gray-400);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-info {
+  border-left-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.callout-success {
+  border-left-color: var(--color-success);
+  background-color: #ecfdf5;
+}
+
+.callout-warning {
+  border-left-color: var(--color-warning);
+  background-color: #fffbeb;
+}
+
+.callout-error {
+  border-left-color: var(--color-error);
+  background-color: #fef2f2;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for VR Page
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .tech-architecture-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lessons-grid-vr {
+    grid-template-columns: 1fr;
+  }
+  
+  .roadmap-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .decision-matrix-table {
+    font-size: 0.7rem;
+  }
+  
+  .phase-badge {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+}
