@@ -1,139 +1,141 @@
 ---
 title: "VR Rapid Prototyping Application"
-subtitle: "Immersive VR engineering curriculum for introductory design courses"
-date: 2025-12-01
-role: "Prototyping Lead & Documentation Lead"
-timeline: "Jan 2025 - Dec 2025"
-team: "12-person team"
+subtitle: "An immersive virtual reality engineering design curriculum for introductory students"
+date: 2025-12-15
+role: "Prototyping Lead (Modeling) & Documentation Lead"
+timeline: "January 2025 - December 2025"
+team: "12-person EPICS team"
 tags:
   - VR/AR
   - Unity
   - C#
-  - 3D Modeling
+  - Systems Integration
   - Curriculum Design
-image: "assets/images/projects/vr-hero.jpg"
-excerpt: "Developed an interactive VR rapid prototyping environment for Meta Quest headsets, integrating 100+ assets and physics simulations to teach engineering design processes."
+  - Meta Quest
+image: "assets/images/vr-prototyping-hero.jpg"
+excerpt: "Engineered a virtual reality rapid prototyping environment and a two-week curriculum to integrate 30+ donated Meta Quest headsets into the introductory engineering design course."
 
-problem: "Over 30 Meta Quest headsets donated by Honeywell sat unused due to a lack of curriculum integration. The Fulton Schools of Engineering needed an interactive, immersive way to teach introductory engineering design concepts without requiring physical lab materials."
+problem: "Over 30 Meta Quest headsets donated by Honeywell sat unused in storage for months due to a lack of curriculum integration. The Fulton Schools of Engineering needed a way to utilize this hardware to teach introductory engineering design concepts interactively, without requiring students to have prior VR experience."
 
-solution: "Engineered a comprehensive VR rapid prototyping application in Unity featuring 100+ interactive 3D assets, physics-based manipulation, and a structured 2-week curriculum framework that allows students to collaboratively design and test virtual prototypes."
+solution: "Developed an interactive 3D Object Construction VR environment built in Unity, featuring over 100 physics-enabled assets and an analytics tracking system. Paired the software with a comprehensive two-week curriculum to seamlessly integrate the hardware into the FSE 100 course."
 
 requirements: |
-  - Feature 3-4 interactive levels with gamified engineering challenges
-  - Support intuitive user input (grabbing, rotating, assembling objects)
-  - Maintain stable frame rates to prevent VR motion sickness
-  - Complete the full activity within a standard 50-75 minute class period
-  - Beginner-friendly for students with no prior VR experience
+  - Deploy across 30+ standalone Meta Quest headsets without external PC tethering
+  - Maintain a stable frame rate to prevent VR motion sickness for beginner users
+  - Integrate interactive physics and collision mechanics for realistic prototyping
+  - Develop a beginner-friendly two-week curriculum aligned with FSE 100 learning outcomes
+  - Achieve a total project cost of $0 utilizing donated hardware and free software
 
 constraints: |
-  - Limited to 30+ standalone Meta Quest headsets (no PC-tethered rendering)
-  - Hardware restricted to undergraduate lab equipment and donated headsets
-  - 1-semester deadline to deliver a functional, curriculum-aligned prototype
+  - Hardware limited to standalone Meta Quest 3 and 3S headsets with mobile-grade processing limits
+  - Target audience consists of first-year students with zero prior VR or Unity experience
+  - Strict one-semester development timeline for the initial functional prototype
+  - Classroom logistics required rapid setup, sanitization, and charging protocols for 30+ units
 
 metrics:
   - name: "Interactive Assets"
     target: "50+ assets"
     achieved: "100+ assets"
-  - name: "Frame Rate Stability"
-    target: "72+ FPS"
-    achieved: "Stable 72-90 FPS"
-  - name: "Activity Completion"
-    target: "< 75 mins"
-    achieved: "50-60 mins"
+  - name: "Hardware Deployed"
+    target: "30 headsets"
+    achieved: "30+ headsets"
+  - name: "Curriculum Length"
+    target: "1 week"
+    achieved: "2 weeks"
+  - name: "Project Cost"
+    target: "$0"
+    achieved: "$0"
 
-sensing: |
-  - **Hand & Controller Tracking**: Meta Quest native hand tracking and XR controller input for precise object manipulation
-  - **Spatial Awareness**: Unity Guardian system integration to ensure physical safety during immersive sessions
-  - **Analytics Logging**: Custom C# scripts to track user completion time, interaction errors, and hint usage
+hardware_platform: |
+  - **Headsets**: Meta Quest 3 and Meta Quest 3S (Standalone VR)
+  - **Controllers**: Touch Plus controllers with hand tracking capabilities
+  - **Infrastructure**: 30-unit charging cart and dedicated classroom storage in ECG
 
-actuation: |
-  - **Physics Engine**: Unity physics simulation for realistic object collisions, gravity, and mass properties
-  - **Interaction Mechanics**: Grab, rotate, snap, and assemble virtual components using the XR Interaction Toolkit
-  - **UI/UX Feedback**: Real-time visual and haptic feedback for successful component mating and task completion
+software_stack: |
+  - **Engine**: Unity Game Engine (Primary development and build platform)
+  - **Scripting**: C# for user interactions, physics logic, and analytics logging
+  - **3D Modeling**: Blender for asset creation, modification, and optimization
+  - **Version Control**: Git and GitHub for team collaboration and code management
 
-mechanical: |
-  - **Virtual Environment**: Modeled and optimized 3D workspaces, including virtual workbenches and assembly zones
-  - **Asset Topology**: Retopologized and optimized 100+ 3D models to ensure high visual fidelity without compromising standalone VR performance
-  - **Ergonomic Design**: Positioned interactive elements and UI within comfortable reach zones to minimize user fatigue
+core_features: |
+  - **Physics & Collisions**: Simulated gravity, object snapping, and collision detection for realistic assembly
+  - **Asset Library**: Over 100 interactive 3D components for rapid virtual prototyping
+  - **Analytics Engine**: Custom C# scripts tracking completion time, error rates, and hint usage
+  - **User Interface**: Minimalist, beginner-friendly menus designed to reduce cognitive load in VR
 
-components:
-  - name: "Meta Quest 3S"
-    spec: "Standalone VR headset (30+ units)"
-  - name: "Unity Engine"
-    spec: "Primary development platform and physics simulator"
-  - name: "XR Interaction Toolkit"
-    spec: "Framework for VR input and object manipulation"
-
-fabrication: |
-  **3D Asset Creation & Optimization:**
-  - Modeled and modified 100+ interactive components in Blender and Unity
-  - Baked lighting and optimized mesh polygons to maintain 90 FPS on standalone headsets
+development_process: |
+  **Phase 1: Documentation & Planning (Jan 2025 - Mar 2025)**
+  - Authored technical reports, risk analysis matrices, and Gantt charts to track design milestones.
+  - Standardized reporting templates and delivered a final technical transition package for future EPICS teams.
   
-  **Software Development:**
-  - Programmed custom C# scripts for object snapping, physics toggling, and analytics logging
-  - Iteratively tested interaction mechanics with small user groups to refine UI and controls
+  **Phase 2: Prototyping & Systems Integration (Mar 2025 - Dec 2025)**
+  - Transitioned to Prototyping Lead to build the core Unity environment.
+  - Integrated over 100 interactive 3D assets, applying physics and collision mechanics.
+  - Established standardized Unity workflows and resolved engine-level rendering blockers.
+  - Optimized frame rates and asset polygon counts to ensure stable performance on standalone mobile headsets.
 
 gallery:
   - src: "/assets/images/projects/vr-unity-editor.jpg"
-    caption: "Unity editor showing the 100+ asset hierarchy and scene layout"
+    caption: "Unity editor scene hierarchy showing the 100+ asset library"
   - src: "/assets/images/projects/vr-environment.jpg"
-    caption: "In-VR view of the interactive rapid prototyping workspace"
+    caption: "First-person view of the interactive VR prototyping workspace"
   - src: "/assets/images/projects/vr-headsets.jpg"
-    caption: "Deployment setup with 30+ Meta Quest headsets"
+    caption: "Deployment setup of the 30+ Meta Quest headsets in the classroom"
+  - src: "/assets/images/projects/vr-curriculum.jpg"
+    caption: "Sample worksheet and curriculum materials for student integration"
 
 testing: |
-  Testing was conducted in three phases aligned with our research questions: component functionality (tracking and physics), subsystem immersion (balancing visual fidelity with performance), and integration (measuring learning outcomes and engagement).
+  Testing was conducted across three primary research phases to validate both the software performance and the educational efficacy of the curriculum.
 
 test_results:
-  - name: "Frame Rate & Sickness"
-    procedure: "Run prototype continuously for 60 mins, monitor FPS and user feedback"
-    result: "Maintained 72-90 FPS; zero reports of VR motion sickness"
+  - name: "Engagement vs. Traditional Methods"
+    procedure: "Compared VR simulation engagement against standard lecture videos using 1-10 scale surveys"
+    result: "VR environment yielded significantly higher engagement and concept retention scores"
     status: "Pass"
-  - name: "Interaction Accuracy"
-    procedure: "Test object snapping and rotation with 5 non-VR users"
-    result: "Intuitive controls achieved; average time to first correct interaction < 2 mins"
+  - name: "Immersion Level Optimization"
+    procedure: "Tested Low, Medium, and High detail environments to balance visual fidelity with standalone headset performance"
+    result: "Medium detail provided the optimal balance, maintaining 90Hz frame rate without causing motion sickness"
     status: "Pass"
-  - name: "Curriculum Alignment"
-    procedure: "Faculty review of the 2-week lesson plan and VR activity flow"
-    result: "Confirmed alignment with FSE 100 engineering design process outcomes"
+  - name: "Analytics Validation"
+    procedure: "Tracked in-game completion times and error rates, comparing them against post-session quiz scores"
+    result: "Successfully established a data-driven feedback loop correlating in-game performance with concept mastery"
     status: "Pass"
 
 worked: |
-  - **Iterative Prototyping**: Testing with small user groups early on prevented major UI/UX overhauls later
-  - **Asset Optimization**: Aggressive polygon reduction and baked lighting allowed high-fidelity visuals on standalone headsets
-  - **Faculty Collaboration**: Continuous feedback from Prof. Osburn ensured the VR activity directly supported course learning objectives
+  - **Asset Pipeline Optimization**: Successfully integrated 100+ assets without degrading the frame rate on standalone hardware
+  - **Team Training**: Established technical workflows that allowed all modeling team members to contribute to Unity development efficiently
+  - **Curriculum Alignment**: Partnered directly with faculty to ensure the VR mechanics perfectly matched the FSE 100 engineering design process
 
 failed: |
-  - **Initial High-Poly Assets**: Early models caused frame drops and VR sickness; required complete retopology of the environment
-  - **Headset Logistics**: Managing charging, updates, and sanitization for 30+ headsets across multiple classrooms proved highly time-consuming
-  - **Network Dependencies**: Wi-Fi drops in certain classrooms delayed worksheet syncing and asset loading
+  - **Hardware Logistics**: Managing the charging, transport, and sanitization of 30+ headsets across campus created significant bottlenecks before class
+  - **VR Literacy Barrier**: Initial testing showed first-year students struggled with basic VR locomotion, requiring us to simplify the control scheme and add a mandatory tutorial module
 
 next_steps: |
-  - Integrate the full 2-week curriculum directly into the VR application with guided tutorials
-  - Implement multi-user collaboration so students can co-design the same virtual prototype
-  - Develop a comprehensive instructor dashboard to view real-time student analytics
+  - Implement multi-user collaboration so students can co-design the same virtual object from different headsets
+  - Integrate the full curriculum directly into the VR program with automated grading via Canvas
+  - Develop dynamic path planning for more complex, multi-stage engineering design challenges
 
 specs:
   software:
     - name: "Unity"
-      version: "2022 LTS"
-    - name: "C#"
-      version: ".NET Standard 2.1"
+      version: "2025 LTS"
     - name: "Blender"
       version: "3.6"
   hardware:
-    - component: "VR Headset"
-      model: "Meta Quest 3S"
-    - component: "Input"
-      model: "Touch Plus Controllers / Hand Tracking"
+    - component: "Headset"
+      model: "Meta Quest 3 / 3S"
   materials:
     - type: "Digital Assets"
       grade: "Optimized FBX/OBJ meshes"
+    - type: "Curriculum"
+      grade: "PDF / Canvas LMS"
   dimensions:
-    - axis: "Virtual Space"
+    - axis: "Virtual Workspace"
       value: "10m x 10m x 4m"
+    - axis: "Physical Footprint"
+      value: "2m x 2m per user (Guardian Boundary)"
   weight: "N/A (Software)"
-  cost: "$0 (Headsets donated by Honeywell, software free)"
+  cost: "$0 USD (Donated Hardware)"
 ---
 
-This project demonstrates the integration of software engineering, 3D asset optimization, and educational curriculum design to transform unused hardware into an interactive engineering learning platform.
+This project demonstrates the integration of software engineering, systems deployment, and educational curriculum design to solve a real-world hardware utilization challenge.
