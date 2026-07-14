@@ -1,134 +1,139 @@
 ---
-title: "other project"
-subtitle: "A self-navigating robot for indoor warehouse inventory management"
-date: 2024-05-15
-role: "Lead Mechanical Designer"
-timeline: "Jan 2024 - May 2024"
-team: "3-person team"
+title: "VR Rapid Prototyping Application"
+subtitle: "Immersive VR engineering curriculum for introductory design courses"
+date: 2025-12-01
+role: "Prototyping Lead & Documentation Lead"
+timeline: "Jan 2025 - Dec 2025"
+team: "12-person team"
 tags:
-  - Robotics
-  - CAD
-  - Arduino
-  - 3D Printing
-image: "assets/images/14F375D7-0896-49FB-9C8B-10815BAE71DA.JPG"
-excerpt: "Designed and built an autonomous mobile robot capable of navigating warehouse environments and scanning RFID tags for inventory tracking."
+  - VR/AR
+  - Unity
+  - C#
+  - 3D Modeling
+  - Curriculum Design
+image: "assets/images/projects/vr-hero.jpg"
+excerpt: "Developed an interactive VR rapid prototyping environment for Meta Quest headsets, integrating 100+ assets and physics simulations to teach engineering design processes."
 
-problem: "Warehouses require efficient inventory tracking systems. Manual counting is time-consuming and error-prone. We needed a low-cost autonomous solution that could navigate between shelving units and scan RFID tags."
+problem: "Over 30 Meta Quest headsets donated by Honeywell sat unused due to a lack of curriculum integration. The Fulton Schools of Engineering needed an interactive, immersive way to teach introductory engineering design concepts without requiring physical lab materials."
 
-solution: "Developed a differential-drive mobile robot with LIDAR-based SLAM navigation, equipped with an RFID reader and camera system. The robot autonomously patrols predefined routes and uploads inventory data to a central database."
+solution: "Engineered a comprehensive VR rapid prototyping application in Unity featuring 100+ interactive 3D assets, physics-based manipulation, and a structured 2-week curriculum framework that allows students to collaboratively design and test virtual prototypes."
 
 requirements: |
-  - Navigate corridors 1.5m wide with ±10cm accuracy
-  - Operate for 4+ hours on single battery charge
-  - Support payload of 5kg for sensors and electronics
-  - Total cost under $500 for prototype
+  - Feature 3-4 interactive levels with gamified engineering challenges
+  - Support intuitive user input (grabbing, rotating, assembling objects)
+  - Maintain stable frame rates to prevent VR motion sickness
+  - Complete the full activity within a standard 50-75 minute class period
+  - Beginner-friendly for students with no prior VR experience
 
 constraints: |
-  - Limited to undergraduate lab equipment for fabrication
-  - Battery capacity restricted by weight budget
-  - 3-month development timeline
+  - Limited to 30+ standalone Meta Quest headsets (no PC-tethered rendering)
+  - Hardware restricted to undergraduate lab equipment and donated headsets
+  - 1-semester deadline to deliver a functional, curriculum-aligned prototype
 
 metrics:
-  - name: "Navigation Accuracy"
-    target: "±10 cm"
-    achieved: "±5 cm"
-  - name: "Battery Life"
-    target: "4 hours"
-    achieved: "4.5 hours"
-  - name: "Total Cost"
-    target: "$500"
-    achieved: "$475"
+  - name: "Interactive Assets"
+    target: "50+ assets"
+    achieved: "100+ assets"
+  - name: "Frame Rate Stability"
+    target: "72+ FPS"
+    achieved: "Stable 72-90 FPS"
+  - name: "Activity Completion"
+    target: "< 75 mins"
+    achieved: "50-60 mins"
 
 sensing: |
-  - **LIDAR**: RPLIDAR A1M8 for 360° range finding and SLAM
-  - **IMU**: MPU6050 for orientation and acceleration
-  - **Wheel Encoders**: Quadrature encoders for odometry
+  - **Hand & Controller Tracking**: Meta Quest native hand tracking and XR controller input for precise object manipulation
+  - **Spatial Awareness**: Unity Guardian system integration to ensure physical safety during immersive sessions
+  - **Analytics Logging**: Custom C# scripts to track user completion time, interaction errors, and hint usage
 
 actuation: |
-  - **Drive Motors**: 2× NEMA 17 stepper motors with A4988 drivers
-  - **Wheel Configuration**: Differential drive with caster support
-  - **Power System**: 3S LiPo battery (11.1V, 5000mAh)
+  - **Physics Engine**: Unity physics simulation for realistic object collisions, gravity, and mass properties
+  - **Interaction Mechanics**: Grab, rotate, snap, and assemble virtual components using the XR Interaction Toolkit
+  - **UI/UX Feedback**: Real-time visual and haptic feedback for successful component mating and task completion
 
 mechanical: |
-  - **Chassis**: 6061-T6 aluminum frame with laser-cut acrylic panels
-  - **Wheel Mounts**: 3D printed PETG housings with ball bearings
-  - **Sensor Brackets**: Parametric Fusion 360 designs
+  - **Virtual Environment**: Modeled and optimized 3D workspaces, including virtual workbenches and assembly zones
+  - **Asset Topology**: Retopologized and optimized 100+ 3D models to ensure high visual fidelity without compromising standalone VR performance
+  - **Ergonomic Design**: Positioned interactive elements and UI within comfortable reach zones to minimize user fatigue
 
 components:
-  - name: "Arduino Mega 2560"
-    spec: "Main controller"
-  - name: "Raspberry Pi 4"
-    spec: "SLAM processing"
-  - name: "RPLIDAR A1M8"
-    spec: "360° LIDAR sensor"
+  - name: "Meta Quest 3S"
+    spec: "Standalone VR headset (30+ units)"
+  - name: "Unity Engine"
+    spec: "Primary development platform and physics simulator"
+  - name: "XR Interaction Toolkit"
+    spec: "Framework for VR input and object manipulation"
 
 fabrication: |
-  **Frame Construction:**
-  - Aluminum extrusions cut to length on bandsaw
-  - Drill press used for mounting holes
+  **3D Asset Creation & Optimization:**
+  - Modeled and modified 100+ interactive components in Blender and Unity
+  - Baked lighting and optimized mesh polygons to maintain 90 FPS on standalone headsets
   
-  **3D Printed Components:**
-  - Wheel hubs and motor mounts printed in PETG
-  - Total print time: ~40 hours
+  **Software Development:**
+  - Programmed custom C# scripts for object snapping, physics toggling, and analytics logging
+  - Iteratively tested interaction mechanics with small user groups to refine UI and controls
 
 gallery:
-  - src: "/assets/images/projects/robot-cad.jpg"
-    caption: "CAD assembly in SolidWorks"
-  - src: "/assets/images/projects/robot-frame.jpg"
-    caption: "Aluminum frame during assembly"
-  - src: "/assets/images/projects/robot-final.jpg"
-    caption: "Completed robot platform"
+  - src: "/assets/images/projects/vr-unity-editor.jpg"
+    caption: "Unity editor showing the 100+ asset hierarchy and scene layout"
+  - src: "/assets/images/projects/vr-environment.jpg"
+    caption: "In-VR view of the interactive rapid prototyping workspace"
+  - src: "/assets/images/projects/vr-headsets.jpg"
+    caption: "Deployment setup with 30+ Meta Quest headsets"
 
 testing: |
-  Testing was conducted in three phases: component testing, subsystem testing, and integration testing.
+  Testing was conducted in three phases aligned with our research questions: component functionality (tracking and physics), subsystem immersion (balancing visual fidelity with performance), and integration (measuring learning outcomes and engagement).
 
 test_results:
-  - name: "Straight Line Accuracy"
-    procedure: "Drive 10m straight, measure deviation"
-    result: "±3 cm over 10m"
+  - name: "Frame Rate & Sickness"
+    procedure: "Run prototype continuously for 60 mins, monitor FPS and user feedback"
+    result: "Maintained 72-90 FPS; zero reports of VR motion sickness"
     status: "Pass"
-  - name: "Battery Endurance"
-    procedure: "Continuous operation until cutoff"
-    result: "4.5 hours"
+  - name: "Interaction Accuracy"
+    procedure: "Test object snapping and rotation with 5 non-VR users"
+    result: "Intuitive controls achieved; average time to first correct interaction < 2 mins"
+    status: "Pass"
+  - name: "Curriculum Alignment"
+    procedure: "Faculty review of the 2-week lesson plan and VR activity flow"
+    result: "Confirmed alignment with FSE 100 engineering design process outcomes"
     status: "Pass"
 
 worked: |
-  - **Modular Design**: Made troubleshooting much easier
-  - **Parametric CAD**: Quick adjustments saved significant time
+  - **Iterative Prototyping**: Testing with small user groups early on prevented major UI/UX overhauls later
+  - **Asset Optimization**: Aggressive polygon reduction and baked lighting allowed high-fidelity visuals on standalone headsets
+  - **Faculty Collaboration**: Continuous feedback from Prof. Osburn ensured the VR activity directly supported course learning objectives
 
 failed: |
-  - **Initial Wheel Choice**: Slipped on smooth concrete; redesigned with rubber coating
-  - **Undersized Battery Connector**: XT30 overheated; upgraded to XT60
+  - **Initial High-Poly Assets**: Early models caused frame drops and VR sickness; required complete retopology of the environment
+  - **Headset Logistics**: Managing charging, updates, and sanitization for 30+ headsets across multiple classrooms proved highly time-consuming
+  - **Network Dependencies**: Wi-Fi drops in certain classrooms delayed worksheet syncing and asset loading
 
 next_steps: |
-  - Implement dynamic path planning
-  - Add wireless charging capability
+  - Integrate the full 2-week curriculum directly into the VR application with guided tutorials
+  - Implement multi-user collaboration so students can co-design the same virtual prototype
+  - Develop a comprehensive instructor dashboard to view real-time student analytics
 
 specs:
   software:
-    - name: "SolidWorks"
-      version: "2023"
-    - name: "Arduino IDE"
-      version: "2.0"
+    - name: "Unity"
+      version: "2022 LTS"
+    - name: "C#"
+      version: ".NET Standard 2.1"
+    - name: "Blender"
+      version: "3.6"
   hardware:
-    - component: "Microcontroller"
-      model: "Arduino Mega 2560"
-    - component: "Motors"
-      model: "NEMA 17 Stepper"
+    - component: "VR Headset"
+      model: "Meta Quest 3S"
+    - component: "Input"
+      model: "Touch Plus Controllers / Hand Tracking"
   materials:
-    - type: "Frame"
-      grade: "6061-T6 Aluminum"
-    - type: "Printed Parts"
-      grade: "PETG"
+    - type: "Digital Assets"
+      grade: "Optimized FBX/OBJ meshes"
   dimensions:
-    - axis: "Length"
-      value: "380 mm"
-    - axis: "Width"
-      value: "280 mm"
-    - axis: "Height"
-      value: "250 mm"
-  weight: "8.2 kg"
-  cost: "$475 USD"
+    - axis: "Virtual Space"
+      value: "10m x 10m x 4m"
+  weight: "N/A (Software)"
+  cost: "$0 (Headsets donated by Honeywell, software free)"
 ---
 
-This project demonstrates the integration of mechanical design, electronics, and embedded programming to solve a real-world logistics challenge.
+This project demonstrates the integration of software engineering, 3D asset optimization, and educational curriculum design to transform unused hardware into an interactive engineering learning platform.
