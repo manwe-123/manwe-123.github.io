@@ -11,3 +11,4 @@
 </body>
 </html>
 ```
+Nothing needs to be added to .gitignore since the changes only include source/config files (.md) and image files (.png), which should not be ignored.
