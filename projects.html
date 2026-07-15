@@ -14,26 +14,6 @@ title: Projects
 <!-- Projects Section -->
 <section class="section">
   <div class="container">
-    
-    <!-- Filter Buttons -->
-    {% assign all_tags = "" %}
-    {% for project in site.projects %}
-      {% if project.tags %}
-        {% for tag in project.tags %}
-          {% assign all_tags = all_tags | append: "," | append: tag %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    
-    {% assign unique_tags = all_tags | split: "," | uniq | sort %}
-    
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      {% for tag in unique_tags limit: 6 %}
-      <button class="filter-btn" data-filter="{{ tag }}">{{ tag }}</button>
-      {% endfor %}
-    </div>
-    
     <!-- Projects Grid -->
     <div class="grid grid-3">
       {% for project in site.projects %}
