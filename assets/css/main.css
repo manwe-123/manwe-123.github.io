@@ -3878,6 +3878,13 @@ blockquote {
   font-size: 0.75rem;
 }
 
+/* Tag variants */
+.tag-tech {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
 /* Subtle type-specific accent borders for differentiation without inconsistency */
 .page-header-vr {
   border-left: 4px solid var(--color-primary);
@@ -6478,9 +6485,10 @@ blockquote {
   opacity: 0.8;
 }
 
-/* Software-specific page header accent */
+/* Software-specific page header accent - matching VR project style */
 .page-header-software {
-  border-left: 4px solid var(--color-gray-700);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  border-left: 4px solid var(--color-primary);
 }
 
 /* Responsive Styles for Project Chimera */

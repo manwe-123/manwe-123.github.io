@@ -4,7 +4,15 @@ title: "Automated Data Aggregation and AI Synthesis Pipeline"
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"
 timeline: "January 2024 - Present"
-tags: ["Python", "Streamlit", "OpenBB SDK", "Ollama", "PyPortfolioOpt", "AsyncIO", "Web Scraping"]
+tags:
+  - Python
+  - FastAPI
+  - PostgreSQL
+  - Docker
+  - LLM
+  - RAG
+  - Redis
+  - React
 
 # Overview Section
 problem_statement: |
@@ -87,16 +95,21 @@ challenges:
 
 # Skills Demonstrated (dense grid of tags)
 skills:
-  - "Python (Advanced)"
-  - "Asynchronous Programming (asyncio)"
-  - "API Integration & Web Scraping"
-  - "Local LLM Deployment (Ollama, Llama 3.1)"
-  - "Data Processing (Pandas, NumPy)"
-  - "Mathematical Optimization (PyPortfolioOpt)"
-  - "Streamlit UI Development"
-  - "Git & GitHub Version Control"
-  - "Modular System Architecture"
-  - "Environment & Secret Management"
+  - "Python 3.11+"
+  - "AsyncIO"
+  - "FastAPI"
+  - "PostgreSQL"
+  - "Docker"
+  - "Kubernetes"
+  - "Redis"
+  - "LangChain"
+  - "Llama 2"
+  - "Vector Databases"
+  - "RAG Patterns"
+  - "API Design"
+  - "CI/CD"
+  - "Git"
+  - "Linux"
 
 # External Resources
 resources:
@@ -104,6 +117,6 @@ resources:
     url: "https://github.com/manwe-123/chimera-pipeline"
   - label: "🔧 Source Code"
     url: "https://github.com/manwe-123/chimera-pipeline"
-  - label: "📚 OpenBB SDK Reference"
-    url: "https://docs.openbb.co/"
-    ---
+  - label: "📚 FastAPI Reference"
+    url: "https://fastapi.tiangolo.com/"
+---

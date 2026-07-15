@@ -1,1 +1,14 @@
+```html
+<!-- Do not modify this file, it's managed by the team -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Chimera</title>
+</head>
+<body>
+    <h1>Welcome to Project Chimera</h1>
+    <p>This is a sample project layout.</p>
+</body>
+</html>
+```
 Nothing needs to be added to .gitignore since the changes only include source/config files (.md) and image files (.png), which should not be ignored.
