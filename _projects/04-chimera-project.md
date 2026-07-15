@@ -4,7 +4,15 @@ title: "Automated Data Aggregation and AI Synthesis Pipeline"
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"
 timeline: "January 2024 - Present"
-tags: ["Python", "FastAPI", "PostgreSQL", "Docker", "LLM", "RAG", "Redis", "React"]
+tags:
+  - Python
+  - FastAPI
+  - PostgreSQL
+  - Docker
+  - LLM
+  - RAG
+  - Redis
+  - React
 
 # Overview Section
 problem_statement: |
