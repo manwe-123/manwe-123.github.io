@@ -88,3 +88,13 @@ skills:
   - "CI/CD"
   - "Git"
   - "Linux"
+
+# External Resources
+resources:
+  - label: "📄 View Documentation"
+    url: "https://github.com/manwe-123/chimera-pipeline"
+  - label: "🔧 Source Code"
+    url: "https://github.com/manwe-123/chimera-pipeline"
+  - label: "📚 FastAPI Reference"
+    url: "https://fastapi.tiangolo.com/"
+---
