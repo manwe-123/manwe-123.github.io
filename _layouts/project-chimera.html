@@ -2,179 +2,249 @@
 layout: default
 ---
 
-<!-- PROJECT HEADER -->
-    <header class="page-header page-header-software">
-      <div class="container">
-        <h1 class="page-title">{{ page.title }}</h1>
-        <p class="page-subtitle">{{ page.subtitle }}</p>
-
-        <div class="project-meta-row">
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">{{ page.role }}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Timeline</span>
-            <span class="meta-value">{{ page.timeline }}</span>
-          </div>
-        </div>
-
-        <div class="project-tags">
-          {% for tag in page.tags %}
-            <span class="tag-pill tag-tech">{{ tag }}</span>
-          {% endfor %}
-        </div>
+<!-- Project Header -->
+<header class="page-header page-header-vr">
+  <div class="container">
+    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+    
+    <h1 class="page-title">{{ page.title }}</h1>
+    
+    {% if page.subtitle %}
+    <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+    
+    <!-- Project Meta Row -->
+    <div class="project-meta-row mt-6">
+      {% if page.role %}
+      <div class="meta-item">
+        <span class="meta-label">Role:</span>
+        <span class="meta-value">{{ page.role }}</span>
       </div>
-    </header>
-
-    <!-- 2. OVERVIEW AND OBJECTIVE -->
-    <section class="section section-overview-objective">
-      <div class="container">
-        <div class="two-column-grid">
-          <div class="column">
-            <h2 class="section-heading">The Engineering Problem</h2>
-            <div class="content-block">
-              {{ page.problem_statement | markdownify }}
-            </div>
-          </div>
-          <div class="column">
-            <h2 class="section-heading">Objective & Relevance</h2>
-            <div class="content-block">
-              {{ page.objective | markdownify }}
-            </div>
-          </div>
-        </div>
+      {% endif %}
+      
+      {% if page.timeline %}
+      <div class="meta-item">
+        <span class="meta-label">Timeline:</span>
+        <span class="meta-value">{{ page.timeline }}</span>
       </div>
-    </section>
+      {% endif %}
+    </div>
+    
+    <!-- Technical Tags -->
+    {% if page.tags %}
+    <div class="project-tags mt-4">
+      {% for tag in page.tags %}
+      <span class="tag tag-primary tag-pill">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>
 
-    <!-- 3. SYSTEM ARCHITECTURE -->
-    <section class="section section-system-architecture">
-      <div class="container">
-        <h2 class="section-heading">System Architecture</h2>
-
-        <!-- Three Column Card Grid -->
-        <div class="three-column-grid architecture-layers-grid">
-          {% for layer in page.system_layers %}
-          <div class="architecture-layer-card">
-            <h3 class="layer-title">{{ layer.title }}</h3>
-            <p class="layer-description">{{ layer.description }}</p>
-          </div>
-          {% endfor %}
-        </div>
-
-        <!-- Architecture Diagram -->
-        <div class="architecture-diagram-container">
-          <figure class="image-with-caption">
-            <img src="{{ page.architecture_diagram.image }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy">
-            <figcaption class="image-caption">{{ page.architecture_diagram.caption }}</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CORE TECHNICAL IMPLEMENTATIONS -->
-    <section class="section section-implementations">
-      <div class="container">
-        <h2 class="section-heading">Core Technical Implementations</h2>
-
-        <div class="implementations-grid">
-          {% for impl in page.implementations %}
-          <div class="implementation-card">
-            <h3 class="implementation-title">{{ impl.title }}</h3>
-            <p class="implementation-description">{{ impl.description }}</p>
-
-            {% if impl.code_snippet %}
-            <div class="code-block-container">
-              <pre class="code-block"><code class="language-python">{{ impl.code_snippet | xml_escape }}</code></pre>
-            </div>
+<!-- Main Content Area -->
+<div class="container section project-chimera">
+  
+  <!-- Section 1: Overview and Objective -->
+  <section class="content-section" id="overview">
+    <h2 class="section-title">The Engineering Problem & Objective</h2>
+    <div class="section-content">
+      <div class="layout-two-col overview-layout">
+        
+        <!-- Left Column: Problem Statement -->
+        <div class="overview-left">
+          <div class="problem-solution-block mb-6">
+            <h3 class="subsection-title subsection-problem">
+              <span class="icon-circle">!</span> The Engineering Problem
+            </h3>
+            {% if page.problem_statement %}
+            {{ page.problem_statement | markdownify }}
             {% endif %}
           </div>
-          {% endfor %}
         </div>
-      </div>
-    </section>
-
-    <!-- 5. SOFTWARE ENGINEERING BEST PRACTICES -->
-    <section class="section section-best-practices">
-      <div class="container">
-        <h2 class="section-heading">Software Engineering Best Practices</h2>
-
-        <div class="three-column-grid best-practices-grid">
-          {% for practice in page.best_practices %}
-          <div class="best-practice-card">
-            <h3 class="practice-title">{{ practice.title }}</h3>
-            <p class="practice-description">{{ practice.description }}</p>
+        
+        <!-- Right Column: Objective -->
+        <div class="overview-right">
+          <div class="problem-solution-block">
+            <h3 class="subsection-title subsection-solution">
+              <span class="icon-circle">✓</span> Objective & Relevance
+            </h3>
+            {% if page.objective %}
+            {{ page.objective | markdownify }}
+            {% endif %}
           </div>
-          {% endfor %}
         </div>
-
-        <!-- Directory Structure Screenshot -->
-        <div class="directory-screenshot-container">
-          <figure class="image-with-caption">
-            <img src="{{ page.directory_screenshot.image }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy">
-            <figcaption class="image-caption">{{ page.directory_screenshot.caption }}</figcaption>
-          </figure>
-        </div>
+        
       </div>
-    </section>
-
-    <!-- 6. CHALLENGES AND PROBLEM SOLVING -->
-    <section class="section section-challenges">
-      <div class="container">
-        <h2 class="section-heading">Challenges & Problem Solving</h2>
-
-        <div class="challenges-grid">
-          {% for item in page.challenges %}
-          <div class="challenge-resolution-card">
-            <div class="challenge-section">
-              <h3 class="challenge-label">Challenge</h3>
-              <p class="challenge-text">{{ item.challenge }}</p>
-            </div>
-            <div class="resolution-section">
-              <h3 class="resolution-label">Resolution</h3>
-              <p class="resolution-text">{{ item.resolution }}</p>
-            </div>
+    </div>
+  </section>
+  
+  <!-- Section 2: System Architecture -->
+  <section class="content-section" id="architecture">
+    <h2 class="section-title">System Architecture</h2>
+    <div class="section-content">
+      
+      <!-- 3-Column Card Grid -->
+      <div class="grid-3 tech-architecture-grid">
+        
+        {% for layer in page.system_layers %}
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">⚡</span>
+            <h4 class="tech-card-title mono">{{ layer.title }}</h4>
           </div>
-          {% endfor %}
+          <div class="tech-card-body">
+            {{ layer.description }}
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      
+      <!-- Architecture Diagram -->
+      <div class="system-architecture-block mt-8">
+        <h4 class="subsection-title">Architecture Diagram</h4>
+        {% if page.architecture_diagram.image %}
+        <figure class="image-with-caption">
+          <img src="{{ page.architecture_diagram.image | relative_url }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+          <figcaption class="image-caption">{{ page.architecture_diagram.caption }}</figcaption>
+        </figure>
+        {% else %}
+        <div class="diagram-placeholder">
+          <div class="diagram-placeholder-content">
+            <span class="diagram-icon">🔧</span>
+            <p>System Architecture Diagram</p>
+            <span class="diagram-note">Data Ingestion → Processing & Synthesis → Visualization & Output</span>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Section 3: Core Technical Implementations -->
+  <section class="content-section" id="implementations">
+    <h2 class="section-title">Core Technical Implementations</h2>
+    <div class="section-content">
+      
+      {% for impl in page.implementations %}
+      <div class="implementation-detail-block mb-6">
+        <h3 class="subsection-title">{{ impl.title }}</h3>
+        <p>{{ impl.description }}</p>
+        
+        {% if impl.code_snippet %}
+        <div class="code-block-container mt-4">
+          <pre class="code-block"><code class="language-python">{{ impl.code_snippet | xml_escape }}</code></pre>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      
+    </div>
+  </section>
+  
+  <!-- Section 4: Software Engineering Best Practices -->
+  <section class="content-section" id="best-practices">
+    <h2 class="section-title">Software Engineering Best Practices</h2>
+    <div class="section-content">
+      
+      <div class="grid-3 tech-architecture-grid">
+        
+        {% for practice in page.best_practices %}
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">✓</span>
+            <h4 class="tech-card-title mono">{{ practice.title }}</h4>
+          </div>
+          <div class="tech-card-body">
+            {{ practice.description }}
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      
+      <!-- Directory Structure Screenshot -->
+      <div class="system-architecture-block mt-8">
+        <h4 class="subsection-title">Repository Structure</h4>
+        {% if page.directory_screenshot.image %}
+        <figure class="image-with-caption">
+          <img src="{{ page.directory_screenshot.image | relative_url }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+          <figcaption class="image-caption">{{ page.directory_screenshot.caption }}</figcaption>
+        </figure>
+        {% else %}
+        <div class="diagram-placeholder">
+          <div class="diagram-placeholder-content">
+            <span class="diagram-icon">📁</span>
+            <p>Directory Structure Screenshot</p>
+            <span class="diagram-note">GitHub Repository File Organization</span>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Section 5: Challenges and Problem Solving -->
+  <section class="content-section" id="challenges">
+    <h2 class="section-title">Challenges & Problem Solving</h2>
+    <div class="section-content">
+      
+      {% for item in page.challenges %}
+      <div class="challenge-resolution-card mb-4">
+        <div class="challenge-section">
+          <h3 class="challenge-label">Challenge</h3>
+          <p class="challenge-text">{{ item.challenge }}</p>
+        </div>
+        <div class="resolution-section">
+          <h3 class="resolution-label">Resolution</h3>
+          <p class="resolution-text">{{ item.resolution }}</p>
         </div>
       </div>
-    </section>
-
-    <!-- 7. SKILLS AND RESOURCES -->
-    <section class="section section-skills-resources">
-      <div class="container">
-        <h2 class="section-heading">Skills & Resources</h2>
-
-        <!-- Skills Dense Grid -->
-        <div class="skills-dense-grid">
-          {% for skill in page.skills %}
-          <span class="skill-tag">{{ skill }}</span>
-          {% endfor %}
-        </div>
-
-        <!-- External Resource Links -->
-        <div class="resources-button-row">
-          {% for resource in page.resources %}
-          <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            {{ resource.label }}
-            <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-          {% endfor %}
-        </div>
+      {% endfor %}
+      
+    </div>
+  </section>
+  
+  <!-- Section 6: Skills and Resources -->
+  <section class="content-section" id="skills-resources">
+    <h2 class="section-title">Skills & Resources</h2>
+    <div class="section-content">
+      
+      <!-- Skills Dense Grid -->
+      <div class="skills-dense-grid mb-6">
+        {% for skill in page.skills %}
+        <span class="skill-tag">{{ skill }}</span>
+        {% endfor %}
       </div>
-    </section>
+      
+      <!-- External Resource Links -->
+      <div class="resources-button-row">
+        {% for resource in page.resources %}
+        <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          {{ resource.label }}
+          <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        {% endfor %}
+      </div>
+      
+    </div>
+  </section>
+  
+</div>
 
-  </main>
+{% include footer.html %}
 
-  {% include footer.html %}
-
-  <!-- Syntax Highlighting Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<!-- Syntax Highlighting Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </body>
 </html>
