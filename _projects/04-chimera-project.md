@@ -75,7 +75,6 @@ best_practices:
     description: "Strict separation of concerns. The codebase is divided into distinct directories (`core/` for business logic, `pages/` for UI, `utils/` for helpers), making the system highly maintainable and scalable for future feature additions."
   - title: "Version Control"
     description: "Managed entirely through Git/GitHub with structured commit histories, feature branching, and a comprehensive `README.md` detailing setup, dependencies, and system architecture."
- (Note: Ensure your actual repo matches this structure)
   - title: "Environment Management"
     description: "Utilized `.env` files for secure API key and credential management, ensuring no sensitive tokens or personal brokerage data were ever pushed to the public repository."
 
