@@ -1,5 +1,6 @@
 ---
-layout: project-cad
+layout: project
+theme: cad
 title: "Shock Absorber Assembly"
 subtitle: "Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class"
 role: "Design Engineer - Academic Project"

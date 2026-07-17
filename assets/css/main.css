@@ -6621,3 +6621,274 @@ blockquote {
 .lesson-icon-chimera {
   font-size: 1.25rem;
 }
+
+/* ==========================================================================
+   COHESIVE DESIGN SYSTEM - ADDENDUM
+   Unified styles for headers, cards, tables, and layouts.
+   These styles provide consistent theming across all project pages.
+   ========================================================================== */
+
+/* Theme Color Variables */
+:root {
+  /* Default Theme (Blue - Software) */
+  --theme-primary: #3b82f6;
+  --theme-secondary: #1d4ed8;
+  --theme-accent: #60a5fa;
+  --theme-glow: rgba(59, 130, 246, 0.15);
+}
+
+/* Project Theme Modifiers - applied via class on body or main container */
+.theme-robotics { 
+  --theme-primary: #0ea5e9; 
+  --theme-secondary: #0369a1; 
+  --theme-accent: #38bdf8; 
+  --theme-glow: rgba(14, 165, 233, 0.15); 
+}
+
+.theme-vr { 
+  --theme-primary: #a855f7; 
+  --theme-secondary: #7e22ce; 
+  --theme-accent: #c084fc; 
+  --theme-glow: rgba(168, 85, 247, 0.15); 
+}
+
+.theme-cad { 
+  --theme-primary: #f97316; 
+  --theme-secondary: #c2410c; 
+  --theme-accent: #fb923c; 
+  --theme-glow: rgba(249, 115, 22, 0.15); 
+}
+
+.theme-chimera { 
+  --theme-primary: #22c55e; 
+  --theme-secondary: #15803d; 
+  --theme-accent: #4ade80; 
+  --theme-glow: rgba(34, 197, 94, 0.15); 
+}
+
+/* ==========================================================================
+   UNIFIED PROJECT HEADER
+   Single structure, color varies by theme class.
+   ========================================================================== */
+.project-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  padding: var(--spacing-16) 0;
+  margin-bottom: var(--spacing-12);
+  overflow: hidden;
+}
+
+.project-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--theme-primary);
+  box-shadow: 0 0 20px var(--theme-glow);
+}
+
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  letter-spacing: -0.02em;
+}
+
+.project-subtitle {
+  font-size: 1.25rem;
+  color: var(--theme-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-6);
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--color-gray-100);
+  border: var(--border-width) solid var(--color-gray-300);
+  border-radius: 99px;
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+}
+
+.meta-badge strong {
+  color: var(--theme-primary);
+  margin-right: var(--spacing-1);
+}
+
+/* ==========================================================================
+   STANDARDIZED CONTENT SECTIONS
+   Consistent spacing and typography for all content blocks.
+   ========================================================================== */
+.content-section {
+  margin-bottom: var(--spacing-16);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: var(--border-width-2) solid var(--color-gray-200);
+  display: inline-block;
+}
+
+.section-title span {
+  color: var(--theme-primary);
+}
+
+.text-block {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-gray-700);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   UNIFIED CARD SYSTEM
+   Replaces all previous card variants with a single flexible component.
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.info-card {
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--theme-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--theme-glow);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+  color: var(--theme-primary);
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.card-content {
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   UNIFIED TABLE SYSTEM
+   Consistent styling for all data tables across projects.
+   ========================================================================== */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-8);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--spacing-4);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.data-table th {
+  background: var(--color-gray-50);
+  color: var(--theme-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background: var(--color-gray-50);
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-title { 
+    font-size: 2rem; 
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ENHANCED TAG STYLE
+   Consistent tag styling across all projects.
+   ========================================================================== */
+.tag-cohesive {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-gray-100);
+  color: var(--theme-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-family-mono);
+  margin-right: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.tag-cohesive:hover {
+  background: var(--theme-glow);
+  text-decoration: none;
+}

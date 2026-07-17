@@ -2,40 +2,31 @@
 layout: default
 ---
 
-<!-- Project Header -->
-<header class="page-header page-header-cad">
+<!-- Unified Project Header with Theme Support -->
+<header class="project-header theme-cad">
   <div class="container">
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
     </a>
     
-    <h1 class="page-title">{{ page.title }}</h1>
+    <h1 class="project-title">{{ page.title }}</h1>
     
     {% if page.subtitle %}
-    <p class="page-subtitle">{{ page.subtitle }}</p>
+    <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
     
     <!-- Project Meta Row -->
-    <div class="project-meta-row mt-6">
+    <div class="project-meta">
       {% if page.role %}
-      <div class="meta-item">
-        <span class="meta-label">Role:</span>
-        <span class="meta-value">{{ page.role }}</span>
-      </div>
+      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
       {% endif %}
       
       {% if page.timeline %}
-      <div class="meta-item">
-        <span class="meta-label">Timeline:</span>
-        <span class="meta-value">{{ page.timeline }}</span>
-      </div>
+      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
       {% endif %}
       
       {% if page.software %}
-      <div class="meta-item">
-        <span class="meta-label">Software:</span>
-        <span class="meta-value">{{ page.software }}</span>
-      </div>
+      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
       {% endif %}
     </div>
     
@@ -43,7 +34,7 @@ layout: default
     {% if page.tags %}
     <div class="project-tags mt-4">
       {% for tag in page.tags %}
-      <span class="tag tag-primary tag-pill">{{ tag }}</span>
+      <span class="tag-cohesive">{{ tag }}</span>
       {% endfor %}
     </div>
     {% endif %}
