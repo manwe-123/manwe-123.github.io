@@ -1,5 +1,6 @@
 ---
-layout: project-chimera
+layout: project
+theme: chimera
 title: "Automated Data Aggregation and AI Synthesis Pipeline"
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"

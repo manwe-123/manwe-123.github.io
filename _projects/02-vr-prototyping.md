@@ -1,5 +1,6 @@
 ---
-layout: project-vr
+layout: project
+theme: vr
 title: "VR Rapid Prototyping Application"
 subtitle: "An immersive virtual reality curriculum and prototyping environment for introductory engineering students"
 date: 2025-12-01

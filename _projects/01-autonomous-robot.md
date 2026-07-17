@@ -1,4 +1,6 @@
 ---
+layout: project
+theme: robotics
 title: "Mental Health Robotics System for Isolated Environments"
 subtitle: "A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants"
 date: 2024-12-09
