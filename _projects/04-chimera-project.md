@@ -1,10 +1,12 @@
 ---
 layout: project
 theme: chimera
+category: engineering
 title: "Automated Data Aggregation and AI Synthesis Pipeline"
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"
 timeline: "January 2024 - Present"
+featured: false
 tags:
   - Python
   - FastAPI

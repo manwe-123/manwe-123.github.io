@@ -1,9 +1,9 @@
 <!-- Site Header -->
 <header class="site-header">
   <div class="container">
-    <div class="header-content">
+    <div class="nav-container">
       <!-- Logo / Site Title -->
-      <a href="{{ '/' | relative_url }}" class="site-logo">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">
         {% if site.logo_text %}
           {{ site.logo_text }}
         {% else %}
@@ -11,18 +11,20 @@
         {% endif %}
       </a>
       
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
       <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation">
+      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
         <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}">Home</a>
         <a href="{{ '/projects' | relative_url }}" class="nav-link{% if page.url contains '/projects' %} active{% endif %}">Projects</a>
         <a href="{{ '/about' | relative_url }}" class="nav-link{% if page.url contains '/about' %} active{% endif %}">About</a>
         <a href="{{ '/contact' | relative_url }}" class="nav-link{% if page.url contains '/contact' %} active{% endif %}">Contact</a>
       </nav>
-      
-      <!-- Mobile Menu Toggle (placeholder for future enhancement) -->
-      <button class="btn btn-sm" style="display: none;" aria-label="Toggle menu">
-        ☰
-      </button>
     </div>
   </div>
 </header>

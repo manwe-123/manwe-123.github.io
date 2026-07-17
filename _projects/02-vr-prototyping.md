@@ -1,12 +1,14 @@
 ---
 layout: project
 theme: vr
+category: engineering
 title: "VR Rapid Prototyping Application"
 subtitle: "An immersive virtual reality curriculum and prototyping environment for introductory engineering students"
 date: 2025-12-01
 role: "Prototyping Lead & Documentation Lead"
 timeline: "January 2025 - December 2025"
 team: "12-person team"
+featured: false
 tags:
   - VR/AR
   - Unity

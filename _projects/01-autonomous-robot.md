@@ -1,12 +1,14 @@
 ---
 layout: project
 theme: robotics
+category: engineering
 title: "Mental Health Robotics System for Isolated Environments"
 subtitle: "A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants"
 date: 2024-12-09
 role: "Design and Prototyping Lead"
 timeline: "August 2024 - December 2024"
 team: "4-person team"
+featured: true
 tags:
   - Robotics
   - Arduino

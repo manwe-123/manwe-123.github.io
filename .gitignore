@@ -1,71 +1,23 @@
-```markdown
+```
+# Build artifacts
+*.backup
+*.mp3
+*.jpg
+
 # Dependencies
 node_modules/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.jekyll-cache/
-.sass-cache/
 
-# Build results
-_site/
-.ssg-cache/
+# Editors
+.vscode/
+.idea/
 
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*
-!.env.example
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
-# Distribution / packaging
-dist/
-build/
-*.gem
-*.war
-*.ear
-
-# Compiled Binary files
-*.exe
-*.dll
-*.so
-*.dylib
-
-# Compressed archives
-*.zip
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.7z
-*.rar
-*.gz
-
-# Temporary files
-*.tmp
-*.temp
-*~
-```
-
-Wait, let me reconsider this. Looking at the file changes, I only see markdown files (.md), HTML layouts, CSS files, and a .gitignore modification. No build artifacts, no dependency directories, no compiled files. This appears to be a clean source code repository without any temporary or generated files in the changes.
-
-```markdown
-
 ```

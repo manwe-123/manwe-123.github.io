@@ -1,11 +1,13 @@
 ---
 layout: project
 theme: cad
+category: engineering
 title: "Shock Absorber Assembly"
 subtitle: "Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class"
 role: "Design Engineer - Academic Project"
 timeline: "Aug 2025 - Dec 2025"
 software: "SolidWorks"
+featured: false
 tags:
   - SolidWorks
   - ASME Y14.5
