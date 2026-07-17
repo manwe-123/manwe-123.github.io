@@ -1,0 +1,6894 @@
+/* ==========================================================================
+   MAIN STYLESHEET - Mechanical Engineering Portfolio
+   Compiled CSS with industrial, technical documentation aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DESIGN SYSTEM VARIABLES (as CSS Custom Properties)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #dbeafe;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Semantic Colors */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-width-2: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Z-index */
+  --z-index-sticky: 1020;
+  --z-index-modal: 1050;
+}
+
+/* --------------------------------------------------------------------------
+   CSS RESET
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-gray-700);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+code, pre, .mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+}
+
+code {
+  background-color: var(--color-gray-100);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-800);
+}
+
+pre {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-4);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.section {
+  padding: var(--spacing-16) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-20) 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-5);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border-color: var(--color-gray-300);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-800);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   TABLES
+   -------------------------------------------------------------------------- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-6);
+  font-size: 0.875rem;
+}
+
+.table th, .table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.table th {
+  font-weight: 600;
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-800);
+  border-bottom-width: var(--border-width-2);
+}
+
+.table td.mono, .table th.mono {
+  font-family: var(--font-family-mono);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-gray-100);
+}
+
+.table-compact th, .table-compact td {
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+/* --------------------------------------------------------------------------
+   LISTS
+   -------------------------------------------------------------------------- */
+
+ul, ol {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-6);
+}
+
+li {
+  margin-bottom: var(--spacing-2);
+}
+
+.list-none {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-none li {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGES
+   -------------------------------------------------------------------------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figure {
+  margin-bottom: var(--spacing-6);
+}
+
+.figure img {
+  border-radius: var(--radius-sm);
+}
+
+.figure figcaption {
+  margin-top: var(--spacing-2);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   HR
+   -------------------------------------------------------------------------- */
+
+hr {
+  border: none;
+  border-top: var(--border-width) solid var(--color-gray-200);
+  margin: var(--spacing-8) 0;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCKQUOTE
+   -------------------------------------------------------------------------- */
+
+blockquote {
+  border-left: var(--border-width-2) solid var(--color-primary);
+  padding-left: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-muted { color: var(--color-gray-500); }
+.text-primary { color: var(--color-primary); }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: var(--spacing-1) !important; }
+.mt-2 { margin-top: var(--spacing-2) !important; }
+.mt-3 { margin-top: var(--spacing-3) !important; }
+.mt-4 { margin-top: var(--spacing-4) !important; }
+.mt-6 { margin-top: var(--spacing-6) !important; }
+.mt-8 { margin-top: var(--spacing-8) !important; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: var(--spacing-1) !important; }
+.mb-2 { margin-bottom: var(--spacing-2) !important; }
+.mb-3 { margin-bottom: var(--spacing-3) !important; }
+.mb-4 { margin-bottom: var(--spacing-4) !important; }
+.mb-6 { margin-bottom: var(--spacing-6) !important; }
+.mb-8 { margin-bottom: var(--spacing-8) !important; }
+
+.py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
+.py-4 { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+.py-8 { padding-top: var(--spacing-8) !important; padding-bottom: var(--spacing-8) !important; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER / NAVIGATION
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--color-white);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  padding: var(--spacing-4) 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.site-logo:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-300);
+  padding: var(--spacing-12) 0;
+  margin-top: var(--spacing-20);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-section h4 {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-4);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: var(--spacing-2);
+}
+
+.footer-section a {
+  color: var(--color-gray-400);
+}
+
+.footer-section a:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: var(--border-width) solid var(--color-gray-800);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CARD
+   -------------------------------------------------------------------------- */
+
+.project-card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+  display: block;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-content {
+  padding: var(--spacing-5);
+}
+
+.project-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.project-card-summary {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.625;
+  margin-bottom: var(--spacing-4);
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   TAG / BADGE
+   -------------------------------------------------------------------------- */
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-2);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.tag-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   SKILLS MATRIX
+   -------------------------------------------------------------------------- */
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .skills-matrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-category {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+}
+
+.skill-category-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2) 0;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.skill-item::before {
+  content: "▸";
+  color: var(--color-primary);
+  margin-right: var(--spacing-2);
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding: var(--spacing-20) 0;
+  background-color: var(--color-gray-50);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-6);
+  max-width: 800px;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-8);
+  max-width: 800px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE HEADER
+   -------------------------------------------------------------------------- */
+
+.page-header {
+  padding: var(--spacing-12) 0;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  margin-bottom: var(--spacing-8);
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT SECTIONS
+   -------------------------------------------------------------------------- */
+
+.content-section {
+  padding: var(--spacing-8) 0;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-6);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.section-content {
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+/* --------------------------------------------------------------------------
+   SPECIFICATIONS SIDEBAR
+   -------------------------------------------------------------------------- */
+
+.specs-sidebar {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-6);
+}
+
+.specs-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.specs-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-2) 0;
+  font-size: 0.875rem;
+  border-bottom: var(--border-width) dotted var(--color-gray-200);
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.spec-value {
+  color: var(--color-gray-900);
+  font-family: var(--font-family-mono);
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGE GALLERY
+   -------------------------------------------------------------------------- */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHTBOX
+   -------------------------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: var(--z-index-modal);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-4);
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.875rem;
+  cursor: pointer;
+  padding: var(--spacing-2);
+}
+
+.lightbox-close:hover {
+  color: var(--color-gray-300);
+}
+
+.lightbox-caption {
+  text-align: center;
+  color: var(--color-gray-300);
+  margin-top: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   TIMELINE
+   -------------------------------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  padding-left: var(--spacing-8);
+  margin: var(--spacing-8) 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-gray-200);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-8);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-white);
+}
+
+.timeline-date {
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  margin-bottom: var(--spacing-1);
+}
+
+.timeline-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.timeline-organization {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-2);
+}
+
+.timeline-description {
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+  line-height: 1.625;
+}
+
+/* --------------------------------------------------------------------------
+   FILTER BUTTONS
+   -------------------------------------------------------------------------- */
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+}
+
+.filter-btn {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: 0.875rem;
+  font-family: var(--font-family-mono);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   GRID LAYOUTS
+   -------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TWO COLUMN LAYOUT
+   -------------------------------------------------------------------------- */
+
+.layout-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 1024px) {
+  .layout-two-col {
+    grid-template-columns: 1fr 300px;
+  }
+}
+
+.main-content {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ALERT / CALLOUT BOXES
+   -------------------------------------------------------------------------- */
+
+.alert {
+  padding: var(--spacing-4);
+  border-left: var(--border-width-2) solid var(--color-gray-400);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-6);
+}
+
+.alert p:last-child {
+  margin-bottom: 0;
+}
+
+.alert-success {
+  border-left-color: var(--color-success);
+  background-color: #ecfdf5;
+}
+
+.alert-warning {
+  border-left-color: var(--color-warning);
+  background-color: #fffbeb;
+}
+
+.alert-error {
+  border-left-color: var(--color-error);
+  background-color: #fef2f2;
+}
+
+/* --------------------------------------------------------------------------
+   ICON GRID
+   -------------------------------------------------------------------------- */
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.icon-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-primary);
+}
+
+.icon-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.icon-card-desc {
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT DETAIL SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.project-header {
+  margin-bottom: var(--spacing-8);
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+.project-meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.project-meta-value {
+  color: var(--color-gray-700);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+/* Subsection styles */
+.subsection {
+  margin-bottom: var(--spacing-8);
+}
+
+.subsection-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.subsection-title::before {
+  content: "▸";
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Requirements table specific */
+.requirements-table {
+  width: 100%;
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--spacing-6);
+}
+
+.requirements-table th {
+  background-color: var(--color-gray-100);
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+}
+
+.requirements-table td {
+  font-family: var(--font-family-mono);
+}
+
+/* Lessons learned grid */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .lessons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lesson-column {
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.lesson-worked {
+  background-color: #ecfdf5;
+  border: var(--border-width) solid var(--color-success);
+}
+
+.lesson-failed {
+  background-color: #fef2f2;
+  border: var(--border-width) solid var(--color-error);
+}
+
+.lesson-next {
+  background-color: #fffbeb;
+  border: var(--border-width) solid var(--color-warning);
+}
+
+.lesson-column h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-worked h4 {
+  color: var(--color-success);
+}
+
+.lesson-failed h4 {
+  color: var(--color-error);
+}
+
+.lesson-next h4 {
+  color: var(--color-warning);
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT PAGE SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.about-bio {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+}
+
+.about-bio p {
+  margin-bottom: var(--spacing-4);
+}
+
+.resume-download-section {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.resume-download-section h3 {
+  margin-bottom: var(--spacing-2);
+}
+
+.resume-download-section p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+.quick-info-card {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+}
+
+.quick-info-card h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-900);
+}
+
+.quick-info-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.quick-info-list li {
+  padding: var(--spacing-2) 0;
+  border-bottom: var(--border-width) dotted var(--color-gray-200);
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quick-info-list li:last-child {
+  border-bottom: none;
+}
+
+.quick-info-label {
+  color: var(--color-gray-600);
+}
+
+.quick-info-value {
+  color: var(--color-gray-900);
+  font-family: var(--font-family-mono);
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT PAGE SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-card {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  text-align: center;
+}
+
+.contact-card-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.contact-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.contact-card p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-3);
+}
+
+.availability-table {
+  width: 100%;
+  margin-bottom: var(--spacing-6);
+}
+
+.availability-table th,
+.availability-table td {
+  padding: var(--spacing-3);
+  text-align: center;
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.availability-table th {
+  background-color: var(--color-gray-100);
+  font-weight: 600;
+}
+
+.availability-yes {
+  background-color: #ecfdf5;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.availability-no {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+
+  .hero {
+    padding: var(--spacing-12) 0;
+  }
+
+  .section {
+    padding: var(--spacing-12) 0;
+  }
+
+  .layout-two-col,
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .hero-actions,
+  .filter-buttons,
+  .lightbox {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .project-card,
+  .skill-category,
+  .specs-sidebar {
+    break-inside: avoid;
+  }
+}
+
+/* ==========================================================================
+   VR PROJECT PAGE SPECIFIC STYLES
+   Custom components for VR Rapid Prototyping Application page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Project Header Enhancements
+   -------------------------------------------------------------------------- */
+
+.page-header-vr {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.meta-value {
+  color: var(--color-gray-700);
+}
+
+.tag-pill {
+  border-radius: 9999px;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Overview Section Layout
+   -------------------------------------------------------------------------- */
+
+.overview-layout {
+  gap: var(--spacing-8);
+}
+
+.overview-left,
+.overview-right {
+  min-width: 0;
+}
+
+.problem-solution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: var(--border-width-2) solid var(--color-primary);
+}
+
+.subsection-problem {
+  color: var(--color-error);
+}
+
+.subsection-solution {
+  color: var(--color-success);
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: currentColor;
+  color: white;
+  font-size: 0.75rem;
+  margin-right: var(--spacing-2);
+}
+
+.stakeholders-card {
+  padding: var(--spacing-5);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-primary);
+}
+
+.custom-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.custom-bullet-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+}
+
+.custom-bullet-list li::before {
+  content: "▸";
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   Technical Architecture Cards
+   -------------------------------------------------------------------------- */
+
+.tech-architecture-grid {
+  gap: var(--spacing-5);
+}
+
+.tech-card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.tech-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.tech-card-icon {
+  font-size: 1.5rem;
+}
+
+.tech-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.tech-card-body {
+  padding: var(--spacing-4);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.tech-card-body ul {
+  margin: 0;
+  padding-left: var(--spacing-4);
+}
+
+.tech-card-body li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* System Architecture Diagram Placeholder */
+
+.system-architecture-block {
+  margin-top: var(--spacing-8);
+}
+
+.diagram-placeholder {
+  background-color: var(--color-gray-100);
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-12);
+  text-align: center;
+}
+
+.diagram-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.diagram-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.diagram-placeholder-content p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.diagram-note {
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   Decision Matrix Table
+   -------------------------------------------------------------------------- */
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.decision-matrix-table {
+  min-width: 800px;
+}
+
+.decision-matrix-table th {
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.decision-matrix-table td.mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.winner-row {
+  background-color: var(--color-primary-light) !important;
+  border: 2px solid var(--color-primary);
+}
+
+.winner-row td {
+  border-top-color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.winner-score {
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Visual
+   -------------------------------------------------------------------------- */
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.timeline-phase {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.timeline-phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-100);
+}
+
+.phase-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.phase-spring {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.phase-summer {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.phase-fall {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.timeline-phase-header h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-gray-900);
+}
+
+.timeline-phase-body {
+  padding: var(--spacing-4);
+}
+
+.timeline-arrow {
+  font-size: 1.5rem;
+  color: var(--color-gray-400);
+}
+
+/* --------------------------------------------------------------------------
+   Contributions Section
+   -------------------------------------------------------------------------- */
+
+.contributions-grid {
+  gap: var(--spacing-6);
+}
+
+.contribution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.contribution-title-lead {
+  color: var(--color-primary);
+}
+
+.contribution-title-docs {
+  color: var(--color-warning);
+}
+
+.role-icon {
+  margin-right: var(--spacing-2);
+}
+
+.achievement-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.achievement-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.achievement-lead li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.achievement-docs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-warning);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Image Gallery Enhancements
+   -------------------------------------------------------------------------- */
+
+.image-gallery-vr {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.gallery-item-vr {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item-vr img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Accordion Component (Research Questions)
+   -------------------------------------------------------------------------- */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.accordion-item {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  transition: background-color var(--transition-fast);
+}
+
+.accordion-header:hover {
+  background-color: var(--color-gray-100);
+}
+
+.accordion-title {
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.25rem;
+  color: var(--color-gray-500);
+  transition: transform var(--transition-base);
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-body {
+  padding: var(--spacing-5);
+  border-top: var(--border-width) solid var(--color-gray-200);
+}
+
+.rq-detail {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.rq-detail p {
+  margin-bottom: var(--spacing-4);
+}
+
+.rq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .rq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rq-detail-item h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.rq-detail-item ul,
+.rq-detail-item ol {
+  margin: 0;
+  padding-left: var(--spacing-4);
+  font-size: 0.8rem;
+}
+
+.results-list li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   Test Results Status Badges
+   -------------------------------------------------------------------------- */
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.status-pass {
+  background-color: #ecfdf5;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.status-fail {
+  background-color: #fef2f2;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.status-pending {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+}
+
+/* --------------------------------------------------------------------------
+   Lessons Learned Grid
+   -------------------------------------------------------------------------- */
+
+.lessons-grid-vr {
+  gap: var(--spacing-6);
+}
+
+.lesson-column {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid;
+}
+
+.lesson-success {
+  background-color: #ecfdf5;
+  border-color: var(--color-success);
+}
+
+.lesson-warning {
+  background-color: #fffbeb;
+  border-color: var(--color-warning);
+}
+
+.lesson-title-success,
+.lesson-title-warning {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-title-success {
+  color: var(--color-success);
+}
+
+.lesson-title-warning {
+  color: var(--color-warning);
+}
+
+.lesson-icon {
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Roadmap Container
+   -------------------------------------------------------------------------- */
+
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-item {
+  display: flex;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.roadmap-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.roadmap-content h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-900);
+}
+
+.roadmap-content p {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.625;
+}
+
+/* --------------------------------------------------------------------------
+   Skills Tag Grid
+   -------------------------------------------------------------------------- */
+
+.skills-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Resource Links
+   -------------------------------------------------------------------------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.resource-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Callout Box Variants
+   -------------------------------------------------------------------------- */
+
+.callout {
+  padding: var(--spacing-4);
+  border-left: var(--border-width-2) solid var(--color-gray-400);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-info {
+  border-left-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.callout-success {
+  border-left-color: var(--color-success);
+  background-color: #ecfdf5;
+}
+
+.callout-warning {
+  border-left-color: var(--color-warning);
+  background-color: #fffbeb;
+}
+
+.callout-error {
+  border-left-color: var(--color-error);
+  background-color: #fef2f2;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for VR Page
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .tech-architecture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lessons-grid-vr {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decision-matrix-table {
+    font-size: 0.7rem;
+  }
+
+  .phase-badge {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+}
+
+/* ==========================================================================
+   CAD PROJECT PAGE STYLES - Shock Absorber Assembly
+   Precision-engineered aesthetic for mechanical design documentation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CAD Page Header
+   -------------------------------------------------------------------------- */
+
+.page-header-cad {
+  background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.page-header-cad .page-title {
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.page-header-cad .page-subtitle {
+  color: var(--color-gray-300);
+  font-family: var(--font-family-mono);
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   BOM Table - Engineering Bill of Materials Style
+   -------------------------------------------------------------------------- */
+
+.bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+}
+
+.bom-table thead {
+  background: linear-gradient(to bottom, var(--color-gray-200), var(--color-gray-300));
+  border-bottom: 2px solid var(--color-gray-400);
+}
+
+.bom-table th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--color-gray-800);
+  border-right: 1px solid var(--color-gray-400);
+  font-family: var(--font-family-sans);
+}
+
+.bom-table th:last-child {
+  border-right: none;
+}
+
+.bom-table tbody tr {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background-color var(--transition-fast);
+}
+
+.bom-table tbody tr:nth-child(odd) {
+  background-color: var(--color-gray-50);
+}
+
+.bom-table tbody tr:nth-child(even) {
+  background-color: var(--color-white);
+}
+
+.bom-table tbody tr:hover {
+  background-color: var(--color-primary-light);
+}
+
+.bom-table td {
+  padding: 0.75rem 1rem;
+  border-right: 1px dotted var(--color-gray-200);
+  vertical-align: middle;
+}
+
+.bom-table td:last-child {
+  border-right: none;
+}
+
+.bom-item-no {
+  font-weight: 600;
+  color: var(--color-primary);
+  min-width: 60px;
+}
+
+.bom-qty {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  min-width: 50px;
+}
+
+/* --------------------------------------------------------------------------
+   Key Design Features Cards
+   -------------------------------------------------------------------------- */
+
+.key-features-grid {
+  gap: var(--spacing-6);
+}
+
+.feature-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.feature-card-header {
+  background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-200) 100%);
+  padding: var(--spacing-4);
+  border-bottom: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.feature-card-body {
+  padding: var(--spacing-4);
+}
+
+.feature-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-spec-list li {
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px dotted var(--color-gray-200);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.feature-spec-list li:last-child {
+  border-bottom: none;
+}
+
+.feature-spec-list strong {
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+}
+
+/* Specific feature card accents */
+.feature-shaft .feature-card-header {
+  border-bottom-color: #0891b2;
+  background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+}
+
+.feature-bushings .feature-card-header {
+  border-bottom-color: #d97706;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.feature-spring .feature-card-header {
+  border-bottom-color: #7c3aed;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Side-by-Side Drawing Comparison
+   -------------------------------------------------------------------------- */
+
+.drawing-comparison-collection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.side-by-side-drawing {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.side-by-side-header {
+  background: var(--color-gray-50);
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.side-by-side-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.side-by-side-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.side-by-side-item {
+  position: relative;
+}
+
+.side-by-side-3d {
+  border-right: 1px solid var(--color-gray-200);
+}
+
+.drawing-viewer {
+  position: relative;
+  cursor: zoom-in;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--color-gray-100);
+}
+
+.drawing-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-slow);
+}
+
+.drawing-viewer:hover img {
+  transform: scale(1.02);
+}
+
+.drawing-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-4);
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   CAD Image Gallery
+   -------------------------------------------------------------------------- */
+
+.image-gallery-cad {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.gallery-item-cad {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item-cad:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.gallery-item-cad img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.gallery-item-cad .gallery-caption {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+  background: var(--color-gray-50);
+}
+
+/* --------------------------------------------------------------------------
+   Challenge -> Resolution Blocks
+   -------------------------------------------------------------------------- */
+
+.lessons-learned-cad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.challenge-resolution-block {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-warning);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-4) var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.challenge-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-800);
+}
+
+.challenge-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.resolution-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--color-success);
+  background: #ecfdf5;
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-700);
+}
+
+.resolution-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-success);
+}
+
+/* --------------------------------------------------------------------------
+   Validation Blocks
+   -------------------------------------------------------------------------- */
+
+.validation-layout {
+  gap: var(--spacing-6);
+}
+
+.validation-block {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.validation-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-success);
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   Skill Tag Grid (Dense)
+   -------------------------------------------------------------------------- */
+
+.skill-tag-dense {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag-dense .skill-tag {
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-700);
+  font-family: var(--font-family-mono);
+  transition: all var(--transition-fast);
+}
+
+.skill-tag-dense .skill-tag:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Resource Buttons
+   -------------------------------------------------------------------------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.btn-resource {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-700);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  font-size: 0.9rem;
+}
+
+.btn-resource:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Enhanced Lightbox for CAD Drawings (Zoomable)
+   -------------------------------------------------------------------------- */
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-6);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  cursor: grab;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+}
+
+.lightbox-image:active {
+  cursor: grabbing;
+}
+
+.lightbox-caption {
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-4);
+  text-align: center;
+  max-width: 800px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: var(--spacing-2);
+  transition: color var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  color: var(--color-primary);
+}
+
+.lightbox-zoom-controls {
+  position: absolute;
+  bottom: var(--spacing-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-2);
+  background: rgba(0, 0, 0, 0.7);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.lightbox-zoom-controls button {
+  background: var(--color-white);
+  border: none;
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-zoom-controls button:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   CAD Page - Constraint Callout Box
+   -------------------------------------------------------------------------- */
+
+.constraint-callout {
+  border-left: 4px solid var(--color-warning);
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.08), transparent);
+}
+
+.constraint-callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--color-warning);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.constraint-callout .callout-icon {
+  font-size: 1.4rem;
+}
+
+.constraint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.constraint-item {
+  padding: var(--spacing-4);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.constraint-item.constraint-threaded {
+  border-left: 3px solid var(--color-primary);
+}
+
+.constraint-item.constraint-other {
+  border-left: 3px solid var(--color-error);
+}
+
+.constraint-label {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-2);
+}
+
+.constraint-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-2);
+}
+
+.constraint-note {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+}
+
+/* Amendment Steps */
+.amendment-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.amendment-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.step-content strong {
+  color: var(--color-gray-800);
+}
+
+/* --------------------------------------------------------------------------
+   CAD Page - Extended BOM Table with Custom/Standard Distinction
+   -------------------------------------------------------------------------- */
+
+.bom-table-extended {
+  min-width: 100%;
+}
+
+.bom-table-extended thead th {
+  background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-700));
+  color: var(--color-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+.bom-table-extended tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.bom-table-extended tbody tr:hover {
+  background-color: var(--color-gray-50);
+}
+
+.bom-row-custom {
+  background-color: rgba(37, 99, 235, 0.03);
+}
+
+.bom-row-standard {
+  background-color: rgba(107, 114, 128, 0.03);
+}
+
+.drawing-required-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-xs);
+  margin-left: var(--spacing-2);
+  vertical-align: middle;
+  font-family: var(--font-family-mono);
+}
+
+.spring-highlight-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: var(--color-white);
+  border-radius: var(--radius-xs);
+  margin-left: var(--spacing-2);
+  vertical-align: middle;
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+}
+
+.part-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.part-type-custom {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.part-type-standard {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* Spring Specification Callout */
+.spring-spec-callout {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.08), transparent);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.spring-spec-callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: #b45309;
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+}
+
+.spring-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.spring-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.spring-spec-item .spec-label {
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+}
+
+.spring-spec-item .spec-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+
+.spring-note {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+
+/* Engineering Mandate Card */
+.engineering-mandate-card {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
+}
+
+.mandate-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-gray-700);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for CAD Page
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .side-by-side-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-by-side-3d {
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .constraint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spring-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .key-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-layout,
+  .validation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bom-table {
+    font-size: 0.8rem;
+  }
+
+  .bom-table th,
+  .bom-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .lightbox-zoom-controls {
+    bottom: var(--spacing-4);
+  }
+
+  .lightbox-zoom-controls button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .spring-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amendment-step {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
++++ assets/css/main.css (修改后)
+/* ==========================================================================
+   MAIN STYLESHEET - Mechanical Engineering Portfolio
+   Compiled CSS with industrial, technical documentation aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DESIGN SYSTEM VARIABLES (as CSS Custom Properties)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #dbeafe;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Semantic Colors */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-width-2: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Z-index */
+  --z-index-sticky: 1020;
+  --z-index-modal: 1050;
+}
+
+/* --------------------------------------------------------------------------
+   CSS RESET
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-gray-700);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+code, pre, .mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+}
+
+code {
+  background-color: var(--color-gray-100);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-800);
+}
+
+pre {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-4);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.section {
+  padding: var(--spacing-16) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-20) 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-5);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border-color: var(--color-gray-300);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-800);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   TABLES
+   -------------------------------------------------------------------------- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-6);
+  font-size: 0.875rem;
+}
+
+.table th, .table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.table th {
+  font-weight: 600;
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-800);
+  border-bottom-width: var(--border-width-2);
+}
+
+.table td.mono, .table th.mono {
+  font-family: var(--font-family-mono);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-gray-100);
+}
+
+.table-compact th, .table-compact td {
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+/* --------------------------------------------------------------------------
+   LISTS
+   -------------------------------------------------------------------------- */
+
+ul, ol {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-6);
+}
+
+li {
+  margin-bottom: var(--spacing-2);
+}
+
+.list-none {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-none li {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGES
+   -------------------------------------------------------------------------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figure {
+  margin-bottom: var(--spacing-6);
+}
+
+.figure img {
+  border-radius: var(--radius-sm);
+}
+
+.figure figcaption {
+  margin-top: var(--spacing-2);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   HR
+   -------------------------------------------------------------------------- */
+
+hr {
+  border: none;
+  border-top: var(--border-width) solid var(--color-gray-200);
+  margin: var(--spacing-8) 0;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCKQUOTE
+   -------------------------------------------------------------------------- */
+
+blockquote {
+  border-left: var(--border-width-2) solid var(--color-primary);
+  padding-left: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-muted { color: var(--color-gray-500); }
+.text-primary { color: var(--color-primary); }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: var(--spacing-1) !important; }
+.mt-2 { margin-top: var(--spacing-2) !important; }
+.mt-3 { margin-top: var(--spacing-3) !important; }
+.mt-4 { margin-top: var(--spacing-4) !important; }
+.mt-6 { margin-top: var(--spacing-6) !important; }
+.mt-8 { margin-top: var(--spacing-8) !important; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: var(--spacing-1) !important; }
+.mb-2 { margin-bottom: var(--spacing-2) !important; }
+.mb-3 { margin-bottom: var(--spacing-3) !important; }
+.mb-4 { margin-bottom: var(--spacing-4) !important; }
+.mb-6 { margin-bottom: var(--spacing-6) !important; }
+.mb-8 { margin-bottom: var(--spacing-8) !important; }
+
+.py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
+.py-4 { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+.py-8 { padding-top: var(--spacing-8) !important; padding-bottom: var(--spacing-8) !important; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER / NAVIGATION
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--color-white);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  padding: var(--spacing-4) 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.site-logo:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-300);
+  padding: var(--spacing-12) 0;
+  margin-top: var(--spacing-20);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-section h4 {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-4);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: var(--spacing-2);
+}
+
+.footer-section a {
+  color: var(--color-gray-400);
+}
+
+.footer-section a:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: var(--border-width) solid var(--color-gray-800);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CARD
+   -------------------------------------------------------------------------- */
+
+.project-card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+  display: block;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-content {
+  padding: var(--spacing-5);
+}
+
+.project-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.project-card-summary {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.625;
+  margin-bottom: var(--spacing-4);
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   TAG / BADGE
+   -------------------------------------------------------------------------- */
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-2);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.tag-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   SKILLS MATRIX
+   -------------------------------------------------------------------------- */
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .skills-matrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-category {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+}
+
+.skill-category-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2) 0;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.skill-item::before {
+  content: "▸";
+  color: var(--color-primary);
+  margin-right: var(--spacing-2);
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding: var(--spacing-20) 0;
+  background-color: var(--color-gray-50);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-6);
+  max-width: 800px;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-8);
+  max-width: 800px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE HEADER
+   -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   PROJECT PAGE STYLES - Unified Design System
+   Consistent styling across all project types for cohesive portfolio aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Project Header - Base Styles (All Projects)
+   -------------------------------------------------------------------------- */
+
+.page-header {
+  padding: var(--spacing-12) 0;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  margin-bottom: var(--spacing-8);
+  background-color: var(--color-gray-50);
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-gray-600);
+  max-width: 800px;
+}
+
+/* Project Meta Row - Consistent across all project types */
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-6);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.meta-value {
+  color: var(--color-gray-700);
+}
+
+/* Technical Tags Row */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+.tag-pill {
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: 0.75rem;
+}
+
+/* Tag variants */
+.tag-tech {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
+/* Subtle type-specific accent borders for differentiation without inconsistency */
+.page-header-vr {
+  border-left: 4px solid var(--color-primary);
+}
+
+.page-header-cad {
+  border-left: 4px solid var(--color-gray-700);
+}
+
+.page-header-chimera {
+  border-left: 4px solid var(--color-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT SECTIONS
+   -------------------------------------------------------------------------- */
+
+.content-section {
+  padding: var(--spacing-8) 0;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-6);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.section-content {
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+/* --------------------------------------------------------------------------
+   SPECIFICATIONS SIDEBAR
+   -------------------------------------------------------------------------- */
+
+.specs-sidebar {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-6);
+}
+
+.specs-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.specs-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-2) 0;
+  font-size: 0.875rem;
+  border-bottom: var(--border-width) dotted var(--color-gray-200);
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.spec-value {
+  color: var(--color-gray-900);
+  font-family: var(--font-family-mono);
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGE GALLERY
+   -------------------------------------------------------------------------- */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHTBOX
+   -------------------------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: var(--z-index-modal);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-4);
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.875rem;
+  cursor: pointer;
+  padding: var(--spacing-2);
+}
+
+.lightbox-close:hover {
+  color: var(--color-gray-300);
+}
+
+.lightbox-caption {
+  text-align: center;
+  color: var(--color-gray-300);
+  margin-top: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   TIMELINE
+   -------------------------------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  padding-left: var(--spacing-8);
+  margin: var(--spacing-8) 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-gray-200);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-8);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-white);
+}
+
+.timeline-date {
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  margin-bottom: var(--spacing-1);
+}
+
+.timeline-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.timeline-organization {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-2);
+}
+
+.timeline-description {
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+  line-height: 1.625;
+}
+
+/* --------------------------------------------------------------------------
+   FILTER BUTTONS
+   -------------------------------------------------------------------------- */
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+}
+
+.filter-btn {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: 0.875rem;
+  font-family: var(--font-family-mono);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   GRID LAYOUTS
+   -------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TWO COLUMN LAYOUT
+   -------------------------------------------------------------------------- */
+
+.layout-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 1024px) {
+  .layout-two-col {
+    grid-template-columns: 1fr 300px;
+  }
+}
+
+.main-content {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ALERT / CALLOUT BOXES
+   -------------------------------------------------------------------------- */
+
+.alert {
+  padding: var(--spacing-4);
+  border-left: var(--border-width-2) solid var(--color-gray-400);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-6);
+}
+
+.alert p:last-child {
+  margin-bottom: 0;
+}
+
+.alert-success {
+  border-left-color: var(--color-success);
+  background-color: #ecfdf5;
+}
+
+.alert-warning {
+  border-left-color: var(--color-warning);
+  background-color: #fffbeb;
+}
+
+.alert-error {
+  border-left-color: var(--color-error);
+  background-color: #fef2f2;
+}
+
+/* --------------------------------------------------------------------------
+   ICON GRID
+   -------------------------------------------------------------------------- */
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-4);
+  margin: var(--spacing-6) 0;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.icon-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-primary);
+}
+
+.icon-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.icon-card-desc {
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT DETAIL SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.project-header {
+  margin-bottom: var(--spacing-8);
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  font-size: 0.875rem;
+}
+
+.project-meta-label {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+.project-meta-value {
+  color: var(--color-gray-700);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+/* Subsection styles */
+.subsection {
+  margin-bottom: var(--spacing-8);
+}
+
+.subsection-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.subsection-title::before {
+  content: "▸";
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Requirements table specific */
+.requirements-table {
+  width: 100%;
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--spacing-6);
+}
+
+.requirements-table th {
+  background-color: var(--color-gray-100);
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+}
+
+.requirements-table td {
+  font-family: var(--font-family-mono);
+}
+
+/* Lessons learned grid */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .lessons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lesson-column {
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.lesson-worked {
+  background-color: #ecfdf5;
+  border: var(--border-width) solid var(--color-success);
+}
+
+.lesson-failed {
+  background-color: #fef2f2;
+  border: var(--border-width) solid var(--color-error);
+}
+
+.lesson-next {
+  background-color: #fffbeb;
+  border: var(--border-width) solid var(--color-warning);
+}
+
+.lesson-column h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-worked h4 {
+  color: var(--color-success);
+}
+
+.lesson-failed h4 {
+  color: var(--color-error);
+}
+
+.lesson-next h4 {
+  color: var(--color-warning);
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT PAGE SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.about-bio {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+}
+
+.about-bio p {
+  margin-bottom: var(--spacing-4);
+}
+
+.resume-download-section {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.resume-download-section h3 {
+  margin-bottom: var(--spacing-2);
+}
+
+.resume-download-section p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+.quick-info-card {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+}
+
+.quick-info-card h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-900);
+}
+
+.quick-info-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.quick-info-list li {
+  padding: var(--spacing-2) 0;
+  border-bottom: var(--border-width) dotted var(--color-gray-200);
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quick-info-list li:last-child {
+  border-bottom: none;
+}
+
+.quick-info-label {
+  color: var(--color-gray-600);
+}
+
+.quick-info-value {
+  color: var(--color-gray-900);
+  font-family: var(--font-family-mono);
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT PAGE SPECIFIC
+   -------------------------------------------------------------------------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-card {
+  background-color: var(--color-gray-50);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  text-align: center;
+}
+
+.contact-card-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.contact-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.contact-card p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-3);
+}
+
+.availability-table {
+  width: 100%;
+  margin-bottom: var(--spacing-6);
+}
+
+.availability-table th,
+.availability-table td {
+  padding: var(--spacing-3);
+  text-align: center;
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.availability-table th {
+  background-color: var(--color-gray-100);
+  font-weight: 600;
+}
+
+.availability-yes {
+  background-color: #ecfdf5;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.availability-no {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+
+  .hero {
+    padding: var(--spacing-12) 0;
+  }
+
+  .section {
+    padding: var(--spacing-12) 0;
+  }
+
+  .layout-two-col,
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .hero-actions,
+  .filter-buttons,
+  .lightbox {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .project-card,
+  .skill-category,
+  .specs-sidebar {
+    break-inside: avoid;
+  }
+}
+
+/* ==========================================================================
+   VR PROJECT PAGE SPECIFIC STYLES
+   Custom components for VR Rapid Prototyping Application page
+   Note: Only VR-specific unique styles remain here. Base project styles
+   are in the unified section above for consistency.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Overview Section Layout
+   -------------------------------------------------------------------------- */
+
+.overview-layout {
+  gap: var(--spacing-8);
+}
+
+.overview-left,
+.overview-right {
+  min-width: 0;
+}
+
+.problem-solution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: var(--border-width-2) solid var(--color-primary);
+}
+
+.subsection-problem {
+  color: var(--color-error);
+}
+
+.subsection-solution {
+  color: var(--color-success);
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: currentColor;
+  color: white;
+  font-size: 0.75rem;
+  margin-right: var(--spacing-2);
+}
+
+.stakeholders-card {
+  padding: var(--spacing-5);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-primary);
+}
+
+.custom-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.custom-bullet-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+}
+
+.custom-bullet-list li::before {
+  content: "▸";
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   Technical Architecture Cards
+   -------------------------------------------------------------------------- */
+
+.tech-architecture-grid {
+  gap: var(--spacing-5);
+}
+
+.tech-card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.tech-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.tech-card-icon {
+  font-size: 1.5rem;
+}
+
+.tech-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.tech-card-body {
+  padding: var(--spacing-4);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.tech-card-body ul {
+  margin: 0;
+  padding-left: var(--spacing-4);
+}
+
+.tech-card-body li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* System Architecture Diagram Placeholder */
+
+.system-architecture-block {
+  margin-top: var(--spacing-8);
+}
+
+.diagram-placeholder {
+  background-color: var(--color-gray-100);
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-12);
+  text-align: center;
+}
+
+.diagram-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.diagram-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.diagram-placeholder-content p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.diagram-note {
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   Decision Matrix Table
+   -------------------------------------------------------------------------- */
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.decision-matrix-table {
+  min-width: 800px;
+}
+
+.decision-matrix-table th {
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.decision-matrix-table td.mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.winner-row {
+  background-color: var(--color-primary-light) !important;
+  border: 2px solid var(--color-primary);
+}
+
+.winner-row td {
+  border-top-color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.winner-score {
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Visual
+   -------------------------------------------------------------------------- */
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.timeline-phase {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.timeline-phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-100);
+}
+
+.phase-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.phase-spring {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.phase-summer {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.phase-fall {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.timeline-phase-header h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-gray-900);
+}
+
+.timeline-phase-body {
+  padding: var(--spacing-4);
+}
+
+.timeline-arrow {
+  font-size: 1.5rem;
+  color: var(--color-gray-400);
+}
+
+/* --------------------------------------------------------------------------
+   Contributions Section
+   -------------------------------------------------------------------------- */
+
+.contributions-grid {
+  gap: var(--spacing-6);
+}
+
+.contribution-block {
+  padding: var(--spacing-5);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.contribution-title-lead {
+  color: var(--color-primary);
+}
+
+.contribution-title-docs {
+  color: var(--color-warning);
+}
+
+.role-icon {
+  margin-right: var(--spacing-2);
+}
+
+.achievement-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.achievement-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-4);
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.achievement-lead li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.achievement-docs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-warning);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Image Gallery Enhancements
+   -------------------------------------------------------------------------- */
+
+.image-gallery-vr {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.gallery-item-vr {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item-vr img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Accordion Component (Research Questions)
+   -------------------------------------------------------------------------- */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.accordion-item {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  transition: background-color var(--transition-fast);
+}
+
+.accordion-header:hover {
+  background-color: var(--color-gray-100);
+}
+
+.accordion-title {
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.25rem;
+  color: var(--color-gray-500);
+  transition: transform var(--transition-base);
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-body {
+  padding: var(--spacing-5);
+  border-top: var(--border-width) solid var(--color-gray-200);
+}
+
+.rq-detail {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+
+.rq-detail p {
+  margin-bottom: var(--spacing-4);
+}
+
+.rq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .rq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rq-detail-item h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.rq-detail-item ul,
+.rq-detail-item ol {
+  margin: 0;
+  padding-left: var(--spacing-4);
+  font-size: 0.8rem;
+}
+
+.results-list li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   Test Results Status Badges
+   -------------------------------------------------------------------------- */
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.status-pass {
+  background-color: #ecfdf5;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.status-fail {
+  background-color: #fef2f2;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.status-pending {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+}
+
+/* --------------------------------------------------------------------------
+   Lessons Learned Grid
+   -------------------------------------------------------------------------- */
+
+.lessons-grid-vr {
+  gap: var(--spacing-6);
+}
+
+.lesson-column {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid;
+}
+
+.lesson-success {
+  background-color: #ecfdf5;
+  border-color: var(--color-success);
+}
+
+.lesson-warning {
+  background-color: #fffbeb;
+  border-color: var(--color-warning);
+}
+
+.lesson-title-success,
+.lesson-title-warning {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-title-success {
+  color: var(--color-success);
+}
+
+.lesson-title-warning {
+  color: var(--color-warning);
+}
+
+.lesson-icon {
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Roadmap Container
+   -------------------------------------------------------------------------- */
+
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-item {
+  display: flex;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+}
+
+.roadmap-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.roadmap-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.roadmap-content h4 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-900);
+}
+
+.roadmap-content p {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.625;
+}
+
+/* --------------------------------------------------------------------------
+   Skills Tag Grid
+   -------------------------------------------------------------------------- */
+
+.skills-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Resource Links
+   -------------------------------------------------------------------------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.resource-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Callout Box Variants
+   -------------------------------------------------------------------------- */
+
+.callout {
+  padding: var(--spacing-4);
+  border-left: var(--border-width-2) solid var(--color-gray-400);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-info {
+  border-left-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.callout-success {
+  border-left-color: var(--color-success);
+  background-color: #ecfdf5;
+}
+
+.callout-warning {
+  border-left-color: var(--color-warning);
+  background-color: #fffbeb;
+}
+
+.callout-error {
+  border-left-color: var(--color-error);
+  background-color: #fef2f2;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for VR Page
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .tech-architecture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lessons-grid-vr {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decision-matrix-table {
+    font-size: 0.7rem;
+  }
+
+  .phase-badge {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+}
+
+/* ==========================================================================
+   CAD PROJECT PAGE SPECIFIC STYLES - Shock Absorber Assembly
+   Precision-engineered aesthetic for mechanical design documentation
+   Note: Only CAD-specific unique styles remain here. Base project styles
+   are in the unified section above for consistency.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   BOM Table - Engineering Bill of Materials Style
+   -------------------------------------------------------------------------- */
+
+.bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+}
+
+.bom-table thead {
+  background: linear-gradient(to bottom, var(--color-gray-200), var(--color-gray-300));
+  border-bottom: 2px solid var(--color-gray-400);
+}
+
+.bom-table th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--color-gray-800);
+  border-right: 1px solid var(--color-gray-400);
+  font-family: var(--font-family-sans);
+}
+
+.bom-table th:last-child {
+  border-right: none;
+}
+
+.bom-table tbody tr {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background-color var(--transition-fast);
+}
+
+.bom-table tbody tr:nth-child(odd) {
+  background-color: var(--color-gray-50);
+}
+
+.bom-table tbody tr:nth-child(even) {
+  background-color: var(--color-white);
+}
+
+.bom-table tbody tr:hover {
+  background-color: var(--color-primary-light);
+}
+
+.bom-table td {
+  padding: 0.75rem 1rem;
+  border-right: 1px dotted var(--color-gray-200);
+  vertical-align: middle;
+}
+
+.bom-table td:last-child {
+  border-right: none;
+}
+
+.bom-item-no {
+  font-weight: 600;
+  color: var(--color-primary);
+  min-width: 60px;
+}
+
+.bom-qty {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  min-width: 50px;
+}
+
+/* --------------------------------------------------------------------------
+   Key Design Features Cards
+   -------------------------------------------------------------------------- */
+
+.key-features-grid {
+  gap: var(--spacing-6);
+}
+
+.feature-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.feature-card-header {
+  background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-200) 100%);
+  padding: var(--spacing-4);
+  border-bottom: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.feature-card-body {
+  padding: var(--spacing-4);
+}
+
+.feature-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-spec-list li {
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px dotted var(--color-gray-200);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.feature-spec-list li:last-child {
+  border-bottom: none;
+}
+
+.feature-spec-list strong {
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+}
+
+/* Specific feature card accents */
+.feature-shaft .feature-card-header {
+  border-bottom-color: #0891b2;
+  background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+}
+
+.feature-bushings .feature-card-header {
+  border-bottom-color: #d97706;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.feature-spring .feature-card-header {
+  border-bottom-color: #7c3aed;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Side-by-Side Drawing Comparison
+   -------------------------------------------------------------------------- */
+
+.drawing-comparison-collection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.side-by-side-drawing {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.side-by-side-header {
+  background: var(--color-gray-50);
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.side-by-side-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.side-by-side-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.side-by-side-item {
+  position: relative;
+}
+
+.side-by-side-3d {
+  border-right: 1px solid var(--color-gray-200);
+}
+
+.drawing-viewer {
+  position: relative;
+  cursor: zoom-in;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--color-gray-100);
+}
+
+.drawing-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-slow);
+}
+
+.drawing-viewer:hover img {
+  transform: scale(1.02);
+}
+
+.drawing-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-4);
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   CAD Image Gallery
+   -------------------------------------------------------------------------- */
+
+.image-gallery-cad {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.gallery-item-cad {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item-cad:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.gallery-item-cad img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.gallery-item-cad .gallery-caption {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+  background: var(--color-gray-50);
+}
+
+/* --------------------------------------------------------------------------
+   Challenge -> Resolution Blocks
+   -------------------------------------------------------------------------- */
+
+.lessons-learned-cad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.challenge-resolution-block {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-warning);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-4) var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.challenge-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-800);
+}
+
+.challenge-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.resolution-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--color-success);
+  background: #ecfdf5;
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-700);
+}
+
+.resolution-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-success);
+}
+
+/* --------------------------------------------------------------------------
+   Validation Blocks
+   -------------------------------------------------------------------------- */
+
+.validation-layout {
+  gap: var(--spacing-6);
+}
+
+.validation-block {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.validation-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-success);
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* --------------------------------------------------------------------------
+   Skill Tag Grid (Dense)
+   -------------------------------------------------------------------------- */
+
+.skill-tag-dense {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag-dense .skill-tag {
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-700);
+  font-family: var(--font-family-mono);
+  transition: all var(--transition-fast);
+}
+
+.skill-tag-dense .skill-tag:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Resource Buttons
+   -------------------------------------------------------------------------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.btn-resource {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-700);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  font-size: 0.9rem;
+}
+
+.btn-resource:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Enhanced Lightbox for CAD Drawings (Zoomable)
+   -------------------------------------------------------------------------- */
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-6);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  cursor: grab;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+}
+
+.lightbox-image:active {
+  cursor: grabbing;
+}
+
+.lightbox-caption {
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-4);
+  text-align: center;
+  max-width: 800px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: var(--spacing-2);
+  transition: color var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  color: var(--color-primary);
+}
+
+.lightbox-zoom-controls {
+  position: absolute;
+  bottom: var(--spacing-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-2);
+  background: rgba(0, 0, 0, 0.7);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.lightbox-zoom-controls button {
+  background: var(--color-white);
+  border: none;
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-zoom-controls button:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   CAD Page - Constraint Callout Box
+   -------------------------------------------------------------------------- */
+
+.constraint-callout {
+  border-left: 4px solid var(--color-warning);
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.08), transparent);
+}
+
+.constraint-callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--color-warning);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.constraint-callout .callout-icon {
+  font-size: 1.4rem;
+}
+
+.constraint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.constraint-item {
+  padding: var(--spacing-4);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.constraint-item.constraint-threaded {
+  border-left: 3px solid var(--color-primary);
+}
+
+.constraint-item.constraint-other {
+  border-left: 3px solid var(--color-error);
+}
+
+.constraint-label {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-2);
+}
+
+.constraint-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-2);
+}
+
+.constraint-note {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+}
+
+/* Amendment Steps */
+.amendment-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.amendment-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.step-content strong {
+  color: var(--color-gray-800);
+}
+
+/* --------------------------------------------------------------------------
+   CAD Page - Extended BOM Table with Custom/Standard Distinction
+   -------------------------------------------------------------------------- */
+
+.bom-table-extended {
+  min-width: 100%;
+}
+
+.bom-table-extended thead th {
+  background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-700));
+  color: var(--color-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+.bom-table-extended tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.bom-table-extended tbody tr:hover {
+  background-color: var(--color-gray-50);
+}
+
+.bom-row-custom {
+  background-color: rgba(37, 99, 235, 0.03);
+}
+
+.bom-row-standard {
+  background-color: rgba(107, 114, 128, 0.03);
+}
+
+.drawing-required-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-xs);
+  margin-left: var(--spacing-2);
+  vertical-align: middle;
+  font-family: var(--font-family-mono);
+}
+
+.spring-highlight-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: var(--color-white);
+  border-radius: var(--radius-xs);
+  margin-left: var(--spacing-2);
+  vertical-align: middle;
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+}
+
+.part-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.part-type-custom {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.part-type-standard {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* Spring Specification Callout */
+.spring-spec-callout {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.08), transparent);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+}
+
+.spring-spec-callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: #b45309;
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+}
+
+.spring-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.spring-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.spring-spec-item .spec-label {
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+}
+
+.spring-spec-item .spec-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+
+.spring-note {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+
+/* Engineering Mandate Card */
+.engineering-mandate-card {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
+}
+
+.mandate-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-gray-700);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for CAD Page
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .side-by-side-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-by-side-3d {
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .constraint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spring-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .key-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-layout,
+  .validation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bom-table {
+    font-size: 0.8rem;
+  }
+
+  .bom-table th,
+  .bom-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .lightbox-zoom-controls {
+    bottom: var(--spacing-4);
+  }
+
+  .lightbox-zoom-controls button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .spring-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amendment-step {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================================================
+   PROJECT CHIMERA - Software/Systems Engineering Project Layout
+   ========================================================================== */
+
+/* Section Spacing */
+.project-chimera .section {
+  padding: var(--spacing-16) 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.project-chimera .section:last-child {
+  border-bottom: none;
+}
+
+/* Section Headings */
+.project-chimera .section-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-8);
+  letter-spacing: -0.01em;
+}
+
+/* Two Column Grid (Overview & Objective) */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8);
+}
+
+.two-column-grid .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-column-grid .content-block {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-gray-700);
+}
+
+/* Three Column Grid Base */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+}
+
+/* Architecture Layer Cards */
+.architecture-layer-card {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  transition: border-color var(--transition-base);
+}
+
+.architecture-layer-card:hover {
+  border-color: var(--color-primary);
+}
+
+.architecture-layer-card .layer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-3);
+  font-family: var(--font-family-mono);
+}
+
+.architecture-layer-card .layer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+/* Architecture Diagram Container */
+.architecture-diagram-container {
+  margin-top: var(--spacing-10);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+}
+
+/* Image with Caption */
+.image-with-caption {
+  text-align: center;
+}
+
+.image-with-caption img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+}
+
+.image-with-caption .image-caption {
+  margin-top: var(--spacing-4);
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+  font-style: italic;
+}
+
+/* Implementations Grid */
+.implementations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.implementation-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+}
+
+.implementation-card .implementation-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-3);
+  font-family: var(--font-family-mono);
+}
+
+.implementation-card .implementation-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Code Block Container */
+.code-block-container {
+  margin-top: var(--spacing-4);
+  background: var(--color-gray-900);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.code-block-container .code-block {
+  margin: 0;
+  padding: var(--spacing-4);
+  overflow-x: auto;
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.code-block-container code {
+  font-family: var(--font-family-mono);
+}
+
+/* Best Practices Grid */
+.best-practices-grid {
+  margin-bottom: var(--spacing-10);
+}
+
+.best-practice-card {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+}
+
+.best-practice-card .practice-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-mono);
+}
+
+.best-practice-card .practice-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+/* Directory Screenshot Container */
+.directory-screenshot-container {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+}
+
+/* Challenges Grid */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.challenge-resolution-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.challenge-resolution-card .challenge-section {
+  background: var(--color-gray-50);
+  padding: var(--spacing-5);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.challenge-resolution-card .challenge-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-error);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-mono);
+}
+
+.challenge-resolution-card .challenge-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+.challenge-resolution-card .resolution-section {
+  padding: var(--spacing-5);
+}
+
+.challenge-resolution-card .resolution-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-success);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-mono);
+}
+
+.challenge-resolution-card .resolution-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+/* Skills Dense Grid */
+.skills-dense-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-10);
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-family: var(--font-family-mono);
+  color: var(--color-gray-700);
+}
+
+/* Resources Button Row */
+.resources-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.resources-button-row .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.resources-button-row .btn:hover {
+  background: var(--color-primary-dark);
+}
+
+.resources-button-row .btn .icon-external {
+  opacity: 0.8;
+}
+
+/* Software-specific page header accent - matching VR project style */
+.page-header-software {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Responsive Styles for Project Chimera */
+@media (max-width: 1024px) {
+  .three-column-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .implementations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-chimera .section {
+    padding: var(--spacing-10) 0;
+  }
+
+  .two-column-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .three-column-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-diagram-container,
+  .directory-screenshot-container {
+    padding: var(--spacing-4);
+  }
+
+  .implementation-card,
+  .best-practice-card,
+  .challenge-resolution-card {
+    padding: var(--spacing-4);
+  }
+
+  .code-block-container .code-block {
+    font-size: 0.8rem;
+    padding: var(--spacing-3);
+  }
+
+  .skills-dense-grid {
+    gap: var(--spacing-2);
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: var(--spacing-2);
+  }
+
+  .resources-button-row {
+    flex-direction: column;
+  }
+
+  .resources-button-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lessons-grid-chimera {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Chimera Project Specific Styles
+   -------------------------------------------------------------------------- */
+
+.image-gallery-chimera {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.gallery-item-chimera {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item-chimera img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.lessons-grid-chimera {
+  gap: var(--spacing-6);
+}
+
+.lesson-column-chimera {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid;
+}
+
+.lesson-success-chimera {
+  background-color: #ecfdf5;
+  border-color: var(--color-success);
+}
+
+.lesson-warning-chimera {
+  background-color: #fffbeb;
+  border-color: var(--color-warning);
+}
+
+.lesson-title-success-chimera,
+.lesson-title-warning-chimera {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-title-success-chimera {
+  color: var(--color-success);
+}
+
+.lesson-title-warning-chimera {
+  color: var(--color-warning);
+}
+
+.lesson-icon-chimera {
+  font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   COHESIVE DESIGN SYSTEM - ADDENDUM
+   Unified styles for headers, cards, tables, and layouts.
+   These styles provide consistent theming across all project pages.
+   ========================================================================== */
+
+/* Theme Color Variables */
+:root {
+  /* Default Theme (Blue - Software) */
+  --theme-primary: #3b82f6;
+  --theme-secondary: #1d4ed8;
+  --theme-accent: #60a5fa;
+  --theme-glow: rgba(59, 130, 246, 0.15);
+}
+
+/* Project Theme Modifiers - applied via class on body or main container */
+.theme-robotics { 
+  --theme-primary: #0ea5e9; 
+  --theme-secondary: #0369a1; 
+  --theme-accent: #38bdf8; 
+  --theme-glow: rgba(14, 165, 233, 0.15); 
+}
+
+.theme-vr { 
+  --theme-primary: #a855f7; 
+  --theme-secondary: #7e22ce; 
+  --theme-accent: #c084fc; 
+  --theme-glow: rgba(168, 85, 247, 0.15); 
+}
+
+.theme-cad { 
+  --theme-primary: #f97316; 
+  --theme-secondary: #c2410c; 
+  --theme-accent: #fb923c; 
+  --theme-glow: rgba(249, 115, 22, 0.15); 
+}
+
+.theme-chimera { 
+  --theme-primary: #22c55e; 
+  --theme-secondary: #15803d; 
+  --theme-accent: #4ade80; 
+  --theme-glow: rgba(34, 197, 94, 0.15); 
+}
+
+/* ==========================================================================
+   UNIFIED PROJECT HEADER
+   Single structure, color varies by theme class.
+   ========================================================================== */
+.project-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+  padding: var(--spacing-16) 0;
+  margin-bottom: var(--spacing-12);
+  overflow: hidden;
+}
+
+.project-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--theme-primary);
+  box-shadow: 0 0 20px var(--theme-glow);
+}
+
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  letter-spacing: -0.02em;
+}
+
+.project-subtitle {
+  font-size: 1.25rem;
+  color: var(--theme-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-6);
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--color-gray-100);
+  border: var(--border-width) solid var(--color-gray-300);
+  border-radius: 99px;
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+}
+
+.meta-badge strong {
+  color: var(--theme-primary);
+  margin-right: var(--spacing-1);
+}
+
+/* ==========================================================================
+   STANDARDIZED CONTENT SECTIONS
+   Consistent spacing and typography for all content blocks.
+   ========================================================================== */
+.content-section {
+  margin-bottom: var(--spacing-16);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: var(--border-width-2) solid var(--color-gray-200);
+  display: inline-block;
+}
+
+.section-title span {
+  color: var(--theme-primary);
+}
+
+.text-block {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-gray-700);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   UNIFIED CARD SYSTEM
+   Replaces all previous card variants with a single flexible component.
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.info-card {
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--theme-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--theme-glow);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+  color: var(--theme-primary);
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.card-content {
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   UNIFIED TABLE SYSTEM
+   Consistent styling for all data tables across projects.
+   ========================================================================== */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-8);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--spacing-4);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.data-table th {
+  background: var(--color-gray-50);
+  color: var(--theme-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background: var(--color-gray-50);
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-title { 
+    font-size: 2rem; 
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ENHANCED TAG STYLE
+   Consistent tag styling across all projects.
+   ========================================================================== */
+.tag-cohesive {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-gray-100);
+  color: var(--theme-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-family-mono);
+  margin-right: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  border: var(--border-width) solid var(--color-gray-200);
+}
+
+.tag-cohesive:hover {
+  background: var(--theme-glow);
+  text-decoration: none;
+}

@@ -4,31 +4,41 @@ title: Projects
 ---
 
 <!-- Page Header -->
-<header class="page-header">
-  <div class="container">
-    <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle">A collection of mechanical engineering, robotics, and prototyping projects demonstrating hands-on design and fabrication skills.</p>
+<header class="section">
+  <div class="container text-center">
+    <h1>Projects</h1>
+    <p class="mb-8">A unified collection of engineering, music, textiles, and photography work.</p>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="engineering">Engineering</button>
+      <button class="filter-btn" data-filter="music">Music</button>
+      <button class="filter-btn" data-filter="textiles">Textiles</button>
+      <button class="filter-btn" data-filter="photography">Photography</button>
+    </div>
   </div>
 </header>
 
 <!-- Projects Section -->
-<section class="section">
+<section class="section" style="padding-top: 0;">
   <div class="container">
     <!-- Projects Grid -->
-    <div class="grid grid-3">
+    <div class="project-grid">
       {% for project in site.projects %}
-      <a href="{{ project.url | relative_url }}" class="project-card" data-tags="{{ project.tags | join: ' ' }}">
+      <a href="{{ project.url | relative_url }}" class="project-card" data-category="{{ project.category | default: 'engineering' }}">
         {% if project.image %}
         <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-card-image" loading="lazy">
         {% else %}
-        <div class="project-card-image" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #9ca3af;">
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
           No Image
         </div>
         {% endif %}
         <div class="project-card-content">
+          <span class="project-card-category">{{ project.category | default: 'Engineering' }}</span>
           <h3 class="project-card-title">{{ project.title }}</h3>
-          <p class="project-card-summary">
-            {% if project.subtitle %}{{ project.subtitle }}{% else %}{{ project.excerpt | strip_html | truncate: 100 }}{% endif %}
+          <p class="project-card-excerpt">
+            {% if project.subtitle %}{{ project.subtitle }}{% else %}{{ project.excerpt | strip_html | truncate: 120 }}{% endif %}
           </p>
           {% if project.tags %}
           <div class="project-card-tags">
@@ -45,7 +55,7 @@ title: Projects
     <!-- Empty State (if no projects) -->
     {% if site.projects.size == 0 %}
     <div class="text-center py-8">
-      <p style="color: #6b7280; margin-bottom: 1rem;">No projects yet. Add your first project by creating a new file in the _projects folder.</p>
+      <p style="color: var(--color-text-muted); margin-bottom: 1rem;">No projects yet. Add your first project by creating a new file in the _projects folder.</p>
     </div>
     {% endif %}
     

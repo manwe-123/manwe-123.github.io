@@ -1,7 +1,47 @@
 // ==========================================================================
-// Main JavaScript - Mechanical Engineering Portfolio
-// Handles lightbox, filtering, and utility functions
+// Main JavaScript - Engineer-Artist Portfolio
+// Dark Theme with Modern Gallery Aesthetic
+// Handles navigation, lightbox, filtering, and utility functions
 // ==========================================================================
+
+// --------------------------------------------------------------------------
+// MOBILE NAVIGATION TOGGLE
+// Updated for hamburger menu functionality
+// --------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      
+      // Animate hamburger to X
+      const spans = navToggle.querySelectorAll('span');
+      if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+  }
+});
 
 // --------------------------------------------------------------------------
 // LIGHTBOX FUNCTIONALITY
@@ -64,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --------------------------------------------------------------------------
-// PROJECT FILTERING
-// For the projects index page
+// PROJECT FILTERING (Enhanced for Categories)
+// For the projects index page with smooth fade transitions
 // --------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -81,14 +121,22 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const filterValue = this.getAttribute('data-filter');
         
-        // Filter projects
+        // Filter projects with smooth fade
         projectCards.forEach(card => {
-          const cardTags = card.getAttribute('data-tags') || '';
+          const category = card.getAttribute('data-category');
           
-          if (filterValue === 'all' || cardTags.includes(filterValue)) {
-            card.style.display = 'block';
+          if (filterValue === 'all' || category === filterValue) {
+            // Show with fade in
+            card.classList.remove('hidden');
+            setTimeout(() => {
+              card.classList.remove('fade-out');
+            }, 50);
           } else {
-            card.style.display = 'none';
+            // Hide with fade out
+            card.classList.add('fade-out');
+            setTimeout(() => {
+              card.classList.add('hidden');
+            }, 400); // Match transition-fade duration
           }
         });
       });
@@ -129,22 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --------------------------------------------------------------------------
-// RESPONSIVE NAVIGATION TOGGLE
-// Placeholder for mobile menu functionality
-// --------------------------------------------------------------------------
-
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.nav-menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-    });
-  }
-});
-
-// --------------------------------------------------------------------------
 // LAZY LOADING IMAGES
 // Native lazy loading with fallback
 // --------------------------------------------------------------------------
@@ -159,28 +191,5 @@ if ('loading' in HTMLImageElement.prototype === false) {
     });
   });
 }
-
-// --------------------------------------------------------------------------
-// PRINT STYLES ENHANCEMENT
-// Add print-specific behaviors
-// --------------------------------------------------------------------------
-
-window.addEventListener('beforeprint', function() {
-  // Expand any collapsed sections before printing
-  const expandedSections = document.querySelectorAll('details');
-  expandedSections.forEach(section => {
-    section.setAttribute('data-was-open', section.open);
-    section.open = true;
-  });
-});
-
-window.addEventListener('afterprint', function() {
-  // Restore collapsed sections after printing
-  const expandedSections = document.querySelectorAll('details[data-was-open]');
-  expandedSections.forEach(section => {
-    section.open = section.getAttribute('data-was-open') === 'true';
-    section.removeAttribute('data-was-open');
-  });
-});
 
 console.log('Portfolio JavaScript loaded successfully');
