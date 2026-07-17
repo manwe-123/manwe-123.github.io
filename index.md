@@ -14,7 +14,7 @@ title: Home
       Seeking hands-on internships in design, manufacturing, robotics, and prototyping.
     </p>
     <div class="hero-actions">
-      <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Work</a>
+      <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Projects</a>
       <a href="{{ site.resume_url | default: 'assets/Resume Jul 2026 Draft 2.pdf' | relative_url }}" class="btn btn-secondary" download>View Resume</a>
     </div>
   </div>
@@ -23,7 +23,7 @@ title: Home
 <!-- Featured Projects Section -->
 <section class="section">
   <div class="container">
-    <h2 style="margin-bottom: 2rem;">Featured Work</h2>
+    <h2 style="margin-bottom: 2rem;">Featured Projects</h2>
     
     <div class="grid grid-3">
       {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
