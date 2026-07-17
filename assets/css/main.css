@@ -3894,6 +3894,10 @@ blockquote {
   border-left: 4px solid var(--color-gray-700);
 }
 
+.page-header-chimera {
+  border-left: 4px solid var(--color-secondary);
+}
+
 /* --------------------------------------------------------------------------
    CONTENT SECTIONS
    -------------------------------------------------------------------------- */
@@ -6553,4 +6557,67 @@ blockquote {
     width: 100%;
     justify-content: center;
   }
+
+  .lessons-grid-chimera {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Chimera Project Specific Styles
+   -------------------------------------------------------------------------- */
+
+.image-gallery-chimera {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.gallery-item-chimera {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item-chimera img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.lessons-grid-chimera {
+  gap: var(--spacing-6);
+}
+
+.lesson-column-chimera {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid;
+}
+
+.lesson-success-chimera {
+  background-color: #ecfdf5;
+  border-color: var(--color-success);
+}
+
+.lesson-warning-chimera {
+  background-color: #fffbeb;
+  border-color: var(--color-warning);
+}
+
+.lesson-title-success-chimera,
+.lesson-title-warning-chimera {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.lesson-title-success-chimera {
+  color: var(--color-success);
+}
+
+.lesson-title-warning-chimera {
+  color: var(--color-warning);
+}
+
+.lesson-icon-chimera {
+  font-size: 1.25rem;
 }

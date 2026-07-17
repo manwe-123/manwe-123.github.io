@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Project Header -->
-<header class="page-header page-header-vr">
+<header class="page-header page-header-chimera">
   <div class="container">
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
@@ -28,6 +28,13 @@ layout: default
       <div class="meta-item">
         <span class="meta-label">Timeline:</span>
         <span class="meta-value">{{ page.timeline }}</span>
+      </div>
+      {% endif %}
+      
+      {% if page.team %}
+      <div class="meta-item">
+        <span class="meta-label">Team Size:</span>
+        <span class="meta-value">{{ page.team }}</span>
       </div>
       {% endif %}
     </div>
