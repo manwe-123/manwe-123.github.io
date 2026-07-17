@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: project-cad
 theme: cad
 category: engineering
 title: "Shock Absorber Assembly"

@@ -1,11 +1,11 @@
 ---
-layout: project
+layout: project-chimera
 theme: chimera
 category: engineering
 title: "Automated Data Aggregation and AI Synthesis Pipeline"
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"
-timeline: "January 2024 - Present"
+timeline: "May 2026 - Present"
 featured: false
 tags:
   - Python
