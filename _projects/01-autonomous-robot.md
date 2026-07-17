@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: project-robotics
 theme: robotics
 category: engineering
 title: "Mental Health Robotics System for Isolated Environments"
@@ -141,5 +141,6 @@ specs:
       value: "6 inches"
   weight: "Optimized for low weight (< 1 kg)"
   cost: "$44.20 USD"
-This project demonstrates the integration of mechanical design, electronics, and embedded programming to solve a real-world human factors challenge in isolated environments.
+
 ---
+This project demonstrates the integration of mechanical design, electronics, and embedded programming to solve a real-world human factors challenge in isolated environments.
