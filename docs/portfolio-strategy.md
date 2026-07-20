@@ -1,4 +1,3 @@
---- docs/portfolio-strategy.md (原始)
 # Portfolio Strategy: The Engineer-Artist
 
 ## Executive Summary
