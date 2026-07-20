@@ -116,7 +116,8 @@ Add the following CSS sections before the closing comment:
 - `/workspace/_layouts/project-cad.html`
 - `/workspace/_layouts/project-chimera.html`
 
-For each layout:
+<!-- For each layout: 
+-->
 1. Remove `{{ content }}` reference
 2. Map ALL YAML variables to HTML structure using Liquid
 3. Use conditional rendering (`{% if page.variable %}`)
