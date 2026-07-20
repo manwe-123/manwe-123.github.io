@@ -268,7 +268,303 @@ layout: default
 - ✅ YAML variables explicitly mapped in all engineering layouts
 - ✅ Zero content changes made to any project information
 
-### Next Steps
-- Site is production-ready for deployment
-- Future additions should follow established YAML schema and specific layout patterns
-- New project categories can be added by creating corresponding layout files and updating filter system
+### ⚠️ CRITICAL ISSUES IDENTIFIED (Require Immediate Fix)
+1. **Missing Layout Files**: Music, Textiles, and Photography projects reference `layout: project` which does not exist
+2. **Robotics Layout Bug**: `project-robotics.html` uses `{{ content }}` but engineering projects store ALL content in YAML (no body content), resulting in blank pages
+3. **Missing CSS Styles**: Project header components (`.project-container`, `.project-header`, `.project-title`, `.meta-badge`, `.tag-cohesive`) are used in layouts but not defined in `main.css`
+4. **Layout Architecture**: Engineering layouts need to map YAML variables directly instead of relying on `{{ content }}`
+
+### Next Steps (Priority Order)
+1. **IMMEDIATE**: Add missing CSS styles for project header components to `main.css`
+2. **IMMEDIATE**: Create specialized layouts for creative projects:
+   - `_layouts/project-music.html` with audio player functionality
+   - `_layouts/project-textiles.html` with gallery/documentation features
+   - `_layouts/project-photography.html` with fullscreen gallery experience
+3. **CRITICAL**: Fix `project-robotics.html` to explicitly render YAML variables instead of `{{ content }}`
+4. **CRITICAL**: Apply same fix to VR, CAD, and Chimera layouts
+5. Update all creative project markdown files to reference their specific layouts
+6. Test all project pages locally before deployment
+7. Deploy to GitHub Pages and verify all pages render correctly
+8. Future additions should follow established YAML schema and specific layout patterns
+9. New project categories can be added by creating corresponding layout files and updating filter system
+
+---
+
+## 9. Sprint-Based Implementation Plan
+
+### Context & Goals (Updated from Q&A Sessions)
+- **Primary Purpose:** Job applications for engineering internships
+- **Target Audience:** Engineering recruiters and hiring managers (primarily mobile users)
+- **Timeline:** Less than 1 month to completion
+- **Update Frequency:** Static with occasional updates
+- **Hosting:** GitHub Pages (manwe-123.github.io)
+- **Content Status:** All media files are placeholders until site functions correctly
+- **Layout Strategy:** Specialized layouts for each project category with unique features
+- **CSS Management:** Direct addition to `main.css` for immediate deployment
+- **Navigation:** Consistent navigation across all project types
+- **Mobile Responsiveness:** Critical priority
+- **Engineering Content:** Maintain current technical documentation style
+- **Creative Projects:** Enhanced visual appeal with multimedia support
+
+---
+
+### Sprint 0: Preparation & Audit (2 hours)
+**Goal:** Establish baseline and verify current state
+
+**Tasks:**
+- [ ] Audit all existing layout files in `_layouts/`
+- [ ] Verify all project markdown files in `_projects/` or `_posts/`
+- [ ] Check CSS file (`assets/css/main.css`) for existing styles
+- [ ] Test current live site to identify specific broken pages
+- [ ] Create backup branch before making changes
+
+**Deliverables:**
+- Complete inventory of existing files
+- List of confirmed broken pages
+- Backup branch created
+
+**Acceptance Criteria:**
+- Full understanding of current codebase state
+- Safe rollback point established
+
+---
+
+### Sprint 1: CSS Foundation Fix (3 hours)
+**Goal:** Add missing project display styles to main.css
+
+**Tasks:**
+- [ ] Add `.project-container` base styles
+- [ ] Add `.project-header` component styles
+- [ ] Add `.project-title` typography styles
+- [ ] Add `.meta-badge` and `.tag-cohesive` styles
+- [ ] Add responsive styles for mobile devices
+- [ ] Add section-specific styles (specs, challenges, results, gallery)
+- [ ] Test styles locally with browser dev tools
+
+**Deliverables:**
+- Updated `main.css` with all project styles
+- Mobile-responsive project page styles
+
+**Acceptance Criteria:**
+- All CSS classes referenced in layouts are defined
+- Styles render correctly on mobile (320px+) and desktop
+- Dark theme consistency maintained
+
+**Audit & Push:**
+- [ ] Review CSS changes for consistency
+- [ ] Test on multiple screen sizes
+- [ ] Commit and push to GitHub
+- [ ] Verify GitHub Pages build succeeds
+
+---
+
+### Sprint 2: Engineering Layouts Fix (4 hours)
+**Goal:** Fix robotics layout and apply pattern to all engineering layouts
+
+**Tasks:**
+- [ ] Analyze current `project-robotics.html` structure
+- [ ] Remove `{{ content }}` dependency
+- [ ] Map all YAML variables to explicit HTML structure:
+  - `{{ page.title }}`
+  - `{{ page.overview }}`
+  - `{% for spec in page.specs %}`
+  - `{% for challenge in page.challenges %}`
+  - `{{ page.results }}`
+  - `{% for item in page.gallery %}`
+- [ ] Apply same fix to `project-vr.html`
+- [ ] Apply same fix to `project-cad.html`
+- [ ] Apply same fix to `project-chimera.html`
+- [ ] Ensure all layouts have `layout: default` in front matter
+
+**Deliverables:**
+- Fixed `_layouts/project-robotics.html`
+- Fixed `_layouts/project-vr.html`
+- Fixed `_layouts/project-cad.html`
+- Fixed `_layouts/project-chimera.html`
+
+**Acceptance Criteria:**
+- All engineering projects display content from YAML front matter
+- No blank pages due to `{{ content }}` reliance
+- Consistent styling across all engineering projects
+- All layouts properly inherit from default.html
+
+**Audit & Push:**
+- [ ] Test each engineering project locally
+- [ ] Verify all YAML fields display correctly
+- [ ] Check mobile responsiveness
+- [ ] Commit and push incrementally (one layout at a time)
+- [ ] Verify each push builds successfully on GitHub Pages
+
+---
+
+### Sprint 3: Creative Layouts Creation (5 hours)
+**Goal:** Create specialized layouts for music, textiles, and photography
+
+**Tasks:**
+- [ ] Create `_layouts/project-music.html`:
+  - Audio player component with custom styling
+  - Display title, instrument, duration
+  - Album art display
+  - Track information section
+- [ ] Create `_layouts/project-textiles.html`:
+  - Hero image showcase
+  - Materials list display
+  - Process documentation section
+  - Detail grid for multiple images
+- [ ] Create `_layouts/project-photography.html`:
+  - Collection-based layout
+  - Location/trip metadata
+  - Fullscreen gallery with lightbox integration
+  - Image captions and details
+- [ ] Ensure all layouts include `layout: default`
+- [ ] Apply cohesive dark theme styling to all layouts
+
+**Deliverables:**
+- `_layouts/project-music.html`
+- `_layouts/project-textiles.html`
+- `_layouts/project-photography.html`
+
+**Acceptance Criteria:**
+- Each creative layout displays category-specific content
+- Visual appeal enhanced compared to engineering layouts
+- Multimedia elements (audio, images) function correctly
+- Mobile-responsive design implemented
+- Consistent navigation with "Back to Projects" button
+
+**Audit & Push:**
+- [ ] Review each layout for design consistency
+- [ ] Test with placeholder content
+- [ ] Verify audio player functionality (music)
+- [ ] Check lightbox behavior (photography)
+- [ ] Commit and push each layout separately
+- [ ] Monitor GitHub Pages build status
+
+---
+
+### Sprint 4: Content Integration (2 hours)
+**Goal:** Update project markdown files to reference correct layouts
+
+**Tasks:**
+- [ ] Update music project files to use `layout: project-music`
+- [ ] Update textiles project files to use `layout: project-textiles`
+- [ ] Update photography project files to use `layout: project-photography`
+- [ ] Verify all engineering projects use their specific layouts
+- [ ] Check that all YAML front matter matches layout expectations
+- [ ] Remove any body content below front matter (should be empty)
+
+**Deliverables:**
+- Updated project markdown files with correct layout references
+- Verified YAML front matter structure
+
+**Acceptance Criteria:**
+- All projects reference existing layout files
+- No 404 errors from missing layouts
+- Content displays correctly based on YAML data
+
+**Audit & Push:**
+- [ ] Cross-reference all layout names in markdown files
+- [ ] Test a sample from each category locally
+- [ ] Commit and push all content updates together
+- [ ] Verify GitHub Pages rebuild completes without errors
+
+---
+
+### Sprint 5: Comprehensive Testing (3 hours)
+**Goal:** Validate all functionality across devices and browsers
+
+**Tasks:**
+- [ ] Test all engineering project pages (Robotics, VR, CAD, Chimera)
+- [ ] Test all creative project pages (Music, Textiles, Photography)
+- [ ] Test unified filtering system on Projects page
+- [ ] Test mobile navigation (hamburger menu)
+- [ ] Test audio player on music projects
+- [ ] Test lightbox on photography projects
+- [ ] Test responsive design at breakpoints (320px, 768px, 1024px, 1440px)
+- [ ] Test cross-browser compatibility (Chrome, Firefox, Safari, Edge)
+- [ ] Test accessibility (keyboard navigation, alt text, contrast)
+- [ ] Verify all internal links work correctly
+
+**Deliverables:**
+- Testing checklist with results
+- Bug list with priority ratings
+- Performance metrics (load times)
+
+**Acceptance Criteria:**
+- All project pages load without errors
+- Filtering works smoothly on all devices
+- Audio and interactive elements function correctly
+- Mobile experience is optimized
+- Accessibility standards met (WCAG 2.1 AA minimum)
+
+**Audit & Push:**
+- [ ] Document all test results
+- [ ] Fix any critical bugs found
+- [ ] Push final fixes
+- [ ] Perform final verification on live GitHub Pages site
+
+---
+
+### Sprint 6: Deployment & Final Polish (2 hours)
+**Goal:** Deploy to production and perform final quality assurance
+
+**Tasks:**
+- [ ] Verify `_config.yml` has correct `baseurl: ""` setting
+- [ ] Check that repository name matches GitHub Pages URL
+- [ ] Clear GitHub Pages cache if needed
+- [ ] Test live site at https://manwe-123.github.io/
+- [ ] Verify all pages load correctly on production
+- [ ] Test site speed using PageSpeed Insights or Lighthouse
+- [ ] Document any remaining issues for future sprints
+- [ ] Create maintenance documentation
+
+**Deliverables:**
+- Fully functional live portfolio
+- Performance report
+- Maintenance guide
+
+**Acceptance Criteria:**
+- Site loads without errors on production URL
+- All projects display correctly
+- Performance score >80 on Lighthouse
+- Mobile-friendly test passes
+- No console errors in browser dev tools
+
+**Audit & Push:**
+- [ ] Final review of live site
+- [ ] Document known limitations or future improvements
+- [ ] Celebrate successful deployment! 🎉
+
+---
+
+## 10. Risk Mitigation & Best Practices
+
+### Version Control Strategy
+- Create feature branches for each sprint: `sprint-1-css`, `sprint-2-engineering-layouts`, etc.
+- Commit frequently with descriptive messages
+- Push after each successful local test
+- Never push multiple sprints at once
+
+### Testing Protocol
+- Test locally before every push
+- Use browser dev tools to simulate mobile devices
+- Check GitHub Actions build status after each push
+- Wait for GitHub Pages deployment to complete before testing live
+
+### Rollback Plan
+- If a push breaks the site, immediately revert to previous commit
+- Use `git revert` instead of `git reset` for shared branches
+- Keep backup branch updated before starting each sprint
+
+### Communication Cadence
+- Complete one sprint fully before moving to next
+- Audit results before proceeding
+- Document any deviations from plan
+
+---
+
+## 11. Open Questions & Future Considerations
+- **Hybrid Projects:** To be brainstormed later (Electronic instruments, coded visuals).
+- **Content Volume:** Plan for scaling if photography collections grow significantly (pagination vs. infinite scroll).
+- **Analytics:** Future integration to track which categories get the most engagement.
+- **Multimedia Expansion:** Potential for video previews, interactive demos, or 3D model viewers for engineering projects.
+- **Contact Form:** Consider adding simple form for recruiter inquiries.
