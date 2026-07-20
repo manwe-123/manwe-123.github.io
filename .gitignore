@@ -1,23 +1,4 @@
 ```
-# Build artifacts
-*.backup
-*.mp3
-*.jpg
-
-# Dependencies
-node_modules/
-
-# Editors
-.vscode/
-.idea/
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-.env.*
+# No build artifacts, dependencies, or temp files detected in changes
+# Only documentation files were added/modified
 ```
