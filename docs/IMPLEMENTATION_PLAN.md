@@ -1,4 +1,4 @@
-<!-- # Portfolio Implementation Plan - Critical Fixes
+# Portfolio Implementation Plan - Critical Fixes
 
 ## Executive Summary
 This document outlines the immediate action plan to fix critical issues preventing project pages from displaying correctly on the GitHub Pages portfolio. The site targets engineering internship recruiters and must showcase both technical and creative work professionally.
@@ -54,7 +54,8 @@ This document outlines the immediate action plan to fix critical issues preventi
   </section>
   {% endif %}
   
-  <!-- Continue for all YAML variables 
+  <!-- Continue for all YAML variables
+ -->
 </div>
 ```
 
@@ -116,7 +117,7 @@ Add the following CSS sections before the closing comment:
 - `/workspace/_layouts/project-cad.html`
 - `/workspace/_layouts/project-chimera.html`
 
-For each layout: 
+Each layout: 
 1. Remove `{{ content }}` reference
 2. Map ALL YAML variables to HTML structure using Liquid
 3. Use conditional rendering (`{% if page.variable %}`)
