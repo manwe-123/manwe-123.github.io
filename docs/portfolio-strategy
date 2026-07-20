@@ -160,7 +160,7 @@ Standard Jekyll workflows use `{{ content }}` to inject markdown body content in
 Each engineering project type has a dedicated layout file that:
 1. Includes `layout: default` in its front matter to inherit the global shell (header, nav, footer, CSS).
 2. Contains explicit HTML structure that maps directly to YAML variable names.
-3. Uses Liquid loops (`{% for %}`) to iterate over list-based YAML data.
+3. Uses Liquid loops to iterate over list-based YAML data.
 4. Applies cohesive CSS classes for consistent dark theme styling.
 
 ### Example Structure
@@ -233,8 +233,8 @@ layout: default
 ### Key Requirements
 - **Variable Name Matching:** Liquid variable names in layouts MUST exactly match YAML keys in markdown files (case-sensitive).
 - **No `{{ content }}`:** Layouts must not rely on `{{ content }}` since markdown body is empty.
-- **Conditional Rendering:** Use `{% if page.variable %}` to handle optional fields.
-- **List Iteration:** Use `{% for item in page.list %}` for arrays of objects.
+- **Conditional Rendering:** Use ' if page.variable ' to handle optional fields.
+- **List Iteration:** Use ' for item in page.list ' for arrays of objects.
 - **Inheritance:** Every specific layout must have `layout: default` to render properly.
 
 ---
