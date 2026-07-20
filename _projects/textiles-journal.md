@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: project-vr
 title: "Hand-Stitched Leather Journal"
 date: 2023-08-10
 category: textiles
