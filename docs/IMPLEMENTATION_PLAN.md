@@ -54,7 +54,7 @@ This document outlines the immediate action plan to fix critical issues preventi
   </section>
   {% endif %}
   
-  <!-- Continue for all YAML variables -->
+  <!-- Continue for all YAML variables 
 </div>
 ```
 
