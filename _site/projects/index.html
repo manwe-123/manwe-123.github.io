@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Projects | </title>
+  <meta name="description" content="A portfolio showcasing my mechanical engineering projects, skills, and experiences.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <!-- Site Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-container">
+      <!-- Logo / Site Title -->
+      <a href="/" class="nav-logo">
+        
+          
+        
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/projects" class="nav-link active">Projects</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Page Header -->
+<header class="section">
+  <div class="container text-center">
+    <h1>Projects</h1>
+    <p class="mb-8">A unified collection of engineering, music, textiles, and photography work.</p>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="engineering">Engineering</button>
+      <button class="filter-btn" data-filter="music">Music</button>
+      <button class="filter-btn" data-filter="textiles">Textiles</button>
+      <button class="filter-btn" data-filter="photography">Photography</button>
+    </div>
+  </div>
+</header>
+
+<!-- Projects Section -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <!-- Projects Grid -->
+    <div class="project-grid">
+      
+      <a href="/projects/01-autonomous-robot/" class="project-card" data-category="engineering">
+        
+        <img src="/assets/images/projects/robot/main.PNG" alt="Mental Health Robotics System for Isolated Environments" class="project-card-image" loading="lazy">
+        
+        <div class="project-card-content">
+          <span class="project-card-category">engineering</span>
+          <h3 class="project-card-title">Mental Health Robotics System for Isolated Environments</h3>
+          <p class="project-card-excerpt">
+            A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">Robotics</span>
+            
+            <span class="tag">Arduino</span>
+            
+            <span class="tag">Laser Cutting</span>
+            
+            <span class="tag">Mechatronics</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/02-vr-prototyping/" class="project-card" data-category="engineering">
+        
+        <img src="/assets/images/projects/vr/main.png" alt="VR Rapid Prototyping Application" class="project-card-image" loading="lazy">
+        
+        <div class="project-card-content">
+          <span class="project-card-category">engineering</span>
+          <h3 class="project-card-title">VR Rapid Prototyping Application</h3>
+          <p class="project-card-excerpt">
+            An immersive virtual reality curriculum and prototyping environment for introductory engineering students
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">VR/AR</span>
+            
+            <span class="tag">Unity</span>
+            
+            <span class="tag">C#</span>
+            
+            <span class="tag">Curriculum Design</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/03-shock-absorber-assembly/" class="project-card" data-category="engineering">
+        
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+          No Image
+        </div>
+        
+        <div class="project-card-content">
+          <span class="project-card-category">engineering</span>
+          <h3 class="project-card-title">Shock Absorber Assembly</h3>
+          <p class="project-card-excerpt">
+            Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">SolidWorks</span>
+            
+            <span class="tag">ASME Y14.5</span>
+            
+            <span class="tag">GD&T</span>
+            
+            <span class="tag">DFM</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/04-chimera-project/" class="project-card" data-category="engineering">
+        
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+          No Image
+        </div>
+        
+        <div class="project-card-content">
+          <span class="project-card-category">engineering</span>
+          <h3 class="project-card-title">Automated Data Aggregation and AI Synthesis Pipeline</h3>
+          <p class="project-card-excerpt">
+            Project Chimera
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">Python</span>
+            
+            <span class="tag">FastAPI</span>
+            
+            <span class="tag">PostgreSQL</span>
+            
+            <span class="tag">Docker</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/textiles-journal/" class="project-card" data-category="textiles">
+        
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+          No Image
+        </div>
+        
+        <div class="project-card-content">
+          <span class="project-card-category">textiles</span>
+          <h3 class="project-card-title">Hand-Stitched Leather Journal</h3>
+          <p class="project-card-excerpt">
+            Overview
+
+
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">leather</span>
+            
+            <span class="tag">bookbinding</span>
+            
+            <span class="tag">hand-stitch</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/music-nocturne/" class="project-card" data-category="music">
+        
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+          No Image
+        </div>
+        
+        <div class="project-card-content">
+          <span class="project-card-category">music</span>
+          <h3 class="project-card-title">Nocturne in E Minor</h3>
+          <p class="project-card-excerpt">
+            Overview
+
+
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">piano</span>
+            
+            <span class="tag">original</span>
+            
+            <span class="tag">classical</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+      <a href="/projects/photography-tokyo/" class="project-card" data-category="photography">
+        
+        <div class="project-card-image" style="display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+          No Image
+        </div>
+        
+        <div class="project-card-content">
+          <span class="project-card-category">photography</span>
+          <h3 class="project-card-title">Midnight in Tokyo</h3>
+          <p class="project-card-excerpt">
+            Overview
+
+
+          </p>
+          
+          <div class="project-card-tags">
+            
+            <span class="tag">street</span>
+            
+            <span class="tag">night</span>
+            
+            <span class="tag">travel</span>
+            
+          </div>
+          
+        </div>
+      </a>
+      
+    </div>
+    
+    <!-- Empty State (if no projects) -->
+    
+    
+  </div>
+</section>
+
+  </main>
+  
+<!-- Footer -->
+  <!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
+          <li>Tempe, AZ</li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 . Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Lightbox for image gallery -->
+  <!-- Lightbox Modal for Image Gallery -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Mental Health Robotics System for Isolated Environments | </title>
+  <meta name="description" content="Designed and built a semi-autonomous companion robot that tracks user proximity and dispenses medical supplies to alleviate mental health struggles in isolat...">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <!-- Site Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-container">
+      <!-- Logo / Site Title -->
+      <a href="/" class="nav-logo">
+        
+          
+        
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/projects" class="nav-link active">Projects</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Unified Project Header with Dynamic Theme Support -->
+
+
+
+<header class="project-header theme-robotics">
+  <div class="container">
+    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+
+    <h1 class="project-title">Mental Health Robotics System for Isolated Environments</h1>
+
+    
+    <p class="project-subtitle">A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants</p>
+    
+
+    <!-- Project Meta Row -->
+    <div class="project-meta">
+      
+      <span class="meta-badge"><strong>Role:</strong> Design and Prototyping Lead</span>
+      
+
+      
+      <span class="meta-badge"><strong>Timeline:</strong> August 2024 - December 2024</span>
+      
+
+      
+      <span class="meta-badge"><strong>Team:</strong> 4-person team</span>
+      
+
+      
+    </div>
+
+    <!-- Technical Tags -->
+    
+    <div class="project-tags mt-4">
+      
+      <span class="tag-cohesive">Robotics</span>
+      
+      <span class="tag-cohesive">Arduino</span>
+      
+      <span class="tag-cohesive">Laser Cutting</span>
+      
+      <span class="tag-cohesive">Mechatronics</span>
+      
+      <span class="tag-cohesive">Prototyping</span>
+      
+    </div>
+    
+  </div>
+</header>
+
+<!-- Main Content Area -->
+<div class="container">
+
+  <!-- Problem Statement -->
+  
+  <section class="project-section">
+    <h2>Problem</h2>
+    <div class="project-content">
+      <p>Mars colony inhabitants face severe mental health challenges, including isolation, loneliness, and sensory deprivation due to confined living conditions. They need an automated, low-cost companion to provide mental enrichment, medical access, and a sense of home.</p>
+    </div>
+  </section>
+  
+
+  <!-- Solution Overview -->
+  
+  <section class="project-section">
+    <h2>Solution</h2>
+    <div class="project-content">
+      <p>Developed an semi-autonomous mobile robot equipped with an ultrasonic sensor for user tracking, a photoresistor-triggered medical drawer, and an LCD screen for positive messaging, fabricated from lightweight, recyclable materials.</p>
+    </div>
+  </section>
+  
+
+  <!-- Requirements -->
+  
+  <section class="project-section">
+    <h2>Requirements</h2>
+    <div class="project-content">
+      <ul>
+  <li>Improve overall mental health metrics by at least 5%</li>
+  <li>Fully automated operation for user tracking and medical dispensing</li>
+  <li>Withstand low atmospheric pressure and normal base living conditions</li>
+  <li>Total prototype cost under $75</li>
+  <li>Low weight and constructed from recyclable materials</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Constraints -->
+  
+  <section class="project-section">
+    <h2>Constraints</h2>
+    <div class="project-content">
+      <ul>
+  <li>Must simulate Mars resource constraints using accessible, recyclable materials</li>
+  <li>Limited to undergraduate lab equipment for fabrication (laser cutter, basic electronics)</li>
+  <li>1-semester development timeline from concept to final acceptance testing</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Metrics Table -->
+  
+  <section class="project-section">
+    <h2>Performance Metrics</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Achieved</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Prototype Cost</td>
+          <td>< $75.00</td>
+          <td>$44.20</td>
+        </tr>
+        
+        <tr>
+          <td>Proximity Tracking</td>
+          <td>< 15 cm</td>
+          <td>15 cm</td>
+        </tr>
+        
+        <tr>
+          <td>Drawer Actuation</td>
+          <td>< 25 light value</td>
+          <td>< 25 light value</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+  
+
+  <!-- Sensing System -->
+  
+  <section class="project-section">
+    <h2>Sensing System</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Ultrasonic Sensor</strong>: HC-SR04 equivalent for 15cm proximity tracking and semi-autonomous navigation</li>
+  <li><strong>Photoresistor</strong>: Light dependent resistor (LDR) for shadow detection to trigger the medical drawer</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Actuation System -->
+  
+  <section class="project-section">
+    <h2>Actuation System</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Drive Motors</strong>: 2x Hobby gear motors with wheels for forward user tracking</li>
+  <li><strong>Servo Motor</strong>: Micro servo for automated medical drawer lid actuation</li>
+  <li><strong>Power System</strong>: 2x 9V batteries for independent logic and motor power distribution</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Mechanical Design -->
+  
+  <section class="project-section">
+    <h2>Mechanical Design</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Chassis</strong>: 6x6x6 inch cube fabricated from 1/8” balsa wood and plywood</li>
+  <li><strong>Fabrication Method</strong>: Laser cut components for precise mechanical fit and structural rigidity</li>
+  <li><strong>Medical Drawer</strong>: Top-mounted compartment with servo-actuated lid for automated dispensing</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Components List -->
+  
+  <section class="project-section">
+    <h2>Key Components</h2>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Specification</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>Arduino Uno</strong></td>
+          <td>Main microcontroller for sensor processing and actuation</td>
+        </tr>
+        
+        <tr>
+          <td><strong>16-Pin Motor Driver Controller</strong></td>
+          <td>H-bridge for hobby gear motor control</td>
+        </tr>
+        
+        <tr>
+          <td><strong>LCD Screen</strong></td>
+          <td>User interface for displaying positive messages</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+  
+
+  <!-- Fabrication Process -->
+  
+  <section class="project-section">
+    <h2>Fabrication Process</h2>
+    <div class="project-content">
+      <p><strong>Laser Cutting &amp; Assembly:</strong></p>
+<ul>
+  <li>Cut 1/8” balsa and plywood components using the laser cutter</li>
+  <li>Sanded internal corners to prevent wheel friction and ensure smooth mechanical movement</li>
+</ul>
+
+<p><strong>Electronics Integration:</strong></p>
+<ul>
+  <li>Mounted Arduino, breadboard, and motor driver inside the wooden chassis</li>
+  <li>Routed wiring for ultrasonic sensor, photoresistor, and servo motor</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Project Gallery -->
+  
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/mars-robot-cad.jpg" alt="CAD model of the robotic enclosure" loading="lazy">
+        <figcaption class="gallery-item-caption">CAD model of the robotic enclosure</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/mars-robot-laser.jpg" alt="Laser-cut wooden chassis components prior to assembly" loading="lazy">
+        <figcaption class="gallery-item-caption">Laser-cut wooden chassis components prior to assembly</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/mars-robot-wiring.jpg" alt="Internal Arduino wiring and breadboard layout" loading="lazy">
+        <figcaption class="gallery-item-caption">Internal Arduino wiring and breadboard layout</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/mars-robot-final.jpg" alt="Completed semi-autonomous prototype" loading="lazy">
+        <figcaption class="gallery-item-caption">Completed semi-autonomous prototype</figcaption>
+      </figure>
+      
+    </div>
+  </section>
+  
+
+  <!-- Testing Overview -->
+  
+  <section class="project-section">
+    <h2>Testing Overview</h2>
+    <div class="project-content">
+      <p>Formal acceptance testing was conducted in three phases (Nov 21, Nov 24, Nov 26) to verify sensor accuracy, motor response, and automated dispensing mechanisms under operational conditions.
+</p>
+    </div>
+  </section>
+  
+
+  <!-- Test Results -->
+  
+  <section class="project-section">
+    <h2>Test Results</h2>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Proximity Tracking</h3>
+        <span class="test-result-status pass">Pass</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Move robot away from user and measure stopping distance
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> Hobby motors engaged and stopped exactly at 15 cm
+      </div>
+    </div>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Drawer Actuation</h3>
+        <span class="test-result-status pass">Pass</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Hover hand over photoresistor to cast a shadow
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> Servo motor triggered and opened lid when light value dropped below 25
+      </div>
+    </div>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Continuous Operation</h3>
+        <span class="test-result-status fail">Fail</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Run full system during final presentation
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> System failed due to overheating wire
+      </div>
+    </div>
+    
+  </section>
+  
+
+  <!-- What Worked -->
+  
+  <section class="project-section">
+    <h2>What Worked</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Sensor Integration</strong>: Ultrasonic and photoresistor logic worked seamlessly for semi-autonomous tracking and automated dispensing</li>
+  <li><strong>Mechanical Fit</strong>: Laser-cut wooden components provided precise structural rigidity for the electronic modules</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- What Failed -->
+  
+  <section class="project-section">
+    <h2>What Failed</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Power Management</strong>: Exposed wiring on the battery connection overheated and melted during the final presentation due to poor soldering</li>
+  <li><strong>Mobility</strong>: Robot could only move forward and lacked differential steering for omnidirectional movement</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Next Steps -->
+  
+  <section class="project-section">
+    <h2>Next Steps</h2>
+    <div class="project-content">
+      <ul>
+  <li>Implement proper wire gauge selection and inline fuses for high-current battery connections</li>
+  <li>Add differential drive steering to allow the robot to turn and follow users dynamically</li>
+  <li>Integrate planned aromatherapy diffuser and audio speakers for multi-sensory therapy</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Technical Specifications -->
+  
+  <section class="project-section">
+    <h2>Technical Specifications</h2>
+
+    
+    <h3 class="specs-category">Software</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Arduino IDE</td>
+          <td>2.0</td>
+        </tr>
+        
+        <tr>
+          <td>TinkerCAD</td>
+          <td>2024</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Hardware</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Microcontroller</td>
+          <td>Arduino Uno</td>
+        </tr>
+        
+        <tr>
+          <td>Motors</td>
+          <td>Hobby Gear Motors</td>
+        </tr>
+        
+        <tr>
+          <td>Sensor</td>
+          <td>Ultrasonic Sensor HC-SR04</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Materials</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Chassis</td>
+          <td>1/8 inch Balsa Wood and Plywood</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Dimensions</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Axis</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Length</td>
+          <td>6 inches</td>
+        </tr>
+        
+        <tr>
+          <td>Width</td>
+          <td>6 inches</td>
+        </tr>
+        
+        <tr>
+          <td>Height</td>
+          <td>6 inches</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Weight & Cost</h3>
+    <table class="specs-table">
+      <tbody>
+        <tr>
+          <th>Weight</th>
+          <td>Optimized for low weight (< 1 kg)</td>
+        </tr>
+        
+        <tr>
+          <th>Cost</th>
+          <td>$44.20 USD</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+  </section>
+  
+
+</div>
+
+  </main>
+  
+<!-- Footer -->
+  <!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
+          <li>Tempe, AZ</li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 . Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Lightbox for image gallery -->
+  <!-- Lightbox Modal for Image Gallery -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

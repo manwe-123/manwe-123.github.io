@@ -1,5 +1,5 @@
 ---
-layout: project-vr
+layout: default
 title: "Nocturne in E Minor"
 date: 2023-09-20
 category: music

@@ -1,5 +1,5 @@
 ---
-layout: project-vr
+layout: default
 title: "Midnight in Tokyo"
 date: 2023-10-15
 category: photography

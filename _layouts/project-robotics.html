@@ -17,32 +17,32 @@ layout: default
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
     </a>
-    
+
     <h1 class="project-title">{{ page.title }}</h1>
-    
+
     {% if page.subtitle %}
     <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    
+
     <!-- Project Meta Row -->
     <div class="project-meta">
       {% if page.role %}
       <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
       {% endif %}
-      
+
       {% if page.timeline %}
       <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
       {% endif %}
-      
+
       {% if page.team %}
       <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
       {% endif %}
-      
+
       {% if page.software %}
       <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
       {% endif %}
     </div>
-    
+
     <!-- Technical Tags -->
     {% if page.tags %}
     <div class="project-tags mt-4">
@@ -54,9 +54,316 @@ layout: default
   </div>
 </header>
 
-<!-- Main Content Area - Renders project-specific content from markdown files -->
-<div class="container section">
-  {{ content }}
-</div>
+<!-- Main Content Area -->
+<div class="container">
 
-{% include footer.html %}
+  <!-- Problem Statement -->
+  {% if page.problem %}
+  <section class="project-section">
+    <h2>Problem</h2>
+    <div class="project-content">
+      <p>{{ page.problem }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Solution Overview -->
+  {% if page.solution %}
+  <section class="project-section">
+    <h2>Solution</h2>
+    <div class="project-content">
+      <p>{{ page.solution }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Requirements -->
+  {% if page.requirements %}
+  <section class="project-section">
+    <h2>Requirements</h2>
+    <div class="project-content">
+      {{ page.requirements | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Constraints -->
+  {% if page.constraints %}
+  <section class="project-section">
+    <h2>Constraints</h2>
+    <div class="project-content">
+      {{ page.constraints | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Metrics Table -->
+  {% if page.metrics %}
+  <section class="project-section">
+    <h2>Performance Metrics</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Achieved</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for metric in page.metrics %}
+        <tr>
+          <td>{{ metric.name }}</td>
+          <td>{{ metric.target }}</td>
+          <td>{{ metric.achieved }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  <!-- Sensing System -->
+  {% if page.sensing %}
+  <section class="project-section">
+    <h2>Sensing System</h2>
+    <div class="project-content">
+      {{ page.sensing | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Actuation System -->
+  {% if page.actuation %}
+  <section class="project-section">
+    <h2>Actuation System</h2>
+    <div class="project-content">
+      {{ page.actuation | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Mechanical Design -->
+  {% if page.mechanical %}
+  <section class="project-section">
+    <h2>Mechanical Design</h2>
+    <div class="project-content">
+      {{ page.mechanical | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Components List -->
+  {% if page.components %}
+  <section class="project-section">
+    <h2>Key Components</h2>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Specification</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for component in page.components %}
+        <tr>
+          <td><strong>{{ component.name }}</strong></td>
+          <td>{{ component.spec }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  <!-- Fabrication Process -->
+  {% if page.fabrication %}
+  <section class="project-section">
+    <h2>Fabrication Process</h2>
+    <div class="project-content">
+      {{ page.fabrication | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Project Gallery -->
+  {% if page.gallery %}
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      {% for image in page.gallery %}
+      <figure class="gallery-item">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Testing Overview -->
+  {% if page.testing %}
+  <section class="project-section">
+    <h2>Testing Overview</h2>
+    <div class="project-content">
+      <p>{{ page.testing }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Test Results -->
+  {% if page.test_results %}
+  <section class="project-section">
+    <h2>Test Results</h2>
+    {% for result in page.test_results %}
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">{{ result.name }}</h3>
+        <span class="test-result-status {{ result.status | downcase }}">{{ result.status }}</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> {{ result.procedure }}
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> {{ result.result }}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- What Worked -->
+  {% if page.worked %}
+  <section class="project-section">
+    <h2>What Worked</h2>
+    <div class="project-content">
+      {{ page.worked | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- What Failed -->
+  {% if page.failed %}
+  <section class="project-section">
+    <h2>What Failed</h2>
+    <div class="project-content">
+      {{ page.failed | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Next Steps -->
+  {% if page.next_steps %}
+  <section class="project-section">
+    <h2>Next Steps</h2>
+    <div class="project-content">
+      {{ page.next_steps | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Technical Specifications -->
+  {% if page.specs %}
+  <section class="project-section">
+    <h2>Technical Specifications</h2>
+
+    {% if page.specs.software %}
+    <h3 class="specs-category">Software</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tool in page.specs.software %}
+        <tr>
+          <td>{{ tool.name }}</td>
+          <td>{{ tool.version }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.hardware %}
+    <h3 class="specs-category">Hardware</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for hw in page.specs.hardware %}
+        <tr>
+          <td>{{ hw.component }}</td>
+          <td>{{ hw.model }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.materials %}
+    <h3 class="specs-category">Materials</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mat in page.specs.materials %}
+        <tr>
+          <td>{{ mat.type }}</td>
+          <td>{{ mat.grade }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.dimensions %}
+    <h3 class="specs-category">Dimensions</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Axis</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dim in page.specs.dimensions %}
+        <tr>
+          <td>{{ dim.axis }}</td>
+          <td>{{ dim.value }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.weight %}
+    <h3 class="specs-category">Weight & Cost</h3>
+    <table class="specs-table">
+      <tbody>
+        <tr>
+          <th>Weight</th>
+          <td>{{ page.specs.weight }}</td>
+        </tr>
+        {% if page.specs.cost %}
+        <tr>
+          <th>Cost</th>
+          <td>{{ page.specs.cost }}</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    {% endif %}
+  </section>
+  {% endif %}
+
+</div>

@@ -15,7 +15,7 @@ tags:
   - Laser Cutting
   - Mechatronics
   - Prototyping
-image: "assets/images/mars-robot-hero.jpg"
+image: "assets/images/projects/robot/main.PNG"
 excerpt: "Designed and built a semi-autonomous companion robot that tracks user proximity and dispenses medical supplies to alleviate mental health struggles in isolated environments."
 
 problem: "Mars colony inhabitants face severe mental health challenges, including isolation, loneliness, and sensory deprivation due to confined living conditions. They need an automated, low-cost companion to provide mental enrichment, medical access, and a sense of home."

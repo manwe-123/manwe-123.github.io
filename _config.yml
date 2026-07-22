@@ -1,17 +1,17 @@
 # Mechanical Engineering Portfolio Configuration
 
-title: "Mechanical Engineering Portfolio"
-description: "CAD, Robotics & Prototyping Portfolio"
+title: ""
+description: "A portfolio showcasing my mechanical engineering projects, skills, and experiences."
 baseurl: "" 
 url: "" 
 
 # Personal Information
 email: "manwe123@asu.edu"
 github_username: "manwe-123"  # Add your GitHub username here
-linkedin_username: "manwecastro"  # Add your LinkedIn username here
+linkedin_username: "manwe-castro"  # Add your LinkedIn username here
 location: "Tempe, AZ"  # Update with your location
 phone: "6023503164"  # Add your phone number if desired
-resume_url: "assets/Resume Jul 2026 Draft 2.pdf"  # Path to your resume PDF
+resume_url: "assets/files/Resume.pdf"  # Path to your resume PDF
 
 # Build Settings for GitHub Pages
 markdown: kramdown

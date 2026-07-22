@@ -1,0 +1,314 @@
+---
+layout: default
+---
+
+<!-- Unified Project Header with Dynamic Theme Support -->
+{% assign theme_class = "theme-music" %}
+
+<header class="project-header {{ theme_class }}">
+  <div class="container">
+    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+    <p class="project-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+
+    <!-- Project Meta Row -->
+    <div class="project-meta">
+      {% if page.role %}
+      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
+      {% endif %}
+
+      {% if page.timeline %}
+      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
+      {% endif %}
+
+      {% if page.instruments %}
+      <span class="meta-badge"><strong>Instruments:</strong> {{ page.instruments | join: ", " }}</span>
+      {% endif %}
+
+      {% if page.duration %}
+      <span class="meta-badge"><strong>Duration:</strong> {{ page.duration }}</span>
+      {% endif %}
+    </div>
+
+    <!-- Technical Tags -->
+    {% if page.tags %}
+    <div class="project-tags mt-4">
+      {% for tag in page.tags %}
+      <span class="tag-cohesive">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>
+
+<!-- Main Content Area -->
+<div class="container">
+
+  <!-- Overview -->
+  {% if page.overview %}
+  <section class="project-section">
+    <h2>Overview</h2>
+    <div class="project-content">
+      {{ page.overview | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Composition Details -->
+  {% if page.composition_details %}
+  <section class="project-section">
+    <h2>Composition Details</h2>
+    <div class="project-content">
+      {{ page.composition_details | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Audio Player Section -->
+  {% if page.audio_file %}
+  <section class="project-section">
+    <h2>Audio Playback</h2>
+    <div class="project-content">
+      <div class="audio-player" id="audio-player-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}">
+        <audio id="audio-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}" src="{{ page.audio_file | relative_url }}"></audio>
+
+        <div class="audio-controls">
+          <button class="audio-play-btn" id="play-btn-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none;">⏸</span>
+          </button>
+
+          <div class="audio-progress-container">
+            <div class="audio-progress-bar" id="progress-bar-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}">
+              <div class="audio-progress-fill" id="progress-fill-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}"></div>
+            </div>
+          </div>
+
+          <span class="audio-time" id="time-display-{{ page.audio_file | split: '/' | last | replace: '.', '-' }}">0:00 / 0:00</span>
+        </div>
+      </div>
+
+      {% if page.lyrics or page.program_notes %}
+      <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        {% if page.lyrics %}
+        <h3 style="margin-bottom: 1rem;">Lyrics</h3>
+        <div style="white-space: pre-line; font-style: italic; line-height: 1.8;">{{ page.lyrics }}</div>
+        {% endif %}
+
+        {% if page.program_notes %}
+        <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Program Notes</h3>
+        <p>{{ page.program_notes }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Process -->
+  {% if page.process %}
+  <section class="project-section">
+    <h2>Creative Process</h2>
+    <div class="project-content">
+      {{ page.process | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Gallery/Scores -->
+  {% if page.gallery %}
+  <section class="project-section">
+    <h2>Gallery & Scores</h2>
+    <div class="gallery-grid">
+      {% for image in page.gallery %}
+      <figure class="gallery-item">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Reflections -->
+  {% if page.reflections %}
+  <section class="project-section">
+    <h2>Reflections</h2>
+    <div class="project-content">
+      {{ page.reflections | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Technical Specifications -->
+  {% if page.software or page.hardware or page.recording_equipment or page.file_format %}
+  <section class="project-section">
+    <h2>Technical Specifications</h2>
+    <div class="specs-table">
+      {% if page.software %}
+      <div class="specs-category">
+        <h3>Software & DAW</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Version/Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tool in page.software %}
+            <tr>
+              <td>{{ tool.name }}</td>
+              <td>{{ tool.version }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+
+      {% if page.hardware %}
+      <div class="specs-category">
+        <h3>Hardware & Instruments</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Model/Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in page.hardware %}
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.model }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+
+      {% if page.recording_equipment %}
+      <div class="specs-category">
+        <h3>Recording Equipment</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment</th>
+              <th>Specifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for equip in page.recording_equipment %}
+            <tr>
+              <td>{{ equip.name }}</td>
+              <td>{{ equip.specs }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+
+      {% if page.file_format or page.sample_rate or page.bit_depth %}
+      <div class="specs-category">
+        <h3>Audio Format</h3>
+        <table>
+          <tbody>
+            {% if page.file_format %}
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>{{ page.file_format }}</td>
+            </tr>
+            {% endif %}
+            {% if page.sample_rate %}
+            <tr>
+              <td><strong>Sample Rate</strong></td>
+              <td>{{ page.sample_rate }}</td>
+            </tr>
+            {% endif %}
+            {% if page.bit_depth %}
+            <tr>
+              <td><strong>Bit Depth</strong></td>
+              <td>{{ page.bit_depth }}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+
+<!-- Audio Player JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const audioPlayers = document.querySelectorAll('.audio-player');
+
+  audioPlayers.forEach(function(player) {
+    const audio = player.querySelector('audio');
+    const playBtn = player.querySelector('.audio-play-btn');
+    const playIcon = player.querySelector('.play-icon');
+    const pauseIcon = player.querySelector('.pause-icon');
+    const progressBar = player.querySelector('.audio-progress-bar');
+    const progressFill = player.querySelector('.audio-progress-fill');
+    const timeDisplay = player.querySelector('.audio-time');
+
+    let isPlaying = false;
+
+    // Format time display
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // Play/Pause functionality
+    playBtn.addEventListener('click', function() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+      } else {
+        audio.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'inline';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Update progress bar
+    audio.addEventListener('timeupdate', function() {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = percent + '%';
+      timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 0)}`;
+    });
+
+    // Seek functionality
+    progressBar.addEventListener('click', function(e) {
+      const rect = progressBar.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = pos * audio.duration;
+    });
+
+    // Reset when audio ends
+    audio.addEventListener('ended', function() {
+      isPlaying = false;
+      playIcon.style.display = 'inline';
+      pauseIcon.style.display = 'none';
+      progressFill.style.width = '0%';
+      timeDisplay.textContent = `0:00 / ${formatTime(audio.duration || 0)}`;
+    });
+  });
+});
+</script>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Automated Data Aggregation and AI Synthesis Pipeline | </title>
+  <meta name="description" content="">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <!-- Site Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-container">
+      <!-- Logo / Site Title -->
+      <a href="/" class="nav-logo">
+        
+          
+        
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/projects" class="nav-link active">Projects</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Unified Project Header with Theme Support -->
+<header class="project-header theme-chimera">
+  <div class="container">
+    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+    
+    <h1 class="project-title">Automated Data Aggregation and AI Synthesis Pipeline</h1>
+    
+    
+    <p class="project-subtitle">Project Chimera</p>
+    
+    
+    <!-- Project Meta Row -->
+    <div class="project-meta">
+      
+      <span class="meta-badge"><strong>Role:</strong> Software & Systems Engineer</span>
+      
+      
+      
+      <span class="meta-badge"><strong>Timeline:</strong> May 2026 - Present</span>
+      
+      
+      
+    </div>
+    
+    <!-- Technical Tags -->
+    
+    <div class="project-tags mt-4">
+      
+      <span class="tag-cohesive">Python</span>
+      
+      <span class="tag-cohesive">FastAPI</span>
+      
+      <span class="tag-cohesive">PostgreSQL</span>
+      
+      <span class="tag-cohesive">Docker</span>
+      
+      <span class="tag-cohesive">LLM</span>
+      
+      <span class="tag-cohesive">RAG</span>
+      
+      <span class="tag-cohesive">Redis</span>
+      
+      <span class="tag-cohesive">React</span>
+      
+    </div>
+    
+  </div>
+</header>
+
+<!-- Main Content Area -->
+<div class="container section">
+  
+  <!-- Section 1: Overview and Objective -->
+  <section class="content-section" id="overview">
+    <h2 class="section-title">The Engineering Problem & Objective</h2>
+    <div class="section-content">
+      <div class="layout-two-col overview-layout">
+        
+        <!-- Left Column: Problem Statement -->
+        <div class="overview-left">
+          <div class="problem-solution-block mb-6">
+            <h3 class="subsection-title subsection-problem">
+              <span class="icon-circle">!</span> The Engineering Problem
+            </h3>
+            
+            <p>Manually aggregating, normalizing, and analyzing data from disparate sources (live market APIs, unstructured news feeds, and raw legal documents) is slow, error-prone, and unscalable. Traditional retail tools lack the institutional-grade data synthesis required for robust, risk-adjusted decision-making, creating a need for an automated, closed-loop data pipeline.</p>
+
+            
+          </div>
+        </div>
+        
+        <!-- Right Column: Objective -->
+        <div class="overview-right">
+          <div class="problem-solution-block">
+            <h3 class="subsection-title subsection-solution">
+              <span class="icon-circle">✓</span> Objective & Relevance
+            </h3>
+            
+            <p>Architect a modular, asynchronous Python application that fetches raw data, processes unstructured text using local machine learning models, and outputs structured, actionable insights via a real-time dashboard. This demonstrates proficiency in building robust data acquisition systems, handling asynchronous data streams, and deploying local AI models—skills directly transferable to automated testing rigs, sensor data logging, and mechatronics control software.</p>
+
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 2: System Architecture -->
+  <section class="content-section" id="architecture">
+    <h2 class="section-title">System Architecture</h2>
+    <div class="section-content">
+      
+      <!-- 3-Column Card Grid -->
+      <div class="grid-3 tech-architecture-grid">
+        
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">⚡</span>
+            <h4 class="tech-card-title mono">Data Ingestion Layer</h4>
+          </div>
+          <div class="tech-card-body">
+            Utilizes the OpenBB SDK and custom wrappers to securely fetch, normalize, and cache data from multiple external APIs (Market Data, NewsAPI, Sophtron) simultaneously without blocking the main thread.
+          </div>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">⚡</span>
+            <h4 class="tech-card-title mono">Processing & Synthesis Layer</h4>
+          </div>
+          <div class="tech-card-body">
+            Runs asynchronously to prevent UI freezing. Utilizes custom Python scripts and Regex to parse raw text, feeding clean data into a locally hosted Large Language Model (Ollama/Llama 3.1) for synthesis and risk extraction.
+          </div>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">⚡</span>
+            <h4 class="tech-card-title mono">Visualization & Output Layer</h4>
+          </div>
+          <div class="tech-card-body">
+            A multi-page Streamlit application that visualizes the processed data and executes constraint-based mathematical optimization logic (PyPortfolioOpt) to generate actionable, capital-constrained recommendations.
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <!-- Architecture Diagram -->
+      <div class="system-architecture-block mt-8">
+        <h4 class="subsection-title">Architecture Diagram</h4>
+        
+        <figure class="image-with-caption">
+          <img src="/assets/images/projects/chimera/architecture-diagram.png" alt="System Architecture Overview showing asynchronous data flow between external APIs, local LLM processing, and the Streamlit UI" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+          <figcaption class="image-caption">System Architecture Overview showing asynchronous data flow between external APIs, local LLM processing, and the Streamlit UI</figcaption>
+        </figure>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Section 3: Core Technical Implementations -->
+  <section class="content-section" id="implementations">
+    <h2 class="section-title">Core Technical Implementations</h2>
+    <div class="section-content">
+      
+      
+      <div class="implementation-detail-block mb-6">
+        <h3 class="subsection-title">Asynchronous Data Fetching</h3>
+        <p>Migrated from synchronous, blocking scripts to an asynchronous architecture using Python's `asyncio`, significantly reducing data latency and preventing UI freezes during heavy, concurrent API calls.</p>
+        
+        
+        <div class="code-block-container mt-4">
+          <pre class="code-block"><code class="language-python">import asyncio
+import aiohttp
+
+async def fetch_market_data(session, ticker):
+    url = f&quot;https://api.openbb.co/v1/equity/price/historical?symbol={ticker}&quot;
+    async with session.get(url) as response:
+        return await response.json()
+</code></pre>
+        </div>
+        
+      </div>
+      
+      <div class="implementation-detail-block mb-6">
+        <h3 class="subsection-title">Local LLM Deployment & NLP</h3>
+        <p>Deployed Llama 3.1 locally via Ollama to ensure zero data leakage and zero API costs. Built a custom web scraper using BeautifulSoup and Regex to extract specific legal risk factors from raw SEC filings before feeding them to the LLM.</p>
+        
+        
+        <div class="code-block-container mt-4">
+          <pre class="code-block"><code class="language-python">import re
+
+def extract_risk_factors(sec_text):
+    # Extract Item 1A: Risk Factors using regex to prevent context-window overflow
+    pattern = r&quot;Item 1A\.\s*Risk Factors(.*?)(?=Item 1B\.|Item 2\.)&quot;
+    match = re.search(pattern, sec_text, re.IGNORECASE | re.DOTALL)
+    return match.group(1).strip() if match else &quot;&quot;
+</code></pre>
+        </div>
+        
+      </div>
+      
+      <div class="implementation-detail-block mb-6">
+        <h3 class="subsection-title">Constraint-Based Optimization</h3>
+        <p>Integrated mathematical optimization libraries (PyPortfolioOpt) to process raw algorithmic scores and generate actionable, constraint-based rebalancing recommendations based on user-defined capital limits.</p>
+        
+        
+        <div class="code-block-container mt-4">
+          <pre class="code-block"><code class="language-python">from pypfopt import EfficientFrontier, expected_returns, risk_models
+
+def optimize_portfolio(prices_df):
+    mu = expected_returns.mean_historical_return(prices_df)
+    S = risk_models.sample_cov(prices_df)
+    ef = EfficientFrontier(mu, S)
+    ef.add_objective(lambda w: w[0] &lt;= 0.2) # Example capital constraint
+    return ef.max_sharpe()
+</code></pre>
+        </div>
+        
+      </div>
+      
+      
+    </div>
+  </section>
+  
+  <!-- Section 4: Software Engineering Best Practices -->
+  <section class="content-section" id="best-practices">
+    <h2 class="section-title">Software Engineering Best Practices</h2>
+    <div class="section-content">
+      
+      <div class="grid-3 tech-architecture-grid">
+        
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">✓</span>
+            <h4 class="tech-card-title mono">Modular Design</h4>
+          </div>
+          <div class="tech-card-body">
+            Strict separation of concerns. The codebase is divided into distinct directories (`core/` for business logic, `pages/` for UI, `utils/` for helpers), making the system highly maintainable and scalable for future feature additions.
+          </div>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">✓</span>
+            <h4 class="tech-card-title mono">Version Control</h4>
+          </div>
+          <div class="tech-card-body">
+            Managed entirely through Git/GitHub with structured commit histories, feature branching, and a comprehensive `README.md` detailing setup, dependencies, and system architecture.
+          </div>
+        </div>
+        
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <span class="tech-card-icon">✓</span>
+            <h4 class="tech-card-title mono">Environment Management</h4>
+          </div>
+          <div class="tech-card-body">
+            Utilized `.env` files for secure API key and credential management, ensuring no sensitive tokens or personal brokerage data were ever pushed to the public repository.
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <!-- Directory Structure Screenshot -->
+      <div class="system-architecture-block mt-8">
+        <h4 class="subsection-title">Repository Structure</h4>
+        
+        <figure class="image-with-caption">
+          <img src="/assets/images/projects/chimera/directory-structure.png" alt="GitHub Repository Directory Structure highlighting modular separation of concerns" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+          <figcaption class="image-caption">GitHub Repository Directory Structure highlighting modular separation of concerns</figcaption>
+        </figure>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Section 5: Challenges and Problem Solving -->
+  <section class="content-section" id="challenges">
+    <h2 class="section-title">Challenges & Problem Solving</h2>
+    <div class="section-content">
+      
+      
+      <div class="challenge-resolution-card mb-4">
+        <div class="challenge-section">
+          <h3 class="challenge-label">Challenge</h3>
+          <p class="challenge-text">Initial synchronous API calls caused the Streamlit UI to freeze and timeout during large, concurrent data fetches.</p>
+        </div>
+        <div class="resolution-section">
+          <h3 class="resolution-label">Resolution</h3>
+          <p class="resolution-text">Refactored the data ingestion layer to use Python’s `asyncio` and asynchronous HTTP requests, decoupling heavy computation from the real-time UI and ensuring a smooth user experience.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-resolution-card mb-4">
+        <div class="challenge-section">
+          <h3 class="challenge-label">Challenge</h3>
+          <p class="challenge-text">Feeding raw, unfiltered SEC filings directly into the LLM caused context-window overflow and hallucinated outputs.</p>
+        </div>
+        <div class="resolution-section">
+          <h3 class="resolution-label">Resolution</h3>
+          <p class="resolution-text">Implemented a deterministic pre-processing step using Regex to extract only the specific 'Item 1A: Risk Factors' text, drastically reducing token count and improving LLM accuracy and relevance.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-resolution-card mb-4">
+        <div class="challenge-section">
+          <h3 class="challenge-label">Challenge</h3>
+          <p class="challenge-text">Privacy concerns regarding sending proprietary or sensitive financial data to cloud-based AI APIs.</p>
+        </div>
+        <div class="resolution-section">
+          <h3 class="resolution-label">Resolution</h3>
+          <p class="resolution-text">Pivoted to a local LLM deployment using Ollama, ensuring 100% data privacy, zero inference latency, and no external API costs.</p>
+        </div>
+      </div>
+      
+      
+    </div>
+  </section>
+  
+  <!-- Section 6: Skills and Resources -->
+  <section class="content-section" id="skills-resources">
+    <h2 class="section-title">Skills & Resources</h2>
+    <div class="section-content">
+      
+      <!-- Skills Dense Grid -->
+      <div class="skills-dense-grid mb-6">
+        
+        <span class="skill-tag">Python 3.11+</span>
+        
+        <span class="skill-tag">AsyncIO</span>
+        
+        <span class="skill-tag">FastAPI</span>
+        
+        <span class="skill-tag">PostgreSQL</span>
+        
+        <span class="skill-tag">Docker</span>
+        
+        <span class="skill-tag">Kubernetes</span>
+        
+        <span class="skill-tag">Redis</span>
+        
+        <span class="skill-tag">LangChain</span>
+        
+        <span class="skill-tag">Llama 2</span>
+        
+        <span class="skill-tag">Vector Databases</span>
+        
+        <span class="skill-tag">RAG Patterns</span>
+        
+        <span class="skill-tag">API Design</span>
+        
+        <span class="skill-tag">CI/CD</span>
+        
+        <span class="skill-tag">Git</span>
+        
+        <span class="skill-tag">Linux</span>
+        
+      </div>
+      
+      <!-- External Resource Links -->
+      <div class="resources-button-row">
+        
+        <a href="https://github.com/manwe-123/chimera-pipeline" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          📄 View Documentation
+          <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        
+        <a href="https://github.com/manwe-123/chimera-pipeline" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          🔧 Source Code
+          <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        
+        <a href="https://fastapi.tiangolo.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          📚 FastAPI Reference
+          <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+</div>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
+          <li>Tempe, AZ</li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 . Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Syntax Highlighting Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</body>
+</html>
+
+  </main>
+  
+<!-- Footer -->
+  <!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
+          <li>Tempe, AZ</li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 . Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Lightbox for image gallery -->
+  <!-- Lightbox Modal for Image Gallery -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

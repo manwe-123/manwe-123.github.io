@@ -2,34 +2,40 @@
 layout: default
 ---
 
-<!-- Unified Project Header with Theme Support -->
-<header class="project-header theme-vr">
+<!-- Unified Project Header with Dynamic Theme Support -->
+{% assign theme_class = "theme-vr" %}
+
+<header class="project-header {{ theme_class }}">
   <div class="container">
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
     </a>
-    
+
     <h1 class="project-title">{{ page.title }}</h1>
-    
+
     {% if page.subtitle %}
     <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    
+
     <!-- Project Meta Row -->
     <div class="project-meta">
       {% if page.role %}
       <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
       {% endif %}
-      
+
       {% if page.timeline %}
       <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
       {% endif %}
-      
+
       {% if page.team %}
       <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
       {% endif %}
+
+      {% if page.software %}
+      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
+      {% endif %}
     </div>
-    
+
     <!-- Technical Tags -->
     {% if page.tags %}
     <div class="project-tags mt-4">
@@ -42,654 +48,461 @@ layout: default
 </header>
 
 <!-- Main Content Area -->
-<div class="container section">
-  
-  <!-- Section 1: Project Overview & Context -->
-  <section class="content-section" id="overview">
-    <h2 class="section-title">Project Overview & Context</h2>
-    <div class="section-content">
-      <div class="layout-two-col overview-layout">
-        
-        <!-- Left Column: Problem & Solution -->
-        <div class="overview-left">
-          <div class="problem-solution-block mb-6">
-            <h3 class="subsection-title subsection-problem">
-              <span class="icon-circle">!</span> The Problem
-            </h3>
-            {% if page.problem %}
-            <p>{{ page.problem }}</p>
-            {% endif %}
-          </div>
-          
-          <div class="problem-solution-block">
-            <h3 class="subsection-title subsection-solution">
-              <span class="icon-circle">✓</span> The Solution
-            </h3>
-            {% if page.solution %}
-            <p>{{ page.solution }}</p>
-            {% endif %}
-          </div>
-        </div>
-        
-        <!-- Right Column: Stakeholders & Goals -->
-        <div class="overview-right">
-          <div class="stakeholders-card">
-            <h3 class="subsection-title">Stakeholders & Goals</h3>
-            <ul class="custom-bullet-list">
-              <li><strong>Prof. Steven Osburn</strong> - Faculty advisor and curriculum lead</li>
-              <li><strong>FSE 100 Students</strong> - Introductory engineering students (primary users)</li>
-              <li><strong>Honeywell</strong> - Industry partner providing hardware donation</li>
-              <li><strong>ASU Fulton Schools</strong> - Institution seeking to modernize curriculum</li>
-            </ul>
-            <div class="callout callout-info mt-4">
-              <strong>Primary Goal:</strong> Expose first-year engineering students to VR applications in engineering design while teaching the 6-step engineering design process.
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  <!-- Section 2: Technical Architecture -->
-  <section class="content-section" id="architecture">
-    <h2 class="section-title">Technical Architecture</h2>
-    <div class="section-content">
-      
-      <!-- 3-Column Card Grid -->
-      <div class="grid-3 tech-architecture-grid">
-        
-        <!-- Hardware Platform Card -->
-        <div class="tech-card">
-          <div class="tech-card-header">
-            <span class="tech-card-icon">📦</span>
-            <h4 class="tech-card-title mono">Hardware Platform</h4>
-          </div>
-          <div class="tech-card-body">
-            {{ page.hardware_platform | markdownify }}
-          </div>
-        </div>
-        
-        <!-- Software Stack Card -->
-        <div class="tech-card">
-          <div class="tech-card-header">
-            <span class="tech-card-icon">💻</span>
-            <h4 class="tech-card-title mono">Software Stack</h4>
-          </div>
-          <div class="tech-card-body">
-            {{ page.software_stack | markdownify }}
-          </div>
-        </div>
-        
-        <!-- Core Features Card -->
-        <div class="tech-card">
-          <div class="tech-card-header">
-            <span class="tech-card-icon">⚡</span>
-            <h4 class="tech-card-title mono">Core Features</h4>
-          </div>
-          <div class="tech-card-body">
-            {{ page.core_features | markdownify }}
-          </div>
-        </div>
-        
-      </div>
-      
-      <!-- System Architecture Diagram Placeholder -->
-      <div class="system-architecture-block mt-8">
-        <h4 class="subsection-title">System Architecture</h4>
-        <div class="diagram-placeholder">
-          <div class="diagram-placeholder-content">
-            <span class="diagram-icon">🔧</span>
-            <p>System Architecture Diagram</p>
-            <span class="diagram-note">Unity Client → Meta Quest Headsets → Analytics Logging → Canvas LMS Integration</span>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 3: Design & Development Process -->
-  <section class="content-section" id="design-process">
-    <h2 class="section-title">Design & Development Process</h2>
-    <div class="section-content">
-      
-      <!-- Decision Matrix Table -->
-      <div class="mb-8">
-        <h3 class="subsection-title">Concept Selection: Decision Matrix</h3>
-        <p class="mb-4">{{ page.decision_matrix | split: '\n' | first }}</p>
-        
-        <div class="table-responsive">
-          <table class="table decision-matrix-table">
-            <thead>
-              <tr>
-                <th>Concept</th>
-                <th class="mono">Relevance<br><small>(Weight: 1.5)</small></th>
-                <th class="mono">Ease of Implementation<br><small>(Weight: 1.2)</small></th>
-                <th class="mono">Engagement<br><small>(Weight: 1.3)</small></th>
-                <th class="mono">Educational Value<br><small>(Weight: 1.0)</small></th>
-                <th class="mono">Total Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Interactive Block Coding</strong></td>
-                <td class="mono">8 × 1.5 = 12</td>
-                <td class="mono">9 × 1.2 = 10.8</td>
-                <td class="mono">6 × 1.3 = 7.8</td>
-                <td class="mono">9 × 1.0 = 9</td>
-                <td class="mono"><strong>440</strong></td>
-              </tr>
-              <tr>
-                <td><strong>FSE Assembly Line</strong></td>
-                <td class="mono">7 × 1.5 = 10.5</td>
-                <td class="mono">5 × 1.2 = 6</td>
-                <td class="mono">9 × 1.3 = 11.7</td>
-                <td class="mono">7 × 1.0 = 7</td>
-                <td class="mono"><strong>650</strong></td>
-              </tr>
-              <tr class="winner-row">
-                <td><strong>3D Object Construction ✓</strong></td>
-                <td class="mono">9 × 1.5 = 13.5</td>
-                <td class="mono">10 × 1.2 = 12</td>
-                <td class="mono">8 × 1.3 = 10.4</td>
-                <td class="mono">8 × 1.0 = 8</td>
-                <td class="mono winner-score"><strong>780</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="callout callout-success mt-4">
-          <strong>Selected Concept:</strong> 3D Object Construction scored highest due to its balance of simplicity, immersion, and scalability across multiple semesters.
-        </div>
-      </div>
-      
-      <!-- Iterative Prototyping Timeline -->
-      <div>
-        <h3 class="subsection-title">Iterative Prototyping Timeline</h3>
-        <div class="timeline-visual">
-          
-          <div class="timeline-phase">
-            <div class="timeline-phase-header">
-              <span class="phase-badge phase-spring">Spring 2025</span>
-              <h4>Part 1: Virtual Environment Creation</h4>
-            </div>
-            <div class="timeline-phase-body">
-              <ul class="custom-bullet-list">
-                <li>Designed foundational 3D workspace in Unity</li>
-                <li>Created modular components and tools for student use</li>
-                <li>Established basic physics and collision systems</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="timeline-arrow">↓</div>
-          
-          <div class="timeline-phase">
-            <div class="timeline-phase-header">
-              <span class="phase-badge phase-summer">Summer 2025</span>
-              <h4>Part 2: Physics & Mechanics Implementation</h4>
-            </div>
-            <div class="timeline-phase-body">
-              <ul class="custom-bullet-list">
-                <li>Implemented realistic object manipulation physics</li>
-                <li>Programmed object snapping and save/load systems</li>
-                <li>Integrated hand controller input tracking</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="timeline-arrow">↓</div>
-          
-          <div class="timeline-phase">
-            <div class="timeline-phase-header">
-              <span class="phase-badge phase-fall">Fall 2025</span>
-              <h4>Part 3: Curriculum & Teacher Resources</h4>
-            </div>
-            <div class="timeline-phase-body">
-              <ul class="custom-bullet-list">
-                <li>Developed 2-week curriculum with 30-min lectures</li>
-                <li>Recorded video guides and troubleshooting manuals</li>
-                <li>Created pre/post activity quizzes</li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 4: My Specific Contributions -->
-  <section class="content-section" id="contributions">
-    <h2 class="section-title">My Specific Contributions</h2>
-    <div class="section-content">
-      
-      <div class="grid-2 contributions-grid">
-        
-        <!-- As Prototyping Lead -->
-        <div class="contribution-block">
-          <h3 class="subsection-title contribution-title-lead">
-            <span class="role-icon">🎯</span> As Prototyping Lead
-          </h3>
-          <ul class="achievement-list achievement-lead">
-            <li>Led the modeling team in creating 100+ interactive 3D assets for the Unity environment</li>
-            <li>Designed and implemented the core VR interaction mechanics (grab, rotate, snap)</li>
-            <li>Optimized frame rates from 60fps to 72fps stable, reducing VR motion sickness reports by 85%</li>
-            <li>Coordinated with the software team to integrate analytics logging scripts</li>
-            <li>Conducted weekly playtesting sessions to gather user feedback on comfort and usability</li>
-          </ul>
-        </div>
-        
-        <!-- As Documentation Lead -->
-        <div class="contribution-block">
-          <h3 class="subsection-title contribution-title-docs">
-            <span class="role-icon">📋</span> As Documentation Lead
-          </h3>
-          <ul class="achievement-list achievement-docs">
-            <li>Authored the complete 2-week curriculum guide for instructors and TAs</li>
-            <li>Created technical documentation for future EPICS teams taking over the project</li>
-            <li>Developed assessment rubrics aligned with ABET learning outcomes</li>
-            <li>Produced video tutorials and quick-start guides for classroom deployment</li>
-            <li>Maintained project wiki with version-controlled design decisions and meeting notes</li>
-          </ul>
-        </div>
-        
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 5: Image Gallery -->
-  <section class="content-section" id="gallery">
-    <h2 class="section-title">Project Gallery</h2>
-    <div class="section-content">
-      
-      {% if page.gallery %}
-      <div class="image-gallery image-gallery-vr">
-        {% for image in page.gallery %}
-        <div class="gallery-item gallery-item-vr" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
-          <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-          <div class="gallery-caption">{{ image.caption }}</div>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %}
-      
-    </div>
-  </section>
-  
-  <!-- Section 6: Testing & Validation -->
-  <section class="content-section" id="testing">
-    <h2 class="section-title">Testing & Validation</h2>
-    <div class="section-content">
-      
-      <!-- Research Questions Accordion -->
-      <div class="mb-8">
-        <h3 class="subsection-title">Research Questions</h3>
-        
-        <div class="accordion research-questions-accordion">
-          
-          <!-- RQ1 -->
-          <div class="accordion-item">
-            <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-              <span class="accordion-title">RQ1: Engagement vs. Learning</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-body">
-                <div class="rq-detail">
-                  <p><strong>Hypothesis:</strong> VR simulation will achieve higher engagement scores than traditional lecture videos while maintaining equivalent learning outcomes.</p>
-                  <div class="rq-grid">
-                    <div class="rq-detail-item">
-                      <h5>Variables</h5>
-                      <ul>
-                        <li><strong>Independent:</strong> Teaching method (VR vs. Video)</li>
-                        <li><strong>Dependent:</strong> Engagement score (1-10), Quiz score (%)</li>
-                        <li><strong>Controlled:</strong> Content coverage, time allocation</li>
-                      </ul>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Procedure</h5>
-                      <ol>
-                        <li>Split class into two groups (A/B testing)</li>
-                        <li>Group A: Traditional video lecture on engineering design</li>
-                        <li>Group B: VR prototyping activity</li>
-                        <li>Both groups complete identical knowledge quiz</li>
-                        <li>Survey engagement on 1-10 scale</li>
-                      </ol>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Results</h5>
-                      <ul class="results-list">
-                        <li><strong>VR Group:</strong> Avg. engagement 8.2/10, Quiz avg. 78%</li>
-                        <li><strong>Video Group:</strong> Avg. engagement 5.4/10, Quiz avg. 76%</li>
-                        <li><strong>Conclusion:</strong> Hypothesis supported — higher engagement with equivalent learning</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- RQ2 -->
-          <div class="accordion-item">
-            <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-              <span class="accordion-title">RQ2: Immersion vs. Performance</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-body">
-                <div class="rq-detail">
-                  <p><strong>Hypothesis:</strong> Medium graphical detail will provide optimal balance between immersion and performance (frame rate) to prevent VR sickness.</p>
-                  <div class="rq-grid">
-                    <div class="rq-detail-item">
-                      <h5>Variables</h5>
-                      <ul>
-                        <li><strong>Independent:</strong> Graphical detail level (Low/Medium/High)</li>
-                        <li><strong>Dependent:</strong> Frame rate (fps), Motion sickness reports, Quiz score</li>
-                        <li><strong>Controlled:</strong> Same content, same headset model</li>
-                      </ul>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Procedure</h5>
-                      <ol>
-                        <li>Three test groups with different detail settings</li>
-                        <li>Monitor frame rates continuously during 65-min session</li>
-                        <li>Track motion sickness reports (Simulator Sickness Questionnaire)</li>
-                        <li>Measure completion time and error count</li>
-                      </ol>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Results</h5>
-                      <ul class="results-list">
-                        <li><strong>Low:</strong> 72fps stable, 0% sickness, lower immersion ratings</li>
-                        <li><strong>Medium:</strong> 72fps stable, 2% mild discomfort, best overall ratings</li>
-                        <li><strong>High:</strong> 58-65fps variable, 15% discomfort reports</li>
-                        <li><strong>Decision:</strong> Locked to Medium detail for deployment</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- RQ3 -->
-          <div class="accordion-item">
-            <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-              <span class="accordion-title">RQ3: Measuring Outcomes</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-body">
-                <div class="rq-detail">
-                  <p><strong>Hypothesis:</strong> Mixed-method assessment (quiz + in-game analytics) will provide more comprehensive outcome measurement than either method alone.</p>
-                  <div class="rq-grid">
-                    <div class="rq-detail-item">
-                      <h5>Variables</h5>
-                      <ul>
-                        <li><strong>Independent:</strong> Assessment method (Quiz-only / Analytics-only / Mixed)</li>
-                        <li><strong>Dependent:</strong> Correlation coefficient, Predictive accuracy</li>
-                        <li><strong>Controlled:</strong> Same student cohort, same activity</li>
-                      </ul>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Procedure</h5>
-                      <ol>
-                        <li>Log all in-game actions: time, errors, hints used, objects placed</li>
-                        <li>Administer traditional post-activity quiz</li>
-                        <li>Calculate correlation between analytics metrics and quiz scores</li>
-                        <li>Build predictive model using combined data</li>
-                      </ol>
-                    </div>
-                    <div class="rq-detail-item">
-                      <h5>Results</h5>
-                      <ul class="results-list">
-                        <li><strong>Quiz-only:</strong> Snapshot assessment, r² = 0.45</li>
-                        <li><strong>Analytics-only:</strong> Continuous data, r² = 0.52</li>
-                        <li><strong>Mixed-method:</strong> Combined approach, r² = 0.73</li>
-                        <li><strong>Conclusion:</strong> Mixed-method provides significantly better outcome prediction</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <!-- Test Results Summary Grid -->
-      <div>
-        <h3 class="subsection-title">Test Results Summary</h3>
-        <div class="table-responsive">
-          <table class="table test-results-table">
-            <thead>
-              <tr>
-                <th>Test Metric</th>
-                <th>Procedure</th>
-                <th>Result</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% if page.test_results %}
-              {% for test in page.test_results %}
-              <tr>
-                <td><strong>{{ test.name }}</strong></td>
-                <td>{{ test.procedure }}</td>
-                <td class="mono">{{ test.result }}</td>
-                <td>
-                  {% if test.status == 'Pass' %}
-                  <span class="status-badge status-pass">{{ test.status }}</span>
-                  {% elsif test.status == 'Fail' %}
-                  <span class="status-badge status-fail">{{ test.status }}</span>
-                  {% else %}
-                  <span class="status-badge status-pending">{{ test.status }}</span>
-                  {% endif %}
-                </td>
-              </tr>
-              {% endfor %}
-              {% endif %}
-              <tr>
-                <td><strong>Frame Rate Optimization</strong></td>
-                <td>Monitor fps across Low/Medium/High detail settings</td>
-                <td class="mono">72fps stable at Medium detail</td>
-                <td><span class="status-badge status-pass">Pass</span></td>
-              </tr>
-              <tr>
-                <td><strong>Analytics Tracking</strong></td>
-                <td>Verify C# scripts log all user interactions</td>
-                <td class="mono">100% event capture, no data loss</td>
-                <td><span class="status-badge status-pass">Pass</span></td>
-              </tr>
-              <tr>
-                <td><strong>Multi-Station Sync</strong></td>
-                <td>Test co-design functionality across 5+ headsets</td>
-                <td class="mono">Successful real-time collaboration</td>
-                <td><span class="status-badge status-pass">Pass</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 7: Challenges & Lessons Learned -->
-  <section class="content-section" id="lessons">
-    <h2 class="section-title">Challenges & Lessons Learned</h2>
-    <div class="section-content">
-      
-      <div class="grid-2 lessons-grid-vr">
-        
-        <!-- What Went Well -->
-        <div class="lesson-column lesson-success">
-          <h4 class="lesson-title-success">
-            <span class="lesson-icon">✓</span> What Went Well
-          </h4>
-          {% if page.worked %}
-          {{ page.worked | markdownify }}
-          {% endif %}
-          <div class="callout callout-success mt-4">
-            <strong>Key Success:</strong> The decision matrix proved highly accurate in predicting which concept would be easiest to deliver while maximizing student engagement.
-          </div>
-        </div>
-        
-        <!-- Technical Challenges -->
-        <div class="lesson-column lesson-warning">
-          <h4 class="lesson-title-warning">
-            <span class="lesson-icon">⚠</span> Technical Challenges
-          </h4>
-          {% if page.failed %}
-          {{ page.failed | markdownify }}
-          {% endif %}
-          
-          <!-- VR Motion Sickness Callout -->
-          <div class="callout callout-warning mt-4">
-            <strong>Challenge: VR Motion Sickness</strong>
-            <p class="mb-0">Initial high-detail environments caused minor discomfort for some users. <strong>Solution:</strong> Locked to medium detail, optimized frame rates to stable 72fps, and added comfort vignetting settings during movement. This reduced motion sickness reports by 85%.</p>
-          </div>
-        </div>
-        
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 8: Future Development & Scalability -->
-  <section class="content-section" id="future">
-    <h2 class="section-title">Future Development & Scalability</h2>
-    <div class="section-content">
-      
-      <h3 class="subsection-title">Next Steps for Future Teams</h3>
-      
-      <div class="roadmap-container">
-        <div class="roadmap-item">
-          <span class="roadmap-number">1</span>
-          <div class="roadmap-content">
-            <h4>Curriculum Integration</h4>
-            <p>Fully integrate the 2-week curriculum directly into the VR program's guided tutorial system for seamless onboarding.</p>
-          </div>
-        </div>
-        
-        <div class="roadmap-item">
-          <span class="roadmap-number">2</span>
-          <div class="roadmap-content">
-            <h4>Design Maze Challenge</h4>
-            <p>Finalize the in-game task logistics and implement the "Design Maze" bonus challenge for advanced students.</p>
-          </div>
-        </div>
-        
-        <div class="roadmap-item">
-          <span class="roadmap-number">3</span>
-          <div class="roadmap-content">
-            <h4>Instructor Resources</h4>
-            <p>Develop a comprehensive, printed quick-start guide for professors and TAs with troubleshooting flowcharts.</p>
-          </div>
-        </div>
-        
-        <div class="roadmap-item">
-          <span class="roadmap-number">4</span>
-          <div class="roadmap-content">
-            <h4>Asset Library Expansion</h4>
-            <p>Expand the asset library to include Mechanical, Civil, and Aerospace engineering prototyping components for cross-disciplinary use.</p>
-          </div>
-        </div>
-        
-        <div class="roadmap-item">
-          <span class="roadmap-number">5</span>
-          <div class="roadmap-content">
-            <h4>Assessment Dashboard</h4>
-            <p>Build an instructor dashboard to visualize student analytics data and identify struggling students in real-time.</p>
-          </div>
-        </div>
-        
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 9: Technical Skills & Resources -->
-  <section class="content-section" id="skills-resources">
-    <h2 class="section-title">Technical Skills & Resources</h2>
-    <div class="section-content">
-      
-      <!-- Technical Skills Grid -->
-      <div class="mb-8">
-        <h3 class="subsection-title">Technical Skills Demonstrated</h3>
-        <div class="skills-tag-grid">
-          <span class="skill-tag">Unity 3D Development</span>
-          <span class="skill-tag">C# Scripting</span>
-          <span class="skill-tag">VR/AR Design</span>
-          <span class="skill-tag">Meta Quest SDK</span>
-          <span class="skill-tag">Blender 3D Modeling</span>
-          <span class="skill-tag">Physics Simulation</span>
-          <span class="skill-tag">User Interaction Design</span>
-          <span class="skill-tag">Analytics Implementation</span>
-          <span class="skill-tag">Curriculum Development</span>
-          <span class="skill-tag">Systems Integration</span>
-          <span class="skill-tag">Performance Optimization</span>
-          <span class="skill-tag">User Testing</span>
-          <span class="skill-tag">Technical Documentation</span>
-          <span class="skill-tag">Project Management</span>
-          <span class="skill-tag">Cross-functional Collaboration</span>
-          <span class="skill-tag">ABET Alignment</span>
-        </div>
-      </div>
-      
-      <!-- Resource Links -->
-      <div>
-        <h3 class="subsection-title">Project Resources</h3>
-        <div class="resource-links">
-          <a href="#" class="btn btn-primary resource-btn">
-            <span class="btn-icon">📂</span> GitHub Repo
-          </a>
-          <a href="#" class="btn btn-secondary resource-btn">
-            <span class="btn-icon">📚</span> Curriculum Docs
-          </a>
-          <a href="#" class="btn btn-outline resource-btn">
-            <span class="btn-icon">📄</span> Full Design Report (PDF)
-          </a>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-</div>
+<div class="container">
 
-<!-- Custom JavaScript for Accordion -->
-<script>
-  function toggleAccordion(header) {
-    const item = header.parentElement;
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('.accordion-icon');
-    const isExpanded = header.getAttribute('aria-expanded') === 'true';
-    
-    // Toggle current item
-    header.setAttribute('aria-expanded', !isExpanded);
-    icon.textContent = isExpanded ? '+' : '−';
-    
-    if (isExpanded) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    }
-  }
-  
-  // Initialize accordion states
-  document.addEventListener('DOMContentLoaded', function() {
-    const accordionContents = document.querySelectorAll('.accordion-content');
-    accordionContents.forEach(function(content) {
-      content.style.maxHeight = null;
-      content.style.transition = 'max-height 0.3s ease-out';
-    });
-  });
-</script>
+  <!-- Problem Statement -->
+  {% if page.problem %}
+  <section class="project-section">
+    <h2>Problem</h2>
+    <div class="project-content">
+      <p>{{ page.problem }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Solution Overview -->
+  {% if page.solution %}
+  <section class="project-section">
+    <h2>Solution</h2>
+    <div class="project-content">
+      <p>{{ page.solution }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Requirements -->
+  {% if page.requirements %}
+  <section class="project-section">
+    <h2>Requirements</h2>
+    <div class="project-content">
+      {{ page.requirements | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Constraints -->
+  {% if page.constraints %}
+  <section class="project-section">
+    <h2>Constraints</h2>
+    <div class="project-content">
+      {{ page.constraints | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Metrics -->
+  {% if page.metrics %}
+  <section class="project-section">
+    <h2>Success Metrics</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Achieved</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for metric in page.metrics %}
+        <tr>
+          <td><strong>{{ metric.name }}</strong></td>
+          <td>{{ metric.target }}</td>
+          <td>{{ metric.achieved }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  <!-- Stakeholders & Goals -->
+  {% if page.stakeholders or page.primary_goal %}
+  <section class="project-section">
+    <h2>Stakeholders & Goals</h2>
+    <div class="project-content">
+      {% if page.stakeholders %}
+      <ul>
+        {% for stakeholder in page.stakeholders %}
+        <li><strong>{{ stakeholder.name }}:</strong> {{ stakeholder.role }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if page.primary_goal %}
+      <p><strong>Primary Goal:</strong> {{ page.primary_goal }}</p>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Hardware Platform -->
+  {% if page.hardware_platform %}
+  <section class="project-section">
+    <h2>Hardware Platform</h2>
+    <div class="project-content">
+      {{ page.hardware_platform | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Software Stack -->
+  {% if page.software_stack %}
+  <section class="project-section">
+    <h2>Software Stack</h2>
+    <div class="project-content">
+      {{ page.software_stack | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Core Features -->
+  {% if page.core_features %}
+  <section class="project-section">
+    <h2>Core Features</h2>
+    <div class="project-content">
+      {{ page.core_features | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Testing Overview -->
+  {% if page.testing %}
+  <section class="project-section">
+    <h2>Testing & Validation</h2>
+    <div class="project-content">
+      {{ page.testing | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Decision Matrix -->
+  {% if page.decision_matrix %}
+  <section class="project-section">
+    <h2>Concept Selection: Decision Matrix</h2>
+    {% if page.decision_matrix.intro %}
+    <div class="project-content">
+      <p>{{ page.decision_matrix.intro }}</p>
+    </div>
+    {% endif %}
+
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>Relevance (×1.5)</th>
+          <th>Ease (×1.2)</th>
+          <th>Engagement (×1.3)</th>
+          <th>Educational Value (×1.0)</th>
+          <th>Total Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for concept in page.decision_matrix.concepts %}
+        <tr>
+          <td>{% if concept.selected %}<strong>{{ concept.name }} ✓</strong>{% else %}{{ concept.name }}{% endif %}</td>
+          <td>{{ concept.scores.relevance | times: 1.5 }}</td>
+          <td>{{ concept.scores.ease | times: 1.2 }}</td>
+          <td>{{ concept.scores.engagement | times: 1.3 }}</td>
+          <td>{{ concept.scores.educational_value | times: 1.0 }}</td>
+          <td>{% if concept.selected %}<strong>{{ concept.total }}</strong>{% else %}{{ concept.total }}{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% assign selected_concept = nil %}
+    {% for concept in page.decision_matrix.concepts %}
+      {% if concept.selected %}
+        {% assign selected_concept = concept %}
+      {% endif %}
+    {% endfor %}
+    {% if selected_concept %}
+    <div class="project-content" style="margin-top: 1rem;">
+      <p><strong>Selected Concept:</strong> {{ selected_concept.note }}</p>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <!-- Development Phases -->
+  {% if page.development_phases %}
+  <section class="project-section">
+    <h2>Iterative Prototyping Timeline</h2>
+    <div class="project-content">
+      {% for phase in page.development_phases %}
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>{{ phase.period }} - {{ phase.title }}</strong></p>
+        <ul>
+          {% for task in phase.tasks %}
+          <li>{{ task }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% unless forloop.last %}
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Contributions -->
+  {% if page.contributions %}
+  <section class="project-section">
+    <h2>My Specific Contributions</h2>
+    <div class="project-content">
+      {% if page.contributions.prototyping_lead %}
+      <h3>As Prototyping Lead</h3>
+      <ul>
+        {% for item in page.contributions.prototyping_lead %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if page.contributions.documentation_lead %}
+      <h3>As Documentation Lead</h3>
+      <ul>
+        {% for item in page.contributions.documentation_lead %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Gallery -->
+  {% if page.gallery %}
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      {% for image in page.gallery %}
+      <figure class="gallery-item">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Research Questions -->
+  {% if page.research_questions %}
+  <section class="project-section">
+    <h2>Research Questions</h2>
+    <div class="project-content">
+      {% for rq in page.research_questions %}
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>{{ rq.id | upcase }}: {{ rq.title }}</h3>
+        <p><strong>Hypothesis:</strong> {{ rq.hypothesis }}</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <div>
+            <h4>Variables</h4>
+            <ul>
+              <li><strong>Independent:</strong> {{ rq.variables.independent }}</li>
+              <li><strong>Dependent:</strong> {{ rq.variables.dependent }}</li>
+              <li><strong>Controlled:</strong> {{ rq.variables.controlled }}</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Procedure</h4>
+            <ol>
+              {% for step in rq.procedure %}
+              <li>{{ step }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+
+          <div>
+            <h4>Results</h4>
+            <ul>
+              {% for result in rq.results %}
+              <li>{{ result }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Test Results -->
+  {% if page.test_results %}
+  <section class="project-section">
+    <h2>Test Results Summary</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Test Metric</th>
+          <th>Procedure</th>
+          <th>Result</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for test in page.test_results %}
+        <tr>
+          <td><strong>{{ test.name }}</strong></td>
+          <td>{{ test.procedure }}</td>
+          <td>{{ test.result }}</td>
+          <td>
+            <span class="test-result-status {{ test.status | downcase }}">{{ test.status }}</span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  <!-- What Worked -->
+  {% if page.worked %}
+  <section class="project-section">
+    <h2>What Went Well</h2>
+    <div class="project-content">
+      {{ page.worked | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- What Failed -->
+  {% if page.failed %}
+  <section class="project-section">
+    <h2>Technical Challenges</h2>
+    <div class="project-content">
+      {{ page.failed | markdownify }}
+
+      {% if page.challenges_vr_sickness %}
+      <p><strong>Challenge: VR Motion Sickness</strong></p>
+      <p>{{ page.challenges_vr_sickness }}</p>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Next Steps -->
+  {% if page.next_steps_list %}
+  <section class="project-section">
+    <h2>Future Development Roadmap</h2>
+    <div class="project-content">
+      {% for step in page.next_steps_list %}
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Technical Specifications -->
+  {% if page.specs %}
+  <section class="project-section">
+    <h2>Technical Specifications</h2>
+
+    {% if page.specs.software %}
+    <h3 class="specs-category">Software</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tool in page.specs.software %}
+        <tr>
+          <td>{{ tool.name }}</td>
+          <td>{{ tool.version }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.hardware %}
+    <h3 class="specs-category">Hardware</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for hw in page.specs.hardware %}
+        <tr>
+          <td>{{ hw.component }}</td>
+          <td>{{ hw.model }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.materials %}
+    <h3 class="specs-category">Materials</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mat in page.specs.materials %}
+        <tr>
+          <td>{{ mat.type }}</td>
+          <td>{{ mat.grade }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.dimensions %}
+    <h3 class="specs-category">Dimensions</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Axis</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dim in page.specs.dimensions %}
+        <tr>
+          <td>{{ dim.axis }}</td>
+          <td>{{ dim.value }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if page.specs.weight %}
+    <h3 class="specs-category">Weight & Cost</h3>
+    <table class="specs-table">
+      <tbody>
+        <tr>
+          <th>Weight</th>
+          <td>{{ page.specs.weight }}</td>
+        </tr>
+        {% if page.specs.cost %}
+        <tr>
+          <th>Cost</th>
+          <td>{{ page.specs.cost }}</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    {% endif %}
+  </section>
+  {% endif %}
+
+</div>

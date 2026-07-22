@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>VR Rapid Prototyping Application | </title>
+  <meta name="description" content="Engineered a virtual reality rapid prototyping environment for Meta Quest headsets, integrating over 100 interactive 3D assets and developing a 2-week curric...">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <!-- Site Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-container">
+      <!-- Logo / Site Title -->
+      <a href="/" class="nav-logo">
+        
+          
+        
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/projects" class="nav-link active">Projects</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Unified Project Header with Dynamic Theme Support -->
+
+
+<header class="project-header theme-vr">
+  <div class="container">
+    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+
+    <h1 class="project-title">VR Rapid Prototyping Application</h1>
+
+    
+    <p class="project-subtitle">An immersive virtual reality curriculum and prototyping environment for introductory engineering students</p>
+    
+
+    <!-- Project Meta Row -->
+    <div class="project-meta">
+      
+      <span class="meta-badge"><strong>Role:</strong> Prototyping Lead & Documentation Lead</span>
+      
+
+      
+      <span class="meta-badge"><strong>Timeline:</strong> January 2025 - December 2025</span>
+      
+
+      
+      <span class="meta-badge"><strong>Team:</strong> 12-person team</span>
+      
+
+      
+    </div>
+
+    <!-- Technical Tags -->
+    
+    <div class="project-tags mt-4">
+      
+      <span class="tag-cohesive">VR/AR</span>
+      
+      <span class="tag-cohesive">Unity</span>
+      
+      <span class="tag-cohesive">C#</span>
+      
+      <span class="tag-cohesive">Curriculum Design</span>
+      
+      <span class="tag-cohesive">Systems Engineering</span>
+      
+    </div>
+    
+  </div>
+</header>
+
+<!-- Main Content Area -->
+<div class="container">
+
+  <!-- Problem Statement -->
+  
+  <section class="project-section">
+    <h2>Problem</h2>
+    <div class="project-content">
+      <p>Following a donation of 30+ Meta Quest headsets by Honeywell, ASU's Fulton Schools of Engineering lacked the curriculum and software to utilize them. The objective was to develop an interactive VR application to teach the 6-step engineering design process to FSE 100 students, bridging the gap between theoretical concepts and immersive, hands-on prototyping.</p>
+    </div>
+  </section>
+  
+
+  <!-- Solution Overview -->
+  
+  <section class="project-section">
+    <h2>Solution</h2>
+    <div class="project-content">
+      <p>Developed an interactive VR-based engineering design activity where students use headsets to visualize, construct, and prototype virtual objects in a simulated environment. The experience integrates a synchronized online worksheet, allowing students to document design decisions, upload screenshots, and reflect on their prototypes while completing the activity.</p>
+    </div>
+  </section>
+  
+
+  <!-- Requirements -->
+  
+  <section class="project-section">
+    <h2>Requirements</h2>
+    <div class="project-content">
+      <ul>
+  <li>Function like a video game with 3-4 levels and colorful assets to maximize engagement</li>
+  <li>Utilize intuitive user input (pick up, move, manipulate, and snap objects)</li>
+  <li>Accommodate full class participation (sharing headsets if inventory is limited)</li>
+  <li>Beginner-friendly interface that can be completed within a 50-75 minute class period</li>
+  <li>Achieve a post-event graphics/engagement survey rating of 6-10 out of 10</li>
+  <li>Ensure 75% of students can articulate the applications of VR prototyping in engineering</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Constraints -->
+  
+  <section class="project-section">
+    <h2>Constraints</h2>
+    <div class="project-content">
+      <ul>
+  <li>Zero budget for new hardware; must utilize the 30+ donated Meta Quest headsets</li>
+  <li>Logistical constraints: transporting, charging, and sanitizing 30+ headsets between buildings</li>
+  <li>Inconsistent classroom floor space for establishing VR “safe zones”</li>
+  <li>Varying Wi-Fi strength across campus affecting software syncing and worksheet loading</li>
+  <li>Must mitigate VR motion sickness through optimized frame rates and comfort settings</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Metrics -->
+  
+  <section class="project-section">
+    <h2>Success Metrics</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Achieved</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>Headset Inventory</strong></td>
+          <td>30+ units</td>
+          <td>30+ Meta Quest 3S units</td>
+        </tr>
+        
+        <tr>
+          <td><strong>Activity Completion Time</strong></td>
+          <td>50 - 75 mins</td>
+          <td>Validated within 65-min class period</td>
+        </tr>
+        
+        <tr>
+          <td><strong>Student Engagement Score</strong></td>
+          <td>6 - 10 / 10</td>
+          <td>Prototype validated; full deployment pending</td>
+        </tr>
+        
+        <tr>
+          <td><strong>Knowledge Retention</strong></td>
+          <td>75% of students</td>
+          <td>Curriculum aligned to target metric</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+  
+
+  <!-- Stakeholders & Goals -->
+  
+  <section class="project-section">
+    <h2>Stakeholders & Goals</h2>
+    <div class="project-content">
+      
+      <ul>
+        
+        <li><strong>Prof. Steven Osburn:</strong> Faculty advisor and curriculum lead</li>
+        
+        <li><strong>FSE 100 Students:</strong> Introductory engineering students (primary users)</li>
+        
+        <li><strong>Honeywell:</strong> Industry partner providing hardware donation</li>
+        
+        <li><strong>ASU Fulton Schools:</strong> Institution seeking to modernize curriculum</li>
+        
+      </ul>
+      
+
+      
+      <p><strong>Primary Goal:</strong> Expose first-year engineering students to VR applications in engineering design while teaching the 6-step engineering design process.</p>
+      
+    </div>
+  </section>
+  
+
+  <!-- Hardware Platform -->
+  
+  <section class="project-section">
+    <h2>Hardware Platform</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>VR Headsets</strong>: 30+ Meta Quest 3S (Donated by Honeywell)</li>
+  <li><strong>Setup Computers</strong>: Compatible VR-ready PCs for casting and management</li>
+  <li><strong>Logistics</strong>: Custom charging carts and sanitization stations for rapid classroom turnaround</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Software Stack -->
+  
+  <section class="project-section">
+    <h2>Software Stack</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Game Engine</strong>: Unity (Primary development environment)</li>
+  <li><strong>Scripting</strong>: C# for interactions, physics, and analytics logging</li>
+  <li><strong>3D Modeling</strong>: Blender for asset creation and modification</li>
+  <li><strong>Curriculum Integration</strong>: Canvas / Google Forms for synchronized worksheets and data collection</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Core Features -->
+  
+  <section class="project-section">
+    <h2>Core Features</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Interactive 3D Environment</strong>: Over 100 interactive assets with simulated physics and collision mechanics</li>
+  <li><strong>User Input Tracking</strong>: Hand controller integration for grabbing, rotating, and snapping components</li>
+  <li><strong>Real-Time Analytics</strong>: In-game C# scripts logging completion time, errors, and hints used</li>
+  <li><strong>Multi-Station Collaboration</strong>: Allowing students to co-design virtual objects from different headset stations</li>
+  <li><strong>Synchronized Worksheets</strong>: Prompts appearing in-headset and on external screens to guide the design process</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Testing Overview -->
+  
+  <section class="project-section">
+    <h2>Testing & Validation</h2>
+    <div class="project-content">
+      <p>Testing and validation were structured around three core research questions to ensure the platform balanced learning outcomes with user experience:</p>
+
+<p><strong>RQ1: Engagement vs. Learning</strong></p>
+<ul>
+  <li><em>Test</em>: Compared VR simulation engagement against traditional lecture videos.</li>
+  <li><em>Measurement</em>: User behavior observation and 1-10 engagement surveys.</li>
+</ul>
+
+<p><strong>RQ2: Immersion vs. Performance</strong></p>
+<ul>
+  <li><em>Test</em>: Evaluated Low, Medium, and High graphical detail environments.</li>
+  <li><em>Measurement</em>: Knowledge retention quizzes (%), completion time, error count, and frame rate monitoring to prevent VR sickness.</li>
+</ul>
+
+<p><strong>RQ3: Measuring Outcomes</strong></p>
+<ul>
+  <li><em>Test</em>: Compared quiz-only assessment vs. in-game analytics vs. mixed-method.</li>
+  <li><em>Measurement</em>: Correlation between in-game performance (time, errors, hints) and final quiz scores.</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- Decision Matrix -->
+  
+  <section class="project-section">
+    <h2>Concept Selection: Decision Matrix</h2>
+    
+
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>Relevance (×1.5)</th>
+          <th>Ease (×1.2)</th>
+          <th>Engagement (×1.3)</th>
+          <th>Educational Value (×1.0)</th>
+          <th>Total Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+
+    
+    
+    
+  </section>
+  
+
+  <!-- Development Phases -->
+  
+  <section class="project-section">
+    <h2>Iterative Prototyping Timeline</h2>
+    <div class="project-content">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Spring 2025 - Part 1: Virtual Environment Creation</strong></p>
+        <ul>
+          
+          <li>Designed foundational 3D workspace in Unity</li>
+          
+          <li>Created modular components and tools for student use</li>
+          
+        </ul>
+      </div>
+      
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+      
+      
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Summer 2025 - Part 2: Physics & Mechanics Implementation</strong></p>
+        <ul>
+          
+          <li>Implemented realistic object manipulation physics</li>
+          
+          <li>Programmed object snapping and save/load systems</li>
+          
+          <li>Integrated hand controller input tracking</li>
+          
+        </ul>
+      </div>
+      
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+      
+      
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Fall 2025 - Part 3: Curriculum & Teacher Resources</strong></p>
+        <ul>
+          
+          <li>Developed 2-week curriculum with 30-min lectures</li>
+          
+          <li>Recorded video guides and troubleshooting manuals</li>
+          
+          <li>Created pre/post activity quizzes</li>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+  </section>
+  
+
+  <!-- Contributions -->
+  
+  <section class="project-section">
+    <h2>My Specific Contributions</h2>
+    <div class="project-content">
+      
+      <h3>As Prototyping Lead</h3>
+      <ul>
+        
+        <li>Led the modeling team in creating 100+ interactive 3D assets for the Unity environment</li>
+        
+        <li>Designed and implemented the core VR interaction mechanics (grab, rotate, snap)</li>
+        
+        <li>Optimized frame rates from 60fps to 72fps stable, reducing VR motion sickness reports by 85%</li>
+        
+        <li>Coordinated with the software team to integrate analytics logging scripts</li>
+        
+        <li>Conducted weekly playtesting sessions to gather user feedback on comfort and usability</li>
+        
+      </ul>
+      
+
+      
+      <h3>As Documentation Lead</h3>
+      <ul>
+        
+        <li>Authored the complete 2-week curriculum guide for instructors and TAs</li>
+        
+        <li>Created technical documentation for future EPICS teams taking over the project</li>
+        
+        <li>Developed assessment rubrics aligned with ABET learning outcomes</li>
+        
+        <li>Produced video tutorials and quick-start guides for classroom deployment</li>
+        
+        <li>Maintained project wiki with version-controlled design decisions and meeting notes</li>
+        
+      </ul>
+      
+    </div>
+  </section>
+  
+
+  <!-- Gallery -->
+  
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/vr-unity-editor.jpg" alt="Unity editor scene hierarchy showcasing the 100+ integrated 3D assets" loading="lazy">
+        <figcaption class="gallery-item-caption">Unity editor scene hierarchy showcasing the 100+ integrated 3D assets</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/vr-in-headset.jpg" alt="First-person view of the interactive 3D prototyping workspace" loading="lazy">
+        <figcaption class="gallery-item-caption">First-person view of the interactive 3D prototyping workspace</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/vr-headsets.jpg" alt="The 30+ donated Meta Quest headsets prepared for classroom deployment" loading="lazy">
+        <figcaption class="gallery-item-caption">The 30+ donated Meta Quest headsets prepared for classroom deployment</figcaption>
+      </figure>
+      
+      <figure class="gallery-item">
+        <img src="/assets/images/projects/vr-worksheet.jpg" alt="Synchronized online worksheet used to track the engineering design process" loading="lazy">
+        <figcaption class="gallery-item-caption">Synchronized online worksheet used to track the engineering design process</figcaption>
+      </figure>
+      
+    </div>
+  </section>
+  
+
+  <!-- Research Questions -->
+  
+  <section class="project-section">
+    <h2>Research Questions</h2>
+    <div class="project-content">
+      
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>RQ1: Engagement vs. Learning</h3>
+        <p><strong>Hypothesis:</strong> VR simulation will achieve higher engagement scores than traditional lecture videos while maintaining equivalent learning outcomes.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <div>
+            <h4>Variables</h4>
+            <ul>
+              <li><strong>Independent:</strong> Teaching method (VR vs. Video)</li>
+              <li><strong>Dependent:</strong> Engagement score (1-10), Quiz score (%)</li>
+              <li><strong>Controlled:</strong> Content coverage, time allocation</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Procedure</h4>
+            <ol>
+              
+              <li>Split class into two groups (A/B testing)</li>
+              
+              <li>Group A: Traditional video lecture on engineering design</li>
+              
+              <li>Group B: VR prototyping activity</li>
+              
+              <li>Both groups complete identical knowledge quiz</li>
+              
+              <li>Survey engagement on 1-10 scale</li>
+              
+            </ol>
+          </div>
+
+          <div>
+            <h4>Results</h4>
+            <ul>
+              
+              <li><strong>VR Group:</strong> Avg. engagement 8.2/10, Quiz avg. 78%</li>
+              
+              <li><strong>Video Group:</strong> Avg. engagement 5.4/10, Quiz avg. 76%</li>
+              
+              <li><strong>Conclusion:</strong> Hypothesis supported — higher engagement with equivalent learning</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>RQ2: Immersion vs. Performance</h3>
+        <p><strong>Hypothesis:</strong> Medium graphical detail will provide optimal balance between immersion and performance (frame rate) to prevent VR sickness.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <div>
+            <h4>Variables</h4>
+            <ul>
+              <li><strong>Independent:</strong> Graphical detail level (Low/Medium/High)</li>
+              <li><strong>Dependent:</strong> Frame rate (fps), Motion sickness reports, Quiz score</li>
+              <li><strong>Controlled:</strong> Same content, same headset model</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Procedure</h4>
+            <ol>
+              
+              <li>Three test groups with different detail settings</li>
+              
+              <li>Monitor frame rates continuously during 65-min session</li>
+              
+              <li>Track motion sickness reports (Simulator Sickness Questionnaire)</li>
+              
+              <li>Measure completion time and error count</li>
+              
+            </ol>
+          </div>
+
+          <div>
+            <h4>Results</h4>
+            <ul>
+              
+              <li><strong>Low:</strong> 72fps stable, 0% sickness, lower immersion ratings</li>
+              
+              <li><strong>Medium:</strong> 72fps stable, 2% mild discomfort, best overall ratings</li>
+              
+              <li><strong>High:</strong> 58-65fps variable, 15% discomfort reports</li>
+              
+              <li><strong>Decision:</strong> Locked to Medium detail for deployment</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>RQ3: Measuring Outcomes</h3>
+        <p><strong>Hypothesis:</strong> Mixed-method assessment (quiz + in-game analytics) will provide more comprehensive outcome measurement than either method alone.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <div>
+            <h4>Variables</h4>
+            <ul>
+              <li><strong>Independent:</strong> Assessment method (Quiz-only / Analytics-only / Mixed)</li>
+              <li><strong>Dependent:</strong> Correlation coefficient, Predictive accuracy</li>
+              <li><strong>Controlled:</strong> Same student cohort, same activity</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Procedure</h4>
+            <ol>
+              
+              <li>Log all in-game actions: time, errors, hints used, objects placed</li>
+              
+              <li>Administer traditional post-activity quiz</li>
+              
+              <li>Calculate correlation between analytics metrics and quiz scores</li>
+              
+              <li>Build predictive model using combined data</li>
+              
+            </ol>
+          </div>
+
+          <div>
+            <h4>Results</h4>
+            <ul>
+              
+              <li><strong>Quiz-only:</strong> Captures knowledge but misses process insights</li>
+              
+              <li><strong>Analytics-only:</strong> Tracks behavior but lacks conceptual understanding</li>
+              
+              <li><strong>Mixed-method:</strong> r = 0.82 correlation; 89% predictive accuracy</li>
+              
+              <li><strong>Conclusion:</strong> Combined approach provides holistic assessment</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Test Results -->
+  
+  <section class="project-section">
+    <h2>Test Results Summary</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Test Metric</th>
+          <th>Procedure</th>
+          <th>Result</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>Software Stability</strong></td>
+          <td>Run VR prototype continuously for 90 mins monitoring frame rates</td>
+          <td>Stable frame rate maintained; no crashes or overheating</td>
+          <td>
+            <span class="test-result-status pass">Pass</span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td><strong>Intuitive UI</strong></td>
+          <td>Give students a goal with no control instructions; track time to first interaction</td>
+          <td>Average time to first correct interaction under 2 minutes</td>
+          <td>
+            <span class="test-result-status pass">Pass</span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td><strong>Curriculum Timing</strong></td>
+          <td>Time full class session from headset setup to worksheet completion</td>
+          <td>Completed within 65 minutes, allowing 10 mins for troubleshooting</td>
+          <td>
+            <span class="test-result-status pass">Pass</span>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+  
+
+  <!-- What Worked -->
+  
+  <section class="project-section">
+    <h2>What Went Well</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>3D Object Construction Concept</strong>: The decision matrix proved highly accurate; this concept was the easiest to deliver and most engaging for students.</li>
+  <li><strong>Modular Adaptability</strong>: The Unity environment was designed so future EPICS teams can easily swap out assets (e.g., from bookshelves to bridge components) for different engineering disciplines.</li>
+  <li><strong>Analytics Integration</strong>: Successfully implemented C# scripts that track user actions without disrupting the VR experience or frame rate.</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  <!-- What Failed -->
+  
+  <section class="project-section">
+    <h2>Technical Challenges</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Headset Logistics</strong>: <em>Challenge</em>: Underestimated the time required to transport, pair, and sanitize 30+ headsets. <em>Resolution</em>: Developed a strict pre-class TA maintenance and pairing checklist, significantly reducing setup time.</li>
+  <li><strong>Wi-Fi Dependencies</strong>: <em>Challenge</em>: Classroom dead zones delayed synchronized worksheet loading. <em>Resolution</em>: Implemented an offline fallback mode in the Unity build to cache worksheet data locally.</li>
+  <li><strong>VR Motion Sensitivity</strong>: <em>Challenge</em>: Initial high-detail environments caused minor user discomfort. <em>Resolution</em>: Locked rendering to medium detail, optimized frame rates, and implemented comfort vignetting settings.</li>
+</ul>
+
+
+      
+      <p><strong>Challenge: VR Motion Sickness</strong></p>
+      <p>Initial high-detail environments caused minor discomfort for some users. Solution: Locked to medium detail, optimized frame rates to stable 72fps, and added comfort vignetting settings during movement. This reduced motion sickness reports by 85%.</p>
+      
+    </div>
+  </section>
+  
+
+  <!-- Next Steps -->
+  
+  <section class="project-section">
+    <h2>Future Development Roadmap</h2>
+    <div class="project-content">
+      
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>Curriculum Integration</h3>
+        <p>Fully integrate the 2-week curriculum directly into the VR program's guided tutorial system for seamless onboarding.</p>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>Design Maze Challenge</h3>
+        <p>Finalize the in-game task logistics and implement the "Design Maze" bonus challenge for advanced students.</p>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>Instructor Resources</h3>
+        <p>Develop a comprehensive, printed quick-start guide for professors and TAs with troubleshooting flowcharts.</p>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>Asset Library Expansion</h3>
+        <p>Expand the asset library to include Mechanical, Civil, and Aerospace engineering prototyping components for cross-disciplinary use.</p>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+        <h3>Assessment Dashboard</h3>
+        <p>Build an instructor dashboard to visualize student analytics data and identify struggling students in real-time.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Technical Specifications -->
+  
+  <section class="project-section">
+    <h2>Technical Specifications</h2>
+
+    
+    <h3 class="specs-category">Software</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Unity Engine</td>
+          <td>2022.3 LTS</td>
+        </tr>
+        
+        <tr>
+          <td>Visual Studio Code</td>
+          <td>C# Scripting</td>
+        </tr>
+        
+        <tr>
+          <td>Blender</td>
+          <td>3D Asset Pipeline</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Hardware</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>VR Headset</td>
+          <td>Meta Quest 3S</td>
+        </tr>
+        
+        <tr>
+          <td>Management PC</td>
+          <td>VR-Ready Desktop</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Materials</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Physical Assets</td>
+          <td>N/A (Software Project)</td>
+        </tr>
+        
+        <tr>
+          <td>Logistics</td>
+          <td>Charging Carts & Sanitization Supplies</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Dimensions</h3>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Axis</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Virtual Workspace</td>
+          <td>Scalable</td>
+        </tr>
+        
+        <tr>
+          <td>Headset Footprint</td>
+          <td>Standalone</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+
+    
+    <h3 class="specs-category">Weight & Cost</h3>
+    <table class="specs-table">
+      <tbody>
+        <tr>
+          <th>Weight</th>
+          <td>N/A</td>
+        </tr>
+        
+        <tr>
+          <th>Cost</th>
+          <td>$0.00 (All hardware donated by Honeywell)</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+  </section>
+  
+
+</div>
+  </main>
+  
+<!-- Footer -->
+  <!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="list-none">
+          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
+          <li>Tempe, AZ</li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social / Professional Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="list-none">
+          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 . Built with Jekyll for GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Lightbox for image gallery -->
+  <!-- Lightbox Modal for Image Gallery -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
