@@ -4,7 +4,7 @@ title: "Hand-Stitched Leather Journal"
 date: 2023-08-10
 category: textiles
 type: textiles
-featured: true
+featured: false
 tags: [leather, bookbinding, hand-stitch]
 materials: [Vegetable-tanned leather, Waxed linen thread, Acid-free paper]
 description: "A hand-bound journal featuring traditional saddle stitching and a minimalist design."

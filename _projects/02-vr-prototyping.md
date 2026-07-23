@@ -8,7 +8,7 @@ date: 2025-12-01
 role: "Prototyping Lead & Documentation Lead"
 timeline: "January 2025 - December 2025"
 team: "12-person team"
-featured: false
+featured: true
 tags:
   - VR/AR
   - Unity

@@ -4,7 +4,7 @@ title: "Midnight in Tokyo"
 date: 2023-10-15
 category: photography
 type: photography
-featured: true
+featured: false
 tags: [street, night, travel]
 location: "Tokyo, Japan"
 description: "A collection of street photography captured during a late-night walk through Shinjuku and Shibuya."

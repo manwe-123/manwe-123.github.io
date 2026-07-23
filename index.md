@@ -110,7 +110,7 @@ title: Home
 <section class="section">
   <div class="container text-center">
     <h2 style="margin-bottom: 1rem;">Interested in Collaboration?</h2>
-    <p style="max-width: 600px; margin: 0 auto 2rem; color: #6b7280;">
+    <p style="max-width: 600px; margin: 0 auto 2rem; color: #7c 8390;">
       I'm actively seeking internship opportunities for Summer 2027. 
       Let's discuss how I can contribute to your team.
     </p>

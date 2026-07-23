@@ -7,7 +7,7 @@ subtitle: "Mechanical design and ASME Y14.5 compliant manufacturing documentatio
 role: "Design Engineer - Academic Project"
 timeline: "Aug 2025 - Dec 2025"
 software: "SolidWorks"
-featured: false
+featured: true
 tags:
   - SolidWorks
   - ASME Y14.5
