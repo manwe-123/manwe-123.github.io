@@ -25,7 +25,11 @@ title: Projects
   <div class="container">
     <!-- Projects Grid -->
     <div class="project-grid">
-      {% for project in site.projects %}
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% assign has_visible_projects = false %}
+      {% for project in sorted_projects %}
+      {% if project.display == true or project.display == 'true' %}
+      {% assign has_visible_projects = true %}
       <a href="{{ project.url | relative_url }}" class="project-card" data-category="{{ project.category | default: 'engineering' }}">
         {% if project.image %}
         <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-card-image" loading="lazy">
@@ -49,11 +53,12 @@ title: Projects
           {% endif %}
         </div>
       </a>
+      {% endif %}
       {% endfor %}
     </div>
     
     <!-- Empty State (if no projects) -->
-    {% if site.projects.size == 0 %}
+    {% if has_visible_projects == false %}
     <div class="text-center py-8">
       <p style="color: var(--color-text-muted); margin-bottom: 1rem;">No projects yet. Add your first project by creating a new file in the _projects folder.</p>
     </div>

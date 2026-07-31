@@ -4,13 +4,7 @@ layout: default
 
 <!-- Unified Project Header with Dynamic Theme Support -->
 {% assign theme_class = "theme-robotics" %}
-{% if page.theme == "vr" %}
-  {% assign theme_class = "theme-vr" %}
-{% elsif page.theme == "cad" %}
-  {% assign theme_class = "theme-cad" %}
-{% elsif page.theme == "chimera" %}
-  {% assign theme_class = "theme-chimera" %}
-{% endif %}
+
 
 <header class="project-header {{ theme_class }}">
   <div class="container">

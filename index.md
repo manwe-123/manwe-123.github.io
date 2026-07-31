@@ -7,7 +7,7 @@ title: Home
 <section class="hero">
   <div class="container">
     <h1 class="hero-title">Manwe Castro</h1>
-    <p class="hero-subtitle">Engineer & Artist | Building Systems. Crafting Art. Solving Problems.</p>
+    <p class="hero-subtitle">Mechanical Engineer & Artist | Building Systems. Crafting Art. Solving Problems.</p>
     <p class="hero-description">
       Passionate about designing and building innovative mechanical systems, 
       playing music, capturing moments through photography, and creating with textiles.

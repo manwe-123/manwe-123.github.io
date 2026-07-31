@@ -23,7 +23,7 @@ DESIGN SYSTEM VARIABLES (Dark Theme)
   --color-engineering: #6b7280;
   --color-music: #c4a574;
   --color-textiles: #7d9a8a;
-  --color-photography: #a67c52;
+  --color-photography: #2a9d8f;
 
   /* Accent Colors */
   --color-accent: #9ca3af;
@@ -890,6 +890,76 @@ FOOTER
 /* --------------------------------------------------------------------------
 PROJECT HEADER - Engineering Projects
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Timeline Visual
+   -------------------------------------------------------------------------- */
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.timeline-phase {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.timeline-phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-100);
+}
+
+.phase-badge {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.phase-spring {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.phase-summer {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.phase-fall {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.timeline-phase-header h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-gray-900);
+}
+
+.timeline-phase-body {
+  padding: var(--spacing-4);
+}
+
+.timeline-arrow {
+  font-size: 1.5rem;
+  color: var(--color-gray-400);
+}
 
 .project-header {
   background-color: var(--color-bg-secondary);
@@ -1790,7 +1860,7 @@ SPECIFICATIONS SIDEBAR
   text-align: right;
 }
 /* --------------------------------------------------------------------------
-   TWO COLUMN LAYOUT
+TWO COLUMN LAYOUT
    -------------------------------------------------------------------------- */
 
 .layout-two-col {

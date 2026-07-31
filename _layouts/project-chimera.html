@@ -2,35 +2,38 @@
 layout: default
 ---
 
-<!-- Unified Project Header with Theme Support -->
-<header class="project-header theme-chimera">
+{% assign theme_class = "theme-chimera" %}
+
+<header class="project-header {{ theme_class }}">
   <div class="container">
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
     </a>
-    
+
     <h1 class="project-title">{{ page.title }}</h1>
-    
+
     {% if page.subtitle %}
     <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    
-    <!-- Project Meta Row -->
+
     <div class="project-meta">
       {% if page.role %}
       <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
       {% endif %}
-      
+
       {% if page.timeline %}
       <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
       {% endif %}
-      
+
       {% if page.team %}
       <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
       {% endif %}
+
+      {% if page.software %}
+      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
+      {% endif %}
     </div>
-    
-    <!-- Technical Tags -->
+
     {% if page.tags %}
     <div class="project-tags mt-4">
       {% for tag in page.tags %}
@@ -41,208 +44,239 @@ layout: default
   </div>
 </header>
 
-<!-- Main Content Area -->
-<div class="container section">
-  
-  <!-- Section 1: Overview and Objective -->
-  <section class="content-section" id="overview">
-    <h2 class="section-title">The Engineering Problem & Objective</h2>
-    <div class="section-content">
+<div class="container">
+
+  {% if page.problem_statement or page.objective %}
+  <section class="project-section">
+    <h2>The Engineering Problem &amp; Objective</h2>
+    <div class="project-content">
       <div class="layout-two-col overview-layout">
-        
-        <!-- Left Column: Problem Statement -->
         <div class="overview-left">
-          <div class="problem-solution-block mb-6">
-            <h3 class="subsection-title subsection-problem">
-              <span class="icon-circle">!</span> The Engineering Problem
-            </h3>
-            {% if page.problem_statement %}
+          {% if page.problem_statement %}
+          <div class="mb-6">
+            <h3>The Engineering Problem</h3>
             {{ page.problem_statement | markdownify }}
-            {% endif %}
           </div>
+          {% endif %}
         </div>
-        
-        <!-- Right Column: Objective -->
+
         <div class="overview-right">
-          <div class="problem-solution-block">
-            <h3 class="subsection-title subsection-solution">
-              <span class="icon-circle">✓</span> Objective & Relevance
-            </h3>
-            {% if page.objective %}
+          {% if page.objective %}
+          <div>
+            <h3>Objective &amp; Relevance</h3>
             {{ page.objective | markdownify }}
-            {% endif %}
           </div>
+          {% endif %}
         </div>
-        
       </div>
     </div>
   </section>
-  
-  <!-- Section 2: System Architecture -->
-  <section class="content-section" id="architecture">
-    <h2 class="section-title">System Architecture</h2>
-    <div class="section-content">
-      
-      <!-- 3-Column Card Grid -->
-      <div class="grid-3 tech-architecture-grid">
-        
+  {% endif %}
+
+  {% if page.system_layers or page.architecture_diagram %}
+  <section class="project-section">
+    <h2>System Architecture</h2>
+    <div class="project-content">
+      {% if page.system_layers %}
+      <div class="grid grid-3">
         {% for layer in page.system_layers %}
-        <div class="tech-card">
-          <div class="tech-card-header">
-            <span class="tech-card-icon">⚡</span>
-            <h4 class="tech-card-title mono">{{ layer.title }}</h4>
-          </div>
-          <div class="tech-card-body">
+        <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
+          <h3>{{ layer.title }}</h3>
+          <div>
             {{ layer.description }}
           </div>
         </div>
         {% endfor %}
-        
       </div>
-      
-      <!-- Architecture Diagram -->
-      <div class="system-architecture-block mt-8">
-        <h4 class="subsection-title">Architecture Diagram</h4>
+      {% endif %}
+
+      {% if page.architecture_diagram %}
+      <div class="mt-8">
+        <h3>Architecture Diagram</h3>
         {% if page.architecture_diagram.image %}
-        <figure class="image-with-caption">
-          <img src="{{ page.architecture_diagram.image | relative_url }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <figcaption class="image-caption">{{ page.architecture_diagram.caption }}</figcaption>
+        <figure class="figure">
+          <img src="{{ page.architecture_diagram.image | relative_url }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy" onclick="openLightbox('{{ page.architecture_diagram.image | relative_url }}', '{{ page.architecture_diagram.caption }}')">
+          <figcaption class="figure-caption">{{ page.architecture_diagram.caption }}</figcaption>
         </figure>
         {% else %}
         <div class="diagram-placeholder">
           <div class="diagram-placeholder-content">
-            <span class="diagram-icon">🔧</span>
             <p>System Architecture Diagram</p>
-            <span class="diagram-note">Data Ingestion → Processing & Synthesis → Visualization & Output</span>
           </div>
         </div>
         {% endif %}
       </div>
-      
+      {% endif %}
     </div>
   </section>
-  
-  <!-- Section 3: Core Technical Implementations -->
-  <section class="content-section" id="implementations">
-    <h2 class="section-title">Core Technical Implementations</h2>
-    <div class="section-content">
-      
+  {% endif %}
+
+  {% if page.implementations %}
+  <section class="project-section">
+    <h2>Core Technical Implementations</h2>
+    <div class="project-content">
       {% for impl in page.implementations %}
-      <div class="implementation-detail-block mb-6">
-        <h3 class="subsection-title">{{ impl.title }}</h3>
+      <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>{{ impl.title }}</h3>
         <p>{{ impl.description }}</p>
-        
+
         {% if impl.code_snippet %}
-        <div class="code-block-container mt-4">
-          <pre class="code-block"><code class="language-python">{{ impl.code_snippet | xml_escape }}</code></pre>
+        <div class="mt-4">
+          <pre class="code-block"><code>{{ impl.code_snippet | xml_escape }}</code></pre>
         </div>
         {% endif %}
       </div>
       {% endfor %}
-      
     </div>
   </section>
-  
-  <!-- Section 4: Software Engineering Best Practices -->
-  <section class="content-section" id="best-practices">
-    <h2 class="section-title">Software Engineering Best Practices</h2>
-    <div class="section-content">
-      
-      <div class="grid-3 tech-architecture-grid">
-        
+  {% endif %}
+
+  {% if page.best_practices or page.directory_screenshot %}
+  <section class="project-section">
+    <h2>Software Engineering Best Practices</h2>
+    <div class="project-content">
+      {% if page.best_practices %}
+      <div class="grid grid-3">
         {% for practice in page.best_practices %}
-        <div class="tech-card">
-          <div class="tech-card-header">
-            <span class="tech-card-icon">✓</span>
-            <h4 class="tech-card-title mono">{{ practice.title }}</h4>
-          </div>
-          <div class="tech-card-body">
-            {{ practice.description }}
+        <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
+          <h3>{{ practice.title }}</h3>
+          <div>
+          <p>{{ practice.description }}</p>
           </div>
         </div>
         {% endfor %}
-        
       </div>
-      
-      <!-- Directory Structure Screenshot -->
-      <div class="system-architecture-block mt-8">
-        <h4 class="subsection-title">Repository Structure</h4>
+      {% endif %}
+
+      {% if page.directory_screenshot %}
+      <div class="mt-8">
+        <h3>Repository Structure</h3>
         {% if page.directory_screenshot.image %}
-        <figure class="image-with-caption">
-          <img src="{{ page.directory_screenshot.image | relative_url }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <figcaption class="image-caption">{{ page.directory_screenshot.caption }}</figcaption>
+        <figure class="figure">
+          <img src="{{ page.directory_screenshot.image | relative_url }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy" onclick="openLightbox('{{ page.directory_screenshot.image | relative_url }}', '{{ page.directory_screenshot.caption }}')">
+          <figcaption class="figure-caption">{{ page.directory_screenshot.caption }}</figcaption>
         </figure>
         {% else %}
         <div class="diagram-placeholder">
           <div class="diagram-placeholder-content">
-            <span class="diagram-icon">📁</span>
             <p>Directory Structure Screenshot</p>
-            <span class="diagram-note">GitHub Repository File Organization</span>
           </div>
         </div>
         {% endif %}
       </div>
-      
+      {% endif %}
     </div>
   </section>
-  
-  <!-- Section 5: Challenges and Problem Solving -->
-  <section class="content-section" id="challenges">
-    <h2 class="section-title">Challenges & Problem Solving</h2>
-    <div class="section-content">
-      
+  {% endif %}
+
+  {% if page.challenges %}
+  <section class="project-section">
+    <h2>Challenges &amp; Problem Solving</h2>
+    <div class="project-content">
       {% for item in page.challenges %}
-      <div class="challenge-resolution-card mb-4">
-        <div class="challenge-section">
-          <h3 class="challenge-label">Challenge</h3>
-          <p class="challenge-text">{{ item.challenge }}</p>
-        </div>
-        <div class="resolution-section">
-          <h3 class="resolution-label">Resolution</h3>
-          <p class="resolution-text">{{ item.resolution }}</p>
-        </div>
+      <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
+        <h3>Challenge</h3>
+        <p>{{ item.challenge }}</p>
+        <h3>Resolution</h3>
+        <p>{{ item.resolution }}</p>
       </div>
       {% endfor %}
-      
     </div>
   </section>
-  
-  <!-- Section 6: Skills and Resources -->
-  <section class="content-section" id="skills-resources">
-    <h2 class="section-title">Skills & Resources</h2>
-    <div class="section-content">
-      
-      <!-- Skills Dense Grid -->
-      <div class="skills-dense-grid mb-6">
-        {% for skill in page.skills %}
-        <span class="skill-tag">{{ skill }}</span>
-        {% endfor %}
+  {% endif %}
+
+  {% if page.skills or page.resources %}
+  <section class="project-section">
+    <h2>Skills &amp; Resources</h2>
+    <div class="project-content">
+      {% if page.skills %}
+      <div class="mb-6">
+        <h3>Technical Skills Demonstrated</h3>
+        <div class="project-tags">
+          {% for skill in page.skills %}
+          <span class="tag-cohesive">{{ skill }}</span>
+          {% endfor %}
+        </div>
       </div>
-      
-      <!-- External Resource Links -->
-      <div class="resources-button-row">
-        {% for resource in page.resources %}
-        <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          {{ resource.label }}
-          <svg class="icon-external" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        </a>
-        {% endfor %}
+      {% endif %}
+
+      {% if page.resources %}
+      <div>
+        <h3>Project Resources</h3>
+        <div class="resources-button-row">
+          {% for resource in page.resources %}
+          <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            {{ resource.label }}
+          </a>
+          {% endfor %}
+        </div>
       </div>
-      
+      {% endif %}
     </div>
   </section>
-  
+  {% endif %}
+
+  {% if page.gallery %}
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      {% for image in page.gallery %}
+      <figure class="gallery-item" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
 </div>
 
-{% include footer.html %}
+<script>
+function openLightbox(imageSrc, caption) {
+  const lightbox = document.getElementById('lightbox') || createLightbox();
+  const lightboxImg = lightbox.querySelector('.lightbox-image');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
 
-<!-- Syntax Highlighting Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-</body>
-</html>
+  lightboxImg.src = imageSrc;
+  lightboxCaption.textContent = caption || '';
+  lightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function createLightbox() {
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.className = 'lightbox-overlay';
+  lightbox.innerHTML = `
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <div class="lightbox-content">
+      <img class="lightbox-image" src="" alt="">
+      <div class="lightbox-caption"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+  return lightbox;
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+document.addEventListener('click', function(e) {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox && e.target === lightbox) {
+    closeLightbox();
+  }
+});
+</script>

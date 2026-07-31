@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Nocturne in E Minor | </title>
+  <title>EPICS in Spain | </title>
   <meta name="description" content="Overview">
   
   <!-- Favicon -->
@@ -54,35 +54,108 @@
   
   <!-- Main Content -->
   <main id="main-content">
-    <h2 id="overview">Overview</h2>
+    
 
-<p>This piece was composed during a late-night session, channeling influences from Chopin and contemporary film scores. It represents a fusion of classical structure with modern harmonic language.</p>
+<header class="project-header theme-photography">
+  <div class="container">
+    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
 
-<h2 id="composition-details">Composition Details</h2>
+    <h1 class="project-title">EPICS in Spain</h1>
+
+    
+    <p class="project-subtitle">A collection of street photography captured during a late-night walk through Shinjuku and Shibuya.</p>
+    
+
+    <div class="project-meta">
+      
+      <span class="meta-badge"><strong>Location:</strong> Tokyo, Japan</span>
+      
+
+      
+      <span class="meta-badge"><strong>Date:</strong> March 15, 2026</span>
+      
+
+      
+      <span class="meta-badge"><strong>Type:</strong> Photography</span>
+      
+    </div>
+
+    
+    <div class="project-tags mt-4">
+      
+      <span class="tag-cohesive">street</span>
+      
+      <span class="tag-cohesive">night</span>
+      
+      <span class="tag-cohesive">travel</span>
+      
+    </div>
+    
+  </div>
+</header>
+
+<div class="container">
+  
+  <section class="project-section">
+    <h2>Gallery</h2>
+    <div class="gallery-grid photo-grid">
+      
+      <figure class="gallery-item" onclick="openLightbox('/assets/images/photography/japan-2023/placeholder-1.jpg', 'EPICS in Spain')">
+        <img src="/assets/images/photography/japan-2023/placeholder-1.jpg" alt="EPICS in Spain image 1" loading="lazy">
+        <figcaption class="gallery-item-caption">EPICS in Spain</figcaption>
+      </figure>
+      
+      <figure class="gallery-item" onclick="openLightbox('/assets/images/photography/japan-2023/placeholder-2.jpg', 'EPICS in Spain')">
+        <img src="/assets/images/photography/japan-2023/placeholder-2.jpg" alt="EPICS in Spain image 2" loading="lazy">
+        <figcaption class="gallery-item-caption">EPICS in Spain</figcaption>
+      </figure>
+      
+    </div>
+  </section>
+  
+
+  
+  <section class="project-section">
+    <div class="project-content">
+      <h2 id="overview">Overview</h2>
+
+<p>This series captures the electric atmosphere of Tokyo’s nightlife, focusing on the interplay of neon lights, rain-slicked streets, and the solitary figures navigating the urban landscape.</p>
+
+<h2 id="technical-details">Technical Details</h2>
 
 <ul>
-  <li><strong>Key:</strong> E Minor</li>
-  <li><strong>Tempo:</strong> 72 BPM</li>
-  <li><strong>Time Signature:</strong> 4/4</li>
-  <li><strong>Instruments:</strong> Solo Piano</li>
+  <li><strong>Camera:</strong> Sony A7III</li>
+  <li><strong>Lenses:</strong> 35mm f/1.4, 85mm f/1.8</li>
+  <li><strong>Processing:</strong> Lightroom Classic, Photoshop</li>
 </ul>
 
-<h2 id="audio">Audio</h2>
+<h2 id="gallery">Gallery</h2>
 
-<div class="audio-player-container">
-  <audio controls="" class="custom-audio">
-    <source src="/assets/audio/placeholder-song.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
+<div class="photo-grid">
+  <img src="/assets/images/photography/japan-2023/placeholder-1.jpg" alt="Neon reflections in puddles" loading="lazy" />
+  <img src="/assets/images/photography/japan-2023/placeholder-2.jpg" alt="Late night commuter" loading="lazy" />
 </div>
-
-<h2 id="process">Process</h2>
-
-<p>The composition began with a simple melodic motif that evolved through multiple variations. The recording was done using a condenser microphone setup in a home studio environment.</p>
 
 <h2 id="reflections">Reflections</h2>
 
-<p>Music provides an outlet for emotional expression that complements my technical work. The discipline required for mastering an instrument parallels the iterative process of engineering design.</p>
+<p>Photography allows me to freeze moments that would otherwise disappear into memory. This trip taught me patience and the art of waiting for the perfect light.</p>
+
+    </div>
+  </section>
+  
+</div>
+
+<!-- Lightbox Modal for Image Gallery -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
 
   </main>
   

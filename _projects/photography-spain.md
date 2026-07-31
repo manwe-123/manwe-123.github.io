@@ -1,18 +1,19 @@
 ---
-layout: default
-title: "Midnight in Tokyo"
-date: 2023-10-15
+layout: project-photo
+theme: photography
+title: "EPICS in Spain"
+date: 2026-3-15
 category: photography
 type: photography
-featured: false
 tags: [street, night, travel]
 location: "Tokyo, Japan"
 description: "A collection of street photography captured during a late-night walk through Shinjuku and Shibuya."
 images:
   - /assets/images/photography/japan-2023/placeholder-1.jpg
   - /assets/images/photography/japan-2023/placeholder-2.jpg
+display: false
+featured: false
 ---
-
 ## Overview
 
 This series captures the electric atmosphere of Tokyo's nightlife, focusing on the interplay of neon lights, rain-slicked streets, and the solitary figures navigating the urban landscape.

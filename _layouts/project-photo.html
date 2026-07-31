@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% assign theme_class = "theme-photography" %}
+
+<header class="project-header {{ theme_class }}">
+  <div class="container">
+    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to Projects
+    </a>
+
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+    <p class="project-subtitle">{{ page.description }}</p>
+    {% endif %}
+
+    <div class="project-meta">
+      {% if page.location %}
+      <span class="meta-badge"><strong>Location:</strong> {{ page.location }}</span>
+      {% endif %}
+
+      {% if page.date %}
+      <span class="meta-badge"><strong>Date:</strong> {{ page.date | date: "%B %-d, %Y" }}</span>
+      {% endif %}
+
+      {% if page.type %}
+      <span class="meta-badge"><strong>Type:</strong> {{ page.type | capitalize }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags %}
+    <div class="project-tags mt-4">
+      {% for tag in page.tags %}
+      <span class="tag-cohesive">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>
+
+<div class="container">
+  {% if page.images %}
+  <section class="project-section">
+    <h2>Gallery</h2>
+    <div class="gallery-grid photo-grid">
+      {% for image in page.images %}
+      <figure class="gallery-item" onclick="openLightbox('{{ image | relative_url }}', '{{ page.title | escape }}')">
+        <img src="{{ image | relative_url }}" alt="{{ page.title | escape }} image {{ forloop.index }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ page.title }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if content != blank %}
+  <section class="project-section">
+    <div class="project-content">
+      {{ content }}
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+{% include lightbox.html %}

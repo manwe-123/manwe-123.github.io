@@ -2,35 +2,34 @@
 layout: default
 ---
 
-<!-- Unified Project Header with Theme Support -->
-<header class="project-header theme-cad">
+{% assign theme_class = "theme-cad" %}
+
+<header class="project-header {{ theme_class }}">
   <div class="container">
     <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to Projects
     </a>
-    
+
     <h1 class="project-title">{{ page.title }}</h1>
-    
+
     {% if page.subtitle %}
     <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    
-    <!-- Project Meta Row -->
+
     <div class="project-meta">
       {% if page.role %}
       <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
       {% endif %}
-      
+
       {% if page.timeline %}
       <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
       {% endif %}
-      
+
       {% if page.software %}
       <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
       {% endif %}
     </div>
-    
-    <!-- Technical Tags -->
+
     {% if page.tags %}
     <div class="project-tags mt-4">
       {% for tag in page.tags %}
@@ -41,129 +40,94 @@ layout: default
   </div>
 </header>
 
-<!-- Main Content Area -->
-<div class="container section">
-  
-  <!-- Section 1: Project Scenario & Overview -->
-  <section class="content-section" id="overview">
-    <h2 class="section-title">Project Scenario & Overview</h2>
-    <div class="section-content">
+<div class="container">
+
+  {% if page.objective or page.engineering_mandate %}
+  <section class="project-section">
+    <h2>Project Scenario &amp; Overview</h2>
+    <div class="project-content">
       <div class="layout-two-col overview-layout">
-        
-        <!-- Left Column: The Objective -->
         <div class="overview-left">
-          <div class="cad-objective-block mb-6">
-            <h3 class="subsection-title subsection-objective">
-              <span class="icon-circle">🎯</span> The Objective
-            </h3>
-            {% if page.objective %}
+          {% if page.objective %}
+          <div class="mb-6">
+            <h3>The Objective</h3>
             <p>{{ page.objective }}</p>
-            {% endif %}
           </div>
+          {% endif %}
         </div>
-        
-        <!-- Right Column: The Engineering Mandate -->
+
         <div class="overview-right">
-          <div class="requirements-card engineering-mandate-card">
-            <h3 class="subsection-title">The Engineering Mandate</h3>
-            {% if page.engineering_mandate %}
-            <p class="mandate-text">{{ page.engineering_mandate }}</p>
-            {% else %}
-            <p>Be an engineer and amend areas that are not correct. Resolve physical interferences and identify missing parts to achieve a properly functioning assembly.</p>
-            {% endif %}
+          {% if page.engineering_mandate %}
+          <div>
+            <h3>The Engineering Mandate</h3>
+            <p>{{ page.engineering_mandate }}</p>
           </div>
+          {% endif %}
         </div>
-        
       </div>
     </div>
   </section>
-  
-  <!-- Section 2: Design Constraints & Interference Management -->
-  <section class="content-section" id="constraints">
-    <h2 class="section-title">Design Constraints & Interference Management</h2>
-    <div class="section-content">
-      
-      <!-- Constraint Callout Box - Critical Component -->
-      <div class="callout callout-constraint constraint-callout mb-8">
-        <div class="callout-header">
-          <span class="callout-icon">⚠</span>
-          <strong>Strict Interference Rules</strong>
-        </div>
-        <div class="callout-body">
-          <div class="constraint-grid">
-            <div class="constraint-item constraint-threaded">
-              <div class="constraint-label">Threaded Components</div>
-              <div class="constraint-value mono">
-                {% if page.interference_constraints %}
-                {{ page.interference_constraints.threaded_allowance }}
-                {% else %}
-                0.02 in³
-                {% endif %}
-              </div>
-              <div class="constraint-note">Allowed interference volume</div>
-            </div>
-            <div class="constraint-item constraint-other">
-              <div class="constraint-label">All Other Components</div>
-              <div class="constraint-value mono">
-                {% if page.interference_constraints %}
-                {{ page.interference_constraints.other_components }}
-                {% else %}
-                Zero interferences allowed
-                {% endif %}
-              </div>
-              <div class="constraint-note">Must achieve perfect fit</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Amendment Process -->
-      <div>
-        <h3 class="subsection-title">Dimension Amendment Process</h3>
-        <p class="mb-4">Initial reference dimensions were systematically amended to achieve a properly functioning shock absorber:</p>
-        <div class="amendment-steps">
-          <div class="amendment-step">
-            <span class="step-number mono">1</span>
-            <div class="step-content">
-              <strong>Initial Assembly:</strong> Created all components using provided reference dimensions
-            </div>
-          </div>
-          <div class="amendment-step">
-            <span class="step-number mono">2</span>
-            <div class="step-content">
-              <strong>Interference Detection:</strong> Ran SolidWorks interference detection to identify clashes
-            </div>
-          </div>
-          <div class="amendment-step">
-            <span class="step-number mono">3</span>
-            <div class="step-content">
-              <strong>Systematic Amendment:</strong> Adjusted part dimensions while maintaining design intent
-            </div>
-          </div>
-          <div class="amendment-step">
-            <span class="step-number mono">4</span>
-            <div class="step-content">
-              <strong>Verification:</strong> Confirmed zero interferences (except threaded allowance) and proper function
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Section 3: Assembly Architecture & BOM -->
-  <section class="content-section" id="assembly">
-    <h2 class="section-title">Assembly Architecture & Bill of Materials</h2>
-    <div class="section-content">
-      
-      <!-- BOM Table - Critical Component with Custom/Standard Distinction -->
+  {% endif %}
+
+  {% if page.interference_constraints or page.amendment_steps %}
+  <section class="project-section">
+    <h2>Design Constraints &amp; Interference Management</h2>
+    <div class="project-content">
+      {% if page.interference_constraints %}
       <div class="mb-8">
-        <h3 class="subsection-title">Bill of Materials (BOM)</h3>
-        <p class="mb-4">Complete parts list for the shock absorber assembly. <strong>Custom machined parts</strong> require engineering drawings; <strong>standard fasteners</strong> are sourced from McMaster-Carr.</p>
-        
+        <h3>Strict Interference Rules</h3>
         <div class="table-responsive">
-          <table class="table bom-table bom-table-extended">
+          <table class="metrics-table">
+            <thead>
+              <tr>
+                <th>Constraint</th>
+                <th>Requirement</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Threaded Components</strong></td>
+                <td class="mono">{{ page.interference_constraints.threaded_allowance }}</td>
+                <td>Allowed interference volume</td>
+              </tr>
+              <tr>
+                <td><strong>All Other Components</strong></td>
+                <td class="mono">{{ page.interference_constraints.other_components }}</td>
+                <td>Must achieve perfect fit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.amendment_steps %}
+      <div>
+        <h3>Dimension Amendment Process</h3>
+        {% if page.amendment_intro %}
+        <p class="mb-4">{{ page.amendment_intro }}</p>
+        {% endif %}
+        <ol>
+          {% for step in page.amendment_steps %}
+          <li>{{ step.description }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.bom or page.spring_specs or page.key_features %}
+  <section class="project-section">
+    <h2>Assembly Architecture &amp; Bill of Materials</h2>
+    <div class="project-content">
+      {% if page.bom %}
+      <div class="mb-8">
+        <h3>Bill of Materials (BOM)</h3>
+        <div class="table-responsive">
+          <table class="metrics-table">
             <thead>
               <tr>
                 <th class="mono">Item No.</th>
@@ -171,500 +135,213 @@ layout: default
                 <th>Material</th>
                 <th class="mono">Qty</th>
                 <th>Type</th>
+                <th>McMaster-Carr</th>
               </tr>
             </thead>
             <tbody>
-              {% if page.bom %}
               {% for item in page.bom %}
-              <tr class="{% if item.type == 'custom' %}bom-row-custom{% elsif item.type == 'standard' %}bom-row-standard{% endif %}">
-                <td class="mono bom-item-no">{{ item.number }}</td>
-                <td>
-                  <strong>{{ item.name }}</strong>
-                  {% if item.type == 'custom' %}
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                  {% endif %}
-                </td>
+              <tr>
+                <td class="mono">{{ item.number }}</td>
+                <td><strong>{{ item.name }}</strong></td>
                 <td>{{ item.material }}</td>
-                <td class="mono bom-qty">{{ item.quantity }}</td>
+                <td class="mono">{{ item.quantity }}</td>
                 <td class="mono">
                   {% if item.type == 'custom' %}
-                  <span class="part-type-badge part-type-custom">Custom</span>
+                  Custom
                   {% elsif item.type == 'standard' %}
-                  <span class="part-type-badge part-type-standard">Standard</span>
+                  Standard
                   {% else %}
-                  <span class="part-type-badge part-type-custom">Custom</span>
+                  {{ item.type }}
                   {% endif %}
                 </td>
+                <td>{{ item.mcmaster_carr }}</td>
               </tr>
               {% endfor %}
-              {% else %}
-              <!-- Default BOM rows if not provided in front matter -->
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">1</td>
-                <td>
-                  <strong>Shock Body (Outer Tube)</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1018</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">2</td>
-                <td>
-                  <strong>Piston Rod</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1045, Chrome Plated</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">3</td>
-                <td>
-                  <strong>Piston Head</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1018</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">4</td>
-                <td>
-                  <strong>Compression Spring</strong>
-                  <span class="spring-highlight-badge" title="Modeled from scratch">↯ Modeled from Scratch</span>
-                </td>
-                <td>Music Wire ASTM A228</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">5</td>
-                <td>
-                  <strong>Upper Bushing</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Bronze SAE 841</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">6</td>
-                <td>
-                  <strong>Lower Bushing</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Bronze SAE 841</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">7</td>
-                <td>
-                  <strong>End Cap (Top)</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1018</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">8</td>
-                <td>
-                  <strong>End Cap (Bottom)</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1018</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              <tr class="bom-row-standard">
-                <td class="mono bom-item-no">9</td>
-                <td><strong>Retaining Ring</strong></td>
-                <td>Spring Steel 1075</td>
-                <td class="mono bom-qty">2</td>
-                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
-              </tr>
-              <tr class="bom-row-standard">
-                <td class="mono bom-item-no">10</td>
-                <td><strong>Set Screw</strong></td>
-                <td>Alloy Steel Grade 8</td>
-                <td class="mono bom-qty">2</td>
-                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
-              </tr>
-              <tr class="bom-row-standard">
-                <td class="mono bom-item-no">11</td>
-                <td><strong>O-Ring Seal</strong></td>
-                <td>Viton Fluoroelastomer</td>
-                <td class="mono bom-qty">2</td>
-                <td class="mono"><span class="part-type-badge part-type-standard">McMaster-Carr</span></td>
-              </tr>
-              <tr class="bom-row-custom">
-                <td class="mono bom-item-no">12</td>
-                <td>
-                  <strong>Mounting Bracket</strong>
-                  <span class="drawing-required-badge" title="Engineering drawing required">📄 Drawing Required</span>
-                </td>
-                <td>Steel AISI 1018</td>
-                <td class="mono bom-qty">1</td>
-                <td class="mono"><span class="part-type-badge part-type-custom">Custom</span></td>
-              </tr>
-              {% endif %}
             </tbody>
           </table>
         </div>
-        
-        <!-- Spring Specification Highlight -->
-        {% if page.spring_specs %}
-        <div class="spring-spec-callout mt-4">
-          <div class="callout-header">
-            <span class="callout-icon">↯</span>
-            <strong>Compression Spring Specifications</strong>
-          </div>
-          <div class="callout-body">
-            <div class="spring-specs-grid">
-              <div class="spring-spec-item">
-                <span class="spec-label">Free Height:</span>
-                <span class="spec-value mono">{{ page.spring_specs.height }}</span>
-              </div>
-              <div class="spring-spec-item">
-                <span class="spec-label">Pitch:</span>
-                <span class="spec-value mono">{{ page.spring_specs.pitch }}</span>
-              </div>
-              <div class="spring-spec-item">
-                <span class="spec-label">Revolutions:</span>
-                <span class="spec-value mono">{{ page.spring_specs.revolutions }}</span>
-              </div>
-            </div>
-            <p class="spring-note mt-2">Spring was modeled from scratch using helical sweep feature (not downloaded from library).</p>
-          </div>
-        </div>
-        {% endif %}
       </div>
-      
-      <!-- Key Design Features Grid -->
+      {% endif %}
+
+      {% if page.spring_specs %}
+      <div class="mb-8">
+        <h3>Compression Spring Specifications</h3>
+        <div class="table-responsive">
+          <table class="metrics-table">
+            <tbody>
+              <tr>
+                <th>Free Height</th>
+                <td class="mono">{{ page.spring_specs.height }}</td>
+              </tr>
+              <tr>
+                <th>Pitch</th>
+                <td class="mono">{{ page.spring_specs.pitch }}</td>
+              </tr>
+              <tr>
+                <th>Revolutions</th>
+                <td class="mono">{{ page.spring_specs.revolutions }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.key_features %}
       <div>
-        <h3 class="subsection-title">Key Design Features</h3>
-        <div class="grid-3 key-features-grid">
-          
-          {% if page.key_features %}
+        <h3>Key Design Features</h3>
+        <div class="grid grid-3">
           {% for feature in page.key_features %}
-          <div class="feature-card feature-{{ feature.name | downcase | replace: ' ', '-' }}">
-            <div class="feature-card-header">
-              <span class="feature-icon">{% if feature.name contains 'Shaft' %}⚙{% elsif feature.name contains 'Bushing' %}◉{% else %}↯{% endif %}</span>
-              <h4 class="feature-title mono">{{ feature.name }}</h4>
-            </div>
-            <div class="feature-card-body">
-              <ul class="feature-spec-list">
-                {% for spec in feature.specs %}
-                <li>{{ spec }}</li>
-                {% endfor %}
-              </ul>
-            </div>
+          <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
+            <p><strong>{{ feature.title }}</strong></p>
+            <p>{{ feature.description }}</p>
           </div>
           {% endfor %}
-          {% else %}
-          <div class="feature-card feature-shaft">
-            <div class="feature-card-header">
-              <span class="feature-icon">⚙</span>
-              <h4 class="feature-title mono">Piston Shaft</h4>
-            </div>
-            <div class="feature-card-body">
-              <ul class="feature-spec-list">
-                <li><strong>Thread:</strong> 0.75-10 UNC-2A</li>
-                <li><strong>Keyway:</strong> 0.125" × 0.125"</li>
-                <li><strong>Diameter:</strong> 0.750" nominal</li>
-                <li><strong>Finish:</strong> Chrome plated for corrosion resistance</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="feature-card feature-bushings">
-            <div class="feature-card-header">
-              <span class="feature-icon">◉</span>
-              <h4 class="feature-title mono">Bronze Bushings</h4>
-            </div>
-            <div class="feature-card-body">
-              <ul class="feature-spec-list">
-                <li><strong>Material:</strong> SAE 841 Oil-Impregnated Bronze</li>
-                <li><strong>ID:</strong> 0.755" (0.005" clearance)</li>
-                <li><strong>OD:</strong> 1.000" press fit</li>
-                <li><strong>Length:</strong> 0.750" each</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="feature-card feature-spring">
-            <div class="feature-card-header">
-              <span class="feature-icon">↯</span>
-              <h4 class="feature-title mono">Compression Spring</h4>
-            </div>
-            <div class="feature-card-body">
-              <ul class="feature-spec-list">
-                <li><strong>Wire Diameter:</strong> 0.125"</li>
-                <li><strong>Outer Diameter:</strong> 1.500"</li>
-                <li><strong>Free Length:</strong> 4.000"</li>
-                <li><strong>Spring Rate:</strong> ~150 lb/in</li>
-              </ul>
-            </div>
-          </div>
-          {% endif %}
-          
         </div>
       </div>
-      
+      {% endif %}
     </div>
   </section>
-  
-  <!-- Section 3: CAD Modeling & Engineering Drawings -->
-  <section class="content-section" id="drawings">
-    <h2 class="section-title">CAD Modeling & Engineering Drawings</h2>
-    <div class="section-content">
-      
-      <p class="mb-6">Click on any drawing to open the zoomable lightbox viewer. Use scroll/pinch to zoom in on dimension callouts and GD&T symbols.</p>
-      
-      <!-- Side-by-Side 3D/2D Comparison Components -->
+  {% endif %}
+
+  {% if page.drawing_pairs or page.gallery %}
+  <section class="project-section">
+    <h2>CAD Modeling &amp; Engineering Drawings</h2>
+    <div class="project-content">
       {% if page.drawing_pairs %}
-      <div class="drawing-comparison-collection">
+      <div class="mb-8">
         {% for pair in page.drawing_pairs %}
-        <div class="side-by-side-drawing">
-          <div class="side-by-side-header">
-            <h4 class="side-by-side-title">{{ pair.title }}</h4>
-          </div>
-          <div class="side-by-side-grid">
-            <div class="side-by-side-item side-by-side-3d">
-              <div class="drawing-viewer" onclick="openLightbox('{{ pair.model_3d | relative_url }}', '{{ pair.title }} - 3D Model')">
-                <img src="{{ pair.model_3d | relative_url }}" alt="{{ pair.title }} - 3D Model" loading="lazy">
-                <div class="drawing-label">3D SolidWorks Model</div>
-              </div>
-            </div>
-            <div class="side-by-side-item side-by-side-2d">
-              <div class="drawing-viewer" onclick="openLightbox('{{ pair.drawing_2d | relative_url }}', '{{ pair.title }} - 2D Drawing')">
-                <img src="{{ pair.drawing_2d | relative_url }}" alt="{{ pair.title }} - 2D Engineering Drawing" loading="lazy">
-                <div class="drawing-label">2D Engineering Drawing</div>
-              </div>
-            </div>
+        <div style="margin-bottom: 2rem;">
+          <h3>{{ pair.title }}</h3>
+          <div class="layout-two-col">
+            <figure class="figure">
+              <img src="{{ pair.model_3d | relative_url }}" alt="{{ pair.title }} - 3D Model" loading="lazy" onclick="openLightbox('{{ pair.model_3d | relative_url }}', '{{ pair.title }} - 3D Model')">
+              <figcaption class="figure-caption">3D SolidWorks Model</figcaption>
+            </figure>
+            <figure class="figure">
+              <img src="{{ pair.drawing_2d | relative_url }}" alt="{{ pair.title }} - 2D Engineering Drawing" loading="lazy" onclick="openLightbox('{{ pair.drawing_2d | relative_url }}', '{{ pair.title }} - 2D Drawing')">
+              <figcaption class="figure-caption">2D Engineering Drawing</figcaption>
+            </figure>
           </div>
         </div>
         {% endfor %}
       </div>
       {% endif %}
-      
-      <!-- Full Gallery of Drawings -->
+
       {% if page.gallery %}
-      <div class="mt-8">
-        <h3 class="subsection-title">Complete Drawing Set</h3>
-        <div class="image-gallery image-gallery-cad">
+      <div>
+        <h3>Complete Drawing Set</h3>
+        <div class="gallery-grid">
           {% for image in page.gallery %}
-          <div class="gallery-item gallery-item-cad" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
+          <figure class="gallery-item" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
             <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-            <div class="gallery-caption">{{ image.caption }}</div>
-          </div>
+            <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+          </figure>
           {% endfor %}
         </div>
       </div>
       {% endif %}
-      
     </div>
   </section>
-  
-  <!-- Section 4: Materials & Manufacturing Considerations -->
-  <section class="content-section" id="materials">
-    <h2 class="section-title">Materials & Manufacturing Considerations</h2>
-    <div class="section-content">
+  {% endif %}
+
+  {% if page.material_selection or page.manufacturing_processes %}
+  <section class="project-section">
+    <h2>Materials &amp; Manufacturing Considerations</h2>
+    <div class="project-content">
       <div class="layout-two-col materials-layout">
-        
-        <!-- Left Column: Material Selection -->
+        {% if page.material_selection %}
         <div class="materials-left">
-          <h3 class="subsection-title">Material Selection</h3>
-          {% if page.material_selection %}
+          <h3>Material Selection</h3>
           {{ page.material_selection | markdownify }}
-          {% else %}
-          <p><strong>Steel (AISI 1018/1045):</strong> Selected for load-bearing components (shock body, piston rod, end caps) due to excellent strength-to-weight ratio, machinability, and cost-effectiveness. The piston rod is chrome-plated for corrosion resistance and reduced friction.</p>
-          <p><strong>Bronze (SAE 841):</strong> Oil-impregnated sintered bronze selected for bushings due to self-lubricating properties, low friction coefficient against steel, and ability to operate without external lubrication—critical for a sealed shock absorber assembly.</p>
-          <p><strong>Music Wire (ASTM A228):</strong> High-carbon spring steel selected for the compression spring due to high yield strength, excellent fatigue resistance, and consistent spring characteristics under cyclic loading.</p>
-          {% endif %}
         </div>
-        
-        <!-- Right Column: Manufacturing Processes -->
+        {% endif %}
+
+        {% if page.manufacturing_processes %}
         <div class="materials-right">
-          <h3 class="subsection-title">Manufacturing Processes</h3>
-          {% if page.manufacturing_processes %}
+          <h3>Manufacturing Processes</h3>
           {{ page.manufacturing_processes | markdownify }}
-          {% else %}
-          <ul class="custom-bullet-list">
-            <li><strong>CNC Turning:</strong> Used for cylindrical parts (shock body, piston rod, bushings) to achieve tight tolerances and smooth surface finishes.</li>
-            <li><strong>CNC Milling:</strong> Employed for flat features, keyways, and mounting bracket geometry.</li>
-            <li><strong>Thread Rolling:</strong> External threads on piston rod produced via thread rolling for improved strength and surface finish.</li>
-            <li><strong>Centerless Grinding:</strong> Applied to piston rod OD for precise diameter control and mirror-like finish.</li>
-            <li><strong>Off-the-Shelf Hardware:</strong> Retaining rings, set screws, and O-rings sourced from McMaster-Carr to reduce manufacturing complexity and cost.</li>
-          </ul>
-          {% endif %}
         </div>
-        
+        {% endif %}
       </div>
     </div>
   </section>
-  
-  <!-- Section 5: Design Validation & Lessons Learned -->
-  <section class="content-section" id="validation">
-    <h2 class="section-title">Design Validation & Lessons Learned</h2>
-    <div class="section-content">
-      
-      <!-- Design Validation -->
-      <div class="mb-8">
-        <h3 class="subsection-title">Design Validation</h3>
-        <div class="layout-two-col validation-layout">
-          
-          <div class="validation-block">
-            <h4 class="validation-subtitle">✓ Assembly Verification</h4>
-            <p>All 12 components were assembled in SolidWorks with appropriate mates (concentric, coincident, distance). The assembly is fully constrained with 0 degrees of freedom, confirming proper fit and function.</p>
-          </div>
-          
-          <div class="validation-block">
-            <h4 class="validation-subtitle">✓ Drawing Accuracy</h4>
-            <p>All 2D drawings were cross-checked against the 3D model using SolidWorks drawing views. Dimensions were verified to match model geometry, and GD&T callouts were validated per ASME Y14.5-2018 standards.</p>
-          </div>
-          
-        </div>
-      </div>
-      
-      <!-- Lessons Learned: Challenge -> Resolution Format -->
+  {% endif %}
+
+  {% if page.design_validation or page.lessons_learned %}
+  <section class="project-section">
+    <h2>Design Validation &amp; Lessons Learned</h2>
+    <div class="project-content">
+      {% if page.design_validation %}
       <div>
-        <h3 class="subsection-title">Lessons Learned</h3>
-        <div class="lessons-learned-cad">
-          
-          {% if page.lessons_learned %}
-          {% for lesson in page.lessons_learned %}
-          <div class="challenge-resolution-block">
-            <div class="challenge-header">
-              <span class="challenge-icon">⚠</span>
-              <strong>Challenge:</strong> {{ lesson.challenge }}
-            </div>
-            <div class="resolution-body">
-              <span class="resolution-icon">✓</span>
-              <strong>Resolution:</strong> {{ lesson.resolution }}
-            </div>
-          </div>
-          {% endfor %}
-          {% else %}
-          <!-- Default lessons learned -->
-          <div class="challenge-resolution-block">
-            <div class="challenge-header">
-              <span class="challenge-icon">⚠</span>
-              <strong>Challenge:</strong> Dimensioning the keyway on the piston shaft
-            </div>
-            <div class="resolution-body">
-              <span class="resolution-icon">✓</span>
-              <strong>Resolution:</strong> Researched standard keyway dimensions per ANSI B17.1 and applied appropriate tolerances (+0.002"/-0.000" for width, +0.010"/-0.000" for depth). Added a detailed detail view at 2:1 scale to clearly show the keyway geometry.
-            </div>
-          </div>
-          
-          <div class="challenge-resolution-block">
-            <div class="challenge-header">
-              <span class="challenge-icon">⚠</span>
-              <strong>Challenge:</strong> Properly specifying GD&T for concentricity between bushing bores
-            </div>
-            <div class="resolution-body">
-              <span class="resolution-icon">✓</span>
-              <strong>Resolution:</strong> Applied positional tolerance (⌀0.005" at MMC) relative to datum axis established by the shock body OD. This ensures both bushings remain coaxial within acceptable limits for smooth piston movement.
-            </div>
-          </div>
-          
-          <div class="challenge-resolution-block">
-            <div class="challenge-header">
-              <span class="challenge-icon">⚠</span>
-              <strong>Challenge:</strong> Thread callout confusion between UNF and UNC series
-            </div>
-            <div class="resolution-body">
-              <span class="resolution-icon">✓</span>
-              <strong>Resolution:</strong> Verified that 0.75-10 is UNC (coarse) series per ASME B1.1. Updated all drawings to explicitly state "UNC-2A" to avoid manufacturing ambiguity. Added note: "THREADS PER ASME B1.1 UNLESS OTHERWISE SPECIFIED."
-            </div>
-          </div>
-          {% endif %}
-          
+        <h3>Design Validation</h3>
+        {% for item in page.design_validation %}
+        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
+          <p><strong>{{ item.title }}</strong></p>
+          <p>{{ item.description }}</p>
         </div>
+        {% endfor %}
       </div>
-      
+      {% endif %}
+
+      {% if page.lessons_learned %}
+      <div>
+        <h3>Lessons Learned</h3>
+        {% for lesson in page.lessons_learned %}
+        <div style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
+          <p><strong>Challenge:</strong> {{ lesson.challenge }}</p>
+          <p><strong>Resolution:</strong> {{ lesson.resolution }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </section>
-  
-  <!-- Section 6: Technical Skills & Resources -->
-  <section class="content-section" id="skills-resources">
-    <h2 class="section-title">Technical Skills & Resources</h2>
-    <div class="section-content">
-      
-      <!-- Technical Skills Grid -->
+  {% endif %}
+
+  {% if page.skills or page.resources %}
+  <section class="project-section">
+    <h2>Technical Skills &amp; Resources</h2>
+    <div class="project-content">
+      {% if page.skills %}
       <div class="mb-8">
-        <h3 class="subsection-title">Technical Skills Demonstrated</h3>
-        <div class="skill-tag-grid skill-tag-dense">
-          {% if page.skills %}
+        <h3>Technical Skills Demonstrated</h3>
+        <div class="project-tags">
           {% for skill in page.skills %}
-          <span class="skill-tag">{{ skill }}</span>
+          <span class="tag-cohesive">{{ skill }}</span>
           {% endfor %}
-          {% else %}
-          <span class="skill-tag">SolidWorks Part Modeling</span>
-          <span class="skill-tag">SolidWorks Assembly</span>
-          <span class="skill-tag">2D Engineering Drawings</span>
-          <span class="skill-tag">ASME Y14.5 GD&T</span>
-          <span class="skill-tag">Dimensional Tolerancing</span>
-          <span class="skill-tag">Section Views</span>
-          <span class="skill-tag">Detail Views</span>
-          <span class="skill-tag">Auxiliary Views</span>
-          <span class="skill-tag">Thread Callouts (ASME B1.1)</span>
-          <span class="skill-tag">Keyway Dimensioning</span>
-          <span class="skill-tag">Surface Finish Symbols</span>
-          <span class="skill-tag">Press Fit Tolerances</span>
-          <span class="skill-tag">Clearance Fits</span>
-          <span class="skill-tag">Material Selection</span>
-          <span class="skill-tag">DFM Principles</span>
-          <span class="skill-tag">BOM Generation</span>
-          <span class="skill-tag">Interference Detection</span>
-          <span class="skill-tag">Mate Constraints</span>
-          <span class="skill-tag">Drawing Sheets Setup</span>
-          <span class="skill-tag">Title Block Management</span>
-          {% endif %}
         </div>
       </div>
-      
-      <!-- Resource Links -->
+      {% endif %}
+
+      {% if page.resources %}
       <div>
-        <h3 class="subsection-title">Project Resources</h3>
-        <div class="resource-links">
-          {% if page.resources %}
+        <h3>Project Resources</h3>
+        <div class="resources-button-row">
           {% for resource in page.resources %}
-          <a href="{{ resource.url }}" class="btn btn-resource" target="_blank" rel="noopener">
+          <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
             {{ resource.label }}
           </a>
           {% endfor %}
-          {% else %}
-          <a href="#" class="btn btn-resource">📄 Download Drawing PDFs</a>
-          <a href="#" class="btn btn-resource">🔧 View SolidWorks Files</a>
-          <a href="https://www.asme.org/codes-standards/find-codes-standards/y14-5-dimensioning-and-tolerancing" class="btn btn-resource" target="_blank" rel="noopener">📐 ASME Y14.5 Reference</a>
-          {% endif %}
         </div>
       </div>
-      
+      {% endif %}
     </div>
   </section>
-  
+  {% endif %}
+
 </div>
 
 <script>
-// Lightbox functionality for zoomable drawings
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox') || createLightbox();
   const lightboxImg = lightbox.querySelector('.lightbox-image');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-  
+
   lightboxImg.src = imageSrc;
   lightboxCaption.textContent = caption || '';
   lightbox.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  
-  // Enable zoom functionality
-  enableLightboxZoom(lightbox);
 }
 
 function createLightbox() {
@@ -676,11 +353,6 @@ function createLightbox() {
     <div class="lightbox-content">
       <img class="lightbox-image" src="" alt="">
       <div class="lightbox-caption"></div>
-      <div class="lightbox-zoom-controls">
-        <button onclick="zoomIn()">+</button>
-        <button onclick="zoomOut()">−</button>
-        <button onclick="resetZoom()">Reset</button>
-      </div>
     </div>
   `;
   document.body.appendChild(lightbox);
@@ -692,88 +364,15 @@ function closeLightbox() {
   if (lightbox) {
     lightbox.style.display = 'none';
     document.body.style.overflow = 'auto';
-    resetZoom();
   }
 }
 
-let currentZoom = 1;
-
-function enableLightboxZoom(lightbox) {
-  const img = lightbox.querySelector('.lightbox-image');
-  currentZoom = 1;
-  img.style.transform = 'scale(1)';
-  img.style.transition = 'transform 0.2s ease';
-  
-  // Mouse wheel zoom
-  img.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.1 : 0.1;
-    currentZoom = Math.max(1, Math.min(5, currentZoom + delta));
-    img.style.transform = `scale(${currentZoom})`;
-  });
-  
-  // Pan on drag when zoomed
-  let isDragging = false;
-  let startX, startY, translateX = 0, translateY = 0;
-  
-  img.addEventListener('mousedown', function(e) {
-    if (currentZoom > 1) {
-      isDragging = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-      img.style.cursor = 'grabbing';
-    }
-  });
-  
-  document.addEventListener('mousemove', function(e) {
-    if (isDragging && currentZoom > 1) {
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-      img.style.transform = `scale(${currentZoom}) translate(${translateX / currentZoom}px, ${translateY / currentZoom}px)`;
-    }
-  });
-  
-  document.addEventListener('mouseup', function() {
-    isDragging = false;
-    img.style.cursor = 'grab';
-  });
-}
-
-function zoomIn() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    const img = lightbox.querySelector('.lightbox-image');
-    currentZoom = Math.min(5, currentZoom + 0.25);
-    img.style.transform = `scale(${currentZoom})`;
-  }
-}
-
-function zoomOut() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    const img = lightbox.querySelector('.lightbox-image');
-    currentZoom = Math.max(1, currentZoom - 0.25);
-    img.style.transform = `scale(${currentZoom})`;
-  }
-}
-
-function resetZoom() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    const img = lightbox.querySelector('.lightbox-image');
-    currentZoom = 1;
-    img.style.transform = 'scale(1)';
-  }
-}
-
-// Close lightbox on escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLightbox();
   }
 });
 
-// Close lightbox on background click
 document.addEventListener('click', function(e) {
   const lightbox = document.getElementById('lightbox');
   if (lightbox && e.target === lightbox) {

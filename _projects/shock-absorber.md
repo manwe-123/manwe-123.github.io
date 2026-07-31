@@ -4,10 +4,12 @@ theme: cad
 category: engineering
 title: "Shock Absorber Assembly"
 subtitle: "Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class"
+date: 2025-12-09
 role: "Design Engineer - Academic Project"
 timeline: "Aug 2025 - Dec 2025"
 software: "SolidWorks"
 featured: true
+display: true
 tags:
   - SolidWorks
   - ASME Y14.5
@@ -35,11 +37,15 @@ amendment_steps:
   - step: 4
     description: "Ran SolidWorks Interference Detection to confirm zero interferences across all non-threaded components, strictly adhering to the 0.02 in³ allowance for threaded fasteners."
 
+amendment_intro: "Initial reference dimensions were systematically amended to achieve a properly functioning shock absorber:"
+
 # Spring specifications
 spring_specs:
   height: "1.845 inches"
   pitch: "0.50 inches"
   revolutions: "3.69"
+
+spring_note: "Spring was modeled from scratch using helical sweep feature (not downloaded from library)."
 
 # Key Design Features (3-column grid)
 key_features:
@@ -51,6 +57,8 @@ key_features:
     description: "Modeled from scratch with specific geometric parameters (1.845\" free height, 0.50\" pitch, 3.69 revolutions) to ensure accurate dynamic suspension behavior."
 
 # Bill of Materials
+bom_intro: "Complete parts list for the shock absorber assembly. **Custom machined parts** require engineering drawings; **standard fasteners** are sourced from McMaster-Carr."
+
 bom:
   - number: 1
     name: "Self Locking Nut"
@@ -133,6 +141,8 @@ drawing_pairs:
     model_3d: "/assets/images/shock-absorber/usupport-3d.png"
     drawing_2d: "/assets/images/shock-absorber/usupport-drawing.png"
 
+drawings_intro: "Click on any drawing to open the zoomable lightbox viewer. Use scroll/pinch to zoom in on dimension callouts and GD&T symbols."
+
 gallery:
   - src: "/assets/images/shock-absorber/assembly-exploded.png"
     caption: "Exploded isometric view of the complete 12-component shock absorber assembly"
@@ -153,6 +163,12 @@ manufacturing_processes: |
   - **Fabrication:** The U-support and bracket utilize milled or laser-cut profiles with drilled mounting holes.
   - **Standard Hardware:** Bolts, nuts, washers, and cotter pins are off-the-shelf McMaster-Carr components, reducing custom manufacturing complexity and cost.
   - **Compression Spring:** Manufactured to specific geometric parameters (Height: 1.845", Pitch: 0.50", 3.69 revolutions).
+
+design_validation:
+  - title: "Assembly Verification"
+    description: "All 12 components were assembled in SolidWorks with appropriate mates (concentric, coincident, distance). The assembly is fully constrained with 0 degrees of freedom, confirming proper fit and function."
+  - title: "Drawing Accuracy"
+    description: "All 2D drawings were cross-checked against the 3D model using SolidWorks drawing views. Dimensions were verified to match model geometry, and GD&T callouts were validated per ASME Y14.5-2018 standards."
 
 lessons_learned:
   - challenge: "Properly dimensioning and tolerancing the 0.125\" x 0.125\" keyway for manufacturing."
@@ -181,23 +197,4 @@ resources:
     url: "/assets/pdfs/shock-absorber-drawings.pdf"
   - label: "🔧 View SolidWorks Files"
     url: "https://github.com/manwe-123/shock-absorber-cad"
-  - label: "📚 ASME Y14.5 Reference"
-    url: "https://www.asme.org/codes-standards/find-codes-standards/y14.5-dimensioning-tolerancing"
 ---
-
-<!-- 
-  This is the Shock Absorber Assembly project page (Mercedes-Benz C-Class).
-  The layout handles all the content structure automatically.
-  
-  The page includes:
-  - Constraint Callout Box (interference rules)
-  - Bill of Materials table (with custom/standard distinction)
-  - Spring specification highlight
-  - Key Design Features grid
-  - Side-by-side 3D/2D drawing comparisons
-  - Image gallery with zoomable lightbox
-  - Materials & Manufacturing sections
-  - Design Validation & Lessons Learned
-  - Technical Skills tag grid
-  - Resource download buttons
--->

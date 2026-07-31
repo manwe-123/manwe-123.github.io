@@ -3,9 +3,11 @@ layout: project-chimera
 theme: chimera
 category: engineering
 title: "Automated Data Aggregation and AI Synthesis Pipeline"
+date: 2026-07-23
 subtitle: "Project Chimera"
 role: "Software & Systems Engineer"
 timeline: "May 2026 - Present"
+display: false
 featured: false
 tags:
   - Python
@@ -111,14 +113,9 @@ skills:
   - "API Design"
   - "CI/CD"
   - "Git"
-  - "Linux"
 
 # External Resources
 resources:
-  - label: "📄 View Documentation"
-    url: "https://github.com/manwe-123/chimera-pipeline"
   - label: "🔧 Source Code"
-    url: "https://github.com/manwe-123/chimera-pipeline"
-  - label: "📚 FastAPI Reference"
-    url: "https://fastapi.tiangolo.com/"
+    url: "https://github.com/manwe-123/equity-analyst"
 ---
