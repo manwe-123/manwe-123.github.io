@@ -1,5 +1,5 @@
 ---
-layout: project-photo
+layout: projects/project-photo
 theme: photography
 title: "EPICS in Spain"
 date: 2026-3-15

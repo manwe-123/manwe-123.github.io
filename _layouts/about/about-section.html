@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<header class="page-header">
+  <div class="container">
+    <a href="{{ '/about' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <span>←</span> Back to About
+    </a>
+    <h1 class="page-title">{{ page.title | default: page.title }}</h1>
+    <p class="page-subtitle">{{ page.section_excerpt | default: page.excerpt }}</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    {% if page.section_intro %}
+    <p style="max-width: 70ch; margin-bottom: 2rem; color: var(--color-text-secondary);">{{ page.section_intro }}</p>
+    {% endif %}
+
+    <div class="project-grid">
+      {% for item in page.section_items %}
+      <div class="project-card">
+        <div class="project-card-content">
+          {% if item.category %}
+          <span class="project-card-category">{{ item.category }}</span>
+          {% endif %}
+          <h3 class="project-card-title">{{ item.title }}</h3>
+          {% if item.subtitle %}
+          <p class="timeline-organization" style="margin-bottom: 0.5rem;">{{ item.subtitle }}</p>
+          {% endif %}
+          {% if item.date %}
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">{{ item.date }}</p>
+          {% endif %}
+          <p class="project-card-excerpt">{{ item.description }}</p>
+          {% if item.tags %}
+          <div class="project-card-tags">
+            {% for tag in item.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

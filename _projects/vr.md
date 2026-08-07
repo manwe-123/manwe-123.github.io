@@ -1,5 +1,5 @@
 ---
-layout: project-vr
+layout: projects/project-vr
 theme: vr
 category: engineering
 title: "VR Rapid Prototyping Application"

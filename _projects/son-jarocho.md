@@ -1,5 +1,5 @@
 ---
-layout: project-jarocho
+layout: projects/project-jarocho
 theme:
 title: "Son Jarocho Collective"
 subtitle: "An original piano composition exploring melancholy and resolution."
@@ -7,7 +7,7 @@ date: 2026-07-29
 category: music
 type: music
 featured: false
-display: true
+display: false
 tags:
   - Music
   - Original

@@ -1,5 +1,5 @@
 ---
-layout: project-chimera
+layout: projects/project-chimera
 theme: chimera
 category: engineering
 title: "Automated Data Aggregation and AI Synthesis Pipeline"

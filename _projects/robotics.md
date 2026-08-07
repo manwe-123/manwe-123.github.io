@@ -1,5 +1,5 @@
 ---
-layout: project-robotics
+layout: projects/project-robotics
 theme: robotics
 category: engineering
 title: "Mental Health Robotics System for Isolated Environments"

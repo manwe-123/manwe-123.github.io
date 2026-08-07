@@ -1,5 +1,5 @@
 ---
-layout: project-jarocho
+layout: projects/project-jarocho
 theme:
 title: "Son Jarocho Collective"
 subtitle: "An original piano composition exploring melancholy and resolution."
