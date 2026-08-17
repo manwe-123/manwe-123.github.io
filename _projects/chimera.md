@@ -12,7 +12,6 @@ featured: false
 tags:
   - Python
   - FastAPI
-  - PostgreSQL
   - Docker
   - LLM
   - RAG

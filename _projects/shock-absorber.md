@@ -15,8 +15,8 @@ tags:
   - ASME Y14.5
   - GD&T
   - DFM
-  - 3rd Angle Projection
-
+  - 3rd Angle Projections
+image: "assets/images/projects/cad/main.png"
 # Project Scenario & Overview
 objective: "Initiate the design of a fully functional shock absorber assembly for the Mercedes-Benz C-Class, modeling all custom components and integrating standard hardware to create a fully constrained, interference-free mechanical system."
 engineering_mandate: "Act as a Design Engineer to critically evaluate initial reference dimensions, amending part geometries to eliminate physical interferences, identify missing components, and ensure the assembly functions as a proper dynamic suspension system."
