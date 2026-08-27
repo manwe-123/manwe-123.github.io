@@ -193,3 +193,33 @@ if ('loading' in HTMLImageElement.prototype === false) {
 }
 
 console.log('Portfolio JavaScript loaded successfully');
+
+// --------------------------------------------------------------------------
+// SCROLL-TRIGGERED ANIMATIONS
+// For hero section and other elements with .animate-on-scroll class
+// --------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  
+  if (animatedElements.length > 0) {
+    // Check if element is in viewport
+    function checkIfInView() {
+      animatedElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // Element is considered in view when top is within viewport
+        if (rect.top >= 0 && rect.top <= (windowHeight * 0.8)) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Initial check on page load
+    checkIfInView();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkIfInView);
+  }
+});
