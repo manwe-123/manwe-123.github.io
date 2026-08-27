@@ -1588,7 +1588,7 @@ ABOUT PAGE SPECIFIC
 }
 
 .quick-info-card {
-  background-color: #cee3f8;
+  background-color: var(--color-accent);
   border: var(--border-width) solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
@@ -1755,8 +1755,8 @@ SPECIFICATIONS SIDEBAR
    -------------------------------------------------------------------------- */
 
 .specs-sidebar {
-  background-color: #26282a;
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: #1a1a1b;
+  border: var(--border-width) solid #38383a;
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
   margin-bottom: var(--spacing-6);

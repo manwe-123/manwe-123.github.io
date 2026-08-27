@@ -8,7 +8,7 @@ title: Home
   <div class="container hero-container">
     <div class="hero-content animate-on-scroll" data-animate="fade-up">
       <h1 class="hero-title">Manwe Castro</h1>
-      <p class="hero-subtitle">Mechanical Engineer</p>
+      <p class="hero-subtitle">Mechanical Engineering Student</p>
       <p class="hero-description">
         Engineering student building tangible solutions for clean energy and sustainable infrastructure. My work spans CAD, fabrication, embedded controls, and data pipelines, taking projects from concept to functioning prototype.
       </p>

@@ -2,22 +2,45 @@
 layout: default
 ---
 
-<header class="page-header">
+
+<header class="project-header">
   <div class="container">
     <a href="{{ '/about' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
       <span>←</span> Back to About
     </a>
-    <h1 class="page-title">{{ page.title | default: page.title }}</h1>
-    <p class="page-subtitle">{{ page.section_excerpt | default: page.excerpt }}</p>
+
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.section_excerpt %}
+    <p class="project-subtitle">{{ page.section_excerpt }}</p>
+    {% endif %}
+
+    <div class="project-meta">
+      {% if page.gpa %}
+      <span class="meta-badge"><strong>GPA:</strong> {{ page.gpa }}</span>
+      {% endif %}
+
+      {% if page.timeline %}
+      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
+      {% endif %}
+
+      {% if page.software %}
+      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags %}
+    <div class="project-tags mt-4">
+      {% for tag in page.tags %}
+      <span class="tag-cohesive">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    {% if page.section_intro %}
-    <p style="max-width: 70ch; margin-bottom: 2rem; color: var(--color-text-secondary);">{{ page.section_intro }}</p>
-    {% endif %}
-
     <div class="project-grid">
       {% for item in page.section_items %}
       <div class="project-card">

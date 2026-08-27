@@ -8,7 +8,7 @@ date: 2025-12-09
 role: "Design Engineer - Academic Project"
 timeline: "Aug 2025 - Dec 2025"
 software: "SolidWorks"
-featured: true
+featured: false
 display: true
 tags:
   - SolidWorks

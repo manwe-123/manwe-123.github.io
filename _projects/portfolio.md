@@ -2,22 +2,17 @@
 layout: projects/project-chimera
 theme: chimera
 category: engineering
-title: "AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal	"
-date: 2026-07-23
+title: "Engineering Portfolio"
+date: 2026-08-23
 subtitle: "A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization."
 role: "Software & Systems Engineer"
-timeline: "May 2026 - Present"
-display: true
-featured: true
+timeline: "June 2026 - Present"
+display: false
+featured: false
 tags:
-  - Python
-  - FastAPI
-  - Docker
-  - LLM
-  - RAG
-  - Redis
-  - React
-image: "assets/images/projects/chimera/main.jpg"
+  - HTML
+  -
+image: "assets/images/projects/portfolio/main.jpg"
 # Overview Section
 problem_statement: |
   Manually aggregating, normalizing, and analyzing data from disparate sources (live market APIs, unstructured news feeds, and raw legal documents) is slow, error-prone, and unscalable. Traditional retail tools lack the institutional-grade data synthesis required for robust, risk-adjusted decision-making, creating a need for an automated, closed-loop data pipeline.

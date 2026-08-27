@@ -1588,7 +1588,7 @@ ABOUT PAGE SPECIFIC
 }
 
 .quick-info-card {
-  background-color: #cee3f8;
+  background-color: var(--color-accent);
   border: var(--border-width) solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
@@ -1755,8 +1755,8 @@ SPECIFICATIONS SIDEBAR
    -------------------------------------------------------------------------- */
 
 .specs-sidebar {
-  background-color: #26282a;
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: #1a1a1b;
+  border: var(--border-width) solid #38383a;
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
   margin-bottom: var(--spacing-6);
@@ -2242,9 +2242,19 @@ ENGINEERING PROJECT TYPOGRAPHY - UNIFIED STYLES
   transform: translateY(30px);
 }
 
+.animate-on-scroll[data-animate="fade-up"].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .animate-on-scroll[data-animate="fade-right"] {
   opacity: 0;
   transform: translateX(50px);
+}
+
+.animate-on-scroll[data-animate="fade-right"].visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .animate-on-scroll[data-animate="fade-left"] {
@@ -2252,9 +2262,19 @@ ENGINEERING PROJECT TYPOGRAPHY - UNIFIED STYLES
   transform: translateX(-50px);
 }
 
+.animate-on-scroll[data-animate="fade-left"].visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .animate-on-scroll[data-animate="scale-in"] {
   opacity: 0;
   transform: scale(0.9);
+}
+
+.animate-on-scroll[data-animate="scale-in"].visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Staggered animation delays for children - override with inline styles when needed */
