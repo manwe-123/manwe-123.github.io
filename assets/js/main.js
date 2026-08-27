@@ -197,13 +197,36 @@ console.log('Portfolio JavaScript loaded successfully');
 // --------------------------------------------------------------------------
 // SCROLL-TRIGGERED ANIMATIONS
 // For hero section and other elements with .animate-on-scroll class
+// Uses Intersection Observer for better performance
 // --------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   
-  if (animatedElements.length > 0) {
-    // Check if element is in viewport
+  if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
+    // Create intersection observer
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        // When element enters viewport
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optionally unobserve after animation triggers once
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      // Trigger when element is 15% visible
+      threshold: 0.15,
+      // Start animating when element is about to enter viewport
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe all animated elements
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  } else if (animatedElements.length > 0) {
+    // Fallback for browsers without IntersectionObserver
     function checkIfInView() {
       animatedElements.forEach(element => {
         const rect = element.getBoundingClientRect();
