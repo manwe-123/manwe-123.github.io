@@ -727,7 +727,7 @@ TABLES
   }
 }
 /* --------------------------------------------------------------------------
-   LISTS
+LISTS
    -------------------------------------------------------------------------- */
 
 ul, ol {
@@ -1588,7 +1588,7 @@ ABOUT PAGE SPECIFIC
 }
 
 .quick-info-card {
-  background-color: var(--color-gray-50);
+  background-color: #cee3f8;
   border: var(--border-width) solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
@@ -1755,7 +1755,7 @@ SPECIFICATIONS SIDEBAR
    -------------------------------------------------------------------------- */
 
 .specs-sidebar {
-  background-color: var(--color-gray-50);
+  background-color: #26282a;
   border: var(--border-width) solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
@@ -1774,6 +1774,7 @@ SPECIFICATIONS SIDEBAR
 .specs-list {
   list-style: none;
   padding-left: 0;
+  padding-right: 10px;
   margin: 0;
 }
 
@@ -1829,7 +1830,7 @@ SPECIFICATIONS SIDEBAR
 }
 
 /* --------------------------------------------------------------------------
-   UTILITY CLASSES
+UTILITY CLASSES
    -------------------------------------------------------------------------- */
 
 .text-center { text-align: center; }
@@ -1892,55 +1893,6 @@ PRINT STYLES
     break-inside: avoid;
     border: 1px solid #ccc;
   }
-}
-/* --------------------------------------------------------------------------
-SPECIFICATIONS SIDEBAR
-   -------------------------------------------------------------------------- */
-
-.specs-sidebar {
-  background-color: var(--color-gray-50);
-  border: var(--border-width) solid var(--color-gray-200);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-5);
-  margin-bottom: var(--spacing-6);
-}
-
-.specs-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-gray-900);
-  margin-bottom: var(--spacing-4);
-  padding-bottom: var(--spacing-3);
-  border-bottom: var(--border-width) solid var(--color-gray-200);
-}
-
-.specs-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.spec-item {
-  display: flex;
-  justify-content: space-between;
-  padding: var(--spacing-2) 0;
-  font-size: 0.875rem;
-  border-bottom: var(--border-width) dotted var(--color-gray-200);
-}
-
-.spec-item:last-child {
-  border-bottom: none;
-}
-
-.spec-label {
-  color: var(--color-gray-600);
-  font-weight: 500;
-}
-
-.spec-value {
-  color: var(--color-gray-900);
-  font-family: var(--font-family-mono);
-  text-align: right;
 }
 /* --------------------------------------------------------------------------
 TWO COLUMN LAYOUT

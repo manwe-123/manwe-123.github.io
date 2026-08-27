@@ -11,3 +11,4 @@ gem "csv"
 gem "bigdecimal"
 
 gem 'liquid', '~> 4.0.4'
+gem 'jekyll-animate-elements'

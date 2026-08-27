@@ -7,18 +7,20 @@ title: Home
 <section class="hero">
   <div class="container">
     <h1 class="hero-title">Manwe Castro</h1>
-    <p class="hero-subtitle">Mechanical Engineer & Artist | Building Systems. Crafting Art. Solving Problems.</p>
+    <p class="hero-subtitle">Mechanical Engineer </p>
     <p class="hero-description">
-      Passionate about designing and building innovative mechanical systems, 
-      playing music, capturing moments through photography, and creating with textiles.
-      Seeking hands-on internships in design, manufacturing, robotics, and prototyping.
+      Engineering student building tangible solutions for clean energy and sustainable infrastructure. My work spans CAD, fabrication, embedded controls, and data pipelines, taking projects from concept to functioning prototype.
     </p>
+    
+
     <div class="hero-actions">
       <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Projects</a>
-      <a href="{{'assets/files/Resume.pdf' | relative_url }}" class="btn btn-secondary" download>View Resume</a>
+      <a href="{{'assets/files/Manwe Castro Resume.pdf' | relative_url }}" class="btn btn-secondary" download>View Resume</a>
     </div>
   </div>
 </section>
+
+
 
 <!-- Featured Projects Section -->
 <section class="section">
@@ -71,7 +73,7 @@ title: Home
         <h3 class="skill-category-title">Engineering + Technical</h3>
         <ul class="skill-list">
           <li class="skill-item">SolidWorks</li>
-          <li class="skill-item">AutoCAD Fusion 360</li>
+          <li class="skill-item">Autodesk Fusion 360</li>
           <li class="skill-item">2D Drafting & GD&T</li>
           <li class="skill-item">Python</li>
           <li class="skill-item">Arduino/C++</li>

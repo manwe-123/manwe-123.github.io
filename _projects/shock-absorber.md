@@ -143,15 +143,15 @@ drawing_pairs:
 
 drawings_intro: "Click on any drawing to open the zoomable lightbox viewer. Use scroll/pinch to zoom in on dimension callouts and GD&T symbols."
 
-gallery:
-  - src: "/assets/images/shock-absorber/assembly-exploded.png"
-    caption: "Exploded isometric view of the complete 12-component shock absorber assembly"
-  - src: "/assets/images/shock-absorber/assembly-constrained.png"
-    caption: "Fully constrained assembly verifying mechanical fit and component movement"
-  - src: "/assets/images/shock-absorber/drawing-sheet-shaft.png"
-    caption: "Manufacturing-ready 2D drawing of the shaft, detailing 0.75-10 threads and 0.125\" keyway"
-  - src: "/assets/images/shock-absorber/drawing-sheet-spring.png"
-    caption: "Spring specification drawing detailing pitch, revolutions, and free height"
+# gallery:
+#  - src: "/assets/images/shock-absorber/assembly-exploded.png"
+#    caption: "Exploded isometric view of the complete 12-component shock absorber assembly"
+#  - src: "/assets/images/shock-absorber/assembly-constrained.png"
+#    caption: "Fully constrained assembly verifying mechanical fit and component movement"
+#  - src: "/assets/images/shock-absorber/drawing-sheet-shaft.png"
+#    caption: "Manufacturing-ready 2D drawing of the shaft, detailing 0.75-10 threads and 0.125\" keyway"
+#  - src: "/assets/images/shock-absorber/drawing-sheet-spring.png"
+#    caption: "Spring specification drawing detailing pitch, revolutions, and free height"
 
 material_selection: |
   **Steel Components:** Selected for all primary load-bearing and structural parts (bracket, shaft, pivot, U-support) due to high tensile strength and durability under dynamic suspension loads.
@@ -192,9 +192,9 @@ skills:
   - Parametric Modeling & Design Intent
   - Interference Detection
 
-resources:
-  - label: "📄 Download Drawing PDFs"
-    url: "/assets/pdfs/shock-absorber-drawings.pdf"
-  - label: "🔧 View SolidWorks Files"
-    url: "https://github.com/manwe-123/shock-absorber-cad"
+# resources:
+#  - label: "📄 Download Drawing PDFs"
+#    url: "/assets/pdfs/shock-absorber-drawings.pdf"
+#  - label: "🔧 View SolidWorks Files"
+#    url: "https://github.com/manwe-123/shock-absorber-cad"
 ---
