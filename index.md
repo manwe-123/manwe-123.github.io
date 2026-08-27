@@ -6,7 +6,7 @@ title: Home
 <!-- Hero Section -->
 <section class="hero">
   <div class="container hero-container">
-    <div class="hero-content animate-on-scroll">
+    <div class="hero-content animate-on-scroll" data-animate="fade-up">
       <h1 class="hero-title">Manwe Castro</h1>
       <p class="hero-subtitle">Mechanical Engineer</p>
       <p class="hero-description">
@@ -20,7 +20,7 @@ title: Home
       </div>
     </div>
     
-    <div class="hero-image-wrapper animate-on-scroll">
+    <div class="hero-image-wrapper animate-on-scroll" data-animate="fade-right">
       <div class="hero-image-frame">
         <img src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Manwe Castro" class="hero-image" loading="eager">
       </div>
@@ -33,12 +33,12 @@ title: Home
 <!-- Featured Projects Section -->
 <section class="section">
   <div class="container">
-    <h2 style="margin-bottom: 2rem;">Featured Projects</h2>
+    <h2 class="animate-on-scroll" data-animate="fade-up" style="margin-bottom: 2rem;">Featured Projects</h2>
     
     <div class="grid grid-3">
       {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
       {% for project in featured_projects %}
-      <a href="{{ project.url | relative_url }}" class="project-card" data-category="{{ project.category | default: 'engineering' }}">
+      <a href="{{ project.url | relative_url }}" class="project-card animate-on-scroll" data-animate="fade-up" data-category="{{ project.category | default: 'engineering' }}" style="transition-delay: {{ forloop.index | times: 0.1 }}s;">
         {% if project.image %}
         <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-card-image" loading="lazy">
         {% else %}
@@ -64,7 +64,7 @@ title: Home
       {% endfor %}
     </div>
     
-    <div style="text-align: center; margin-top: 3rem;">
+    <div class="animate-on-scroll" data-animate="fade-up" style="text-align: center; margin-top: 3rem;">
       <a href="{{ '/projects' | relative_url }}" class="btn btn-outline">View All Work →</a>
     </div>
   </div>
