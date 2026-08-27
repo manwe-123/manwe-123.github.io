@@ -5,17 +5,25 @@ title: Home
 
 <!-- Hero Section -->
 <section class="hero">
-  <div class="container">
-    <h1 class="hero-title">Manwe Castro</h1>
-    <p class="hero-subtitle">Mechanical Engineer </p>
-    <p class="hero-description">
-      Engineering student building tangible solutions for clean energy and sustainable infrastructure. My work spans CAD, fabrication, embedded controls, and data pipelines, taking projects from concept to functioning prototype.
-    </p>
-    
+  <div class="container hero-container">
+    <div class="hero-content animate-on-scroll">
+      <h1 class="hero-title">Manwe Castro</h1>
+      <p class="hero-subtitle">Mechanical Engineer</p>
+      <p class="hero-description">
+        Engineering student building tangible solutions for clean energy and sustainable infrastructure. My work spans CAD, fabrication, embedded controls, and data pipelines, taking projects from concept to functioning prototype.
+      </p>
+      
 
-    <div class="hero-actions">
-      <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Projects</a>
-      <a href="{{'assets/files/Manwe Castro Resume.pdf' | relative_url }}" class="btn btn-secondary" download>View Resume</a>
+      <div class="hero-actions">
+        <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Projects</a>
+        <a href="{{'assets/files/Manwe Castro Resume.pdf' | relative_url }}" class="btn btn-outline" download>View Resume</a>
+      </div>
+    </div>
+    
+    <div class="hero-image-wrapper animate-on-scroll">
+      <div class="hero-image-frame">
+        <img src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Manwe Castro" class="hero-image" loading="eager">
+      </div>
     </div>
   </div>
 </section>
