@@ -11,7 +11,7 @@ github_username: "manwe-123"  # Add your GitHub username here
 linkedin_username: "manwe-castro"  # Add your LinkedIn username here
 location: "Tempe, AZ"  # Update with your location
 phone: "6023503164"  # Add your phone number if desired
-resume_url: "assets/files/Resume.pdf"  # Path to your resume PDF
+resume_url: "assets/files/Manwe Castro Resume.pdf"  # Path to your resume PDF
 
 # Build Settings for GitHub Pages
 markdown: kramdown
@@ -46,21 +46,3 @@ incremental: false
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-plugins:
-  - jekyll-animate-elements
-# using default values from plugin, excluding `enabled` and `verbose`
-animation:
-  enabled: true # enables css animation of individual elements
-  # selector to select elements in page. All elements that match the selector will be used, in the order they are found
-  selector: "audio, blockquote, div.card, div.highlighter-rouge, div.news, div.repositories, div.row, div.social, div.tag-category-list, figure, h2, h3, ol, p, tr, ul, video"
-  name: enter # name of your animation
-  duration: 0.6s
-  # `from` and `to` can be either a string or a hash. Here you can see an example of both usages
-  from:
-    opacity: 0
-    transform: translateY(10px)
-  to: "opacity:1;transform:none"
-  delay: 100ms # delay before each consecutive animation starts
-  # note that usually not more than 20 elements need to be animated, since they will be outside the screen
-  max_elements: 20 # maximum number of elements to animate (set to -1 to animate all elements)
-  verbose: true

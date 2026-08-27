@@ -1,9 +1,11 @@
 things to do
 - change about me quick info: done
-- fix bug of pages background loading slow
+- fix bug of home page missing content
+    - missing all info up until skills
 - redo home page
     - add picture of me
-    - add animation
+    - add animation to intro and featured section
+    - fis scroll animation
 - add animation to projects page
 - add animation to about page
 - add animation to contact page

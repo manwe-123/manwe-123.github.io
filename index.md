@@ -22,7 +22,7 @@ title: Home
     
     <div class="hero-image-wrapper animate-on-scroll" data-animate="fade-right">
       <div class="hero-image-frame">
-        <img src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Manwe Castro" class="hero-image" loading="eager">
+        <img src="{{ '/assets/images/headshot.jpg' }}" alt="Manwe Castro" class="hero-image" loading="eager">
       </div>
     </div>
   </div>
