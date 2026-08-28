@@ -49,6 +49,9 @@
 <loc>http://localhost:4000/contact/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/about/epics/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/about/hobbies/</loc>
 </url>
 <url>
@@ -65,9 +68,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/about/shpe/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/about/study-abroad/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/docs/</loc>
