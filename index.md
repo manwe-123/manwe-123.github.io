@@ -16,7 +16,7 @@ title: Home
 
       <div class="hero-actions">
         <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">View All Projects</a>
-        <a href="{{'assets/files/Manwe Castro Resume.pdf' | relative_url }}" class="btn btn-outline" download>View Resume</a>
+        <a href="{{'assets/files/Manwe Castro Resume.pdf' | relative_url }}" class="btn btn-outline">View Resume</a>
       </div>
     </div>
     
