@@ -2,7 +2,7 @@
 layout: projects/project-chimera
 theme: chimera
 category: engineering
-title: "AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal	"
+title: "AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal"
 date: 2026-07-23
 subtitle: "A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization."
 role: "Software & Systems Engineer"

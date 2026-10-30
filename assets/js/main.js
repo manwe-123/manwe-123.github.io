@@ -14,30 +14,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const navMenu = document.getElementById('navMenu');
   
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-      
-      // Animate hamburger to X
+    function setMenuOpen(open) {
+      navMenu.classList.toggle('active', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       const spans = navToggle.querySelectorAll('span');
-      if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
+      spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
+      spans[1].style.opacity = open ? '0' : '';
+      spans[2].style.transform = open ? 'rotate(-45deg) translate(7px, -6px)' : '';
+    }
+
+    navToggle.addEventListener('click', function() {
+      setMenuOpen(!navMenu.classList.contains('active'));
+    });
+
+    navMenu.addEventListener('click', function(e) {
+      if (e.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        setMenuOpen(false);
+        navToggle.focus();
       }
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
       if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
+        setMenuOpen(false);
       }
     });
   }
@@ -168,8 +173,11 @@ document.addEventListener('DOMContentLoaded', function() {
           
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
           });
+          if (targetElement.hasAttribute('tabindex')) {
+            targetElement.focus({ preventScroll: true });
+          }
         }
       }
     });

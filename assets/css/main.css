@@ -454,8 +454,8 @@ GRID LAYOUTS
 }
 
 .skill-category {
-  background-color: var(--color-gray-50);
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
 }
@@ -463,10 +463,10 @@ GRID LAYOUTS
 .skill-category-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-4);
   padding-bottom: var(--spacing-3);
-  border-bottom: var(--border-width) solid var(--color-gray-200);
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .skill-list {
@@ -480,12 +480,12 @@ GRID LAYOUTS
   align-items: center;
   padding: var(--spacing-2) 0;
   font-size: 0.875rem;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
 }
 
 .skill-item::before {
   content: "▸";
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-right: var(--spacing-2);
   font-weight: bold;
 }
@@ -876,7 +876,7 @@ FOOTER
   color: var(--color-text-primary);
 }
 .footer-section h3 {
-  color: var(--color-white);
+  color: var(--color-text-primary);
   font-size: 0.70rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -893,20 +893,20 @@ FOOTER
 }
 
 .footer-section a {
-  color: var(--color-gray-400);
+  color: var(--color-text-muted);
 }
 
 .footer-section a:hover {
-  color: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 .footer-bottom {
   margin-top: var(--spacing-8);
   padding-top: var(--spacing-6);
-  border-top: var(--border-width) solid var(--color-gray-800);
+  border-top: var(--border-width) solid var(--color-border);
   text-align: center;
   font-size: 0.875rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 /* --------------------------------------------------------------------------
    TIMELINE
@@ -925,7 +925,7 @@ FOOTER
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: var(--color-gray-200);
+  background-color: var(--color-border);
 }
 
 .timeline-item {
@@ -941,33 +941,33 @@ FOOTER
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--color-primary);
-  border: 2px solid var(--color-white);
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-text-primary);
 }
 
 .timeline-date {
   font-family: var(--font-family-mono);
   font-size: 0.875rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
   margin-bottom: var(--spacing-1);
 }
 
 .timeline-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-1);
 }
 
 .timeline-organization {
   font-size: 1rem;
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-2);
 }
 
 .timeline-description {
   font-size: 0.875rem;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
   line-height: 1.625;
 }
 /* --------------------------------------------------------------------------
@@ -983,15 +983,15 @@ PROJECT HEADER - Engineering Projects
   align-items: center;
   gap: var(--spacing-4);
   padding: var(--spacing-6);
-  background-color: var(--color-gray-50);
+  background-color: var(--color-bg-secondary);
   border-radius: var(--radius-md);
 }
 
 .timeline-phase {
   width: 100%;
   max-width: 500px;
-  background-color: var(--color-white);
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: var(--color-text-primary);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -1001,7 +1001,7 @@ PROJECT HEADER - Engineering Projects
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-4);
-  background-color: var(--color-gray-100);
+  background-color: var(--color-bg-tertiary);
 }
 
 .phase-badge {
@@ -1032,7 +1032,7 @@ PROJECT HEADER - Engineering Projects
 .timeline-phase-header h4 {
   font-size: 1rem;
   margin: 0;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
 }
 
 .timeline-phase-body {
@@ -1041,7 +1041,7 @@ PROJECT HEADER - Engineering Projects
 
 .timeline-arrow {
   font-size: 1.5rem;
-  color: var(--color-gray-400);
+  color: var(--color-text-muted);
 }
 
 .project-header {
@@ -1169,7 +1169,7 @@ PROJECT HEADER - Engineering Projects
 
 .content-section {
   padding: var(--spacing-8) 0;
-  border-bottom: var(--border-width) solid var(--color-gray-200);
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .content-section:last-child {
@@ -1179,7 +1179,7 @@ PROJECT HEADER - Engineering Projects
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-6);
   display: flex;
   align-items: center;
@@ -1191,14 +1191,14 @@ PROJECT HEADER - Engineering Projects
   display: inline-block;
   width: 4px;
   height: 24px;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   border-radius: var(--radius-sm);
 }
 
 .section-content {
   font-size: 1rem;
   line-height: 1.625;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
 }
 
 /* --------------------------------------------------------------------------
@@ -1789,7 +1789,7 @@ ABOUT PAGE SPECIFIC
 .about-bio {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
 }
 
 .about-bio p {
@@ -1797,8 +1797,8 @@ ABOUT PAGE SPECIFIC
 }
 
 .resume-download-section {
-  background-color: var(--color-gray-50);
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-6);
   text-align: center;
@@ -1810,13 +1810,13 @@ ABOUT PAGE SPECIFIC
 }
 
 .resume-download-section p {
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-4);
 }
 
 .quick-info-card {
   background-color: var(--color-accent);
-  border: var(--border-width) solid var(--color-gray-200);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
   margin-bottom: var(--spacing-4);
@@ -1825,7 +1825,7 @@ ABOUT PAGE SPECIFIC
 .quick-info-card h4 {
   font-size: 1rem;
   margin-bottom: var(--spacing-3);
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
 }
 
 .quick-info-list {
@@ -1836,7 +1836,7 @@ ABOUT PAGE SPECIFIC
 
 .quick-info-list li {
   padding: var(--spacing-2) 0;
-  border-bottom: var(--border-width) dotted var(--color-gray-200);
+  border-bottom: var(--border-width) dotted var(--color-border);
   font-size: 0.875rem;
   display: flex;
   justify-content: space-between;
@@ -1847,11 +1847,11 @@ ABOUT PAGE SPECIFIC
 }
 
 .quick-info-label {
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
 }
 
 .quick-info-value {
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   font-family: var(--font-family-mono);
 }
 /* --------------------------------------------------------------------------
@@ -1871,8 +1871,8 @@ CONTACT PAGE SPECIFIC
 }
 
 .contact-card {
-  background-color: var(--color-gray-50);
-  border: var(--border-width) solid var(--color-gray-200);
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
   text-align: center;
@@ -1880,7 +1880,7 @@ CONTACT PAGE SPECIFIC
 
 .contact-card-icon {
   font-size: 2rem;
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-bottom: var(--spacing-3);
 }
 
@@ -1890,7 +1890,7 @@ CONTACT PAGE SPECIFIC
 }
 
 .contact-card p {
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-3);
 }
 
@@ -1903,11 +1903,11 @@ CONTACT PAGE SPECIFIC
 .availability-table td {
   padding: var(--spacing-3);
   text-align: center;
-  border: var(--border-width) solid var(--color-gray-200);
+  border: var(--border-width) solid var(--color-border);
 }
 
 .availability-table th {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-bg-tertiary);
   font-weight: 600;
 }
 
@@ -1918,8 +1918,8 @@ CONTACT PAGE SPECIFIC
 }
 
 .availability-no {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
 }
 
 /* --------------------------------------------------------------------------
@@ -1992,10 +1992,10 @@ SPECIFICATIONS SIDEBAR
 .specs-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-4);
   padding-bottom: var(--spacing-3);
-  border-bottom: var(--border-width) solid var(--color-gray-200);
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .specs-list {
@@ -2010,7 +2010,7 @@ SPECIFICATIONS SIDEBAR
   justify-content: space-between;
   padding: var(--spacing-2) 0;
   font-size: 0.875rem;
-  border-bottom: var(--border-width) dotted var(--color-gray-200);
+  border-bottom: var(--border-width) dotted var(--color-border);
 }
 
 .spec-item:last-child {
@@ -2018,12 +2018,12 @@ SPECIFICATIONS SIDEBAR
 }
 
 .spec-label {
-  color: var(--color-gray-600);
+  color: var(--color-text-secondary);
   font-weight: 500;
 }
 
 .spec-value {
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   font-size: 0.80rem;
   text-align: right;
 }
@@ -2064,8 +2064,8 @@ UTILITY CLASSES
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-.text-muted { color: var(--color-gray-500); }
-.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-text-muted); }
+.text-primary { color: var(--color-accent); }
 
 .mt-0 { margin-top: 0 !important; }
 .mt-1 { margin-top: var(--spacing-1) !important; }
@@ -2155,8 +2155,8 @@ TWO COLUMN LAYOUT
 
 .alert {
   padding: var(--spacing-4);
-  border-left: var(--border-width-2) solid var(--color-gray-400);
-  background-color: var(--color-gray-50);
+  border-left: var(--border-width-2) solid var(--color-text-muted);
+  background-color: var(--color-bg-secondary);
   border-radius: var(--radius-sm);
   margin-bottom: var(--spacing-6);
 }
@@ -2509,3 +2509,48 @@ ENGINEERING PROJECT TYPOGRAPHY - UNIFIED STYLES
 .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
 .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
 .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+
+/* Keyboard access and motion preferences. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--spacing-2);
+  left: var(--spacing-4);
+  z-index: var(--z-index-lightbox);
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.spec-item {
+  align-items: baseline;
+  gap: var(--spacing-3);
+}
+
+.spec-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
