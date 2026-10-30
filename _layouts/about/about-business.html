@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<header class="project-header business-header{% if page.business_theme == 'engineering' %} business-header-engineering{% endif %}">
+  <div class="container">
+    <a href="{{ '/about' | relative_url }}" class="btn btn-outline btn-sm mb-4">← Back to About</a>
+    <h1 class="project-title">{{ page.title | escape }}</h1>
+    {% if page.section_excerpt %}
+    <p class="project-subtitle">{{ page.section_excerpt | escape }}</p>
+    {% endif %}
+
+    {% if page.role or page.timeline or page.location %}
+    <div class="project-meta">
+      {% if page.role %}
+      <span class="meta-badge"><strong>Role:</strong> {{ page.role | escape }}</span>
+      {% endif %}
+      {% if page.timeline %}
+      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline | escape }}</span>
+      {% endif %}
+      {% if page.location %}
+      <span class="meta-badge"><strong>Location:</strong> {{ page.location | escape }}</span>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if page.tags %}
+    <div class="project-tags">
+      {% for tag in page.tags %}
+      <span class="tag-cohesive">{{ tag | escape }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.instagram_url %}
+    <a class="btn btn-outline business-instagram-link" href="{{ page.instagram_url | escape }}" target="_blank" rel="noopener">View {{ page.instagram_handle | default: 'work on Instagram' | escape }} ↗</a>
+    {% endif %}
+  </div>
+</header>
+
+<div class="container business-page">
+  {% if page.section_intro %}
+  <section class="project-section" aria-labelledby="business-overview-heading">
+    <h2 id="business-overview-heading">{{ page.overview_title | default: 'The Business' | escape }}</h2>
+    <div class="business-intro">{{ page.section_intro | markdownify }}</div>
+  </section>
+  {% endif %}
+
+  {% if page.section_items and page.section_items.size > 0 %}
+  <section class="project-section" aria-labelledby="business-experience-heading">
+    <h2 id="business-experience-heading">{{ page.experience_title | default: 'Behind the Work' | escape }}</h2>
+    <div class="business-experience-grid">
+      {% for item in page.section_items %}
+      <article class="about-item-card">
+        <h3>{{ item.title | escape }}</h3>
+        <div>{{ item.description | markdownify }}</div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.work_samples and page.work_samples.size > 0 %}
+  <section class="project-section" aria-labelledby="business-work-heading">
+    <h2 id="business-work-heading">{{ page.work_title | default: 'Selected Work' | escape }}</h2>
+    {% if page.work_intro %}
+    <p class="business-intro">{{ page.work_intro | escape }}</p>
+    {% endif %}
+    <div class="business-work-grid">
+      {% for work in page.work_samples %}
+      <figure class="business-work">
+        {% if work.image %}
+        <a href="{{ work.image | relative_url | uri_escape }}" target="_blank" rel="noopener" aria-label="{{ work.alt | append: ' Open original image in a new tab.' | escape }}">
+          <img src="{{ work.image | relative_url | uri_escape }}" alt="{{ work.alt | escape }}" loading="lazy" decoding="async"{% if work.width and work.height %} width="{{ work.width }}" height="{{ work.height }}"{% endif %}>
+        </a>
+        {% endif %}
+        <figcaption>
+          <h3>{{ work.title | escape }}</h3>
+          {% if work.description %}<p>{{ work.description | escape }}</p>{% endif %}
+          {% if work.url %}<a href="{{ work.url | escape }}" target="_blank" rel="noopener">View on Instagram ↗</a>{% endif %}
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.instagram_url and page.instagram_intro %}
+  <section class="project-section" aria-labelledby="business-instagram-heading">
+    <h2 id="business-instagram-heading">Follow the Work</h2>
+    <p class="business-intro">{{ page.instagram_intro | escape }}</p>
+    <div class="business-social-links">
+      {% if page.instagram_highlight_url %}
+      <a class="btn btn-outline" href="{{ page.instagram_highlight_url | escape }}" target="_blank" rel="noopener">Repairs on Instagram ↗</a>
+      {% endif %}
+      <a class="btn btn-outline" href="{{ page.instagram_url | escape }}" target="_blank" rel="noopener">{{ page.instagram_handle | default: 'View Instagram' | escape }} ↗</a>
+    </div>
+  </section>
+  {% endif %}
+
+  {{ content }}
+</div>

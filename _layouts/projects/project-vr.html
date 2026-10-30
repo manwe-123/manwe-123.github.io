@@ -48,7 +48,7 @@ layout: default
 </header>
 
 <!-- Main Content Area -->
-<div class="container">
+<div class="container vr-project">
 
   <!-- Problem Statement -->
   {% if page.problem %}
@@ -67,6 +67,28 @@ layout: default
     <div class="project-content">
       <p>{{ page.solution }}</p>
     </div>
+  </section>
+  {% endif %}
+
+  {% if page.prototype_video %}
+  <section class="project-section" aria-labelledby="prototype-demo-heading">
+    <h2 id="prototype-demo-heading">Final Prototype Demo</h2>
+    <div class="project-content">
+      <p>{{ page.prototype_video.description | escape }}</p>
+    </div>
+    <figure class="vr-prototype">
+      <video class="vr-prototype-video" controls playsinline preload="none" poster="{{ page.prototype_video.poster | relative_url | uri_escape }}" width="{{ page.prototype_video.width }}" height="{{ page.prototype_video.height }}" aria-label="{{ page.prototype_video.title | escape }}" aria-describedby="prototype-demo-caption">
+        <source src="{{ page.prototype_video.src | relative_url | uri_escape }}" type="video/mp4">
+        <p>Your browser does not support embedded video. <a href="{{ page.prototype_video.src | relative_url | uri_escape }}">Watch the prototype demo</a>.</p>
+      </video>
+      <figcaption id="prototype-demo-caption">
+        <div class="vr-prototype-caption">
+          <span class="vr-prototype-meta">Final semester prototype · {{ page.prototype_video.duration | escape }}</span>
+          <p>{{ page.prototype_video.caption | escape }}</p>
+        </div>
+        <a class="vr-prototype-link" href="{{ page.prototype_video.src | relative_url | uri_escape }}" target="_blank" rel="noopener">Open video ↗</a>
+      </figcaption>
+    </figure>
   </section>
   {% endif %}
 
@@ -94,6 +116,7 @@ layout: default
   {% if page.metrics %}
   <section class="project-section">
     <h2>Success Metrics</h2>
+    <div class="table-wrapper" role="region" aria-label="Success metrics" tabindex="0">
     <table class="metrics-table">
       <thead>
         <tr>
@@ -112,6 +135,7 @@ layout: default
         {% endfor %}
       </tbody>
     </table>
+    </div>
   </section>
   {% endif %}
 
@@ -335,6 +359,7 @@ layout: default
   {% if page.test_results %}
   <section class="project-section">
     <h2>Test Results Summary</h2>
+    <div class="table-wrapper" role="region" aria-label="Test results summary" tabindex="0">
     <table class="metrics-table">
       <thead>
         <tr>
@@ -357,6 +382,7 @@ layout: default
         {% endfor %}
       </tbody>
     </table>
+    </div>
   </section>
   {% endif %}
 

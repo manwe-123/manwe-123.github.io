@@ -49,7 +49,7 @@ layout: default
 </header>
 
 <!-- Main Content Area -->
-<div class="container">
+<div class="container robotics-project">
 
   <!-- Problem Statement -->
   {% if page.problem %}
@@ -65,8 +65,13 @@ layout: default
   {% if page.solution %}
   <section class="project-section">
     <h2>Solution</h2>
-    <div class="project-content">
-      <p>{{ page.solution }}</p>
+    <div class="robotics-solution{% if page.prototype_image %} robotics-solution-with-image{% endif %}">
+      <div class="project-content">
+        <p>{{ page.solution }}</p>
+      </div>
+      {% if page.prototype_image %}
+      {% include projects/robotics-figure.html image=page.prototype_image eager=true %}
+      {% endif %}
     </div>
   </section>
   {% endif %}
@@ -88,6 +93,20 @@ layout: default
     <div class="project-content">
       {{ page.constraints | markdownify }}
     </div>
+  </section>
+  {% endif %}
+
+  {% if page.concept or page.sketch_image %}
+  <section class="project-section">
+    <h2>Concept Development</h2>
+    {% if page.concept %}
+    <div class="project-content">
+      <p>{{ page.concept }}</p>
+    </div>
+    {% endif %}
+    {% if page.sketch_image %}
+    {% include projects/robotics-figure.html image=page.sketch_image %}
+    {% endif %}
   </section>
   {% endif %}
 
@@ -143,6 +162,14 @@ layout: default
     <div class="project-content">
       {{ page.mechanical | markdownify }}
     </div>
+    {% if page.model_image %}
+    <h3>CAD Model &amp; Component Layout</h3>
+    {% include projects/robotics-figure.html image=page.model_image %}
+    {% endif %}
+    {% if page.drawing_image %}
+    <h3>Orthographic Drawing</h3>
+    {% include projects/robotics-figure.html image=page.drawing_image %}
+    {% endif %}
   </section>
   {% endif %}
 
@@ -179,21 +206,6 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Project Gallery 
-  {% if page.gallery %}
-  <section class="project-section">
-    <h2>Project Gallery</h2>
-    <div class="gallery-grid">
-      {% for image in page.gallery %}
-      <figure class="gallery-item">
-        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
--->
   <!-- Testing Overview -->
   {% if page.testing %}
   <section class="project-section">

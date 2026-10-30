@@ -21,7 +21,41 @@ excerpt: "Designed and built a semi-autonomous companion robot that tracks user 
 
 problem: "Mars colony inhabitants face severe mental health challenges, including isolation, loneliness, and sensory deprivation due to confined living conditions. They need an automated, low-cost companion to provide mental enrichment, medical access, and a sense of home."
 
-solution: "Developed an semi-autonomous mobile robot equipped with an ultrasonic sensor for user tracking, a photoresistor-triggered medical drawer, and an LCD screen for positive messaging, fabricated from lightweight, recyclable materials."
+solution: "Developed a semi-autonomous mobile robot equipped with an ultrasonic sensor for user tracking, a photoresistor-triggered medical drawer, and an LCD screen for positive messaging, fabricated from lightweight, recyclable materials."
+
+prototype_image:
+  src: "/assets/images/projects/robot/prototype.png"
+  alt: "Physical wooden robot prototype with an illuminated LCD, front ultrasonic sensor, and wheels."
+  caption: "The physical prototype brings the wooden chassis, LCD interface, ultrasonic sensor, and drive wheels together."
+  frame: prototype
+  width: 828
+  height: 1792
+
+concept: "Early brainstorming explored how a compact wheeled companion could combine an expressive screen with access to medical supplies. The sketch records the initial enclosure and interaction ideas before the design was developed in CAD."
+
+sketch_image:
+  src: "/assets/images/projects/robot/figure 8.jpg"
+  alt: "Hand-drawn wheeled companion robot concept with an LCD screen and a proposed medical tray interaction."
+  caption: "Brainstorming sketch exploring the robot's overall form, screen placement, and medical supply interaction."
+  frame: sketch
+  width: 720
+  height: 540
+
+model_image:
+  src: "/assets/images/projects/robot/figure 1.png"
+  alt: "Annotated purple robot CAD concept identifying the screen, buttons, diffuser, speaker, arms, wheels, medical tray, and distance sensor."
+  caption: "Annotated CAD concept showing the proposed component layout. Arms, audio, and aromatherapy were concept features rather than completed prototype functions."
+  frame: model
+  width: 800
+  height: 600
+
+drawing_image:
+  src: "/assets/images/projects/robot/figure 6.jpg"
+  alt: "Dimensioned orthographic robot enclosure drawing with top, front, and side views; dimensions are in inches."
+  caption: "Orthographic drawing documenting the enclosure dimensions and component openings. Dimensions are in inches."
+  frame: drawing
+  width: 800
+  height: 600
 
 requirements: |
   - Improve overall mental health metrics by at least 5%
@@ -76,16 +110,6 @@ fabrication: |
   **Electronics Integration:**
   - Mounted Arduino, breadboard, and motor driver inside the wooden chassis
   - Routed wiring for ultrasonic sensor, photoresistor, and servo motor
-
-gallery:
-  - src: "/assets/images/projects/mars-robot-cad.jpg"
-    caption: "CAD model of the robotic enclosure"
-  - src: "/assets/images/projects/mars-robot-laser.jpg"
-    caption: "Laser-cut wooden chassis components prior to assembly"
-  - src: "/assets/images/projects/mars-robot-wiring.jpg"
-    caption: "Internal Arduino wiring and breadboard layout"
-  - src: "/assets/images/projects/mars-robot-final.jpg"
-    caption: "Completed semi-autonomous prototype"
 
 testing: |
   Formal acceptance testing was conducted in three phases (Nov 21, Nov 24, Nov 26) to verify sensor accuracy, motor response, and automated dispensing mechanisms under operational conditions.

@@ -1382,6 +1382,233 @@ GALLERY GRID
   text-align: center;
 }
 
+/* Robotics case study: contextual figures, scoped to this project. */
+.robotics-project .robotics-solution {
+  display: grid;
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+.robotics-project .robotics-figure {
+  margin: var(--spacing-6) auto 0;
+  max-width: 800px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.robotics-project .robotics-figure-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+}
+
+.robotics-project .robotics-figure-media:focus-visible {
+  outline: 3px solid var(--color-accent-hover);
+  outline-offset: -3px;
+}
+
+.robotics-project .robotics-figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* Frame report/screenshot margins without modifying the source images. */
+.robotics-project .robotics-figure-prototype {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 0;
+}
+
+.robotics-project .robotics-figure-prototype .robotics-figure-media {
+  aspect-ratio: 4 / 5;
+}
+
+.robotics-project .robotics-figure-prototype img {
+  position: absolute;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.robotics-project .robotics-figure-sketch {
+  max-width: 600px;
+}
+
+.robotics-project .robotics-figure-sketch .robotics-figure-media {
+  aspect-ratio: 362 / 281;
+}
+
+.robotics-project .robotics-figure-sketch img {
+  position: absolute;
+  max-width: none;
+  width: 198.895%; /* 720px source / 362px sketch region */
+  left: 0;
+  top: 0;
+}
+
+.robotics-project .robotics-figure-model {
+  max-width: 680px;
+}
+
+.robotics-project .robotics-figure-model .robotics-figure-media {
+  aspect-ratio: 370 / 278;
+}
+
+.robotics-project .robotics-figure-model img {
+  position: absolute;
+  max-width: none;
+  width: 216.216%; /* 800px source / 370px annotated model region */
+  left: 0;
+  top: -47.482%; /* Skip the 132px top margin. */
+}
+
+.robotics-project .robotics-figure-action {
+  display: inline-block;
+  margin-left: var(--spacing-2);
+  font-size: 0.75rem;
+}
+
+.robotics-project .robotics-figure figcaption {
+  padding: var(--spacing-4);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .robotics-project .robotics-solution-with-image {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+    gap: var(--spacing-10);
+  }
+}
+
+/* VR case study: a responsive prototype demo with native playback controls. */
+.vr-project .vr-prototype {
+  margin: var(--spacing-6) 0 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.vr-project .vr-prototype-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.vr-project .vr-prototype-video:focus-visible {
+  outline: 3px solid var(--color-accent-hover);
+  outline-offset: -3px;
+}
+
+.vr-project .vr-prototype figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.vr-project .vr-prototype-caption {
+  flex: 1 1 28rem;
+  min-width: 0;
+}
+
+.vr-project .vr-prototype-meta {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.vr-project .vr-prototype-caption p {
+  margin: 0;
+}
+
+.vr-project .vr-prototype-link {
+  white-space: nowrap;
+}
+
+/* Business experience pages share the About theme with category accents. */
+.business-header {
+  border-bottom-color: var(--color-textiles);
+}
+
+.business-header-engineering {
+  border-bottom-color: var(--color-engineering);
+}
+
+.business-header .business-instagram-link {
+  margin-top: var(--spacing-6);
+}
+
+.business-page .business-intro {
+  max-width: 75ch;
+}
+
+.business-page .business-work-grid,
+.business-page .business-experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-6);
+}
+
+.business-page .business-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.business-page .business-work {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.business-page .business-work img {
+  width: 100%;
+  height: auto;
+}
+
+.business-page .business-work figcaption {
+  padding: var(--spacing-5);
+}
+
+.business-page .business-work h3,
+.business-page .about-item-card h3 {
+  margin-top: 0;
+}
+
+.business-page .business-work p,
+.business-page .about-item-card p:last-child {
+  margin-bottom: 0;
+}
+
+.business-page .business-work figcaption > a {
+  display: inline-block;
+  margin-top: var(--spacing-3);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .business-page .business-work-grid,
+  .business-page .business-experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* --------------------------------------------------------------------------
    AUDIO PLAYER
    -------------------------------------------------------------------------- */

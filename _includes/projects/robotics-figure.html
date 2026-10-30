@@ -1,0 +1,9 @@
+<figure class="robotics-figure robotics-figure-{{ include.image.frame | escape }}">
+  <a class="robotics-figure-media" href="{{ include.image.src | relative_url | uri_escape }}" target="_blank" rel="noopener" aria-label="{{ include.image.alt | append: ' Open original image in a new tab.' | escape }}">
+    <img src="{{ include.image.src | relative_url | uri_escape }}" alt="{{ include.image.alt | escape }}" width="{{ include.image.width }}" height="{{ include.image.height }}" loading="{% if include.eager %}eager{% else %}lazy{% endif %}" decoding="async">
+  </a>
+  <figcaption>
+    {{ include.image.caption | escape }}
+    <a class="robotics-figure-action" href="{{ include.image.src | relative_url | uri_escape }}" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>

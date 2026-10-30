@@ -23,6 +23,16 @@ problem: "Following a donation of 30+ Meta Quest headsets by Honeywell, ASU's Fu
 
 solution: "Developed an interactive VR-based engineering design activity where students use headsets to visualize, construct, and prototype virtual objects in a simulated environment. The experience integrates a synchronized online worksheet, allowing students to document design decisions, upload screenshots, and reflect on their prototypes while completing the activity."
 
+prototype_video:
+  src: "/assets/images/projects/vr/prototype-demo.mp4"
+  poster: "/assets/images/projects/vr/prototype-poster.jpg"
+  title: "Final-semester VR prototype: table assembly"
+  description: "Recorded during my final semester on the project, this prototype demonstrates a guided table-assembly activity inside the VR workshop."
+  caption: "The demo follows the table-assembly exercise, from the on-screen reference to positioning the tabletop and legs in the virtual workspace."
+  duration: "0:40"
+  width: 1280
+  height: 720
+
 primary_goal: "Expose first-year engineering students to VR applications in engineering design while teaching the 6-step engineering design process."
 
 stakeholders:
