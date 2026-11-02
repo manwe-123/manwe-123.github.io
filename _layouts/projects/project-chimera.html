@@ -1,50 +1,8 @@
 ---
-layout: default
+layout: project
 ---
 
-{% assign theme_class = "theme-chimera" %}
-
-<header class="project-header {{ theme_class }}">
-  <div class="container">
-    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
-    <h1 class="project-title">{{ page.title }}</h1>
-
-    {% if page.subtitle %}
-    <p class="project-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
-
-    <div class="project-meta">
-      {% if page.role %}
-      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
-      {% endif %}
-
-      {% if page.timeline %}
-      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
-      {% endif %}
-
-      {% if page.team %}
-      <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
-      {% endif %}
-
-      {% if page.software %}
-      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
-      {% endif %}
-    </div>
-
-    {% if page.tags %}
-    <div class="project-tags mt-4">
-      {% for tag in page.tags %}
-      <span class="tag-cohesive">{{ tag }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </div>
-</header>
-
-<div class="container">
+<div class="project-body">
 
   {% if page.problem_statement or page.objective %}
   <section class="project-section">
@@ -95,7 +53,7 @@ layout: default
         <h3>Architecture Diagram</h3>
         {% if page.architecture_diagram.image %}
         <figure class="figure">
-          <img src="{{ page.architecture_diagram.image | relative_url }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy" onclick="openLightbox('{{ page.architecture_diagram.image | relative_url }}', '{{ page.architecture_diagram.caption }}')">
+          <img src="{{ page.architecture_diagram.image | relative_url }}" alt="{{ page.architecture_diagram.caption }}" loading="lazy">
           <figcaption class="figure-caption">{{ page.architecture_diagram.caption }}</figcaption>
         </figure>
         {% else %}
@@ -107,6 +65,20 @@ layout: default
         {% endif %}
       </div>
       {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.gallery %}
+  <section class="project-section">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      {% for image in page.gallery %}
+      <figure class="gallery-item">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
+        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
+      </figure>
+      {% endfor %}
     </div>
   </section>
   {% endif %}
@@ -153,7 +125,7 @@ layout: default
         <h3>Repository Structure</h3>
         {% if page.directory_screenshot.image %}
         <figure class="figure">
-          <img src="{{ page.directory_screenshot.image | relative_url }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy" onclick="openLightbox('{{ page.directory_screenshot.image | relative_url }}', '{{ page.directory_screenshot.caption }}')">
+          <img src="{{ page.directory_screenshot.image | relative_url }}" alt="{{ page.directory_screenshot.caption }}" loading="lazy">
           <figcaption class="figure-caption">{{ page.directory_screenshot.caption }}</figcaption>
         </figure>
         {% else %}
@@ -215,68 +187,4 @@ layout: default
     </div>
   </section>
   {% endif %}
-
-  {% if page.gallery %}
-  <section class="project-section">
-    <h2>Project Gallery</h2>
-    <div class="gallery-grid">
-      {% for image in page.gallery %}
-      <figure class="gallery-item" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
-        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
 </div>
-
-<script>
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox') || createLightbox();
-  const lightboxImg = lightbox.querySelector('.lightbox-image');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || '';
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function createLightbox() {
-  const lightbox = document.createElement('div');
-  lightbox.id = 'lightbox';
-  lightbox.className = 'lightbox-overlay';
-  lightbox.innerHTML = `
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <div class="lightbox-content">
-      <img class="lightbox-image" src="" alt="">
-      <div class="lightbox-caption"></div>
-    </div>
-  `;
-  document.body.appendChild(lightbox);
-  return lightbox;
-}
-
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
-});
-
-document.addEventListener('click', function(e) {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox && e.target === lightbox) {
-    closeLightbox();
-  }
-});
-</script>

@@ -18,94 +18,61 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="case-study-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link" aria-current="page">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    
-
+    <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
 <header class="project-header theme-chimera">
   <div class="container">
-    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
-    <h1 class="project-title">AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal</h1>
-
+    <div class="project-breadcrumb"><a href="/projects/">← All projects</a><span>Engineering / Case study</span></div>
+    <h1 class="project-title">AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal</h1>
     
     <p class="project-subtitle">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
-    
-
-    <div class="project-meta">
+    <dl class="project-facts">
+      <div><dt>My role</dt><dd>Software &amp; Systems Engineer</dd></div>
+      <div><dt>Timeline</dt><dd>May 2026 - Present</dd></div>
       
-      <span class="meta-badge"><strong>Role:</strong> Software & Systems Engineer</span>
       
-
       
-      <span class="meta-badge"><strong>Timeline:</strong> May 2026 - Present</span>
       
-
       
-
-      
+    </dl>
+    <div class="project-header-bottom">
+      <div class="project-tags"><span class="tag-cohesive">Python</span><span class="tag-cohesive">FastAPI</span><span class="tag-cohesive">Docker</span><span class="tag-cohesive">LLM</span><span class="tag-cohesive">RAG</span><span class="tag-cohesive">Redis</span><span class="tag-cohesive">React</span></div>
+      <div class="project-utilities"><span data-reading-time></span><button type="button" class="text-button" data-copy-link>Copy project link</button></div>
     </div>
-
-    
-    <div class="project-tags mt-4">
-      
-      <span class="tag-cohesive">Python</span>
-      
-      <span class="tag-cohesive">FastAPI</span>
-      
-      <span class="tag-cohesive">Docker</span>
-      
-      <span class="tag-cohesive">LLM</span>
-      
-      <span class="tag-cohesive">RAG</span>
-      
-      <span class="tag-cohesive">Redis</span>
-      
-      <span class="tag-cohesive">React</span>
-      
-    </div>
-    
   </div>
 </header>
 
-<div class="container">
+<div class="container case-study-layout" data-case-study>
+  <aside class="case-index" data-case-index hidden>
+    <details open>
+      <summary>On this page <span data-reading-position></span></summary>
+      <nav aria-label="Case study sections" data-section-nav></nav>
+    </details>
+    <a href="#main-content" class="case-back-top">↑ Back to top</a>
+  </aside>
+  <article class="case-study-content" id="case-study-content"><div class="project-body">
 
   
   <section class="project-section">
@@ -170,6 +137,8 @@
       
     </div>
   </section>
+  
+
   
 
   
@@ -313,116 +282,93 @@
     </div>
   </section>
   
-
-  
-
+</div>
+</article>
 </div>
 
-<script>
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox') || createLightbox();
-  const lightboxImg = lightbox.querySelector('.lightbox-image');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
 
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || '';
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
+<section class="section related-projects" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">Keep exploring</span><h2 id="related-heading">More from the workshop.</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+    <div class="project-grid related-grid">
+      
+      
+      
+      
+      
+      
 
-function createLightbox() {
-  const lightbox = document.createElement('div');
-  lightbox.id = 'lightbox';
-  lightbox.className = 'lightbox-overlay';
-  lightbox.innerHTML = `
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <div class="lightbox-content">
-      <img class="lightbox-image" src="" alt="">
-      <div class="lightbox-caption"></div>
+
+<a href="/projects/solar-power-meter/" class="project-card" data-category="engineering" data-title="Solar Panel Power Meter" data-search="solar panel power meter an arduino-based instrument for measuring solar panel voltage, current, and power. arduino analog circuits signal conditioning tinkercad calibration" data-date="1777618800">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/solar-power-meter/main.jpg" alt="Solar Panel Power Meter" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Solar Panel Power Meter</h3>
+    <p class="project-card-excerpt">Built and tested a solar panel power meter using a voltage divider, shunt resistor, op-amp, and Arduino to display live voltage, current, and power on a...</p>
+    <div class="project-card-tags"><span class="tag">Arduino</span><span class="tag">Analog Circuits</span><span class="tag">Signal Conditioning</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+
+
+<a href="/projects/shock-absorber/" class="project-card" data-category="engineering" data-title="Shock Absorber Assembly" data-search="shock absorber assembly a solidworks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets. solidworks assembly design engineering drawings third-angle projection" data-date="1765263600">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/cad/assembly.jpg" alt="Shock Absorber Assembly" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2025</span></div>
+    <h3 class="project-card-title">Shock Absorber Assembly</h3>
+    <p class="project-card-excerpt">A SolidWorks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets.</p>
+    <div class="project-card-tags"><span class="tag">SolidWorks</span><span class="tag">Assembly Design</span><span class="tag">Engineering Drawings</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+      
     </div>
-  `;
-  document.body.appendChild(lightbox);
-  return lightbox;
-}
+  </div>
+</section>
 
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
-});
-
-document.addEventListener('click', function(e) {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox && e.target === lightbox) {
-    closeLightbox();
-  }
-});
-</script>
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

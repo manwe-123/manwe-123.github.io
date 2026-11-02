@@ -1,0 +1,154 @@
+---
+layout: project
+---
+
+<div class="circuits-project">
+  <section class="project-section">
+    <h2>Project Overview</h2>
+    <div class="circuits-overview">
+      <div class="project-content">
+        <h3>The Brief</h3>
+        <p>{{ page.overview | escape }}</p>
+        <h3>The Prototype</h3>
+        <p>{{ page.solution | escape }}</p>
+        <a class="btn btn-outline mt-4" href="{{ page.report_url | relative_url }}">Read Final Report (PDF)</a>
+        <a class="btn btn-outline mt-4" href="{{ page.lab_url | relative_url }}">Read Lab 7 (PDF)</a>
+      </div>
+      <figure class="circuits-figure">
+        <a href="{{ page.prototype.src | relative_url }}" target="_blank" rel="noopener" aria-label="View full-size prototype photo in a new tab">
+          <img src="{{ page.prototype.src | relative_url }}" alt="{{ page.prototype.alt | escape }}" width="{{ page.prototype.width }}" height="{{ page.prototype.height }}" decoding="async">
+        </a>
+        <figcaption>{{ page.prototype.caption | escape }}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Panel Characterization</h2>
+    <div class="circuits-table-scroll" role="region" aria-label="Initial solar panel measurements by lighting condition" tabindex="0">
+      <table class="metrics-table">
+        <caption>Initial measurements with a 1 kΩ load, recorded in Lab 7, p. 1.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Lighting Condition</th>
+            <th scope="col">Panel Voltage</th>
+            <th scope="col">Panel Current</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for measurement in page.lighting_measurements %}
+          <tr>
+            <th scope="row">{{ measurement.condition | escape }}</th>
+            <td>{{ measurement.voltage | escape }}</td>
+            <td>{{ measurement.current | escape }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Signal Chain &amp; Circuit Design</h2>
+    <div class="grid grid-3">
+      {% for stage in page.signal_chain %}
+      <div class="circuits-stage project-content">
+        <h3>{{ stage.title | escape }}</h3>
+        <p>{{ stage.description | escape }}</p>
+        <p class="circuits-equation"><code>{{ stage.equation | escape }}</code></p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="project-content">
+      <h3>Design Tradeoffs</h3>
+      <ul>
+        {% for tradeoff in page.tradeoffs %}
+        <li>{{ tradeoff | escape }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>From ADC Readings to Engineering Units</h2>
+    <p>{{ page.conversion_intro | escape }}</p>
+    {% for conversion in page.conversions %}
+    <h3>{{ conversion.name | escape }}</h3>
+    <p class="circuits-equation"><code>{{ conversion.equation | escape }}</code></p>
+    {% endfor %}
+    <p>{{ page.conversion_note | escape }}</p>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>Capacitor Discharge Analysis</h2>
+    <p>{{ page.discharge.description | escape }}</p>
+    <p class="circuits-equation"><code>{{ page.discharge.equation | escape }}</code></p>
+    <p class="circuits-equation"><code>{{ page.discharge.calculation | escape }}</code></p>
+    <p>{{ page.discharge.note | escape }}</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Simulation &amp; Bench Development</h2>
+    <div class="grid grid-3 circuits-gallery">
+      {% for image in page.simulation_gallery %}
+      <figure class="circuits-figure">
+        <a href="{{ image.src | relative_url }}" target="_blank" rel="noopener" aria-label="{{ image.alt | append: ' Open full-size image in a new tab.' | escape }}">
+          <img src="{{ image.src | relative_url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" decoding="async">
+        </a>
+        <figcaption>{{ image.caption | escape }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Troubleshooting &amp; Iteration</h2>
+    <div class="grid grid-2">
+      {% for iteration in page.iterations %}
+      <div class="project-content">
+        <h3>{{ iteration.title | escape }}</h3>
+        <p>{{ iteration.problem | escape }}</p>
+        <p>{{ iteration.resolution | escape }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Validation &amp; Results</h2>
+    <h3>Circuit &amp; Display Checks</h3>
+    <div class="circuits-table-scroll" role="region" aria-label="Circuit validation measurements" tabindex="0">
+      <table class="metrics-table">
+        <caption>{{ page.measurements_caption | escape }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Measurement</th>
+            <th scope="col">Design / Comparison</th>
+            <th scope="col">Observed Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for measurement in page.measurements %}
+          <tr>
+            <th scope="row">{{ measurement.name | escape }}</th>
+            <td>{{ measurement.expected | escape }}</td>
+            <td>{{ measurement.observed | escape }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="project-content">
+      <p>{{ page.validation_note | escape }}</p>
+    </div>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>Lessons &amp; Next Steps</h2>
+    <p>{{ page.reflection | escape }}</p>
+    <h3>Beyond the Breadboard</h3>
+    <p>{{ page.next_steps | escape }}</p>
+    <a class="btn btn-outline mt-4" href="{{ page.report_url | relative_url }}" download>Download Final Report (PDF)</a>
+    <a class="btn btn-outline mt-4" href="{{ page.lab_url | relative_url }}" download>Download Lab 7 (PDF)</a>
+  </section>
+</div>

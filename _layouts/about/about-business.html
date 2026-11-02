@@ -2,41 +2,7 @@
 layout: default
 ---
 
-<header class="project-header business-header{% if page.business_theme == 'engineering' %} business-header-engineering{% endif %}">
-  <div class="container">
-    <a href="{{ '/about' | relative_url }}" class="btn btn-outline btn-sm mb-4">← Back to About</a>
-    <h1 class="project-title">{{ page.title | escape }}</h1>
-    {% if page.section_excerpt %}
-    <p class="project-subtitle">{{ page.section_excerpt | escape }}</p>
-    {% endif %}
-
-    {% if page.role or page.timeline or page.location %}
-    <div class="project-meta">
-      {% if page.role %}
-      <span class="meta-badge"><strong>Role:</strong> {{ page.role | escape }}</span>
-      {% endif %}
-      {% if page.timeline %}
-      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline | escape }}</span>
-      {% endif %}
-      {% if page.location %}
-      <span class="meta-badge"><strong>Location:</strong> {{ page.location | escape }}</span>
-      {% endif %}
-    </div>
-    {% endif %}
-
-    {% if page.tags %}
-    <div class="project-tags">
-      {% for tag in page.tags %}
-      <span class="tag-cohesive">{{ tag | escape }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    {% if page.instagram_url %}
-    <a class="btn btn-outline business-instagram-link" href="{{ page.instagram_url | escape }}" target="_blank" rel="noopener">View {{ page.instagram_handle | default: 'work on Instagram' | escape }} ↗</a>
-    {% endif %}
-  </div>
-</header>
+{% include about/header.html %}
 
 <div class="container business-page">
   {% if page.section_intro %}
@@ -70,7 +36,7 @@ layout: default
       {% for work in page.work_samples %}
       <figure class="business-work">
         {% if work.image %}
-        <a href="{{ work.image | relative_url | uri_escape }}" target="_blank" rel="noopener" aria-label="{{ work.alt | append: ' Open original image in a new tab.' | escape }}">
+        <a href="{{ work.image | relative_url | uri_escape }}" target="_blank" rel="noopener" aria-label="{{ work.alt | append: ' Enlarge image.' | escape }}">
           <img src="{{ work.image | relative_url | uri_escape }}" alt="{{ work.alt | escape }}" loading="lazy" decoding="async"{% if work.width and work.height %} width="{{ work.width }}" height="{{ work.height }}"{% endif %}>
         </a>
         {% endif %}

@@ -1,382 +1,111 @@
 ---
-layout: default
+layout: project
 ---
 
-{% assign theme_class = "theme-cad" %}
-
-<header class="project-header {{ theme_class }}">
-  <div class="container">
-    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
-    <h1 class="project-title">{{ page.title }}</h1>
-
-    {% if page.subtitle %}
-    <p class="project-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
-
-    <div class="project-meta">
-      {% if page.role %}
-      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
-      {% endif %}
-
-      {% if page.timeline %}
-      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
-      {% endif %}
-
-      {% if page.software %}
-      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
-      {% endif %}
-    </div>
-
-    {% if page.tags %}
-    <div class="project-tags mt-4">
-      {% for tag in page.tags %}
-      <span class="tag-cohesive">{{ tag }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </div>
-</header>
-
-<div class="container">
-
-  {% if page.objective or page.engineering_mandate %}
+<div class="project-body cad-project">
   <section class="project-section">
-    <h2>Project Scenario &amp; Overview</h2>
+    <h2>Project Overview</h2>
     <div class="project-content">
-      <div class="layout-two-col overview-layout">
-        <div class="overview-left">
-          {% if page.objective %}
-          <div class="mb-6">
-            <h3>The Objective</h3>
-            <p>{{ page.objective }}</p>
-          </div>
-          {% endif %}
-        </div>
+      <p>{{ page.objective | escape }}</p>
+      <figure class="figure cad-assembly-figure">
+        <a class="cad-assembly-media" href="{{ page.image | relative_url }}">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" width="515" height="527" decoding="async">
+        </a>
+        <figcaption>{{ page.image_caption | escape }}</figcaption>
+      </figure>
+      <dl class="cad-project-stats">
+        {% for stat in page.project_stats %}
+        <div><dt>{{ stat.label | escape }}</dt><dd>{{ stat.value | escape }}</dd></div>
+        {% endfor %}
+      </dl>
+      <h3>My Contribution</h3>
+      <ul>{% for contribution in page.contributions %}<li>{{ contribution | escape }}</li>{% endfor %}</ul>
+    </div>
+  </section>
 
-        <div class="overview-right">
-          {% if page.engineering_mandate %}
-          <div>
-            <h3>The Engineering Mandate</h3>
-            <p>{{ page.engineering_mandate }}</p>
-          </div>
-          {% endif %}
-        </div>
+  <section class="project-section">
+    <h2>Design Brief &amp; Constraints</h2>
+    <div class="project-content">
+      <p>{{ page.project_context | escape }}</p>
+      <p>{{ page.requirements_intro | escape }}</p>
+      <div class="grid grid-2">
+        {% for requirement in page.requirements %}
+        <div class="cad-detail-card"><h3>{{ requirement.title | escape }}</h3><p>{{ requirement.description | escape }}</p></div>
+        {% endfor %}
       </div>
     </div>
   </section>
-  {% endif %}
 
-  {% if page.interference_constraints or page.amendment_steps %}
-  <section class="project-section">
-    <h2>Design Constraints &amp; Interference Management</h2>
-    <div class="project-content">
-      {% if page.interference_constraints %}
-      <div class="mb-8">
-        <h3>Strict Interference Rules</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <thead>
-              <tr>
-                <th>Constraint</th>
-                <th>Requirement</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Threaded Components</strong></td>
-                <td class="mono">{{ page.interference_constraints.threaded_allowance }}</td>
-                <td>Allowed interference volume</td>
-              </tr>
-              <tr>
-                <td><strong>All Other Components</strong></td>
-                <td class="mono">{{ page.interference_constraints.other_components }}</td>
-                <td>Must achieve perfect fit</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      {% endif %}
-
-      {% if page.amendment_steps %}
-      <div>
-        <h3>Dimension Amendment Process</h3>
-        {% if page.amendment_intro %}
-        <p class="mb-4">{{ page.amendment_intro }}</p>
-        {% endif %}
-        <ol>
-          {% for step in page.amendment_steps %}
-          <li>{{ step.description }}</li>
-          {% endfor %}
-        </ol>
-      </div>
-      {% endif %}
-    </div>
-  </section>
-  {% endif %}
-
-  {% if page.bom or page.spring_specs or page.key_features %}
   <section class="project-section">
     <h2>Assembly Architecture &amp; Bill of Materials</h2>
     <div class="project-content">
-      {% if page.bom %}
-      <div class="mb-8">
-        <h3>Bill of Materials (BOM)</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <thead>
-              <tr>
-                <th class="mono">Item No.</th>
-                <th>Part Name</th>
-                <th>Material</th>
-                <th class="mono">Qty</th>
-                <th>Type</th>
-                <th>McMaster-Carr</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for item in page.bom %}
-              <tr>
-                <td class="mono">{{ item.number }}</td>
-                <td><strong>{{ item.name }}</strong></td>
-                <td>{{ item.material }}</td>
-                <td class="mono">{{ item.quantity }}</td>
-                <td class="mono">
-                  {% if item.type == 'custom' %}
-                  Custom
-                  {% elsif item.type == 'standard' %}
-                  Standard
-                  {% else %}
-                  {{ item.type }}
-                  {% endif %}
-                </td>
-                <td>{{ item.mcmaster_carr }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+      <p>{{ page.assembly_intro | escape }}</p>
+      <figure class="figure cad-drawing">
+        <img src="{{ page.exploded_image | relative_url }}" alt="Exploded shock absorber assembly with numbered component callouts, an assembled view, and a 12-line bill of materials." width="1584" height="1224" loading="lazy" decoding="async">
+        <figcaption>{{ page.exploded_caption | escape }}</figcaption>
+      </figure>
+      <h3>Parts &amp; Materials</h3>
+      <p>{{ page.bom_intro | escape }}</p>
+      <div class="table-responsive">
+        <table class="metrics-table">
+          <caption>Bill of materials from the submitted exploded assembly drawing</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">Part</th><th scope="col">Material</th><th scope="col">Qty.</th><th scope="col">Type</th></tr></thead>
+          <tbody>
+            {% for item in page.bom %}
+            <tr><td class="mono">{{ item.number }}</td><th scope="row">{{ item.name | escape }}</th><td>{{ item.material | escape }}</td><td class="mono">{{ item.quantity }}</td><td>{{ item.type | escape }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
-      {% endif %}
-
-      {% if page.spring_specs %}
-      <div class="mb-8">
-        <h3>Compression Spring Specifications</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <tbody>
-              <tr>
-                <th>Free Height</th>
-                <td class="mono">{{ page.spring_specs.height }}</td>
-              </tr>
-              <tr>
-                <th>Pitch</th>
-                <td class="mono">{{ page.spring_specs.pitch }}</td>
-              </tr>
-              <tr>
-                <th>Revolutions</th>
-                <td class="mono">{{ page.spring_specs.revolutions }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      {% endif %}
-
-      {% if page.key_features %}
-      <div>
-        <h3>Key Design Features</h3>
-        <div class="grid grid-3">
-          {% for feature in page.key_features %}
-          <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-            <p><strong>{{ feature.title }}</strong></p>
-            <p>{{ feature.description }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </section>
-  {% endif %}
-<!---
-  {% if page.drawing_pairs or page.gallery %}
+
   <section class="project-section">
-    <h2>CAD Modeling &amp; Engineering Drawings</h2>
+    <h2>Component Design &amp; Engineering Drawings</h2>
     <div class="project-content">
-      {% if page.drawing_pairs %}
-      <div class="mb-8">
-        {% for pair in page.drawing_pairs %}
-        <div style="margin-bottom: 2rem;">
-          <h3>{{ pair.title }}</h3>
-          <div class="layout-two-col">
-            <figure class="figure">
-              <img src="{{ pair.model_3d | relative_url }}" alt="{{ pair.title }} - 3D Model" loading="lazy" onclick="openLightbox('{{ pair.model_3d | relative_url }}', '{{ pair.title }} - 3D Model')">
-              <figcaption class="figure-caption">3D SolidWorks Model</figcaption>
-            </figure>
-            <figure class="figure">
-              <img src="{{ pair.drawing_2d | relative_url }}" alt="{{ pair.title }} - 2D Engineering Drawing" loading="lazy" onclick="openLightbox('{{ pair.drawing_2d | relative_url }}', '{{ pair.title }} - 2D Drawing')">
-              <figcaption class="figure-caption">2D Engineering Drawing</figcaption>
-            </figure>
-          </div>
+      <p>{{ page.drawings_intro | escape }}</p>
+      <div class="grid grid-2 cad-drawing-grid">
+        {% for drawing in page.drawings %}
+        <div class="cad-drawing-card">
+          <h3>{{ drawing.title | escape }}</h3>
+          <figure class="figure cad-drawing">
+            <img src="{{ drawing.src | relative_url }}" alt="{{ drawing.alt | escape }}" width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>{{ drawing.caption | escape }}</figcaption>
+          </figure>
         </div>
         {% endfor %}
       </div>
-      {% endif %}
-
-      {% if page.gallery %}
-      <div>
-        <h3>Complete Drawing Set</h3>
-        <div class="gallery-grid">
-          {% for image in page.gallery %}
-          <figure class="gallery-item" onclick="openLightbox('{{ image.src | relative_url }}', '{{ image.caption }}')">
-            <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-            <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
-          </figure>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
+      <p class="cad-drawing-note">{{ page.spring_note | escape }}</p>
     </div>
   </section>
-  {% endif %}
--->
-  {% if page.material_selection or page.manufacturing_processes %}
+
   <section class="project-section">
     <h2>Materials &amp; Manufacturing Considerations</h2>
-    <div class="project-content">
-      <div class="layout-two-col materials-layout">
-        {% if page.material_selection %}
-        <div class="materials-left">
-          <h3>Material Selection</h3>
-          {{ page.material_selection | markdownify }}
-        </div>
-        {% endif %}
-
-        {% if page.manufacturing_processes %}
-        <div class="materials-right">
-          <h3>Manufacturing Processes</h3>
-          {{ page.manufacturing_processes | markdownify }}
-        </div>
-        {% endif %}
-      </div>
+    <div class="project-content grid grid-2">
+      <div><h3>Material Selection</h3>{{ page.material_selection | markdownify }}</div>
+      <div><h3>From CAD to Fabrication</h3>{{ page.manufacturing_considerations | markdownify }}</div>
     </div>
   </section>
-  {% endif %}
 
-  {% if page.design_validation or page.lessons_learned %}
   <section class="project-section">
-    <h2>Design Validation &amp; Lessons Learned</h2>
+    <h2>Outcomes &amp; Next Steps</h2>
     <div class="project-content">
-      {% if page.design_validation %}
-      <div>
-        <h3>Design Validation</h3>
-        {% for item in page.design_validation %}
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>{{ item.title }}</strong></p>
-          <p>{{ item.description }}</p>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %}
-
-      {% if page.lessons_learned %}
-      <div>
-        <h3>Lessons Learned</h3>
-        {% for lesson in page.lessons_learned %}
-        <div style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Challenge:</strong> {{ lesson.challenge }}</p>
-          <p><strong>Resolution:</strong> {{ lesson.resolution }}</p>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %}
+      {% for outcome in page.outcomes %}
+      <h3>{{ outcome.title | escape }}</h3><p>{{ outcome.description | escape }}</p>
+      {% endfor %}
+      <p>{{ page.validation_note | escape }}</p>
+      <h3>Further Engineering Work</h3>
+      <ul>{% for step in page.next_steps %}<li>{{ step | escape }}</li>{% endfor %}</ul>
     </div>
   </section>
-  {% endif %}
 
-  {% if page.skills or page.resources %}
   <section class="project-section">
-    <h2>Technical Skills &amp; Resources</h2>
+    <h2>Technical Skills &amp; Drawing Package</h2>
     <div class="project-content">
-      {% if page.skills %}
-      <div class="mb-8">
-        <h3>Technical Skills Demonstrated</h3>
-        <div class="project-tags">
-          {% for skill in page.skills %}
-          <span class="tag-cohesive">{{ skill }}</span>
-          {% endfor %}
-        </div>
+      <div class="project-tags">{% for skill in page.skills %}<span class="tag-cohesive">{{ skill | escape }}</span>{% endfor %}</div>
+      <div class="resources-button-row">
+        {% for resource in page.resources %}<a href="{{ resource.url | relative_url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ resource.label | escape }}</a>{% endfor %}
       </div>
-      {% endif %}
-
-      {% if page.resources %}
-      <div>
-        <h3>Project Resources</h3>
-        <div class="resources-button-row">
-          {% for resource in page.resources %}
-          <a href="{{ resource.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            {{ resource.label }}
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </section>
-  {% endif %}
-
 </div>
-
-<script>
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox') || createLightbox();
-  const lightboxImg = lightbox.querySelector('.lightbox-image');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || '';
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function createLightbox() {
-  const lightbox = document.createElement('div');
-  lightbox.id = 'lightbox';
-  lightbox.className = 'lightbox-overlay';
-  lightbox.innerHTML = `
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <div class="lightbox-content">
-      <img class="lightbox-image" src="" alt="">
-      <div class="lightbox-caption"></div>
-    </div>
-  `;
-  document.body.appendChild(lightbox);
-  return lightbox;
-}
-
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
-});
-
-document.addEventListener('click', function(e) {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox && e.target === lightbox) {
-    closeLightbox();
-  }
-});
-</script>

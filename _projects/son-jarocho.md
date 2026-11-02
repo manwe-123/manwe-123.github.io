@@ -28,6 +28,7 @@ composition_details: |
   - Tempo: 72 BPM
   - Time Signature: 4/4
   - Instruments: Solo Piano
+audio_available: false
 audio_file: /assets/audio/placeholder-song.mp3
 lyrics: ""
 program_notes: |

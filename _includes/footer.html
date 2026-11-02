@@ -1,40 +1,6 @@
-<!-- Site Footer -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/about' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:{{ site.email | escape }}">{{ site.email | escape }} <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="{{ '/projects/' | relative_url }}">Explore projects</a><a href="{{ '/about/' | relative_url }}">A little about me</a><a href="{{ '/contact/' | relative_url }}">Get in touch</a>{% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}{% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub ↗</a>{% endif %}</div></div>
+    <div class="footer-bottom"><p>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</p><span>{{ site.location | escape }} <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>

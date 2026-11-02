@@ -1,8 +1,6 @@
-<!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+<dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>

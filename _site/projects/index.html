@@ -18,259 +18,158 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link" aria-current="page">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <!-- Page Header -->
-<header class="section">
-  <div class="container text-center">
-    <h1>Projects</h1>
-    <p class="mb-8">A unified collection of engineering, music, textiles, and photography work.</p>
     
-    <!-- Filter Buttons -->
-    <div class="filter-container">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="engineering">Engineering</button>
-      <button class="filter-btn" data-filter="music">Music</button>
-      <button class="filter-btn" data-filter="textiles">Textiles</button>
-      <button class="filter-btn" data-filter="photography">Photography</button>
-    </div>
-  </div>
-</header>
-
-<!-- Projects Section -->
-<section class="section" style="padding-top: 0;">
+<header class="page-header collection-header"><div class="container"><span class="eyebrow">The project index / 5 case studies</span><h1 class="page-title">A few things<br>I've <em>put together.</em></h1><p class="page-subtitle">Mechanical design, physical prototypes, and digital tools. Follow the thinking, the building, and what I learned along the way.</p></div></header>
+<section class="section project-discovery" data-project-browser>
   <div class="container">
-    <!-- Projects Grid -->
-    <div class="project-grid">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="/projects/chimera/" class="project-card" data-category="engineering">
+    <div class="discovery-toolbar">
+      <div class="filter-container" aria-label="Filter projects by discipline"><button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All work <span>5</span></button>
         
-        <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal" class="project-card-image" loading="lazy">
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">AI-Driven Quantitative Equity Research & Portfolio Optimization Terminal</h3>
-          <p class="project-card-excerpt">
-            A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">Python</span>
-            
-            <span class="tag">FastAPI</span>
-            
-            <span class="tag">Docker</span>
-            
-            <span class="tag">LLM</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      <a href="/projects/shock-absorber/" class="project-card" data-category="engineering">
-        
-        <img src="/assets/images/projects/cad/main.png" alt="Shock Absorber Assembly" class="project-card-image" loading="lazy">
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">Shock Absorber Assembly</h3>
-          <p class="project-card-excerpt">
-            Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">SolidWorks</span>
-            
-            <span class="tag">ASME Y14.5</span>
-            
-            <span class="tag">GD&T</span>
-            
-            <span class="tag">DFM</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/projects/vr/" class="project-card" data-category="engineering">
-        
-        <img src="/assets/images/projects/vr/main.png" alt="VR Rapid Prototyping Application" class="project-card-image" loading="lazy">
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">VR Rapid Prototyping Application</h3>
-          <p class="project-card-excerpt">
-            An immersive virtual reality curriculum and prototyping environment for introductory engineering students
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">VR/AR</span>
-            
-            <span class="tag">Unity</span>
-            
-            <span class="tag">C#</span>
-            
-            <span class="tag">Curriculum Design</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      <a href="/projects/robotics/" class="project-card" data-category="engineering">
-        
-        <img src="/assets/images/projects/robot/main.png" alt="Mental Health Robotics System for Isolated Environments" class="project-card-image" loading="lazy">
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">Mental Health Robotics System for Isolated Environments</h3>
-          <p class="project-card-excerpt">
-            A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">Robotics</span>
-            
-            <span class="tag">Arduino</span>
-            
-            <span class="tag">Laser Cutting</span>
-            
-            <span class="tag">Mechatronics</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      
+        <button type="button" class="filter-btn" data-filter="engineering" aria-pressed="false">Engineering <span>5</span></button>
+      </div>
+      <div class="project-search"><label class="sr-only" for="project-search">Search projects, tools, or topics</label><input type="search" id="project-search" placeholder="Search projects, tools, topics…" autocomplete="off" data-project-search><kbd aria-hidden="true">/</kbd></div>
     </div>
+    <div class="discovery-meta"><p role="status" aria-live="polite" data-project-count>5 projects</p><div class="discovery-controls"><label for="project-sort">Sort</label><select id="project-sort" data-project-sort><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">A → Z</option></select><div class="view-switch" aria-label="Project display"><button type="button" data-project-view="grid" aria-pressed="true" aria-label="Grid view" title="Grid view"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5" height="5"/><rect x="12" y="3" width="5" height="5"/><rect x="3" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></svg></button><button type="button" data-project-view="list" aria-pressed="false" aria-label="List view" title="List view"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg></button></div></div></div>
+    <div class="project-grid" data-project-grid>
+
+
+<a href="/projects/chimera/" class="project-card" data-category="engineering" data-title="Chimera Research Terminal" data-search="ai-driven quantitative equity research &amp; portfolio optimization terminal a modular, asynchronous python pipeline integrating live data apis, local llm synthesis, and constraint-based optimization. python fastapi docker llm rag redis react" data-date="1784790000">
+  <div class="project-card-media">
     
-    <!-- Empty State (if no projects) -->
+    <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" decoding="async">
     
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Chimera Research Terminal</h3>
+    <p class="project-card-excerpt">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
+    <div class="project-card-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/solar-power-meter/" class="project-card" data-category="engineering" data-title="Solar Panel Power Meter" data-search="solar panel power meter an arduino-based instrument for measuring solar panel voltage, current, and power. arduino analog circuits signal conditioning tinkercad calibration" data-date="1777618800">
+  <div class="project-card-media">
     
+    <img src="/assets/images/projects/solar-power-meter/main.jpg" alt="Solar Panel Power Meter" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Solar Panel Power Meter</h3>
+    <p class="project-card-excerpt">Built and tested a solar panel power meter using a voltage divider, shunt resistor, op-amp, and Arduino to display live voltage, current, and power on a...</p>
+    <div class="project-card-tags"><span class="tag">Arduino</span><span class="tag">Analog Circuits</span><span class="tag">Signal Conditioning</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/shock-absorber/" class="project-card" data-category="engineering" data-title="Shock Absorber Assembly" data-search="shock absorber assembly a solidworks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets. solidworks assembly design engineering drawings third-angle projection" data-date="1765263600">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/cad/assembly.jpg" alt="Shock Absorber Assembly" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2025</span></div>
+    <h3 class="project-card-title">Shock Absorber Assembly</h3>
+    <p class="project-card-excerpt">A SolidWorks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets.</p>
+    <div class="project-card-tags"><span class="tag">SolidWorks</span><span class="tag">Assembly Design</span><span class="tag">Engineering Drawings</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">03 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/vr/" class="project-card" data-category="engineering" data-title="VR Prototyping Workshop" data-search="vr rapid prototyping application unity environments and object-construction activities for asu&#39;s fse 100 engineering curriculum unity vr/ar 3d modeling rapid prototyping engineering education" data-date="1764572400">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/vr/main.png" alt="VR Rapid Prototyping Application" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2025</span></div>
+    <h3 class="project-card-title">VR Prototyping Workshop</h3>
+    <p class="project-card-excerpt">Led Spring documentation and Fall Unity prototyping for an EPICS project introducing FSE 100 students to VR through object construction and the engineer...</p>
+    <div class="project-card-tags"><span class="tag">Unity</span><span class="tag">VR/AR</span><span class="tag">3D Modeling</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">04 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/robotics/" class="project-card" data-category="engineering" data-title="Baymax Companion Robot" data-search="mental health robotics system for isolated environments baymax: an arduino companion robot prototype for a mars-colony design scenario robotics arduino laser cutting mechatronics prototyping" data-date="1733727600">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/robot/main.png" alt="Mental Health Robotics System for Isolated Environments" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2024</span></div>
+    <h3 class="project-card-title">Baymax Companion Robot</h3>
+    <p class="project-card-excerpt">Designed and built a companion robot prototype combining ultrasonic proximity control, an LCD interface, and a photoresistor-triggered storage lid in a ...</p>
+    <div class="project-card-tags"><span class="tag">Robotics</span><span class="tag">Arduino</span><span class="tag">Laser Cutting</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">05 / →</span></div>
+  </div>
+</a>
+</div>
+    <div class="project-empty" data-project-empty hidden><span class="eyebrow">Nothing here just yet</span><h2>No projects match that search.</h2><p>Try a tool like “Arduino,” a topic like “VR,” or a shorter search.</p><button type="button" class="btn btn-outline" data-project-reset>Clear search &amp; filters</button></div>
+    <noscript><p>All projects are shown. Enable JavaScript to search, sort, and filter the collection.</p></noscript>
   </div>
 </section>
 
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

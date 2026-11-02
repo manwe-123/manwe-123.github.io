@@ -1,78 +1,198 @@
 ---
-layout: default
+layout: project
 ---
 
-<!-- Unified Project Header with Dynamic Theme Support -->
-{% assign theme_class = "theme-vr" %}
+<div class="vr-project">
+  <section class="project-section project-content">
+    <h2>Problem &amp; Project Direction</h2>
+    <p>{{ page.problem | escape }}</p>
+    <p>{{ page.solution | escape }}</p>
+    <h3>Documented Project Status</h3>
+    <p>{{ page.document_status | escape }}</p>
+  </section>
 
-<header class="project-header {{ theme_class }}">
-  <div class="container">
-    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
-    <h1 class="project-title">{{ page.title }}</h1>
-
-    {% if page.subtitle %}
-    <p class="project-subtitle">{{ page.subtitle }}</p>
+  <section class="project-section project-content">
+    <h2>My Contributions</h2>
+    {% if page.documentation_contributions %}
+    <h3>Spring 2025 · Documentation Lead</h3>
+    <ul>
+      {% for contribution in page.documentation_contributions %}
+      <li>{{ contribution | escape }}</li>
+      {% endfor %}
+    </ul>
     {% endif %}
+    <h3>Fall 2025 · Unity Prototyping Lead</h3>
+    <ul>
+      {% for contribution in page.contributions %}
+      <li>{{ contribution | escape }}</li>
+      {% endfor %}
+    </ul>
+    <p>{{ page.contributions_note | escape }}</p>
+  </section>
 
-    <!-- Project Meta Row -->
-    <div class="project-meta">
-      {% if page.role %}
-      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
-      {% endif %}
+  <section class="project-section project-content">
+    <h2>Requirements &amp; Classroom Constraints</h2>
+    <h3>Activity Requirements</h3>
+    {{ page.requirements | markdownify }}
+    <h3>Deployment Constraints</h3>
+    {{ page.constraints | markdownify }}
+  </section>
 
-      {% if page.timeline %}
-      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
-      {% endif %}
-
-      {% if page.team %}
-      <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
-      {% endif %}
-
-      {% if page.software %}
-      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
-      {% endif %}
+  <section class="project-section">
+    <h2>Learning Targets &amp; Validation Status</h2>
+    <div class="table-wrapper" role="region" aria-label="Learning targets and documented validation status" tabindex="0">
+      <table class="metrics-table">
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Design Target</th>
+            <th scope="col">Documented Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for metric in page.metrics %}
+          <tr>
+            <th scope="row">{{ metric.name | escape }}</th>
+            <td>{{ metric.target | escape }}</td>
+            <td>{{ metric.achieved | escape }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <!-- Technical Tags -->
-    {% if page.tags %}
-    <div class="project-tags mt-4">
-      {% for tag in page.tags %}
-      <span class="tag-cohesive">{{ tag }}</span>
+  <section class="project-section">
+    <h2>Concept Selection</h2>
+    <div class="project-content">
+      <p>{{ page.concept_selection.intro | escape }}</p>
+    </div>
+    <div class="table-wrapper" role="region" aria-label="Weighted concept selection ratings" tabindex="0">
+      <table class="metrics-table vr-concept-table">
+        <caption>Ratings out of 10; weighted score uses the percentage weights shown.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Concept</th>
+            <th scope="col">Curriculum (30%)</th>
+            <th scope="col">Implementation (20%)</th>
+            <th scope="col">Engagement (30%)</th>
+            <th scope="col">Educational Value (20%)</th>
+            <th scope="col">Weighted Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for concept in page.concept_selection.concepts %}
+          <tr>
+            <th scope="row">{{ concept.name | escape }}{% if concept.selected %} · Selected{% endif %}</th>
+            <td>{{ concept.relevance }}</td>
+            <td>{{ concept.ease }}</td>
+            <td>{{ concept.engagement }}</td>
+            <td>{{ concept.value }}</td>
+            <td>{{ concept.weighted | escape }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="project-content">
+      <p>{{ page.concept_selection.note | escape }}</p>
+    </div>
+  </section>
+
+  {% if page.model_selection %}
+  <section class="project-section" aria-labelledby="model-selection-heading">
+    <h2 id="model-selection-heading">Design Model Decision Matrix</h2>
+    <div class="project-content">
+      <p>{{ page.model_selection.intro | escape }}</p>
+      <p>{{ page.model_selection.scoring | escape }}</p>
+    </div>
+    <div class="table-wrapper" role="region" aria-label="Illustrative table, bookshelf, and bench decision matrix" tabindex="0">
+      <table class="metrics-table">
+        <caption>Illustrative scores · Ease 40% · Design difficulty 35% · Aesthetics 25%</caption>
+        <thead>
+          <tr>
+            <th scope="col">Design Model</th>
+            <th scope="col">Ease of Implementation ↑</th>
+            <th scope="col">Design Difficulty ↓</th>
+            <th scope="col">Aesthetics ↑</th>
+            <th scope="col">Weighted Score ↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for model in page.model_selection.options %}
+          <tr>
+            <th scope="row">{{ model.name | escape }}{% if model.selected %} · Selected{% endif %}</th>
+            <td>{{ model.ease }}</td>
+            <td>{{ model.difficulty }}</td>
+            <td>{{ model.aesthetics }}</td>
+            <td>{% if model.selected %}<strong>{{ model.weighted | escape }}</strong>{% else %}{{ model.weighted | escape }}{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="project-content">
+      <p>{{ page.model_selection.formula | escape }}</p>
+      <p>{{ page.model_selection.rationale | escape }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="project-section">
+    <h2>Proposed Student Activity</h2>
+    <div class="grid grid-3">
+      {% for step in page.activity_steps %}
+      <div class="vr-detail-card project-content">
+        <h3>{{ forloop.index }} · {{ step.title | escape }}</h3>
+        <p>{{ step.description | escape }}</p>
+      </div>
       {% endfor %}
     </div>
-    {% endif %}
-  </div>
-</header>
+  </section>
 
-<!-- Main Content Area -->
-<div class="container vr-project">
-
-  <!-- Problem Statement -->
-  {% if page.problem %}
   <section class="project-section">
-    <h2>Problem</h2>
-    <div class="project-content">
-      <p>{{ page.problem }}</p>
+    <h2>System Workstreams</h2>
+    <div class="grid grid-2">
+      {% for workstream in page.workstreams %}
+      <div class="project-content">
+        <h3>{{ workstream.title | escape }}</h3>
+        <p>{{ workstream.description | escape }}</p>
+      </div>
+      {% endfor %}
     </div>
   </section>
-  {% endif %}
 
-  <!-- Solution Overview -->
-  {% if page.solution %}
   <section class="project-section">
-    <h2>Solution</h2>
-    <div class="project-content">
-      <p>{{ page.solution }}</p>
+    <h2>Design Artifacts</h2>
+    <div class="grid grid-2 vr-artifacts">
+      {% for artifact in page.artifacts %}
+      <figure class="vr-artifact">
+        <a href="{{ artifact.src | relative_url }}" target="_blank" rel="noopener" aria-label="{{ artifact.alt | append: ' Open original image in a new tab.' | escape }}">
+          <img src="{{ artifact.src | relative_url }}" alt="{{ artifact.alt | escape }}" width="{{ artifact.width }}" height="{{ artifact.height }}" loading="lazy" decoding="async">
+        </a>
+        <figcaption>{{ artifact.caption | escape }} <a href="{{ artifact.src | relative_url }}" target="_blank" rel="noopener">View original ↗</a></figcaption>
+      </figure>
+      {% endfor %}
     </div>
   </section>
-  {% endif %}
+
+  <section class="project-section project-content">
+    <h2>Development Timeline</h2>
+    {% for phase in page.development_phases %}
+    {% unless phase.planned %}
+    <h3>{{ phase.period | escape }} · {{ phase.title | escape }}</h3>
+    <ul>
+      {% for task in phase.tasks %}
+      <li>{{ task | escape }}</li>
+      {% endfor %}
+    </ul>
+    {% endunless %}
+    {% endfor %}
+  </section>
 
   {% if page.prototype_video %}
   <section class="project-section" aria-labelledby="prototype-demo-heading">
-    <h2 id="prototype-demo-heading">Final Prototype Demo</h2>
+    <h2 id="prototype-demo-heading">Prototype Demo</h2>
     <div class="project-content">
       <p>{{ page.prototype_video.description | escape }}</p>
     </div>
@@ -92,443 +212,116 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Requirements -->
-  {% if page.requirements %}
-  <section class="project-section">
-    <h2>Requirements</h2>
+  {% if page.performance_testing %}
+  <section class="project-section" aria-labelledby="performance-testing-heading">
+    <h2 id="performance-testing-heading">Frame Rate, Asset Optimization &amp; Motion Sickness</h2>
     <div class="project-content">
-      {{ page.requirements | markdownify }}
+      <p>{{ page.performance_testing.summary | escape }}</p>
     </div>
-  </section>
-  {% endif %}
+    <div class="grid grid-3">
+      {% for step in page.performance_testing.approach %}
+      <div class="vr-detail-card project-content">
+        <h3>{{ step.title | escape }}</h3>
+        <p>{{ step.description | escape }}</p>
+      </div>
+      {% endfor %}
+    </div>
 
-  <!-- Constraints -->
-  {% if page.constraints %}
-  <section class="project-section">
-    <h2>Constraints</h2>
     <div class="project-content">
-      {{ page.constraints | markdownify }}
+      <h3>Illustrative Before &amp; After Statistics</h3>
+      <p>{{ page.performance_testing.example_note | escape }}</p>
     </div>
-  </section>
-  {% endif %}
-
-  <!-- Metrics -->
-  {% if page.metrics %}
-  <section class="project-section">
-    <h2>Success Metrics</h2>
-    <div class="table-wrapper" role="region" aria-label="Success metrics" tabindex="0">
-    <table class="metrics-table">
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Target</th>
-          <th>Achieved</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for metric in page.metrics %}
-        <tr>
-          <td><strong>{{ metric.name }}</strong></td>
-          <td>{{ metric.target }}</td>
-          <td>{{ metric.achieved }}</td>
-        </tr>
+    <div class="table-wrapper" role="region" aria-label="Illustrative asset optimization statistics, not measured project results" tabindex="0">
+      <table class="metrics-table">
+        <caption>Invented numerical example · Original assets compared with simplified assets</caption>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Example Before</th>
+            <th scope="col">Example After</th>
+            <th scope="col">Calculated Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for metric in page.performance_testing.example_metrics %}
+          <tr>
+            <th scope="row">{{ metric.name | escape }}</th>
+            <td>{{ metric.before | escape }}</td>
+            <td>{{ metric.after | escape }}</td>
+            <td>{{ metric.change | escape }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="project-content">
+      <p>{{ page.performance_testing.example_interpretation | escape }}</p>
+      <h3>Comfort Observation</h3>
+      <p>{{ page.performance_testing.comfort_result | escape }}</p>
+      <h3>Repeatable Test Protocol</h3>
+      <p>{{ page.performance_testing.protocol_intro | escape }}</p>
+      <ol>
+        {% for step in page.performance_testing.protocol %}
+        <li>{{ step | escape }}</li>
         {% endfor %}
-      </tbody>
-    </table>
+      </ol>
+      <h3>Research &amp; Technical References</h3>
+      {% for reference in page.performance_testing.research %}
+      <p><strong>{{ reference.title | escape }}:</strong> {{ reference.text | escape }} <a href="{{ reference.url | escape }}" target="_blank" rel="noopener">{{ reference.label | escape }} ↗</a></p>
+      {% endfor %}
     </div>
   </section>
   {% endif %}
 
-  <!-- Stakeholders & Goals -->
-  {% if page.stakeholders or page.primary_goal %}
   <section class="project-section">
-    <h2>Stakeholders & Goals</h2>
-    <div class="project-content">
-      {% if page.stakeholders %}
-      <ul>
-        {% for stakeholder in page.stakeholders %}
-        <li><strong>{{ stakeholder.name }}:</strong> {{ stakeholder.role }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
-      {% if page.primary_goal %}
-      <p><strong>Primary Goal:</strong> {{ page.primary_goal }}</p>
-      {% endif %}
+    <h2>Planned Research &amp; Testing</h2>
+    <div class="grid grid-3">
+      {% for question in page.research_questions %}
+      <div class="vr-detail-card project-content">
+        <h3>{{ question.id | escape }} · {{ question.title | escape }}</h3>
+        <p>{{ question.question | escape }}</p>
+        <p>{{ question.plan | escape }}</p>
+      </div>
+      {% endfor %}
     </div>
   </section>
-  {% endif %}
 
-  <!-- Hardware Platform -->
-  {% if page.hardware_platform %}
   <section class="project-section">
-    <h2>Hardware Platform</h2>
-    <div class="project-content">
-      {{ page.hardware_platform | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Software Stack -->
-  {% if page.software_stack %}
-  <section class="project-section">
-    <h2>Software Stack</h2>
-    <div class="project-content">
-      {{ page.software_stack | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Core Features -->
-  {% if page.core_features %}
-  <section class="project-section">
-    <h2>Core Features</h2>
-    <div class="project-content">
-      {{ page.core_features | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Testing Overview -->
-  {% if page.testing %}
-  <section class="project-section">
-    <h2>Testing & Validation</h2>
-    <div class="project-content">
-      {{ page.testing | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Decision Matrix 
-  {% if page.decision_matrix %}
-  <section class="project-section">
-    <h2>Concept Selection: Decision Matrix</h2>
-    {% if page.decision_matrix.intro %}
-    <div class="project-content">
-      <p>{{ page.decision_matrix.intro }}</p>
-    </div>
-    {% endif %}
-
-    <table class="metrics-table">
-      <thead>
-        <tr>
-          <th>Concept</th>
-          <th>Relevance (×1.5)</th>
-          <th>Ease (×1.2)</th>
-          <th>Engagement (×1.3)</th>
-          <th>Educational Value (×1.0)</th>
-          <th>Total Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for concept in page.decision_matrix.concepts %}
-        <tr>
-          <td>{% if concept.selected %}<strong>{{ concept.name }} ✓</strong>{% else %}{{ concept.name }}{% endif %}</td>
-          <td>{{ concept.scores.relevance | times: 1.5 }}</td>
-          <td>{{ concept.scores.ease | times: 1.2 }}</td>
-          <td>{{ concept.scores.engagement | times: 1.3 }}</td>
-          <td>{{ concept.scores.educational_value | times: 1.0 }}</td>
-          <td>{% if concept.selected %}<strong>{{ concept.total }}</strong>{% else %}{{ concept.total }}{% endif %}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
-    {% assign selected_concept = nil %}
-    {% for concept in page.decision_matrix.concepts %}
-      {% if concept.selected %}
-        {% assign selected_concept = concept %}
-      {% endif %}
-    {% endfor %}
-    {% if selected_concept %}
-    <div class="project-content" style="margin-top: 1rem;">
-      <p><strong>Selected Concept:</strong> {{ selected_concept.note }}</p>
-    </div>
-    {% endif %}
-  </section>
-  {% endif %}
--->
-  <!-- Development Phases -->
-  {% if page.development_phases %}
-  <section class="project-section">
-    <h2>Iterative Prototyping Timeline</h2>
+    <h2>Next Steps &amp; Handoff</h2>
     <div class="project-content">
       {% for phase in page.development_phases %}
-      <div style="margin-bottom: 1.5rem;">
-        <p><strong>{{ phase.period }} - {{ phase.title }}</strong></p>
-        <ul>
-          {% for task in phase.tasks %}
-          <li>{{ task }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% unless forloop.last %}
-      <hr style="border: none; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
-      {% endunless %}
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Contributions -->
-  {% if page.contributions %}
-  <section class="project-section">
-    <h2>My Specific Contributions</h2>
-    <div class="project-content">
-      {% if page.contributions.prototyping_lead %}
-      <h3>As Prototyping Lead</h3>
+      {% if phase.planned %}
+      <h3>{{ phase.period | escape }} · {{ phase.title | escape }}</h3>
       <ul>
-        {% for item in page.contributions.prototyping_lead %}
-        <li>{{ item }}</li>
+        {% for task in phase.tasks %}
+        <li>{{ task | escape }}</li>
         {% endfor %}
       </ul>
       {% endif %}
-
-      {% if page.contributions.documentation_lead %}
-      <h3>As Documentation Lead</h3>
-      <ul>
-        {% for item in page.contributions.documentation_lead %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Gallery
-  {% if page.gallery %}
-  <section class="project-section">
-    <h2>Project Gallery</h2>
-    <div class="gallery-grid">
-      {% for image in page.gallery %}
-      <figure class="gallery-item">
-        <img src="{{ image.src | relative_url }}" alt="{{ image.caption }}" loading="lazy">
-        <figcaption class="gallery-item-caption">{{ image.caption }}</figcaption>
-      </figure>
       {% endfor %}
     </div>
-  </section>
-  {% endif %}
--->
-  <!-- Research Questions -->
-  {% if page.research_questions %}
-  <section class="project-section">
-    <h2>Research Questions</h2>
-    <div class="project-content">
-      {% for rq in page.research_questions %}
-      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px;">
-        <h3>{{ rq.id | upcase }}: {{ rq.title }}</h3>
-        <p><strong>Hypothesis:</strong> {{ rq.hypothesis }}</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-          <div>
-            <h3>Variables</h3>
-            <ul>
-              <li><strong>Independent:</strong> {{ rq.variables.independent }}</li>
-              <li><strong>Dependent:</strong> {{ rq.variables.dependent }}</li>
-              <li><strong>Controlled:</strong> {{ rq.variables.controlled }}</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3>Procedure</h3>
-            <ol>
-              {% for step in rq.procedure %}
-              <li>{{ step }}</li>
-              {% endfor %}
-            </ol>
-          </div>
-
-          <div>
-            <h3>Results</h3>
-            <ul>
-              {% for result in rq.results %}
-              <li>{{ result }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Test Results -->
-  {% if page.test_results %}
-  <section class="project-section">
-    <h2>Test Results Summary</h2>
-    <div class="table-wrapper" role="region" aria-label="Test results summary" tabindex="0">
-    <table class="metrics-table">
-      <thead>
-        <tr>
-          <th>Test Metric</th>
-          <th>Procedure</th>
-          <th>Result</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for test in page.test_results %}
-        <tr>
-          <td><strong>{{ test.name }}</strong></td>
-          <td>{{ test.procedure }}</td>
-          <td>{{ test.result }}</td>
-          <td>
-            <span class="test-result-status {{ test.status | downcase }}">{{ test.status }}</span>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- What Worked -->
-  {% if page.worked %}
-  <section class="project-section">
-    <h2>What Went Well</h2>
-    <div class="project-content">
-      {{ page.worked | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- What Failed -->
-  {% if page.failed %}
-  <section class="project-section">
-    <h2>Technical Challenges</h2>
-    <div class="project-content">
-      {{ page.failed | markdownify }}
-
-      {% if page.challenges_vr_sickness %}
-      <p><strong>Challenge: VR Motion Sickness</strong></p>
-      <p>{{ page.challenges_vr_sickness }}</p>
-      {% endif %}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Next Steps -->
-  {% if page.next_steps_list %}
-  <section class="project-section">
-    <h2>Future Development Roadmap</h2>
-    <div class="project-content">
+    <div class="grid grid-2">
       {% for step in page.next_steps_list %}
-      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--color-bg-secondary); border-radius: 8px; border-left: 4px solid var(--color-accent);">
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.description }}</p>
+      <div class="project-content">
+        <h3>{{ step.title | escape }}</h3>
+        <p>{{ step.description | escape }}</p>
       </div>
       {% endfor %}
     </div>
   </section>
-  {% endif %}
 
-  <!-- Technical Specifications -->
-  {% if page.specs %}
-  <section class="project-section">
-    <h2>Technical Specifications</h2>
-
-    {% if page.specs.software %}
-    <h3 class="specs-category">Software</h3>
-    <table class="specs-table">
-      <thead>
-        <tr>
-          <th>Tool</th>
-          <th>Version</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for tool in page.specs.software %}
-        <tr>
-          <td>{{ tool.name }}</td>
-          <td>{{ tool.version }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
-
-    {% if page.specs.hardware %}
-    <h3 class="specs-category">Hardware</h3>
-    <table class="specs-table">
-      <thead>
-        <tr>
-          <th>Component</th>
-          <th>Model</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for hw in page.specs.hardware %}
-        <tr>
-          <td>{{ hw.component }}</td>
-          <td>{{ hw.model }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
-
-    {% if page.specs.materials %}
-    <h3 class="specs-category">Materials</h3>
-    <table class="specs-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for mat in page.specs.materials %}
-        <tr>
-          <td>{{ mat.type }}</td>
-          <td>{{ mat.grade }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
-
-    {% if page.specs.dimensions %}
-    <h3 class="specs-category">Dimensions</h3>
-    <table class="specs-table">
-      <thead>
-        <tr>
-          <th>Axis</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for dim in page.specs.dimensions %}
-        <tr>
-          <td>{{ dim.axis }}</td>
-          <td>{{ dim.value }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
-
-    {% if page.specs.weight %}
-    <h3 class="specs-category">Weight & Cost</h3>
-    <table class="specs-table">
-      <tbody>
-        <tr>
-          <th>Weight</th>
-          <td>{{ page.specs.weight }}</td>
-        </tr>
-        {% if page.specs.cost %}
-        <tr>
-          <th>Cost</th>
-          <td>{{ page.specs.cost }}</td>
-        </tr>
-        {% endif %}
-      </tbody>
-    </table>
-    {% endif %}
+  <section class="project-section project-content">
+    <h2>Tools &amp; Project Resources</h2>
+    <ul>
+      {% for tool in page.specs.software %}
+      <li><strong>{{ tool.name | escape }}:</strong> {{ tool.version | escape }}</li>
+      {% endfor %}
+      {% for hardware in page.specs.hardware %}
+      <li><strong>{{ hardware.component | escape }}:</strong> {{ hardware.model | escape }}</li>
+      {% endfor %}
+      <li><strong>Recorded spending:</strong> {{ page.specs.cost | escape }}</li>
+    </ul>
+    <p>{{ page.design_document_note | escape }}</p>
+    <a class="btn btn-outline" href="{{ page.design_document_url | relative_url }}" download>Download Design Excerpts (PDF)</a>
   </section>
-  {% endif %}
-
 </div>

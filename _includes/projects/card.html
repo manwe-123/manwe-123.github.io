@@ -1,0 +1,20 @@
+{% assign item = include.project %}
+{% assign search_tags = item.tags | join: ' ' %}
+{% assign card_excerpt = item.excerpt | strip_html | strip %}
+<a href="{{ item.url | relative_url }}" class="project-card" data-category="{{ item.category | default: 'engineering' }}" data-title="{{ item.card_title | default: item.title | escape }}" data-search="{{ item.title | append: ' ' | append: item.subtitle | append: ' ' | append: search_tags | downcase | escape }}" data-date="{{ item.date | date: '%s' }}">
+  <div class="project-card-media">
+    {% if item.image %}
+    <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}" class="project-card-image" loading="lazy" decoding="async">
+    {% else %}
+    <div class="project-card-placeholder" aria-hidden="true">{{ item.category | default: 'Project' | capitalize }}<span>MC / {{ item.date | date: '%Y' }}</span></div>
+    {% endif %}
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">{{ item.category | default: 'Engineering' }}</span><span class="project-card-year">{{ item.date | date: '%Y' }}</span></div>
+    <h3 class="project-card-title">{{ item.card_title | default: item.title | escape }}</h3>
+    <p class="project-card-excerpt">{{ card_excerpt | default: item.subtitle | default: item.description | strip_html | truncate: 155 }}</p>
+    <div class="project-card-tags">{% for tag in item.tags limit: 3 %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">{% if include.number < 10 %}0{% endif %}{{ include.number }} / →</span></div>
+  </div>
+</a>

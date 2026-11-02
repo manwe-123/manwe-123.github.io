@@ -1,30 +1,13 @@
-<!-- Site Header -->
 <header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="{{ '/' | relative_url }}" class="nav-logo">
-        {% if site.logo_text %}
-          {{ site.logo_text }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}">Home</a>
-        <a href="{{ '/projects' | relative_url }}" class="nav-link{% if page.url contains '/projects' %} active{% endif %}">Projects</a>
-        <a href="{{ '/about' | relative_url }}" class="nav-link{% if page.url contains '/about' %} active{% endif %}">About</a>
-        <a href="{{ '/contact' | relative_url }}" class="nav-link{% if page.url contains '/contact' %} active{% endif %}">Contact</a>
-      </nav>
-    </div>
+  <div class="container nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="{{ site.title | escape }} home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>{{ site.title | escape }}</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="{{ '/' | relative_url }}" class="nav-link"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/projects/' | relative_url }}" class="nav-link"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/about/' | relative_url }}" class="nav-link"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/contact/' | relative_url }}" class="nav-link"{% if page.url contains '/contact' %} aria-current="page"{% endif %}>Contact</a>
+      <a href="{{ site.resume_url | relative_url }}" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>

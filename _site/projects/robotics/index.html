@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Mental Health Robotics System for Isolated Environments | Manwe Castro</title>
-  <meta name="description" content="Designed and built a semi-autonomous companion robot that tracks user proximity and dispenses medical supplies to alleviate mental health struggles in isolat...">
+  <meta name="description" content="Designed and built a companion robot prototype combining ultrasonic proximity control, an LCD interface, and a photoresistor-triggered storage lid in a laser...">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -18,115 +18,83 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="case-study-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link" aria-current="page">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <!-- Unified Project Header with Dynamic Theme Support -->
-
-
-
+    <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
 <header class="project-header theme-robotics">
   <div class="container">
-    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
+    <div class="project-breadcrumb"><a href="/projects/">← All projects</a><span>Engineering / Case study</span></div>
     <h1 class="project-title">Mental Health Robotics System for Isolated Environments</h1>
-
     
-    <p class="project-subtitle">A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants</p>
-    
-
-    <!-- Project Meta Row -->
-    <div class="project-meta">
+    <p class="project-subtitle">Baymax: an Arduino companion robot prototype for a Mars-colony design scenario</p>
+    <dl class="project-facts">
+      <div><dt>My role</dt><dd>CAD, Embedded Programming &amp; Prototyping</dd></div>
+      <div><dt>Timeline</dt><dd>August 2024 - December 2024</dd></div>
+      <div><dt>Team</dt><dd>4-person team</dd></div>
       
-      <span class="meta-badge"><strong>Role:</strong> Design and Prototyping Lead</span>
       
-
       
-      <span class="meta-badge"><strong>Timeline:</strong> August 2024 - December 2024</span>
       
-
-      
-      <span class="meta-badge"><strong>Team:</strong> 4-person team</span>
-      
-
-      
+    </dl>
+    <div class="project-header-bottom">
+      <div class="project-tags"><span class="tag-cohesive">Robotics</span><span class="tag-cohesive">Arduino</span><span class="tag-cohesive">Laser Cutting</span><span class="tag-cohesive">Mechatronics</span><span class="tag-cohesive">Prototyping</span></div>
+      <div class="project-utilities"><span data-reading-time></span><button type="button" class="text-button" data-copy-link>Copy project link</button></div>
     </div>
-
-    <!-- Technical Tags -->
-    
-    <div class="project-tags mt-4">
-      
-      <span class="tag-cohesive">Robotics</span>
-      
-      <span class="tag-cohesive">Arduino</span>
-      
-      <span class="tag-cohesive">Laser Cutting</span>
-      
-      <span class="tag-cohesive">Mechatronics</span>
-      
-      <span class="tag-cohesive">Prototyping</span>
-      
-    </div>
-    
   </div>
 </header>
 
-<!-- Main Content Area -->
-<div class="container robotics-project">
+<div class="container case-study-layout" data-case-study>
+  <aside class="case-index" data-case-index hidden>
+    <details open>
+      <summary>On this page <span data-reading-position></span></summary>
+      <nav aria-label="Case study sections" data-section-nav></nav>
+    </details>
+    <a href="#main-content" class="case-back-top">↑ Back to top</a>
+  </aside>
+  <article class="case-study-content" id="case-study-content"><!-- Unified Project Header with Dynamic Theme Support -->
 
-  <!-- Problem Statement -->
+<!-- Main Content Area -->
+<div class="robotics-project">
+
   
   <section class="project-section">
     <h2>Problem</h2>
     <div class="project-content">
-      <p>Mars colony inhabitants face severe mental health challenges, including isolation, loneliness, and sensory deprivation due to confined living conditions. They need an automated, low-cost companion to provide mental enrichment, medical access, and a sense of home.</p>
+      <p>The ASU 101 'Mars in the Making' project asked our team to address isolation, homesickness, and limited interaction in a hypothetical Mars colony. We focused on a low-cost companion concept that could approach a user, display a greeting, and make a small supply compartment accessible. The intended users were colony inhabitants, with colony leaders and NASA researchers identified as stakeholders in the scenario.</p>
     </div>
   </section>
   
 
-  <!-- Solution Overview -->
   
   <section class="project-section">
     <h2>Solution</h2>
     <div class="robotics-solution robotics-solution-with-image">
       <div class="project-content">
-        <p>Developed a semi-autonomous mobile robot equipped with an ultrasonic sensor for user tracking, a photoresistor-triggered medical drawer, and an LCD screen for positive messaging, fabricated from lightweight, recyclable materials.</p>
+        <p>Our four-person team built Baymax, a wooden, wheeled Arduino prototype with two input sensors and three outputs: drive motors, a servo-operated storage lid, and an LCD. It moves forward while the user is beyond a 15 cm threshold, stops nearby, and displays 'Good Morning' and 'Place Hand Above' prompts. Covering the top-mounted photoresistor opens the supply compartment. The prototype passed the documented functional acceptance checks on November 26; a later presentation was stopped after battery wiring overheated.</p>
+        
+        <a class="btn btn-outline mt-4" href="/assets/files/robotics-final-design-report.pdf">Read Final Design Report (PDF)</a>
+        
       </div>
       
       <figure class="robotics-figure robotics-figure-prototype">
@@ -144,24 +112,40 @@
   </section>
   
 
-  <!-- Requirements -->
+  
+  <section class="project-section">
+    <h2>My Contributions</h2>
+    <div class="project-content">
+      <ul>
+        
+        <li>Created the CAD model, dimensioned orthographic drawing, and design-description material for the final report.</li>
+        
+        <li>Built the TinkerCAD circuit and code, assembled the physical circuit, and programmed the Arduino.</li>
+        
+        <li>Helped construct the exterior, added artwork to the back of the prototype, and troubleshot integration issues with the team.</li>
+        
+      </ul>
+      <p>Appendix C attributes these tasks to me. Teammates contributed laser cutting, enclosure measurements, tray construction, woodwork, soldering, code edits, and troubleshooting.</p>
+    </div>
+  </section>
+  
+
   
   <section class="project-section">
     <h2>Requirements</h2>
     <div class="project-content">
       <ul>
-  <li>Improve overall mental health metrics by at least 5%</li>
-  <li>Fully automated operation for user tracking and medical dispensing</li>
-  <li>Withstand low atmospheric pressure and normal base living conditions</li>
-  <li>Total prototype cost under $75</li>
-  <li>Low weight and constructed from recyclable materials</li>
+  <li><strong>Project goal:</strong> improve mental health by at least 5%; the team did not quantify this outcome or establish therapeutic effectiveness</li>
+  <li><strong>Automation:</strong> approach the user, stop nearby, display a greeting, and open a supply lid in response to a hand shadow</li>
+  <li><strong>Budget:</strong> keep the listed prototype materials below $75</li>
+  <li><strong>Scenario requirements:</strong> tolerate base living conditions and low atmospheric pressure, and avoid harm to users; environmental qualification was not performed</li>
+  <li><strong>Design criteria:</strong> low maintenance, durability, low weight, interaction, and a sense of home</li>
 </ul>
 
     </div>
   </section>
   
 
-  <!-- Constraints -->
   
   <section class="project-section">
     <h2>Constraints</h2>
@@ -181,7 +165,7 @@
     <h2>Concept Development</h2>
     
     <div class="project-content">
-      <p>Early brainstorming explored how a compact wheeled companion could combine an expressive screen with access to medical supplies. The sketch records the initial enclosure and interaction ideas before the design was developed in CAD.</p>
+      <p>We compared three concepts: a Daylight Simulator, the Baymax companion robot, and a Mood Button wearable. The decision matrix prioritized a sense of home, maintenance, and interaction, and selected Baymax. Early sketches and CAD explored articulated arms, mood buttons, speakers, and a diffuser. We reduced the build to proximity-based movement, an LCD greeting, and a servo-operated lid to deliver a functioning classroom prototype.</p>
     </div>
     
     
@@ -199,81 +183,15 @@
   </section>
   
 
-  <!-- Metrics Table -->
-  
-  <section class="project-section">
-    <h2>Performance Metrics</h2>
-    <table class="metrics-table">
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Target</th>
-          <th>Achieved</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        <tr>
-          <td>Prototype Cost</td>
-          <td>< $75.00</td>
-          <td>$44.20</td>
-        </tr>
-        
-        <tr>
-          <td>Proximity Tracking</td>
-          <td>< 15 cm</td>
-          <td>15 cm</td>
-        </tr>
-        
-        <tr>
-          <td>Drawer Actuation</td>
-          <td>< 25 light value</td>
-          <td>< 25 light value</td>
-        </tr>
-        
-      </tbody>
-    </table>
-  </section>
-  
-
-  <!-- Sensing System -->
-  
-  <section class="project-section">
-    <h2>Sensing System</h2>
-    <div class="project-content">
-      <ul>
-  <li><strong>Ultrasonic Sensor</strong>: HC-SR04 equivalent for 15cm proximity tracking and semi-autonomous navigation</li>
-  <li><strong>Photoresistor</strong>: Light dependent resistor (LDR) for shadow detection to trigger the medical drawer</li>
-</ul>
-
-    </div>
-  </section>
-  
-
-  <!-- Actuation System -->
-  
-  <section class="project-section">
-    <h2>Actuation System</h2>
-    <div class="project-content">
-      <ul>
-  <li><strong>Drive Motors</strong>: 2x Hobby gear motors with wheels for forward user tracking</li>
-  <li><strong>Servo Motor</strong>: Micro servo for automated medical drawer lid actuation</li>
-  <li><strong>Power System</strong>: 2x 9V batteries for independent logic and motor power distribution</li>
-</ul>
-
-    </div>
-  </section>
-  
-
-  <!-- Mechanical Design -->
   
   <section class="project-section">
     <h2>Mechanical Design</h2>
     <div class="project-content">
       <ul>
-  <li><strong>Chassis</strong>: 6x6x6 inch cube fabricated from 1/8” balsa wood and plywood</li>
-  <li><strong>Fabrication Method</strong>: Laser cut components for precise mechanical fit and structural rigidity</li>
-  <li><strong>Medical Drawer</strong>: Top-mounted compartment with servo-actuated lid for automated dispensing</li>
+  <li><strong>Chassis:</strong> a nominal 6 × 6 × 6 inch body made from 1/8-inch balsa wood and plywood</li>
+  <li><strong>Front face:</strong> a 3.15 × 1.42 inch LCD above the ultrasonic sensor, leaving the user-facing messages and distance measurement unobstructed</li>
+  <li><strong>Supply compartment:</strong> a top-mounted, three-compartment tray with a hinged lid moved by a small wooden linkage on the servo; users retrieve items themselves</li>
+  <li><strong>Wheel packaging:</strong> powered rear wheels and passive front wheels; the enclosure corners were sanded to remove interference with the wheel circumference</li>
 </ul>
 
     </div>
@@ -297,7 +215,7 @@
     <img src="/assets/images/projects/robot/figure%206.jpg" alt="Dimensioned orthographic robot enclosure drawing with top, front, and side views; dimensions are in inches." width="800" height="600" loading="lazy" decoding="async">
   </a>
   <figcaption>
-    Orthographic drawing documenting the enclosure dimensions and component openings. Dimensions are in inches.
+    Dimensioned drawing of the original Baymax CAD concept. Its proposed screen, arms, and accessory openings differ from the simplified 6-inch wooden prototype; dimensions are in inches.
     <a class="robotics-figure-action" href="/assets/images/projects/robot/figure%206.jpg" target="_blank" rel="noopener">View original ↗</a>
   </figcaption>
 </figure>
@@ -306,7 +224,6 @@
   </section>
   
 
-  <!-- Components List -->
   
   <section class="project-section">
     <h2>Key Components</h2>
@@ -326,12 +243,12 @@
         
         <tr>
           <td><strong>16-Pin Motor Driver Controller</strong></td>
-          <td>H-bridge for hobby gear motor control</td>
+          <td>H-bridge for the two hobby gear motors</td>
         </tr>
         
         <tr>
           <td><strong>LCD Screen</strong></td>
-          <td>User interface for displaying positive messages</td>
+          <td>16 × 2 character interface for greeting and hand-placement prompts</td>
         </tr>
         
       </tbody>
@@ -339,129 +256,66 @@
   </section>
   
 
-  <!-- Fabrication Process -->
   
   <section class="project-section">
-    <h2>Fabrication Process</h2>
-    <div class="project-content">
-      <p><strong>Laser Cutting &amp; Assembly:</strong></p>
-<ul>
-  <li>Cut 1/8” balsa and plywood components using the laser cutter</li>
-  <li>Sanded internal corners to prevent wheel friction and ensure smooth mechanical movement</li>
-</ul>
-
-<p><strong>Electronics Integration:</strong></p>
-<ul>
-  <li>Mounted Arduino, breadboard, and motor driver inside the wooden chassis</li>
-  <li>Routed wiring for ultrasonic sensor, photoresistor, and servo motor</li>
-</ul>
-
-    </div>
-  </section>
-  
-
-  <!-- Testing Overview -->
-  
-  <section class="project-section">
-    <h2>Testing Overview</h2>
-    <div class="project-content">
-      <p>Formal acceptance testing was conducted in three phases (Nov 21, Nov 24, Nov 26) to verify sensor accuracy, motor response, and automated dispensing mechanisms under operational conditions.
-</p>
-    </div>
-  </section>
-  
-
-  <!-- Test Results -->
-  
-  <section class="project-section">
-    <h2>Test Results</h2>
-    
-    <div class="test-result">
-      <div class="test-result-header">
-        <h3 class="test-result-name">Proximity Tracking</h3>
-        <span class="test-result-status pass">Pass</span>
-      </div>
-      <div class="test-result-procedure">
-        <strong>Procedure:</strong> Move robot away from user and measure stopping distance
-      </div>
-      <div class="test-result-result">
-        <strong>Result:</strong> Hobby motors engaged and stopped exactly at 15 cm
-      </div>
-    </div>
-    
-    <div class="test-result">
-      <div class="test-result-header">
-        <h3 class="test-result-name">Drawer Actuation</h3>
-        <span class="test-result-status pass">Pass</span>
-      </div>
-      <div class="test-result-procedure">
-        <strong>Procedure:</strong> Hover hand over photoresistor to cast a shadow
-      </div>
-      <div class="test-result-result">
-        <strong>Result:</strong> Servo motor triggered and opened lid when light value dropped below 25
-      </div>
-    </div>
-    
-    <div class="test-result">
-      <div class="test-result-header">
-        <h3 class="test-result-name">Continuous Operation</h3>
-        <span class="test-result-status fail">Fail</span>
-      </div>
-      <div class="test-result-procedure">
-        <strong>Procedure:</strong> Run full system during final presentation
-      </div>
-      <div class="test-result-result">
-        <strong>Result:</strong> System failed due to overheating wire
-      </div>
-    </div>
-    
-  </section>
-  
-
-  <!-- What Worked -->
-  
-  <section class="project-section">
-    <h2>What Worked</h2>
+    <h2>Sensing System</h2>
     <div class="project-content">
       <ul>
-  <li><strong>Sensor Integration</strong>: Ultrasonic and photoresistor logic worked seamlessly for semi-autonomous tracking and automated dispensing</li>
-  <li><strong>Mechanical Fit</strong>: Laser-cut wooden components provided precise structural rigidity for the electronic modules</li>
+  <li><strong>Ultrasonic sensor:</strong> trigger on Arduino pin 2 and echo on pin 3; pulse duration is converted to distance using <code class="language-plaintext highlighter-rouge">distance = duration × 0.034 / 2</code></li>
+  <li><strong>Photoresistor:</strong> read on A0 to detect a hand shadow over the top compartment; 25 is a raw analog-reading threshold, not a calibrated light level</li>
 </ul>
 
     </div>
   </section>
   
 
-  <!-- What Failed -->
   
   <section class="project-section">
-    <h2>What Failed</h2>
+    <h2>Actuation System</h2>
     <div class="project-content">
       <ul>
-  <li><strong>Power Management</strong>: Exposed wiring on the battery connection overheated and melted during the final presentation due to poor soldering</li>
-  <li><strong>Mobility</strong>: Robot could only move forward and lacked differential steering for omnidirectional movement</li>
+  <li><strong>Drive motors:</strong> two hobby gear motors controlled through a 16-pin motor driver; the implemented motion is forward-only</li>
+  <li><strong>Servo:</strong> attached to pin 8, with 90° used for the closed position and 0° for the open position in the report’s code</li>
+  <li><strong>LCD:</strong> a 16 × 2 character display with a greeting and a prompt to place a hand above the lid</li>
+  <li><strong>Power:</strong> the materials table lists two 9 V batteries; power delivery and battery wiring became key reliability issues during integration</li>
 </ul>
 
     </div>
   </section>
   
 
-  <!-- Next Steps -->
   
   <section class="project-section">
-    <h2>Next Steps</h2>
+    <h2>Control Logic &amp; Circuit Integration</h2>
     <div class="project-content">
-      <ul>
-  <li>Implement proper wire gauge selection and inline fuses for high-current battery connections</li>
-  <li>Add differential drive steering to allow the robot to turn and follow users dynamically</li>
-  <li>Integrate planned aromatherapy diffuser and audio speakers for multi-sensory therapy</li>
-</ul>
-
+      <ol>
+        
+        <li>Read the photoresistor and send an ultrasonic trigger pulse, then convert the echo duration to distance.</li>
+        
+        <li>If distance is greater than 15 cm, drive both wheels forward and clear the LCD. Otherwise, stop the drive motors and enter the interaction branch.</li>
+        
+        <li>Within the stopped interaction branch, keep the lid closed when the light reading is above 25. At 25 or below, open the lid for 5 seconds and then close it.</li>
+        
+        <li>Display &#39;Good Morning&#39; for 5 seconds, then &#39;Place Hand Above&#39; for 3 seconds. These blocking delays pause new sensor readings and limit response speed.</li>
+        
+      </ol>
+      <p>The report&#39;s early descriptions use several different approach distances. This summary follows the 15 cm threshold in Appendix A&#39;s Arduino code and Appendix B&#39;s acceptance procedure.</p>
     </div>
+    
+    <figure class="robotics-figure robotics-figure-circuit">
+  <a class="robotics-figure-media" href="/assets/images/projects/robot/report-circuit.png" target="_blank" rel="noopener" aria-label="TinkerCAD wiring diagram connecting an Arduino Uno, ultrasonic sensor, photoresistor, servo, LCD, motor driver, and two drive motors. Open original image in a new tab.">
+    <img src="/assets/images/projects/robot/report-circuit.png" alt="TinkerCAD wiring diagram connecting an Arduino Uno, ultrasonic sensor, photoresistor, servo, LCD, motor driver, and two drive motors." width="1336" height="674" loading="lazy" decoding="async">
+  </a>
+  <figcaption>
+    Appendix A&#39;s TinkerCAD circuit documents the sensing, display, servo, and motor-control wiring used to develop the prototype.
+    <a class="robotics-figure-action" href="/assets/images/projects/robot/report-circuit.png" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>
+
+    
   </section>
   
 
-  <!-- Technical Specifications -->
   
   <section class="project-section">
     <h2>Technical Specifications</h2>
@@ -479,12 +333,12 @@
         
         <tr>
           <td>Arduino IDE</td>
-          <td>2.0</td>
+          <td>Version not specified in the report</td>
         </tr>
         
         <tr>
           <td>TinkerCAD</td>
-          <td>2024</td>
+          <td>Circuit simulation and code prototyping</td>
         </tr>
         
       </tbody>
@@ -577,12 +431,12 @@
       <tbody>
         <tr>
           <th>Weight</th>
-          <td>Optimized for low weight (< 1 kg)</td>
+          <td>Not measured in the report</td>
         </tr>
         
         <tr>
           <th>Cost</th>
-          <td>$44.20 USD</td>
+          <td>$44.20 listed materials; the table does not include an Arduino line item</td>
         </tr>
         
       </tbody>
@@ -591,65 +445,348 @@
   </section>
   
 
+  
+  <section class="project-section">
+    <h2>Fabrication Process</h2>
+    <div class="project-content">
+      <p><strong>Laser Cutting &amp; Assembly:</strong></p>
+<ul>
+  <li>Laser-cut 1/8-inch balsa and plywood panels and assembled the enclosure around the electronics</li>
+  <li>Added a hinged lid and a servo-driven wooden linkage for the supply tray</li>
+  <li>Sanded the enclosure corners after testing revealed wheel friction</li>
+</ul>
+
+<p><strong>Electronics Integration:</strong></p>
+<ul>
+  <li>Integrated the Arduino, breadboard, motor driver, LCD, sensors, and servo inside the chassis</li>
+  <li>Adjusted battery power while debugging delayed motor response</li>
+  <li>Restored the servo connection after rewiring had interrupted the photoresistor-to-lid interaction</li>
+</ul>
+
+    </div>
+    
+    <div class="grid grid-3 robotics-build-gallery">
+      
+      <figure class="robotics-figure robotics-figure-build">
+  <a class="robotics-figure-media" href="/assets/images/projects/robot/report-front.png" target="_blank" rel="noopener" aria-label="Front view of the wooden Baymax prototype with a blue LCD, ultrasonic sensor, and red drive wheels. Open original image in a new tab.">
+    <img src="/assets/images/projects/robot/report-front.png" alt="Front view of the wooden Baymax prototype with a blue LCD, ultrasonic sensor, and red drive wheels." width="262" height="319" loading="lazy" decoding="async">
+  </a>
+  <figcaption>
+    Final prototype front view, showing the LCD and ultrasonic sensor placement (Figure 6, p. 6).
+    <a class="robotics-figure-action" href="/assets/images/projects/robot/report-front.png" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>
+
+      
+      <figure class="robotics-figure robotics-figure-build">
+  <a class="robotics-figure-media" href="/assets/images/projects/robot/report-medical-tray.png" target="_blank" rel="noopener" aria-label="Top view of the robot with its hinged supply lid lifted, revealing the divided wooden tray and servo mechanism. Open original image in a new tab.">
+    <img src="/assets/images/projects/robot/report-medical-tray.png" alt="Top view of the robot with its hinged supply lid lifted, revealing the divided wooden tray and servo mechanism." width="214" height="322" loading="lazy" decoding="async">
+  </a>
+  <figcaption>
+    The hinged top lid provides access to the supply compartments; the servo replaces the original articulated-arm concept (Figure 7, p. 6).
+    <a class="robotics-figure-action" href="/assets/images/projects/robot/report-medical-tray.png" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>
+
+      
+      <figure class="robotics-figure robotics-figure-build">
+  <a class="robotics-figure-media" href="/assets/images/projects/robot/report-interior.png" target="_blank" rel="noopener" aria-label="Open wooden enclosure revealing the Arduino, breadboard, wiring, motors, and rear of the LCD. Open original image in a new tab.">
+    <img src="/assets/images/projects/robot/report-interior.png" alt="Open wooden enclosure revealing the Arduino, breadboard, wiring, motors, and rear of the LCD." width="556" height="639" loading="lazy" decoding="async">
+  </a>
+  <figcaption>
+    Interior integration photo from Appendix A. The crowded wiring illustrates the packaging and cable-management work still needed.
+    <a class="robotics-figure-action" href="/assets/images/projects/robot/report-interior.png" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>
+
+      
+    </div>
+    
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>Testing Overview</h2>
+    <div class="project-content">
+      <p>Informal checks on November 21 and 24 exposed motor-power, wheel-friction, and servo-wiring issues. The report states that the functional acceptance checks passed on November 26 after repairs. These checks verified movement, stopping, LCD output, and lid operation; they did not establish sensor precision, long-term reliability, environmental suitability, or a measurable mental-health benefit.
+</p>
+    </div>
+    
+    <div class="project-content">
+      
+      <h3>November 21, 2024</h3>
+      <p>LCD and lid actuation worked, but the drive motors responded late or not at all. The team investigated battery power and mechanical interference.</p>
+      
+      <h3>November 24, 2024</h3>
+      <p>After power adjustments and sanding the wheel-clearance area, movement and LCD response worked. The lid no longer responded because a servo connection had been disturbed.</p>
+      
+      <h3>November 26, 2024</h3>
+      <p>The team corrected the servo wiring and reported passing all functional acceptance checks by the end of class.</p>
+      
+      <h3>Final presentation</h3>
+      <p>The robot approached the user, but smoke from the battery wiring forced the demonstration to stop. A previously recorded working demonstration was shown instead.</p>
+      
+    </div>
+    
+    
+    <figure class="robotics-figure robotics-figure-clearance">
+  <a class="robotics-figure-media" href="/assets/images/projects/robot/report-wheel-clearance.png" target="_blank" rel="noopener" aria-label="Robot enclosure beside exposed electronics, with a red curve marking the wooden corner that rubbed against a wheel. Open original image in a new tab.">
+    <img src="/assets/images/projects/robot/report-wheel-clearance.png" alt="Robot enclosure beside exposed electronics, with a red curve marking the wooden corner that rubbed against a wheel." width="342" height="238" loading="lazy" decoding="async">
+  </a>
+  <figcaption>
+    Figure 11 marks the wheel-interference area in red. Sanding this corner reduced friction during the November troubleshooting sessions (p. 12).
+    <a class="robotics-figure-action" href="/assets/images/projects/robot/report-wheel-clearance.png" target="_blank" rel="noopener">View original ↗</a>
+  </figcaption>
+</figure>
+
+    
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>Test Results</h2>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Proximity Tracking</h3>
+        <span class="test-result-status pass">Pass</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Move robot away from user and measure stopping distance
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> Forward motion and stopping around the 15 cm threshold passed the documented functional check
+      </div>
+    </div>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Drawer Actuation</h3>
+        <span class="test-result-status pass">Pass</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Hover hand over photoresistor to cast a shadow
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> Covering the photoresistor opened the lid after the servo wiring was restored
+      </div>
+    </div>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">LCD Interaction</h3>
+        <span class="test-result-status pass">Pass</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Place a hand in front of the robot near the stopping threshold
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> LCD greeting passed the acceptance check; the code also includes a hand-placement prompt
+      </div>
+    </div>
+    
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">Continuous Operation</h3>
+        <span class="test-result-status fail">Fail</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> Run full system during final presentation
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> Demonstration stopped after battery-to-breadboard wire insulation began melting; continuous operation was not established
+      </div>
+    </div>
+    
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>Performance Metrics</h2>
+    <div class="robotics-table-scroll" role="region" aria-label="Robotics project performance metrics" tabindex="0">
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Documented Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Listed Materials Cost</td>
+          <td>< $75.00</td>
+          <td>$44.20 in the report's materials table</td>
+        </tr>
+        
+        <tr>
+          <td>Proximity Control</td>
+          <td>Move beyond 15 cm; stop nearby</td>
+          <td>Passed the November 26 functional check; no precision study</td>
+        </tr>
+        
+        <tr>
+          <td>Drawer Actuation</td>
+          <td>Open when the photoresistor is covered</td>
+          <td>Passed after wiring repair; code uses a raw light threshold of 25</td>
+        </tr>
+        
+        <tr>
+          <td>Mental Health Goal</td>
+          <td>5% improvement</td>
+          <td>Not quantitatively evaluated</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    </div>
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>What Worked</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Functional integration:</strong> after troubleshooting, the sensors drove the intended wheel, LCD, and lid responses in the acceptance checks</li>
+  <li><strong>Mechanical iteration:</strong> removing wheel interference improved movement without rebuilding the enclosure</li>
+  <li><strong>Scope reduction:</strong> replacing articulated arms with a hinged supply lid made the interaction achievable within the course prototype</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>What Failed</h2>
+    <div class="project-content">
+      <ul>
+  <li><strong>Power wiring:</strong> insulation on the battery-to-breadboard connection melted during the presentation. The team attributed this to a poorly soldered connection and exposed wiring; the report does not document a measured electrical root-cause analysis</li>
+  <li><strong>Mobility:</strong> the robot could only move forward, so it could not navigate toward a user outside the sensor’s forward direction</li>
+  <li><strong>Response time:</strong> blocking delays for the lid and LCD messages prevent continuous sensor updates</li>
+  <li><strong>Validation coverage:</strong> the 5% mental-health goal, low-pressure operation, and long-duration reliability were not demonstrated</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  
+  <section class="project-section">
+    <h2>Next Steps</h2>
+    <div class="project-content">
+      <ul>
+  <li>Rebuild and insulate the power connections, add strain relief and suitable overcurrent protection, and verify motor current under load before repeating endurance tests</li>
+  <li>Add differential drive steering to allow the robot to turn and follow users dynamically</li>
+  <li>Replace blocking delays with timed states so sensing continues during LCD messages and lid movement</li>
+  <li>Repeat acceptance checks after every wiring change and add battery-runtime and repeated-cycle testing</li>
+  <li>Revisit the proposed speakers and diffuser only after the core power, motion, and enclosure systems are reliable</li>
+</ul>
+
+    </div>
+  </section>
+  
+
+  
+  <section class="project-section project-content">
+    <h2>Project Documentation</h2>
+    <p>The team report includes the design concepts, materials budget, Arduino code and circuit, acceptance procedures, and individual contributions.</p>
+    <a class="btn btn-outline" href="/assets/files/robotics-final-design-report.pdf" download>Download Final Design Report (PDF)</a>
+  </section>
+  
+
 </div>
+</article>
+</div>
+
+
+<section class="section related-projects" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">Keep exploring</span><h2 id="related-heading">More from the workshop.</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+    <div class="project-grid related-grid">
+      
+      
+      
+      
+
+
+<a href="/projects/chimera/" class="project-card" data-category="engineering" data-title="Chimera Research Terminal" data-search="ai-driven quantitative equity research &amp; portfolio optimization terminal a modular, asynchronous python pipeline integrating live data apis, local llm synthesis, and constraint-based optimization. python fastapi docker llm rag redis react" data-date="1784790000">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Chimera Research Terminal</h3>
+    <p class="project-card-excerpt">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
+    <div class="project-card-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+
+
+<a href="/projects/solar-power-meter/" class="project-card" data-category="engineering" data-title="Solar Panel Power Meter" data-search="solar panel power meter an arduino-based instrument for measuring solar panel voltage, current, and power. arduino analog circuits signal conditioning tinkercad calibration" data-date="1777618800">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/solar-power-meter/main.jpg" alt="Solar Panel Power Meter" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Solar Panel Power Meter</h3>
+    <p class="project-card-excerpt">Built and tested a solar panel power meter using a voltage divider, shunt resistor, op-amp, and Arduino to display live voltage, current, and power on a...</p>
+    <div class="project-card-tags"><span class="tag">Arduino</span><span class="tag">Analog Circuits</span><span class="tag">Signal Conditioning</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</section>
 
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

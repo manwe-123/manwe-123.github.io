@@ -8,6 +8,7 @@ type: photography
 tags: [street, night, travel]
 location: "Tokyo, Japan"
 description: "A collection of street photography captured during a late-night walk through Shinjuku and Shibuya."
+images_available: false
 images:
   - /assets/images/photography/japan-2023/placeholder-1.jpg
   - /assets/images/photography/japan-2023/placeholder-2.jpg
@@ -26,10 +27,14 @@ This series captures the electric atmosphere of Tokyo's nightlife, focusing on t
 
 ## Gallery
 
+{% if page.images_available != false %}
 <div class="photo-grid">
   <img src="/assets/images/photography/japan-2023/placeholder-1.jpg" alt="Neon reflections in puddles" loading="lazy">
   <img src="/assets/images/photography/japan-2023/placeholder-2.jpg" alt="Late night commuter" loading="lazy">
 </div>
+{% else %}
+<p class="media-placeholder">No photographs have been published for this series yet.</p>
+{% endif %}
 
 ## Reflections
 

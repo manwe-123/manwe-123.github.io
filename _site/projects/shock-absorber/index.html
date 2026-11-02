@@ -18,678 +18,343 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="case-study-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link" aria-current="page">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    
-
+    <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
 <header class="project-header theme-cad">
   <div class="container">
-    <a href="/projects" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
+    <div class="project-breadcrumb"><a href="/projects/">← All projects</a><span>Engineering / Case study</span></div>
     <h1 class="project-title">Shock Absorber Assembly</h1>
-
     
-    <p class="project-subtitle">Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class</p>
-    
-
-    <div class="project-meta">
+    <p class="project-subtitle">A SolidWorks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets.</p>
+    <dl class="project-facts">
+      <div><dt>My role</dt><dd>Part modeling, assembly &amp; engineering drawings</dd></div>
+      <div><dt>Timeline</dt><dd>Fall 2025</dd></div>
       
-      <span class="meta-badge"><strong>Role:</strong> Design Engineer - Academic Project</span>
+      <div><dt>Course</dt><dd>MAE 214 · Final Project</dd></div>
+      <div><dt>Tools</dt><dd>SolidWorks</dd></div>
       
-
       
-      <span class="meta-badge"><strong>Timeline:</strong> Aug 2025 - Dec 2025</span>
-      
-
-      
-      <span class="meta-badge"><strong>Software:</strong> SolidWorks</span>
-      
+    </dl>
+    <div class="project-header-bottom">
+      <div class="project-tags"><span class="tag-cohesive">SolidWorks</span><span class="tag-cohesive">Assembly Design</span><span class="tag-cohesive">Engineering Drawings</span><span class="tag-cohesive">Third-angle Projection</span></div>
+      <div class="project-utilities"><span data-reading-time></span><button type="button" class="text-button" data-copy-link>Copy project link</button></div>
     </div>
-
-    
-    <div class="project-tags mt-4">
-      
-      <span class="tag-cohesive">SolidWorks</span>
-      
-      <span class="tag-cohesive">ASME Y14.5</span>
-      
-      <span class="tag-cohesive">GD&T</span>
-      
-      <span class="tag-cohesive">DFM</span>
-      
-      <span class="tag-cohesive">3rd Angle Projections</span>
-      
-    </div>
-    
   </div>
 </header>
 
-<div class="container">
-
-  
+<div class="container case-study-layout" data-case-study>
+  <aside class="case-index" data-case-index hidden>
+    <details open>
+      <summary>On this page <span data-reading-position></span></summary>
+      <nav aria-label="Case study sections" data-section-nav></nav>
+    </details>
+    <a href="#main-content" class="case-back-top">↑ Back to top</a>
+  </aside>
+  <article class="case-study-content" id="case-study-content"><div class="project-body cad-project">
   <section class="project-section">
-    <h2>Project Scenario &amp; Overview</h2>
+    <h2>Project Overview</h2>
     <div class="project-content">
-      <div class="layout-two-col overview-layout">
-        <div class="overview-left">
-          
-          <div class="mb-6">
-            <h3>The Objective</h3>
-            <p>Initiate the design of a fully functional shock absorber assembly for the Mercedes-Benz C-Class, modeling all custom components and integrating standard hardware to create a fully constrained, interference-free mechanical system.</p>
-          </div>
-          
-        </div>
+      <p>For my MAE 214 final project, I modeled a shock absorber assembly in SolidWorks and prepared a drawing package connecting individual part geometry to the complete assembly. The work combines seven custom component designs with standard fastening hardware.</p>
+      <figure class="figure cad-assembly-figure">
+        <a class="cad-assembly-media" href="/assets/images/projects/cad/assembly.jpg">
+          <img src="/assets/images/projects/cad/assembly.jpg" alt="Assembled SolidWorks model with a pivot, U-support, mounting bracket, and spring below the support." width="515" height="527" decoding="async">
+        </a>
+        <figcaption>The completed CAD assembly from my final project cover: a pivot supported between two bronze bushings, above a spring-and-bracket arrangement.</figcaption>
+      </figure>
+      <dl class="cad-project-stats">
+        
+        <div><dt>BOM line items</dt><dd>12</dd></div>
+        
+        <div><dt>Total part instances</dt><dd>13</dd></div>
+        
+        <div><dt>Component drawing sheets</dt><dd>7</dd></div>
+        
+        <div><dt>Exploded assembly sheet</dt><dd>1</dd></div>
+        
+      </dl>
+      <h3>My Contribution</h3>
+      <ul><li>Modeled the bracket, spacer, shaft, U-support, bushing, pivot, and spring as individual components.</li><li>Integrated the components and fastening hardware into the assembled model shown in the final submission.</li><li>Created an exploded view with numbered callouts and a bill of materials listing part names, materials, and quantities.</li><li>Prepared seven component sheets with orthographic views, isometric views, dimensions, and thread or coil details where applicable.</li></ul>
+    </div>
+  </section>
 
-        <div class="overview-right">
-          
-          <div>
-            <h3>The Engineering Mandate</h3>
-            <p>Act as a Design Engineer to critically evaluate initial reference dimensions, amending part geometries to eliminate physical interferences, identify missing components, and ensure the assembly functions as a proper dynamic suspension system.</p>
-          </div>
-          
-        </div>
+  <section class="project-section">
+    <h2>Design Brief &amp; Constraints</h2>
+    <div class="project-content">
+      <p>The assignment used a fictional design-engineer scenario for a Mercedes-Benz C-Class shock absorber. Reference figures supplied the starting geometry; the brief required students to revise dimensions where needed, account for missing parts, and communicate the assembly through engineering drawings.</p>
+      <p>These constraints come from the assignment brief and define the design task. They are separate from the results documented in my drawing package.</p>
+      <div class="grid grid-2">
+        
+        <div class="cad-detail-card"><h3>Fit and motion</h3><p>Use the reference figures and supplied motion video to assemble the mechanism, adjusting geometry where necessary for the intended motion.</p></div>
+        
+        <div class="cad-detail-card"><h3>Interference limits</h3><p>The brief permits up to 0.02 in³ of interference for threaded components. All other components must have no interference.</p></div>
+        
+        <div class="cad-detail-card"><h3>Drawing coverage</h3><p>Provide dimensioned third-angle drawings for custom parts, plus an exploded assembly drawing and a bill of materials. The spring must be modeled by the student.</p></div>
+        
+        <div class="cad-detail-card"><h3>Materials and hardware</h3><p>Choose suitable materials, including bronze bushings. Downloaded fasteners are permitted, with a separate appendix requested for their part numbers, descriptions, and materials.</p></div>
+        
       </div>
     </div>
   </section>
-  
 
-  
-  <section class="project-section">
-    <h2>Design Constraints &amp; Interference Management</h2>
-    <div class="project-content">
-      
-      <div class="mb-8">
-        <h3>Strict Interference Rules</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <thead>
-              <tr>
-                <th>Constraint</th>
-                <th>Requirement</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Threaded Components</strong></td>
-                <td class="mono">0.02 in³</td>
-                <td>Allowed interference volume</td>
-              </tr>
-              <tr>
-                <td><strong>All Other Components</strong></td>
-                <td class="mono">Zero interferences allowed</td>
-                <td>Must achieve perfect fit</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-
-      
-      <div>
-        <h3>Dimension Amendment Process</h3>
-        
-        <p class="mb-4">Initial reference dimensions were systematically amended to achieve a properly functioning shock absorber:</p>
-        
-        <ol>
-          
-          <li>Analyzed initial reference dimensions and identified physical clashes between the shaft, spacer, and U-support during virtual assembly.</li>
-          
-          <li>Adjusted the shaft length and spacer thickness to eliminate axial interferences while maintaining the required overall assembly length.</li>
-          
-          <li>Verified radial clearances between the bronze bushings and the steel shaft, ensuring smooth linear motion without binding.</li>
-          
-          <li>Ran SolidWorks Interference Detection to confirm zero interferences across all non-threaded components, strictly adhering to the 0.02 in³ allowance for threaded fasteners.</li>
-          
-        </ol>
-      </div>
-      
-    </div>
-  </section>
-  
-
-  
   <section class="project-section">
     <h2>Assembly Architecture &amp; Bill of Materials</h2>
     <div class="project-content">
-      
-      <div class="mb-8">
-        <h3>Bill of Materials (BOM)</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <thead>
-              <tr>
-                <th class="mono">Item No.</th>
-                <th>Part Name</th>
-                <th>Material</th>
-                <th class="mono">Qty</th>
-                <th>Type</th>
-                <th>McMaster-Carr</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-              <tr>
-                <td class="mono">1</td>
-                <td><strong>Self Locking Nut</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Standard
-                  
-                </td>
-                <td>Yes</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">2</td>
-                <td><strong>Hex Head Bolt</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Standard
-                  
-                </td>
-                <td>Yes</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">3</td>
-                <td><strong>Pivot</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">4</td>
-                <td><strong>Cotter Pin</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Standard
-                  
-                </td>
-                <td>Yes</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">5</td>
-                <td><strong>Castle Nut</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Standard
-                  
-                </td>
-                <td>Yes</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">6</td>
-                <td><strong>Bushing</strong></td>
-                <td>Bronze</td>
-                <td class="mono">2</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">7</td>
-                <td><strong>U-Support</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">8</td>
-                <td><strong>Spring</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">9</td>
-                <td><strong>Shaft</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">10</td>
-                <td><strong>Spacer</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">11</td>
-                <td><strong>Bracket</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Custom
-                  
-                </td>
-                <td>No</td>
-              </tr>
-              
-              <tr>
-                <td class="mono">12</td>
-                <td><strong>Washer</strong></td>
-                <td>Steel</td>
-                <td class="mono">1</td>
-                <td class="mono">
-                  
-                  Standard
-                  
-                </td>
-                <td>Yes</td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
+      <p>The exploded drawing makes the component relationships explicit: the pivot sits between a pair of bronze bushings in the U-support, while the shaft, spring, spacer, bracket, washer, and self-locking nut form the lower stack. A hex-head bolt, castle nut, and cotter pin complete the upper connection.</p>
+      <figure class="figure cad-drawing">
+        <img src="/assets/images/projects/cad/exploded-assembly.png" alt="Exploded shock absorber assembly with numbered component callouts, an assembled view, and a 12-line bill of materials." width="1584" height="1224" loading="lazy" decoding="async">
+        <figcaption>Final submission, sheet 1: exploded and assembled isometric views with the complete bill of materials. Item 6 appears twice because the assembly uses two bushings.</figcaption>
+      </figure>
+      <h3>Parts &amp; Materials</h3>
+      <p>Transcribed from the submitted assembly sheet: 12 line items and 13 individual part instances. The seven custom component types correspond to the seven individual drawing sheets.</p>
+      <div class="table-responsive">
+        <table class="metrics-table">
+          <caption>Bill of materials from the submitted exploded assembly drawing</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">Part</th><th scope="col">Material</th><th scope="col">Qty.</th><th scope="col">Type</th></tr></thead>
+          <tbody>
+            
+            <tr><td class="mono">1</td><th scope="row">Self-locking nut</th><td>Steel</td><td class="mono">1</td><td>Standard hardware</td></tr>
+            
+            <tr><td class="mono">2</td><th scope="row">Hex-head bolt</th><td>Steel</td><td class="mono">1</td><td>Standard hardware</td></tr>
+            
+            <tr><td class="mono">3</td><th scope="row">Pivot</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">4</td><th scope="row">Cotter pin</th><td>Steel</td><td class="mono">1</td><td>Standard hardware</td></tr>
+            
+            <tr><td class="mono">5</td><th scope="row">Castle nut</th><td>Steel</td><td class="mono">1</td><td>Standard hardware</td></tr>
+            
+            <tr><td class="mono">6</td><th scope="row">Bushing</th><td>Bronze</td><td class="mono">2</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">7</td><th scope="row">U-support</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">8</td><th scope="row">Spring</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">9</td><th scope="row">Shaft</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">10</td><th scope="row">Spacer</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">11</td><th scope="row">Bracket</th><td>Steel</td><td class="mono">1</td><td>Custom component</td></tr>
+            
+            <tr><td class="mono">12</td><th scope="row">Washer</th><td>Steel</td><td class="mono">1</td><td>Standard hardware</td></tr>
+            
+          </tbody>
+        </table>
       </div>
-      
-
-      
-      <div class="mb-8">
-        <h3>Compression Spring Specifications</h3>
-        <div class="table-responsive">
-          <table class="metrics-table">
-            <tbody>
-              <tr>
-                <th>Free Height</th>
-                <td class="mono">1.845 inches</td>
-              </tr>
-              <tr>
-                <th>Pitch</th>
-                <td class="mono">0.50 inches</td>
-              </tr>
-              <tr>
-                <th>Revolutions</th>
-                <td class="mono">3.69</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-
-      
-      <div>
-        <h3>Key Design Features</h3>
-        <div class="grid grid-3">
-          
-          <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-            <p><strong>Shaft Geometry</strong></p>
-            <p>Features a 0.75-10 thread specification and a precise 0.125" x 0.125" keyway for secure torque transmission and component alignment.</p>
-          </div>
-          
-          <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-            <p><strong>Bronze Bushings</strong></p>
-            <p>Utilizes SAE bronze bushings to provide a low coefficient of friction and high wear resistance against the steel shaft, eliminating the need for continuous lubrication.</p>
-          </div>
-          
-          <div class="project-content" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-            <p><strong>Custom Compression Spring</strong></p>
-            <p>Modeled from scratch with specific geometric parameters (1.845" free height, 0.50" pitch, 3.69 revolutions) to ensure accurate dynamic suspension behavior.</p>
-          </div>
-          
-        </div>
-      </div>
-      
     </div>
   </section>
-  
-<!---
-  
+
   <section class="project-section">
-    <h2>CAD Modeling &amp; Engineering Drawings</h2>
+    <h2>Component Design &amp; Engineering Drawings</h2>
     <div class="project-content">
-      
-      <div class="mb-8">
+      <p>Each sheet pairs the component&#39;s 3D form with dimensioned views. Dimensions below are transcribed in inches from the final submission. Select a sheet to enlarge it, or download the PDF for the original vector drawings.</p>
+      <div class="grid grid-2 cad-drawing-grid">
         
-        <div style="margin-bottom: 2rem;">
-          <h3>Shaft Assembly Detail</h3>
-          <div class="layout-two-col">
-            <figure class="figure">
-              <img src="/assets/images/shock-absorber/shaft-3d.png" alt="Shaft Assembly Detail - 3D Model" loading="lazy" onclick="openLightbox('/assets/images/shock-absorber/shaft-3d.png', 'Shaft Assembly Detail - 3D Model')">
-              <figcaption class="figure-caption">3D SolidWorks Model</figcaption>
-            </figure>
-            <figure class="figure">
-              <img src="/assets/images/shock-absorber/shaft-drawing.png" alt="Shaft Assembly Detail - 2D Engineering Drawing" loading="lazy" onclick="openLightbox('/assets/images/shock-absorber/shaft-drawing.png', 'Shaft Assembly Detail - 2D Drawing')">
-              <figcaption class="figure-caption">2D Engineering Drawing</figcaption>
-            </figure>
-          </div>
+        <div class="cad-drawing-card">
+          <h3>Bracket</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/bracket.png" alt="Bracket drawing with top, front, side, and isometric views showing its mounting holes and bent profile." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 2 · A 9.500 × 3.000 mounting footprint, 0.313 thickness, two Ø0.500 mounting holes, and a central Ø0.750 hole. The views also locate the bends and their radii.</figcaption>
+          </figure>
         </div>
         
-        <div style="margin-bottom: 2rem;">
-          <h3>U-Support Internal Geometry</h3>
-          <div class="layout-two-col">
-            <figure class="figure">
-              <img src="/assets/images/shock-absorber/usupport-3d.png" alt="U-Support Internal Geometry - 3D Model" loading="lazy" onclick="openLightbox('/assets/images/shock-absorber/usupport-3d.png', 'U-Support Internal Geometry - 3D Model')">
-              <figcaption class="figure-caption">3D SolidWorks Model</figcaption>
-            </figure>
-            <figure class="figure">
-              <img src="/assets/images/shock-absorber/usupport-drawing.png" alt="U-Support Internal Geometry - 2D Engineering Drawing" loading="lazy" onclick="openLightbox('/assets/images/shock-absorber/usupport-drawing.png', 'U-Support Internal Geometry - 2D Drawing')">
-              <figcaption class="figure-caption">2D Engineering Drawing</figcaption>
-            </figure>
-          </div>
+        <div class="cad-drawing-card">
+          <h3>Spacer</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/spacer.png" alt="Annular spacer drawing showing its inner and outer diameters, axial height, and isometric view." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 3 · A ring with Ø2.25 outside diameter, Ø1.75 inside diameter, and 1.00 axial height.</figcaption>
+          </figure>
+        </div>
+        
+        <div class="cad-drawing-card">
+          <h3>Shaft</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/shaft.png" alt="Partially threaded shaft drawing with a 0.75-10 thread callout and a dimensioned end detail." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 4 · Ø0.750 shaft with a 3.125 length dimension, a 0.75-10 × 1.00 threaded portion, and a 0.125 × 0.125 end-detail callout.</figcaption>
+          </figure>
+        </div>
+        
+        <div class="cad-drawing-card">
+          <h3>U-support</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/u-support.png" alt="U-support drawing showing its two upright arms, rounded ends, mounting holes, and bend radii." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 5 · A 3.526 overall width and 5.265 height, 0.313 wall thickness, Ø0.500 pivot holes, and R1.400 rounded ends.</figcaption>
+          </figure>
+        </div>
+        
+        <div class="cad-drawing-card">
+          <h3>Bushing</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/bushing.png" alt="Flanged bronze bushing drawing with orthographic and isometric views and flange dimensions." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 6 · The pair of bronze bushings uses a Ø1.500 body, Ø2.000 flange, 1.250 overall length, and 0.250 flange thickness.</figcaption>
+          </figure>
+        </div>
+        
+        <div class="cad-drawing-card">
+          <h3>Pivot</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/pivot.png" alt="Pivot drawing showing a mounting plate with four holes and its cylindrical bearing interface." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 7 · A 6.500 × 2.400 top plate with four Ø0.250 holes, 0.313 plate thickness, and a Ø1.500 cylindrical opening.</figcaption>
+          </figure>
+        </div>
+        
+        <div class="cad-drawing-card">
+          <h3>Spring</h3>
+          <figure class="figure cad-drawing">
+            <img src="/assets/images/projects/cad/spring.png" alt="Helical spring drawing showing the coil shape, wire diameter, overall height, pitch, and revolution count." width="1584" height="1224" loading="lazy" decoding="async">
+            <figcaption>Sheet 8 · The coil note specifies 1.845 height, 0.50 pitch, and 3.69 revolutions. The drawing separately dimensions 2.005 overall height and Ø0.250 wire.</figcaption>
+          </figure>
         </div>
         
       </div>
-      
-
-      
+      <p class="cad-drawing-note">The spring&#39;s 1.845 helix-height note and 2.005 overall-height dimension are both retained from the sheet. They should not be reported as the same free-height measurement. The drawing documents geometry; it does not establish a spring rate or damping coefficient.</p>
     </div>
   </section>
-  
--->
-  
+
   <section class="project-section">
     <h2>Materials &amp; Manufacturing Considerations</h2>
-    <div class="project-content">
-      <div class="layout-two-col materials-layout">
-        
-        <div class="materials-left">
-          <h3>Material Selection</h3>
-          <p><strong>Steel Components:</strong> Selected for all primary load-bearing and structural parts (bracket, shaft, pivot, U-support) due to high tensile strength and durability under dynamic suspension loads.</p>
+    <div class="project-content grid grid-2">
+      <div><h3>Material Selection</h3><p><strong>Steel structure and hardware.</strong> The bill of materials specifies steel for the bracket, spacer, shaft, U-support, pivot, spring, and all five hardware types. It does not identify steel grades, heat treatments, or coatings.</p>
 
-<p><strong>Bronze Bushings:</strong> Specified for bearing surfaces to provide a low coefficient of friction and high wear resistance against the rotating steel shaft, eliminating the need for continuous external lubrication.</p>
+<p><strong>Bronze bearing interfaces.</strong> Both bushings are listed as bronze. Their flanged geometry locates them at the pivot connection in the exploded assembly; the submission does not specify a bronze alloy or lubrication requirement.</p>
+</div>
+      <div><h3>From CAD to Fabrication</h3><p>The drawings communicate different fabrication needs: rotational geometry for the shaft, spacer, and bushings; formed profiles and hole locations for the bracket and U-support; and coil geometry for the spring.</p>
 
-        </div>
-        
-
-        
-        <div class="materials-right">
-          <h3>Manufacturing Processes</h3>
-          <ul>
-  <li><strong>CNC Turning &amp; Milling:</strong> Required for custom machined components like the shaft, spacer, and pivot to achieve tight dimensional tolerances and precise surface finishes.</li>
-  <li><strong>Fabrication:</strong> The U-support and bracket utilize milled or laser-cut profiles with drilled mounting holes.</li>
-  <li><strong>Standard Hardware:</strong> Bolts, nuts, washers, and cotter pins are off-the-shelf McMaster-Carr components, reducing custom manufacturing complexity and cost.</li>
-  <li><strong>Compression Spring:</strong> Manufactured to specific geometric parameters (Height: 1.845”, Pitch: 0.50”, 3.69 revolutions).</li>
-</ul>
-
-        </div>
-        
-      </div>
+<p>A manufacturing release would still need material grades, general and fit tolerances, surface-finish requirements, and confirmed hardware catalog references. These are next steps beyond the submitted CAD drawing package.</p>
+</div>
     </div>
   </section>
-  
 
-  
   <section class="project-section">
-    <h2>Design Validation &amp; Lessons Learned</h2>
+    <h2>Outcomes &amp; Next Steps</h2>
     <div class="project-content">
       
-      <div>
-        <h3>Design Validation</h3>
-        
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Assembly Verification</strong></p>
-          <p>All 12 components were assembled in SolidWorks with appropriate mates (concentric, coincident, distance). The assembly is fully constrained with 0 degrees of freedom, confirming proper fit and function.</p>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Drawing Accuracy</strong></p>
-          <p>All 2D drawings were cross-checked against the 3D model using SolidWorks drawing views. Dimensions were verified to match model geometry, and GD&T callouts were validated per ASME Y14.5-2018 standards.</p>
-        </div>
-        
-      </div>
+      <h3>A traceable assembly package</h3><p>The final submission contains an assembled model image, an exploded assembly/BOM sheet, and seven individually dimensioned component sheets. The numbered callouts connect every BOM item to its position in the assembly.</p>
       
-
+      <h3>Component-to-assembly communication</h3><p>Orthographic views capture dimensions and hole locations, while isometric views explain the shape of the formed supports, pivot, bushings, and spring. The shaft and spring sheets add their specific thread and coil callouts.</p>
       
-      <div>
-        <h3>Lessons Learned</h3>
-        
-        <div style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Challenge:</strong> Properly dimensioning and tolerancing the 0.125" x 0.125" keyway for manufacturing.</p>
-          <p><strong>Resolution:</strong> Researched standard ANSI keyway dimensions and applied appropriate geometric tolerances to the 2D drawing to ensure proper torque transmission and shaft fit.</p>
-        </div>
-        
-        <div style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Challenge:</strong> Communicating complex internal geometries and thread specifications to a machinist.</p>
-          <p><strong>Resolution:</strong> Utilized detailed section views and local detail callouts on the 2D drawings to clearly convey internal features and the 0.75-10 thread specification without cluttering the primary views.</p>
-        </div>
-        
-        <div style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary); border-radius: 8px;">
-          <p><strong>Challenge:</strong> Ensuring all 12 components assembled without physical interferences.</p>
-          <p><strong>Resolution:</strong> Systematically applied mechanical mates (concentric, coincident, distance) and utilized SolidWorks interference detection tools to verify clearances before finalizing the drawing package.</p>
-        </div>
-        
-      </div>
-      
+      <p>This is a CAD modeling and documentation project. The supplied PDFs do not include a motion study, interference-detection results, load analysis, or physical testing, so vehicle fit, suspension performance, and compliance with the interference limits remain unverified here.</p>
+      <h3>Further Engineering Work</h3>
+      <ul><li>Record an interference check against the brief&#39;s limits and demonstrate the intended assembly motion with the correct degrees of freedom.</li><li>Add catalog part numbers and dimensions for the five hardware types in the requested fastener appendix.</li><li>Resolve manufacturing fits and tolerances, then analyze spring stiffness, operating loads, and travel before any prototype testing.</li></ul>
     </div>
   </section>
-  
 
-  
   <section class="project-section">
-    <h2>Technical Skills &amp; Resources</h2>
+    <h2>Technical Skills &amp; Drawing Package</h2>
     <div class="project-content">
-      
-      <div class="mb-8">
-        <h3>Technical Skills Demonstrated</h3>
-        <div class="project-tags">
-          
-          <span class="tag-cohesive">SolidWorks Part Modeling</span>
-          
-          <span class="tag-cohesive">SolidWorks Assembly Design</span>
-          
-          <span class="tag-cohesive">ASME Y14.5 Drafting Standards</span>
-          
-          <span class="tag-cohesive">2D Engineering Drawing Creation</span>
-          
-          <span class="tag-cohesive">GD&T Application</span>
-          
-          <span class="tag-cohesive">Section & Detail Views</span>
-          
-          <span class="tag-cohesive">Thread Specification & Callouts</span>
-          
-          <span class="tag-cohesive">Keyway Design</span>
-          
-          <span class="tag-cohesive">Material Selection</span>
-          
-          <span class="tag-cohesive">Standard Hardware Integration</span>
-          
-          <span class="tag-cohesive">Parametric Modeling & Design Intent</span>
-          
-          <span class="tag-cohesive">Interference Detection</span>
-          
-        </div>
+      <div class="project-tags"><span class="tag-cohesive">SolidWorks Part Modeling</span><span class="tag-cohesive">Assembly Design</span><span class="tag-cohesive">Exploded Views &amp; BOMs</span><span class="tag-cohesive">Third-angle Drawing Layout</span><span class="tag-cohesive">Thread Callouts</span><span class="tag-cohesive">Helical Spring Geometry</span><span class="tag-cohesive">Material Documentation</span></div>
+      <div class="resources-button-row">
+        <a href="/assets/files/shock-absorber-drawing-package.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download drawing package · 8 sheets (PDF)</a>
       </div>
-      
-
-      
     </div>
   </section>
-  
-
+</div>
+</article>
 </div>
 
-<script>
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox') || createLightbox();
-  const lightboxImg = lightbox.querySelector('.lightbox-image');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
 
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || '';
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
+<section class="section related-projects" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">Keep exploring</span><h2 id="related-heading">More from the workshop.</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+    <div class="project-grid related-grid">
+      
+      
+      
+      
 
-function createLightbox() {
-  const lightbox = document.createElement('div');
-  lightbox.id = 'lightbox';
-  lightbox.className = 'lightbox-overlay';
-  lightbox.innerHTML = `
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <div class="lightbox-content">
-      <img class="lightbox-image" src="" alt="">
-      <div class="lightbox-caption"></div>
+
+<a href="/projects/chimera/" class="project-card" data-category="engineering" data-title="Chimera Research Terminal" data-search="ai-driven quantitative equity research &amp; portfolio optimization terminal a modular, asynchronous python pipeline integrating live data apis, local llm synthesis, and constraint-based optimization. python fastapi docker llm rag redis react" data-date="1784790000">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Chimera Research Terminal</h3>
+    <p class="project-card-excerpt">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
+    <div class="project-card-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+
+
+<a href="/projects/solar-power-meter/" class="project-card" data-category="engineering" data-title="Solar Panel Power Meter" data-search="solar panel power meter an arduino-based instrument for measuring solar panel voltage, current, and power. arduino analog circuits signal conditioning tinkercad calibration" data-date="1777618800">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/solar-power-meter/main.jpg" alt="Solar Panel Power Meter" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Solar Panel Power Meter</h3>
+    <p class="project-card-excerpt">Built and tested a solar panel power meter using a voltage divider, shunt resistor, op-amp, and Arduino to display live voltage, current, and power on a...</p>
+    <div class="project-card-tags"><span class="tag">Arduino</span><span class="tag">Analog Circuits</span><span class="tag">Signal Conditioning</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+      
+      
+      
     </div>
-  `;
-  document.body.appendChild(lightbox);
-  return lightbox;
-}
+  </div>
+</section>
 
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
-});
-
-document.addEventListener('click', function(e) {
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox && e.target === lightbox) {
-    closeLightbox();
-  }
-});
-</script>
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

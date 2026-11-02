@@ -577,7 +577,7 @@ PROJECT GRID
   cursor: pointer;
   text-align: left;
   border: 1px solid var(--color-border);
-  background: linear-gradient(180deg, var(--color-bg-secondary), rgba(30, 30, 30, 0.95));
+  background: linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg-primary));
 }
 
 .about-card.selected {
@@ -1134,6 +1134,9 @@ PROJECT HEADER - Engineering Projects
   border-color: var(--color-engineering);
 }
 
+.theme-circuits .project-title,
+.theme-circuits .meta-badge,
+.theme-circuits .tag-cohesive:hover,
 .theme-cad .project-title,
 .theme-cad .meta-badge,
 .theme-cad .tag-cohesive:hover {
@@ -1471,6 +1474,38 @@ GALLERY GRID
   font-size: 0.75rem;
 }
 
+.robotics-project .robotics-build-gallery .robotics-figure {
+  width: 100%;
+  min-width: 0;
+  margin-top: var(--spacing-6);
+}
+
+.robotics-project .robotics-build-gallery .robotics-figure-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.robotics-project .robotics-build-gallery img {
+  width: auto;
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.robotics-project .robotics-figure-clearance {
+  max-width: 480px;
+}
+
+.robotics-project .project-content code {
+  overflow-wrap: anywhere;
+}
+
+.robotics-project .robotics-table-scroll {
+  overflow-x: auto;
+}
+
 .robotics-project .robotics-figure figcaption {
   padding: var(--spacing-4);
   color: var(--color-text-secondary);
@@ -1483,6 +1518,83 @@ GALLERY GRID
   .robotics-project .robotics-solution-with-image {
     grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
     gap: var(--spacing-10);
+  }
+}
+
+/* Circuits case study: prototype photo, signal stages, and bench results. */
+.circuits-project .circuits-overview {
+  display: grid;
+  gap: var(--spacing-8);
+  align-items: start;
+}
+
+.circuits-project .circuits-figure {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+.circuits-project .circuits-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.circuits-project .circuits-figure figcaption {
+  padding: var(--spacing-4);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.circuits-project .circuits-stage {
+  min-width: 0;
+  padding: var(--spacing-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+.circuits-project .circuits-stage h3 {
+  margin-top: 0;
+}
+
+.circuits-project .circuits-equation {
+  margin-top: var(--spacing-4);
+  overflow-wrap: anywhere;
+}
+
+.circuits-project .circuits-gallery .circuits-figure {
+  max-width: none;
+  min-width: 0;
+}
+
+.circuits-project .circuits-gallery img {
+  height: 300px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.circuits-project .circuits-table-scroll {
+  overflow-x: auto;
+}
+
+.circuits-project .metrics-table {
+  min-width: 540px;
+}
+
+.circuits-project .metrics-table caption {
+  text-align: left;
+  padding-bottom: var(--spacing-4);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .circuits-project .circuits-overview {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   }
 }
 
@@ -1537,6 +1649,58 @@ GALLERY GRID
 
 .vr-project .vr-prototype-link {
   white-space: nowrap;
+}
+
+.vr-project .vr-detail-card {
+  min-width: 0;
+  padding: var(--spacing-5);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.vr-project .vr-detail-card h3 {
+  margin-top: 0;
+}
+
+.vr-project .vr-artifact {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.vr-project .vr-artifact img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.vr-project .vr-artifact figcaption {
+  padding: var(--spacing-4);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.vr-project .table-wrapper {
+  overflow-x: auto;
+}
+
+.vr-project .metrics-table {
+  min-width: 540px;
+}
+
+.vr-project .vr-concept-table {
+  min-width: 760px;
+}
+
+.vr-project .metrics-table caption {
+  padding-bottom: var(--spacing-4);
+  text-align: left;
+  color: var(--color-text-secondary);
 }
 
 /* Business experience pages share the About theme with category accents. */
@@ -1982,8 +2146,8 @@ SPECIFICATIONS SIDEBAR
    -------------------------------------------------------------------------- */
 
 .specs-sidebar {
-  background-color: #1a1a1b;
-  border: var(--border-width) solid #38383a;
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-5);
   margin-bottom: var(--spacing-6);

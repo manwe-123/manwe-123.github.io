@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<header class="project-header hobby-detail-header">
+  <div class="container">
+    <div class="project-breadcrumb"><a href="{{ '/about/hobbies/' | relative_url }}">← All hobbies</a><span>Hobbies / {{ page.hobby_kind | escape }}</span></div>
+    <div class="hobby-heading-grid">
+      <div><h1 class="project-title">{{ page.title | escape }}</h1><p class="project-subtitle">{{ page.section_excerpt | escape }}</p></div>
+      <span class="hobby-detail-mark" aria-hidden="true">{{ page.hobby_mark | escape }}</span>
+    </div>
+    <dl class="project-facts">
+      <div><dt>Experience</dt><dd>{{ page.experience | escape }}</dd></div>
+      {% if page.started %}<div><dt>Started</dt><dd>{{ page.started | escape }}</dd></div>{% endif %}
+      {% if page.gear %}<div><dt>Camera</dt><dd>{{ page.gear | escape }}</dd></div>{% endif %}
+    </dl>
+    <div class="project-tags mt-6">{% for tag in page.tags %}<span class="tag-cohesive">{{ tag | escape }}</span>{% endfor %}</div>
+  </div>
+</header>
+<div class="container hobby-detail-body">
+  <section class="hobby-practice" aria-labelledby="hobby-practice-heading">
+    <span class="eyebrow">Outside engineering</span>
+    <h2 id="hobby-practice-heading">My Practice</h2>
+    <p>{{ page.intro | escape }}</p>
+    {% if page.detail %}<p>{{ page.detail | escape }}</p>{% endif %}
+    {% if page.related_url %}<a class="text-link" href="{{ page.related_url | relative_url }}">{{ page.related_label | escape }} →</a>{% endif %}
+    {% if page.creative_label %}<a class="text-link" href="https://www.instagram.com/manwesmiscellanea/" target="_blank" rel="noopener noreferrer">{{ page.creative_label | escape }} ↗</a>{% endif %}
+  </section>
+  <nav class="hobby-directory" aria-label="Explore my other hobbies">
+    <h2>Keep exploring</h2>
+    {% assign hobbies = site.pages | where: 'layout', 'about/about-hobby' | sort: 'hobby_order' %}
+    <ul>{% for hobby in hobbies %}<li><a href="{{ hobby.url | relative_url }}"{% if hobby.url == page.url %} aria-current="page"{% endif %}>{{ hobby.title | escape }}<span aria-hidden="true">→</span></a></li>{% endfor %}</ul>
+    <a class="text-link" href="{{ '/about/' | relative_url }}">Back to About →</a>
+  </nav>
+</div>
+<div class="container">{% include hobbies/instagram.html %}</div>

@@ -1,0 +1,21 @@
+<header class="project-header theme-{{ page.theme | default: page.category | default: 'engineering' }}">
+  <div class="container">
+    <div class="project-breadcrumb"><a href="{{ '/projects/' | relative_url }}">← All projects</a><span>{{ page.category | default: 'Engineering' | capitalize }} / Case study</span></div>
+    <h1 class="project-title">{{ page.title | escape }}</h1>
+    {% assign project_subtitle = page.subtitle | default: page.description %}
+    {% if project_subtitle %}<p class="project-subtitle">{{ project_subtitle | escape }}</p>{% endif %}
+    <dl class="project-facts">
+      {% if page.role %}<div><dt>My role</dt><dd>{{ page.role | escape }}</dd></div>{% endif %}
+      {% if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline | escape }}</dd></div>{% elsif page.date %}<div><dt>Date</dt><dd>{{ page.date | date: '%B %Y' }}</dd></div>{% endif %}
+      {% if page.team %}<div><dt>Team</dt><dd>{{ page.team | escape }}</dd></div>{% endif %}
+      {% if page.course %}<div><dt>Course</dt><dd>{{ page.course | escape }}</dd></div>{% endif %}
+      {% if page.software and page.software.first == nil %}<div><dt>Tools</dt><dd>{{ page.software | escape }}</dd></div>{% endif %}
+      {% if page.instruments %}<div><dt>Instruments</dt><dd>{{ page.instruments | escape }}</dd></div>{% endif %}
+      {% if page.location %}<div><dt>Location</dt><dd>{{ page.location | escape }}</dd></div>{% endif %}
+    </dl>
+    <div class="project-header-bottom">
+      <div class="project-tags">{% for tag in page.tags %}<span class="tag-cohesive">{{ tag | escape }}</span>{% endfor %}</div>
+      <div class="project-utilities"><span data-reading-time></span><button type="button" class="text-button" data-copy-link>Copy project link</button></div>
+    </div>
+  </div>
+</header>

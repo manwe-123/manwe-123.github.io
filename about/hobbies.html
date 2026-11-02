@@ -1,24 +1,24 @@
 ---
-layout: about/about-section
+layout: default
 title: Hobbies
 permalink: /about/hobbies/
 display: false
 section_title: Hobbies
-section_excerpt: Interests outside of school that keep me creative, curious, and energized.
-section_intro: A few of the interests I keep pursuing outside the classroom to stay curious and balanced.
-section_items:
-  - title: CAD and Digital Design
-    subtitle: Modeling and visualization
-    description: Enjoy turning ideas into precise digital models and exploring visual communication through design.
-    date: Personal interest
-    tags:
-      - CAD
-      - Visualization
-  - title: Photography and Visual Storytelling
-    subtitle: Capturing projects and environments
-    description: Use photography as a way to document process, texture, and the story behind a build or installation.
-    date: Personal interest
-    tags:
-      - Photography
-      - Storytelling
+section_excerpt: "Music, movement, making, and the places I see through my camera."
 ---
+
+<header class="page-header">
+  <div class="container">
+    <div class="project-breadcrumb"><a href="{{ '/about/' | relative_url }}">← Back to About</a><span>Outside engineering</span></div>
+    <h1 class="page-title">A life beyond the workshop.</h1>
+    <p class="page-subtitle">{{ page.section_excerpt | escape }}</p>
+  </div>
+</header>
+<section class="section">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">Ten hobbies, always learning</span><h2>What I make time for.</h2></div><p>Some interests have been with me for a decade. Others are just getting started.</p></div>
+    {% assign hobbies = site.pages | where: 'layout', 'about/about-hobby' | sort: 'hobby_order' %}
+    <div class="project-grid hobby-grid">{% for hobby in hobbies %}{% include hobbies/card.html hobby=hobby %}{% endfor %}</div>
+    {% include hobbies/instagram.html %}
+  </div>
+</section>

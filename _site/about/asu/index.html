@@ -18,191 +18,131 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="about-page ">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="/about" class="nav-link active">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link" aria-current="page">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <header class="project-header">
+    <header class="project-header about-detail-header">
   <div class="container">
-    <a href="/about" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to About
-    </a>
-
+    <div class="project-breadcrumb"><a href="/about/">← Back to About</a><span>Education</span></div>
     <h1 class="project-title">Arizona State University</h1>
-
+    <p class="project-subtitle">Bachelor&#39;s Degree of Science in Mechanical Engineering</p>
     
-    <p class="project-subtitle">Bachelor's Degree of Science in Mechanical Engineering</p>
+    <dl class="project-facts">
+      
+      <div><dt>Timeline</dt><dd>Graduating May 2028</dd></div>
+      
+      
+      <div><dt>GPA</dt><dd>3.61/4.0</dd></div>
+    </dl>
     
-
-    <div class="project-meta">
+    
+    
+    <div class="about-header-links">
       
-      <span class="meta-badge"><strong>GPA:</strong> 3.61/4.0</span>
-      
-
-      
-      <span class="meta-badge"><strong>Timeline:</strong> Graduating May 2028</span>
-      
-
-      <span class="meta-badge"><strong><a href="/assets/files/Manwe%20Castro%20Transcript.pdf">View Transcript</a></strong></span>
-
+      <a class="btn btn-outline" href="/assets/files/Manwe%20Castro%20Transcript.pdf">View transcript</a>
     </div>
-
     
   </div>
 </header>
 
-<section class="section">
-  <div class="container">
-    <div class="project-grid">
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">Learning by Building</h3>
-          
-          
-          <p class="project-card-excerpt">I am pursuing a B.S. in Mechanical Engineering at Arizona State University. I treat the machine shop and the coding terminal as extensions of the classroom. My approach to engineering education is highly applied. I do not just want to solve equations on a whiteboard. I want to understand how those equations dictate the physical behavior of materials, the efficiency of power grids, and the logic of automated systems. ASUs curriculum has provided the rigorous theoretical foundation I need, but my primary focus has always been on translating that theory into tangible, functioning prototypes.</p>
-          
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">Core Mechanics and Materials</h3>
-          
-          
-          <p class="project-card-excerpt">My coursework is heavily anchored in physical systems and material science. In Structure and Properties of Materials (MSE 250), I studied how atomic structures dictate macro-level material behavior, which directly informs my interest in sustainable infrastructure and renewable energy components. In Computer-Aided Engineering (MAE 214), I moved beyond basic 3D modeling to master ASME Y14.5 drafting standards, tolerance analysis, and design for manufacturability. These classes bridged the gap between conceptual design and the exact specifications required by a machine shop.</p>
-          
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">EPICS: Community-Driven Design</h3>
-          
-          
-          <p class="project-card-excerpt">The most valuable component of my education has been the Engineering Projects in Community Service (EPICS) program. Rather than waiting for senior design, EPICS gave me a multi-semester sandbox to lead cross-functional teams, manage project scope, and build hardware for real stakeholders. It is where I directed development of a VR rapid prototyping environment for the university's introductory engineering courses and designed the control systems for an autonomous robotics prototype. The program's emphasis on human-centered design and social innovation also shaped how I scope and evaluate every project I touch.</p>
-          
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">Resilience in the Core</h3>
-          
-          
-          <p class="project-card-excerpt">The Spring 2026 semester was an academic crucible. I took on an 18-credit load of core weed-out classes, including Thermodynamics, Circuits, Mechanics of Materials, and Advanced Mathematical Methods. The sheer volume and complexity of the material pushed my limits and resulted in a challenging term GPA. However, it forced a complete overhaul of my study systems and time management strategies. I identified my knowledge gaps, retook Advanced Math over the summer to master the material and earn a B, and built the mental resilience required to handle the demanding pace of upper-division engineering and professional plant operations.</p>
-          
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">The Road to Barcelona</h3>
-          
-          
-          <p class="project-card-excerpt">My time at ASU is the first half of a broader trajectory. Walking Barcelona's smart infrastructure and seeing how the city balances its history with modern urban systems solidified my long-term goal: to pursue graduate study in Urban Innovation and Smart Cities at the Universitat Politècnica de Catalunya (UPC). I am currently evaluating ASU's 4+1 Master's program to deepen my technical expertise in energy systems before taking that next step. The mechanical and systems engineering foundation I am building at ASU is the prerequisite for designing the sustainable, tech-forward urban infrastructure of the future.</p>
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
+<div class="container section about-story">
+  
+  
+  <section class="about-detail-section" aria-labelledby="about-section-1">
+    
+    <h2 id="about-section-1">Learning by Building</h2>
+    
+    
+    <p>I am pursuing a B.S. in Mechanical Engineering at Arizona State University. I treat the machine shop and the coding terminal as extensions of the classroom. My approach to engineering education is highly applied. I do not just want to solve equations on a whiteboard. I want to understand how those equations dictate the physical behavior of materials, the efficiency of power grids, and the logic of automated systems. ASUs curriculum has provided the rigorous theoretical foundation I need, but my primary focus has always been on translating that theory into tangible, functioning prototypes.</p>
+
+    
+  </section>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-2">
+    
+    <h2 id="about-section-2">Core Mechanics and Materials</h2>
+    
+    
+    <p>My coursework is heavily anchored in physical systems and material science. In Structure and Properties of Materials (MSE 250), I studied how atomic structures dictate macro-level material behavior, which directly informs my interest in sustainable infrastructure and renewable energy components. In Computer-Aided Engineering (MAE 214), I moved beyond basic 3D modeling to master ASME Y14.5 drafting standards, tolerance analysis, and design for manufacturability. These classes bridged the gap between conceptual design and the exact specifications required by a machine shop.</p>
+
+    
+  </section>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-3">
+    
+    <h2 id="about-section-3">EPICS: Community-Driven Design</h2>
+    
+    
+    <p>The most valuable component of my education has been the Engineering Projects in Community Service (EPICS) program. Rather than waiting for senior design, EPICS gave me a multi-semester sandbox to lead cross-functional teams, manage project scope, and build hardware for real stakeholders. It is where I directed development of a VR rapid prototyping environment for the university’s introductory engineering courses and designed the control systems for an autonomous robotics prototype. The program’s emphasis on human-centered design and social innovation also shaped how I scope and evaluate every project I touch.</p>
+
+    
+  </section>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-4">
+    
+    <h2 id="about-section-4">Resilience in the Core</h2>
+    
+    
+    <p>The Spring 2026 semester was an academic crucible. I took on an 18-credit load of core weed-out classes, including Thermodynamics, Circuits, Mechanics of Materials, and Advanced Mathematical Methods. The sheer volume and complexity of the material pushed my limits and resulted in a challenging term GPA. However, it forced a complete overhaul of my study systems and time management strategies. I identified my knowledge gaps, retook Advanced Math over the summer to master the material and earn a B, and built the mental resilience required to handle the demanding pace of upper-division engineering and professional plant operations.</p>
+
+    
+  </section>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-5">
+    
+    <h2 id="about-section-5">The Road to Barcelona</h2>
+    
+    
+    <p>My time at ASU is the first half of a broader trajectory. Walking Barcelona’s smart infrastructure and seeing how the city balances its history with modern urban systems solidified my long-term goal: to pursue graduate study in Urban Innovation and Smart Cities at the Universitat Politècnica de Catalunya (UPC). I am currently evaluating ASU’s 4+1 Master’s program to deepen my technical expertise in energy systems before taking that next step. The mechanical and systems engineering foundation I am building at ASU is the prerequisite for designing the sustainable, tech-forward urban infrastructure of the future.</p>
+
+    
+  </section>
+  
+  
+
+</div>
+
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

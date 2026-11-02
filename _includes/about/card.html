@@ -1,0 +1,12 @@
+{% assign entry = include.item %}
+{% assign entry_category = entry.section_title | default: entry.title %}
+{% assign entry_meta = entry.experience | default: entry.role | default: entry.timeline %}
+<a href="{{ entry.url | relative_url }}" class="project-card about-entry-card{% if entry.hobby_order %} hobby-card{% endif %}" data-category="{{ entry_category | slugify }}">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">{{ entry_category | escape }}{% if entry.hobby_kind %} · {{ entry.hobby_kind | escape }}{% endif %}</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">{{ entry.card_title | default: entry.title | escape }}</h3>
+    {% if entry_meta %}<p class="about-entry-meta">{{ entry_meta | escape }}</p>{% endif %}
+    {% if entry.section_excerpt %}<p class="project-card-excerpt">{{ entry.section_excerpt | escape }}</p>{% endif %}
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>

@@ -1,57 +1,12 @@
 ---
-layout: default
+layout: project
 ---
 
 <!-- Unified Project Header with Dynamic Theme Support -->
-{% assign theme_class = "theme-robotics" %}
-
-
-<header class="project-header {{ theme_class }}">
-  <div class="container">
-    <a href="{{ '/projects' | relative_url }}" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to Projects
-    </a>
-
-    <h1 class="project-title">{{ page.title }}</h1>
-
-    {% if page.subtitle %}
-    <p class="project-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
-
-    <!-- Project Meta Row -->
-    <div class="project-meta">
-      {% if page.role %}
-      <span class="meta-badge"><strong>Role:</strong> {{ page.role }}</span>
-      {% endif %}
-
-      {% if page.timeline %}
-      <span class="meta-badge"><strong>Timeline:</strong> {{ page.timeline }}</span>
-      {% endif %}
-
-      {% if page.team %}
-      <span class="meta-badge"><strong>Team:</strong> {{ page.team }}</span>
-      {% endif %}
-
-      {% if page.software %}
-      <span class="meta-badge"><strong>Software:</strong> {{ page.software }}</span>
-      {% endif %}
-    </div>
-
-    <!-- Technical Tags -->
-    {% if page.tags %}
-    <div class="project-tags mt-4">
-      {% for tag in page.tags %}
-      <span class="tag-cohesive">{{ tag }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </div>
-</header>
 
 <!-- Main Content Area -->
-<div class="container robotics-project">
+<div class="robotics-project">
 
-  <!-- Problem Statement -->
   {% if page.problem %}
   <section class="project-section">
     <h2>Problem</h2>
@@ -61,13 +16,15 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Solution Overview -->
   {% if page.solution %}
   <section class="project-section">
     <h2>Solution</h2>
     <div class="robotics-solution{% if page.prototype_image %} robotics-solution-with-image{% endif %}">
       <div class="project-content">
         <p>{{ page.solution }}</p>
+        {% if page.report_url %}
+        <a class="btn btn-outline mt-4" href="{{ page.report_url | relative_url }}">Read Final Design Report (PDF)</a>
+        {% endif %}
       </div>
       {% if page.prototype_image %}
       {% include projects/robotics-figure.html image=page.prototype_image eager=true %}
@@ -76,7 +33,20 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Requirements -->
+  {% if page.contributions %}
+  <section class="project-section">
+    <h2>My Contributions</h2>
+    <div class="project-content">
+      <ul>
+        {% for contribution in page.contributions %}
+        <li>{{ contribution | escape }}</li>
+        {% endfor %}
+      </ul>
+      <p>{{ page.contributions_note | escape }}</p>
+    </div>
+  </section>
+  {% endif %}
+
   {% if page.requirements %}
   <section class="project-section">
     <h2>Requirements</h2>
@@ -86,7 +56,6 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Constraints -->
   {% if page.constraints %}
   <section class="project-section">
     <h2>Constraints</h2>
@@ -110,52 +79,6 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Metrics Table -->
-  {% if page.metrics %}
-  <section class="project-section">
-    <h2>Performance Metrics</h2>
-    <table class="metrics-table">
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Target</th>
-          <th>Achieved</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for metric in page.metrics %}
-        <tr>
-          <td>{{ metric.name }}</td>
-          <td>{{ metric.target }}</td>
-          <td>{{ metric.achieved }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </section>
-  {% endif %}
-
-  <!-- Sensing System -->
-  {% if page.sensing %}
-  <section class="project-section">
-    <h2>Sensing System</h2>
-    <div class="project-content">
-      {{ page.sensing | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Actuation System -->
-  {% if page.actuation %}
-  <section class="project-section">
-    <h2>Actuation System</h2>
-    <div class="project-content">
-      {{ page.actuation | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Mechanical Design -->
   {% if page.mechanical %}
   <section class="project-section">
     <h2>Mechanical Design</h2>
@@ -173,7 +96,6 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Components List -->
   {% if page.components %}
   <section class="project-section">
     <h2>Key Components</h2>
@@ -196,78 +118,41 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- Fabrication Process -->
-  {% if page.fabrication %}
+  {% if page.sensing %}
   <section class="project-section">
-    <h2>Fabrication Process</h2>
+    <h2>Sensing System</h2>
     <div class="project-content">
-      {{ page.fabrication | markdownify }}
+      {{ page.sensing | markdownify }}
     </div>
   </section>
   {% endif %}
 
-  <!-- Testing Overview -->
-  {% if page.testing %}
+  {% if page.actuation %}
   <section class="project-section">
-    <h2>Testing Overview</h2>
+    <h2>Actuation System</h2>
     <div class="project-content">
-      <p>{{ page.testing }}</p>
+      {{ page.actuation | markdownify }}
     </div>
   </section>
   {% endif %}
 
-  <!-- Test Results -->
-  {% if page.test_results %}
+  {% if page.control_logic %}
   <section class="project-section">
-    <h2>Test Results</h2>
-    {% for result in page.test_results %}
-    <div class="test-result">
-      <div class="test-result-header">
-        <h3 class="test-result-name">{{ result.name }}</h3>
-        <span class="test-result-status {{ result.status | downcase }}">{{ result.status }}</span>
-      </div>
-      <div class="test-result-procedure">
-        <strong>Procedure:</strong> {{ result.procedure }}
-      </div>
-      <div class="test-result-result">
-        <strong>Result:</strong> {{ result.result }}
-      </div>
-    </div>
-    {% endfor %}
-  </section>
-  {% endif %}
-
-  <!-- What Worked -->
-  {% if page.worked %}
-  <section class="project-section">
-    <h2>What Worked</h2>
+    <h2>Control Logic &amp; Circuit Integration</h2>
     <div class="project-content">
-      {{ page.worked | markdownify }}
+      <ol>
+        {% for step in page.control_logic %}
+        <li>{{ step | escape }}</li>
+        {% endfor %}
+      </ol>
+      <p>{{ page.control_note | escape }}</p>
     </div>
+    {% if page.circuit_image %}
+    {% include projects/robotics-figure.html image=page.circuit_image %}
+    {% endif %}
   </section>
   {% endif %}
 
-  <!-- What Failed -->
-  {% if page.failed %}
-  <section class="project-section">
-    <h2>What Failed</h2>
-    <div class="project-content">
-      {{ page.failed | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Next Steps -->
-  {% if page.next_steps %}
-  <section class="project-section">
-    <h2>Next Steps</h2>
-    <div class="project-content">
-      {{ page.next_steps | markdownify }}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- Technical Specifications -->
   {% if page.specs %}
   <section class="project-section">
     <h2>Technical Specifications</h2>
@@ -369,6 +254,123 @@ layout: default
       </tbody>
     </table>
     {% endif %}
+  </section>
+  {% endif %}
+
+  {% if page.fabrication %}
+  <section class="project-section">
+    <h2>Fabrication Process</h2>
+    <div class="project-content">
+      {{ page.fabrication | markdownify }}
+    </div>
+    {% if page.build_gallery %}
+    <div class="grid grid-3 robotics-build-gallery">
+      {% for image in page.build_gallery %}
+      {% include projects/robotics-figure.html image=image %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if page.testing %}
+  <section class="project-section">
+    <h2>Testing Overview</h2>
+    <div class="project-content">
+      <p>{{ page.testing }}</p>
+    </div>
+    {% if page.test_history %}
+    <div class="project-content">
+      {% for test in page.test_history %}
+      <h3>{{ test.date | escape }}</h3>
+      <p>{{ test.result | escape }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.clearance_image %}
+    {% include projects/robotics-figure.html image=page.clearance_image %}
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if page.test_results %}
+  <section class="project-section">
+    <h2>Test Results</h2>
+    {% for result in page.test_results %}
+    <div class="test-result">
+      <div class="test-result-header">
+        <h3 class="test-result-name">{{ result.name }}</h3>
+        <span class="test-result-status {{ result.status | downcase }}">{{ result.status }}</span>
+      </div>
+      <div class="test-result-procedure">
+        <strong>Procedure:</strong> {{ result.procedure }}
+      </div>
+      <div class="test-result-result">
+        <strong>Result:</strong> {{ result.result }}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if page.metrics %}
+  <section class="project-section">
+    <h2>Performance Metrics</h2>
+    <div class="robotics-table-scroll" role="region" aria-label="Robotics project performance metrics" tabindex="0">
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Documented Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for metric in page.metrics %}
+        <tr>
+          <td>{{ metric.name }}</td>
+          <td>{{ metric.target }}</td>
+          <td>{{ metric.achieved }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.worked %}
+  <section class="project-section">
+    <h2>What Worked</h2>
+    <div class="project-content">
+      {{ page.worked | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.failed %}
+  <section class="project-section">
+    <h2>What Failed</h2>
+    <div class="project-content">
+      {{ page.failed | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.next_steps %}
+  <section class="project-section">
+    <h2>Next Steps</h2>
+    <div class="project-content">
+      {{ page.next_steps | markdownify }}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.report_url %}
+  <section class="project-section project-content">
+    <h2>Project Documentation</h2>
+    <p>The team report includes the design concepts, materials budget, Arduino code and circuit, acceptance procedures, and individual contributions.</p>
+    <a class="btn btn-outline" href="{{ page.report_url | relative_url }}" download>Download Final Design Report (PDF)</a>
   </section>
   {% endif %}
 

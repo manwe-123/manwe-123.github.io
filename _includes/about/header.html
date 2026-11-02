@@ -1,0 +1,23 @@
+<header class="project-header about-detail-header">
+  <div class="container">
+    <div class="project-breadcrumb"><a href="{{ '/about/' | relative_url }}">← Back to About</a><span>{{ page.section_title | default: 'About' | escape }}</span></div>
+    <h1 class="project-title">{{ page.title | escape }}</h1>
+    {% if page.section_excerpt %}<p class="project-subtitle">{{ page.section_excerpt | escape }}</p>{% endif %}
+    {% if page.role or page.timeline or page.location or page.software or page.gpa %}
+    <dl class="project-facts">
+      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role | escape }}</dd></div>{% endif %}
+      {% if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline | escape }}</dd></div>{% endif %}
+      {% if page.location %}<div><dt>Location</dt><dd>{{ page.location | escape }}</dd></div>{% endif %}
+      {% if page.software %}<div><dt>Tools</dt><dd>{{ page.software | escape }}</dd></div>{% endif %}
+      {% if page.gpa %}<div><dt>GPA</dt><dd>{{ page.gpa | escape }}</dd></div>{% endif %}
+    </dl>
+    {% endif %}
+    {% if page.tags.size > 0 %}<div class="project-tags mt-6">{% for tag in page.tags %}<span class="tag-cohesive">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+    {% if page.instagram_url or page.transcript_url %}
+    <div class="about-header-links">
+      {% if page.instagram_url %}<a class="btn btn-outline" href="{{ page.instagram_url | escape }}" target="_blank" rel="noopener noreferrer">{{ page.instagram_handle | default: 'View Instagram' | escape }} ↗</a>{% endif %}
+      {% if page.transcript_url %}<a class="btn btn-outline" href="{{ page.transcript_url | relative_url }}">View transcript</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</header>

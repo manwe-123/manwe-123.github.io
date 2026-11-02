@@ -18,82 +18,53 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="about-page ">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="/about" class="nav-link active">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link" aria-current="page">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <header class="project-header business-header business-header-engineering">
+    <header class="project-header about-detail-header">
   <div class="container">
-    <a href="/about" class="btn btn-outline btn-sm mb-4">← Back to About</a>
+    <div class="project-breadcrumb"><a href="/about/">← Back to About</a><span>Experience</span></div>
     <h1 class="project-title">Manwe&#39;s Mobile Mechanic</h1>
-    
     <p class="project-subtitle">Mobile automotive maintenance and light repair in Tempe and the surrounding area.</p>
     
-
+    <dl class="project-facts">
+      <div><dt>Role</dt><dd>Owner &amp; Mechanic</dd></div>
+      
+      <div><dt>Location</dt><dd>Tempe, Arizona &amp; surrounding area</dd></div>
+      
+      
+    </dl>
     
-    <div class="project-meta">
-      
-      <span class="meta-badge"><strong>Role:</strong> Owner &amp; Mechanic</span>
-      
-      
-      
-      <span class="meta-badge"><strong>Location:</strong> Tempe, Arizona &amp; surrounding area</span>
+    <div class="project-tags mt-6"><span class="tag-cohesive">Automotive Repair</span><span class="tag-cohesive">Vehicle Maintenance</span><span class="tag-cohesive">Mobile Service</span><span class="tag-cohesive">Small Business</span></div>
+    
+    <div class="about-header-links">
+      <a class="btn btn-outline" href="https://www.instagram.com/manwesmm/" target="_blank" rel="noopener noreferrer">@manwesmm ↗</a>
       
     </div>
-    
-
-    
-    <div class="project-tags">
-      
-      <span class="tag-cohesive">Automotive Repair</span>
-      
-      <span class="tag-cohesive">Vehicle Maintenance</span>
-      
-      <span class="tag-cohesive">Mobile Service</span>
-      
-      <span class="tag-cohesive">Small Business</span>
-      
-    </div>
-    
-
-    
-    <a class="btn btn-outline business-instagram-link" href="https://www.instagram.com/manwesmm/" target="_blank" rel="noopener">View @manwesmm ↗</a>
     
   </div>
 </header>
+
 
 <div class="container business-page">
   
@@ -153,7 +124,7 @@ with mechanical systems, routine maintenance, and repair.</p>
       
       <figure class="business-work">
         
-        <a href="/assets/images/about/mobile-mechanic/launch-announcement.jpg" target="_blank" rel="noopener" aria-label="Mobile automotive maintenance and light repair announcement for Tempe and the surrounding area, with at-home service, weekend appointments, and Instagram messages for quotes. Open original image in a new tab.">
+        <a href="/assets/images/about/mobile-mechanic/launch-announcement.jpg" target="_blank" rel="noopener" aria-label="Mobile automotive maintenance and light repair announcement for Tempe and the surrounding area, with at-home service, weekend appointments, and Instagram messages for quotes. Enlarge image.">
           <img src="/assets/images/about/mobile-mechanic/launch-announcement.jpg" alt="Mobile automotive maintenance and light repair announcement for Tempe and the surrounding area, with at-home service, weekend appointments, and Instagram messages for quotes." loading="lazy" decoding="async" width="1080" height="1350">
         </a>
         
@@ -166,7 +137,7 @@ with mechanical systems, routine maintenance, and repair.</p>
       
       <figure class="business-work">
         
-        <a href="/assets/images/about/mobile-mechanic/services-overview.jpg" target="_blank" rel="noopener" aria-label="Service guide listing oil changes, brake pads and rotors, battery replacement, spark plugs, engine and cabin filters, wiper blades, serpentine belts, and select light repairs. Open original image in a new tab.">
+        <a href="/assets/images/about/mobile-mechanic/services-overview.jpg" target="_blank" rel="noopener" aria-label="Service guide listing oil changes, brake pads and rotors, battery replacement, spark plugs, engine and cabin filters, wiper blades, serpentine belts, and select light repairs. Enlarge image.">
           <img src="/assets/images/about/mobile-mechanic/services-overview.jpg" alt="Service guide listing oil changes, brake pads and rotors, battery replacement, spark plugs, engine and cabin filters, wiper blades, serpentine belts, and select light repairs." loading="lazy" decoding="async" width="1080" height="1350">
         </a>
         
@@ -198,60 +169,24 @@ with mechanical systems, routine maintenance, and repair.</p>
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -18,271 +18,138 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link" aria-current="page">Home</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <!-- Hero Section -->
-<section class="hero">
-  <div class="container hero-container">
-    <div class="hero-content animate-on-scroll" data-animate="fade-up">
-      <h1 class="hero-title">Manwe Castro</h1>
-      <p class="hero-subtitle">Mechanical Engineering Student</p>
-      <p class="hero-description">
-        Engineering student building tangible solutions for clean energy and sustainable infrastructure. My work spans CAD, fabrication, embedded controls, and data pipelines, taking projects from concept to functioning prototype.
-      </p>
-      
-
-      <div class="hero-actions">
-        <a href="/projects" class="btn btn-primary">View All Projects</a>
-        <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="btn btn-outline">View Resume</a>
-      </div>
+    <section class="studio-hero">
+  <div class="container studio-hero-grid">
+    <div class="studio-hero-copy">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Manwe Castro / Mechanical Engineering</p>
+      <h1>Ideas on paper.<br />Systems in <em>motion.</em></h1>
+      <p class="studio-hero-description">I'm a mechanical engineering student at Arizona State University. I design, build, and test things that connect the digital world to the physical one.</p>
+      <div class="hero-actions"><a href="/projects/" class="btn btn-primary">Explore my work <span aria-hidden="true">→</span></a><a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="text-link">View résumé <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-footnote"><span>CAD &amp; fabrication</span><span>Embedded systems</span><span>Creative technology</span></div>
     </div>
-    
-    <div class="hero-image-wrapper animate-on-scroll" data-animate="fade-right">
-      <div class="hero-image-frame">
-        <img src="/assets/images/headshot.jpg" alt="Manwe Castro" class="hero-image" loading="eager" />
-      </div>
-    </div>
+    <figure class="portrait-study"><div class="portrait-image"><img src="/assets/images/headshot.jpg" alt="Manwe Castro" width="640" height="800" fetchpriority="high" /><span class="portrait-cross portrait-cross-top" aria-hidden="true">+</span><span class="portrait-cross portrait-cross-bottom" aria-hidden="true">+</span></div><figcaption><span>Curious by nature.<br />Hands-on by practice.</span><span class="mono">Tempe, AZ<br />Arizona State University</span></figcaption></figure>
   </div>
 </section>
-
-<!-- Featured Projects Section -->
-<section class="section">
+<section class="section selected-work" id="selected-work">
   <div class="container">
-    <h2 class="animate-on-scroll" data-animate="fade-up" style="margin-bottom: 2rem;">Featured Projects</h2>
+    <div class="section-heading-row"><div><span class="eyebrow">01 / Selected work</span><h2>From concept to something real.</h2></div><a class="text-link" href="/projects/">View all projects →</a></div>
+    <div class="project-grid">
+      
+      
+
+
+<a href="/projects/chimera/" class="project-card" data-category="engineering" data-title="Chimera Research Terminal" data-search="ai-driven quantitative equity research &amp; portfolio optimization terminal a modular, asynchronous python pipeline integrating live data apis, local llm synthesis, and constraint-based optimization. python fastapi docker llm rag redis react" data-date="1784790000">
+  <div class="project-card-media">
     
-    <div class="grid grid-3">
-      
-      
-      <a href="/projects/robotics/" class="project-card animate-on-scroll" data-animate="fade-up" data-category="engineering" style="transition-delay: 0.1s;">
-        
-        <img src="/assets/images/projects/robot/main.png" alt="Mental Health Robotics System for Isolated Environments" class="project-card-image" loading="lazy" />
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">Mental Health Robotics System for Isolated Environments</h3>
-          <p class="project-card-summary">
-            A semi-autonomous therapeutic companion robot for isolated Mars colony inhabitants
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">Robotics</span>
-            
-            <span class="tag">Arduino</span>
-            
-            <span class="tag">Laser Cutting</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      <a href="/projects/vr/" class="project-card animate-on-scroll" data-animate="fade-up" data-category="engineering" style="transition-delay: 0.2s;">
-        
-        <img src="/assets/images/projects/vr/main.png" alt="VR Rapid Prototyping Application" class="project-card-image" loading="lazy" />
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">VR Rapid Prototyping Application</h3>
-          <p class="project-card-summary">
-            An immersive virtual reality curriculum and prototyping environment for introductory engineering students
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">VR/AR</span>
-            
-            <span class="tag">Unity</span>
-            
-            <span class="tag">C#</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-      <a href="/projects/chimera/" class="project-card animate-on-scroll" data-animate="fade-up" data-category="engineering" style="transition-delay: 0.3s;">
-        
-        <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" />
-        
-        <div class="project-card-content">
-          <span class="project-card-category">engineering</span>
-          <h3 class="project-card-title">AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal</h3>
-          <p class="project-card-summary">
-            A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.
-          </p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">Python</span>
-            
-            <span class="tag">FastAPI</span>
-            
-            <span class="tag">Docker</span>
-            
-          </div>
-          
-        </div>
-      </a>
-      
-    </div>
+    <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" decoding="async" />
     
-    <div class="animate-on-scroll" data-animate="fade-up" style="text-align: center; margin-top: 3rem;">
-      <a href="/projects" class="btn btn-outline">View All Work →</a>
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Chimera Research Terminal</h3>
+    <p class="project-card-excerpt">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
+    <div class="project-card-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/vr/" class="project-card" data-category="engineering" data-title="VR Prototyping Workshop" data-search="vr rapid prototyping application unity environments and object-construction activities for asu&#39;s fse 100 engineering curriculum unity vr/ar 3d modeling rapid prototyping engineering education" data-date="1764572400">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/vr/main.png" alt="VR Rapid Prototyping Application" class="project-card-image" loading="lazy" decoding="async" />
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2025</span></div>
+    <h3 class="project-card-title">VR Prototyping Workshop</h3>
+    <p class="project-card-excerpt">Led Spring documentation and Fall Unity prototyping for an EPICS project introducing FSE 100 students to VR through object construction and the engineer...</p>
+    <div class="project-card-tags"><span class="tag">Unity</span><span class="tag">VR/AR</span><span class="tag">3D Modeling</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+
+
+<a href="/projects/robotics/" class="project-card" data-category="engineering" data-title="Baymax Companion Robot" data-search="mental health robotics system for isolated environments baymax: an arduino companion robot prototype for a mars-colony design scenario robotics arduino laser cutting mechatronics prototyping" data-date="1733727600">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/robot/main.png" alt="Mental Health Robotics System for Isolated Environments" class="project-card-image" loading="lazy" decoding="async" />
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2024</span></div>
+    <h3 class="project-card-title">Baymax Companion Robot</h3>
+    <p class="project-card-excerpt">Designed and built a companion robot prototype combining ultrasonic proximity control, an LCD interface, and a photoresistor-triggered storage lid in a ...</p>
+    <div class="project-card-tags"><span class="tag">Robotics</span><span class="tag">Arduino</span><span class="tag">Laser Cutting</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">03 / →</span></div>
+  </div>
+</a>
+
     </div>
   </div>
 </section>
-
-<!-- Skills Matrix Section -->
-<section class="section" style="background-color: #1a1a1a; border-top: 1px solid #333; border-bottom: 1px solid #333;">
+<section class="section practice-section">
   <div class="container">
-    <h2 style="margin-bottom: 2rem;">Skills + Practices</h2>
-    
-    <div class="skills-matrix">
-      <!-- Engineering and Technical -->
-      <div class="skill-category">
-        <h3 class="skill-category-title">Engineering + Technical</h3>
-        <ul class="skill-list">
-          <li class="skill-item">SolidWorks</li>
-          <li class="skill-item">Autodesk Fusion 360</li>
-          <li class="skill-item">2D Drafting &amp; GD&amp;T</li>
-          <li class="skill-item">Python</li>
-          <li class="skill-item">Arduino/C++</li>
-          <li class="skill-item">Unity Game Engine</li>
-        </ul>
-      </div>
-      
-      <!-- Fabrication & Hands-On -->
-      <div class="skill-category">
-        <h3 class="skill-category-title">Fabrication + Making</h3>
-        <ul class="skill-list">
-          <li class="skill-item">3D Printing (FDM/SLA)</li>
-          <li class="skill-item">Laser Cutting</li>
-          <li class="skill-item">Electronics Assembly</li>
-          <li class="skill-item">Automotive Repair</li>
-        </ul>
-      </div>
-      
-      <!-- Creative & Artistic -->
-      <div class="skill-category">
-        <h3 class="skill-category-title">Creative + Artistic</h3>
-        <ul class="skill-list">
-          <li class="skill-item">Sewing</li>
-          <li class="skill-item">Piano</li>
-          <li class="skill-item">Violin</li>
-          <li class="skill-item">Guitar</li>
-          <li class="skill-item">Jarana &amp; Requinto</li>
-          <li class="skill-item">Photography</li>
-        </ul>
-      </div>
+    <div class="section-heading-row"><div><span class="eyebrow">02 / How I work</span><h2>Think it through.<br />Then get your hands on it.</h2></div><p>My work moves between mechanical design, electronics, software, and creative practice. Each gives me another way to approach a problem.</p></div>
+    <div class="practice-grid">
+      <div class="practice-item"><span class="practice-number">01</span><h3>Design with purpose.</h3><p>Start with the person, the constraints, and the question worth solving.</p><ul class="skill-list"><li>SolidWorks &amp; Fusion 360</li><li>2D drafting &amp; GD&amp;T</li><li>Unity Game Engine</li></ul></div>
+      <div class="practice-item"><span class="practice-number">02</span><h3>Build to understand.</h3><p>Prototype the parts that matter. Learn from the fit, the wiring, and the first run.</p><ul class="skill-list"><li>3D printing &amp; laser cutting</li><li>Electronics assembly</li><li>Arduino/C++ &amp; automotive repair</li></ul></div>
+      <div class="practice-item"><span class="practice-number">03</span><h3>Keep refining.</h3><p>Measure what happens, question the assumptions, and make the next iteration better.</p><ul class="skill-list"><li>Python &amp; data pipelines</li><li>Sewing &amp; photography</li><li>Piano, violin, guitar &amp; jarana/requinto</li></ul></div>
     </div>
   </div>
 </section>
-
-<!-- Call to Action Section -->
-<section class="section">
-  <div class="container text-center">
-    <h2 style="margin-bottom: 1rem;">Interested in Collaboration?</h2>
-    <p style="max-width: 600px; margin: 0 auto 2rem; color: #7c 8390;">
-      I'm actively seeking internship opportunities for Summer 2027. 
-      Let's discuss how I can contribute to your team.
-    </p>
-    <a href="/contact" class="btn btn-primary">Get In Touch</a>
-  </div>
-</section>
+<section class="section home-about"><div class="container home-about-grid"><div><span class="eyebrow">03 / Beyond the workbench</span><h2>Engineering is one part<br />of the picture.</h2></div><div><p>Music, sewing, photography, and community work keep me curious about how things are made—and who they're made for. I'm interested in clean energy, sustainable infrastructure, and practical ideas that improve everyday life.</p><a class="text-link" href="/about/">More about me →</a></div></div></section>
+<section class="container opportunity-strip"><span class="status-dot" aria-hidden="true"></span><p>Seeking a <strong>Summer 2027 engineering internship.</strong></p><a href="/contact/">Let's connect ↗</a></section>
 
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

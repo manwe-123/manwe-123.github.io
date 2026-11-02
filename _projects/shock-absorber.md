@@ -2,199 +2,135 @@
 layout: projects/project-cad
 theme: cad
 category: engineering
+card_title: "Shock Absorber Assembly"
 title: "Shock Absorber Assembly"
-subtitle: "Mechanical design and ASME Y14.5 compliant manufacturing documentation for Mercedes-Benz C-Class"
+subtitle: "A SolidWorks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets."
 date: 2025-12-09
-role: "Design Engineer - Academic Project"
-timeline: "Aug 2025 - Dec 2025"
+role: "Part modeling, assembly & engineering drawings"
+timeline: "Fall 2025"
+course: "MAE 214 · Final Project"
 software: "SolidWorks"
 featured: false
 display: true
 tags:
   - SolidWorks
-  - ASME Y14.5
-  - GD&T
-  - DFM
-  - 3rd Angle Projections
-image: "assets/images/projects/cad/main.png"
-# Project Scenario & Overview
-objective: "Initiate the design of a fully functional shock absorber assembly for the Mercedes-Benz C-Class, modeling all custom components and integrating standard hardware to create a fully constrained, interference-free mechanical system."
-engineering_mandate: "Act as a Design Engineer to critically evaluate initial reference dimensions, amending part geometries to eliminate physical interferences, identify missing components, and ensure the assembly functions as a proper dynamic suspension system."
+  - Assembly Design
+  - Engineering Drawings
+  - Third-angle Projection
+image: "/assets/images/projects/cad/assembly.jpg"
+image_alt: "Assembled SolidWorks model with a pivot, U-support, mounting bracket, and spring below the support."
+image_caption: "The completed CAD assembly from my final project cover: a pivot supported between two bronze bushings, above a spring-and-bracket arrangement."
 
-# Design Constraints & Interference Management
-interference_constraints:
-  threaded_allowance: "0.02 in³"
-  other_components: "Zero interferences allowed"
+objective: "For my MAE 214 final project, I modeled a shock absorber assembly in SolidWorks and prepared a drawing package connecting individual part geometry to the complete assembly. The work combines seven custom component designs with standard fastening hardware."
+project_context: "The assignment used a fictional design-engineer scenario for a Mercedes-Benz C-Class shock absorber. Reference figures supplied the starting geometry; the brief required students to revise dimensions where needed, account for missing parts, and communicate the assembly through engineering drawings."
 
-# Amendment process steps
-amendment_steps:
-  - step: 1
-    description: "Analyzed initial reference dimensions and identified physical clashes between the shaft, spacer, and U-support during virtual assembly."
-  - step: 2
-    description: "Adjusted the shaft length and spacer thickness to eliminate axial interferences while maintaining the required overall assembly length."
-  - step: 3
-    description: "Verified radial clearances between the bronze bushings and the steel shaft, ensuring smooth linear motion without binding."
-  - step: 4
-    description: "Ran SolidWorks Interference Detection to confirm zero interferences across all non-threaded components, strictly adhering to the 0.02 in³ allowance for threaded fasteners."
+project_stats:
+  - value: "12"
+    label: "BOM line items"
+  - value: "13"
+    label: "Total part instances"
+  - value: "7"
+    label: "Component drawing sheets"
+  - value: "1"
+    label: "Exploded assembly sheet"
 
-amendment_intro: "Initial reference dimensions were systematically amended to achieve a properly functioning shock absorber:"
+contributions:
+  - "Modeled the bracket, spacer, shaft, U-support, bushing, pivot, and spring as individual components."
+  - "Integrated the components and fastening hardware into the assembled model shown in the final submission."
+  - "Created an exploded view with numbered callouts and a bill of materials listing part names, materials, and quantities."
+  - "Prepared seven component sheets with orthographic views, isometric views, dimensions, and thread or coil details where applicable."
 
-# Spring specifications
-spring_specs:
-  height: "1.845 inches"
-  pitch: "0.50 inches"
-  revolutions: "3.69"
+requirements_intro: "These constraints come from the assignment brief and define the design task. They are separate from the results documented in my drawing package."
+requirements:
+  - title: "Fit and motion"
+    description: "Use the reference figures and supplied motion video to assemble the mechanism, adjusting geometry where necessary for the intended motion."
+  - title: "Interference limits"
+    description: "The brief permits up to 0.02 in³ of interference for threaded components. All other components must have no interference."
+  - title: "Drawing coverage"
+    description: "Provide dimensioned third-angle drawings for custom parts, plus an exploded assembly drawing and a bill of materials. The spring must be modeled by the student."
+  - title: "Materials and hardware"
+    description: "Choose suitable materials, including bronze bushings. Downloaded fasteners are permitted, with a separate appendix requested for their part numbers, descriptions, and materials."
 
-spring_note: "Spring was modeled from scratch using helical sweep feature (not downloaded from library)."
-
-# Key Design Features (3-column grid)
-key_features:
-  - title: "Shaft Geometry"
-    description: "Features a 0.75-10 thread specification and a precise 0.125\" x 0.125\" keyway for secure torque transmission and component alignment."
-  - title: "Bronze Bushings"
-    description: "Utilizes SAE bronze bushings to provide a low coefficient of friction and high wear resistance against the steel shaft, eliminating the need for continuous lubrication."
-  - title: "Custom Compression Spring"
-    description: "Modeled from scratch with specific geometric parameters (1.845\" free height, 0.50\" pitch, 3.69 revolutions) to ensure accurate dynamic suspension behavior."
-
-# Bill of Materials
-bom_intro: "Complete parts list for the shock absorber assembly. **Custom machined parts** require engineering drawings; **standard fasteners** are sourced from McMaster-Carr."
-
+assembly_intro: "The exploded drawing makes the component relationships explicit: the pivot sits between a pair of bronze bushings in the U-support, while the shaft, spring, spacer, bracket, washer, and self-locking nut form the lower stack. A hex-head bolt, castle nut, and cotter pin complete the upper connection."
+exploded_image: "/assets/images/projects/cad/exploded-assembly.png"
+exploded_caption: "Final submission, sheet 1: exploded and assembled isometric views with the complete bill of materials. Item 6 appears twice because the assembly uses two bushings."
+bom_intro: "Transcribed from the submitted assembly sheet: 12 line items and 13 individual part instances. The seven custom component types correspond to the seven individual drawing sheets."
 bom:
-  - number: 1
-    name: "Self Locking Nut"
-    type: "standard"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "Yes"
-  - number: 2
-    name: "Hex Head Bolt"
-    type: "standard"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "Yes"
-  - number: 3
-    name: "Pivot"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 4
-    name: "Cotter Pin"
-    type: "standard"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "Yes"
-  - number: 5
-    name: "Castle Nut"
-    type: "standard"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "Yes"
-  - number: 6
-    name: "Bushing"
-    type: "custom"
-    material: "Bronze"
-    quantity: 2
-    mcmaster_carr: "No"
-  - number: 7
-    name: "U-Support"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 8
-    name: "Spring"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 9
-    name: "Shaft"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 10
-    name: "Spacer"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 11
-    name: "Bracket"
-    type: "custom"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "No"
-  - number: 12
-    name: "Washer"
-    type: "standard"
-    material: "Steel"
-    quantity: 1
-    mcmaster_carr: "Yes"
+  - { number: 1, name: "Self-locking nut", material: "Steel", quantity: 1, type: "Standard hardware" }
+  - { number: 2, name: "Hex-head bolt", material: "Steel", quantity: 1, type: "Standard hardware" }
+  - { number: 3, name: "Pivot", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 4, name: "Cotter pin", material: "Steel", quantity: 1, type: "Standard hardware" }
+  - { number: 5, name: "Castle nut", material: "Steel", quantity: 1, type: "Standard hardware" }
+  - { number: 6, name: "Bushing", material: "Bronze", quantity: 2, type: "Custom component" }
+  - { number: 7, name: "U-support", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 8, name: "Spring", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 9, name: "Shaft", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 10, name: "Spacer", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 11, name: "Bracket", material: "Steel", quantity: 1, type: "Custom component" }
+  - { number: 12, name: "Washer", material: "Steel", quantity: 1, type: "Standard hardware" }
 
-drawing_pairs:
-  - title: "Shaft Assembly Detail"
-    model_3d: "/assets/images/shock-absorber/shaft-3d.png"
-    drawing_2d: "/assets/images/shock-absorber/shaft-drawing.png"
-  - title: "U-Support Internal Geometry"
-    model_3d: "/assets/images/shock-absorber/usupport-3d.png"
-    drawing_2d: "/assets/images/shock-absorber/usupport-drawing.png"
-
-drawings_intro: "Click on any drawing to open the zoomable lightbox viewer. Use scroll/pinch to zoom in on dimension callouts and GD&T symbols."
-
-# gallery:
-#  - src: "/assets/images/shock-absorber/assembly-exploded.png"
-#    caption: "Exploded isometric view of the complete 12-component shock absorber assembly"
-#  - src: "/assets/images/shock-absorber/assembly-constrained.png"
-#    caption: "Fully constrained assembly verifying mechanical fit and component movement"
-#  - src: "/assets/images/shock-absorber/drawing-sheet-shaft.png"
-#    caption: "Manufacturing-ready 2D drawing of the shaft, detailing 0.75-10 threads and 0.125\" keyway"
-#  - src: "/assets/images/shock-absorber/drawing-sheet-spring.png"
-#    caption: "Spring specification drawing detailing pitch, revolutions, and free height"
+drawings_intro: "Each sheet pairs the component's 3D form with dimensioned views. Dimensions below are transcribed in inches from the final submission. Select a sheet to enlarge it, or download the PDF for the original vector drawings."
+drawings:
+  - title: "Bracket"
+    src: "/assets/images/projects/cad/bracket.png"
+    alt: "Bracket drawing with top, front, side, and isometric views showing its mounting holes and bent profile."
+    caption: "Sheet 2 · A 9.500 × 3.000 mounting footprint, 0.313 thickness, two Ø0.500 mounting holes, and a central Ø0.750 hole. The views also locate the bends and their radii."
+  - title: "Spacer"
+    src: "/assets/images/projects/cad/spacer.png"
+    alt: "Annular spacer drawing showing its inner and outer diameters, axial height, and isometric view."
+    caption: "Sheet 3 · A ring with Ø2.25 outside diameter, Ø1.75 inside diameter, and 1.00 axial height."
+  - title: "Shaft"
+    src: "/assets/images/projects/cad/shaft.png"
+    alt: "Partially threaded shaft drawing with a 0.75-10 thread callout and a dimensioned end detail."
+    caption: "Sheet 4 · Ø0.750 shaft with a 3.125 length dimension, a 0.75-10 × 1.00 threaded portion, and a 0.125 × 0.125 end-detail callout."
+  - title: "U-support"
+    src: "/assets/images/projects/cad/u-support.png"
+    alt: "U-support drawing showing its two upright arms, rounded ends, mounting holes, and bend radii."
+    caption: "Sheet 5 · A 3.526 overall width and 5.265 height, 0.313 wall thickness, Ø0.500 pivot holes, and R1.400 rounded ends."
+  - title: "Bushing"
+    src: "/assets/images/projects/cad/bushing.png"
+    alt: "Flanged bronze bushing drawing with orthographic and isometric views and flange dimensions."
+    caption: "Sheet 6 · The pair of bronze bushings uses a Ø1.500 body, Ø2.000 flange, 1.250 overall length, and 0.250 flange thickness."
+  - title: "Pivot"
+    src: "/assets/images/projects/cad/pivot.png"
+    alt: "Pivot drawing showing a mounting plate with four holes and its cylindrical bearing interface."
+    caption: "Sheet 7 · A 6.500 × 2.400 top plate with four Ø0.250 holes, 0.313 plate thickness, and a Ø1.500 cylindrical opening."
+  - title: "Spring"
+    src: "/assets/images/projects/cad/spring.png"
+    alt: "Helical spring drawing showing the coil shape, wire diameter, overall height, pitch, and revolution count."
+    caption: "Sheet 8 · The coil note specifies 1.845 height, 0.50 pitch, and 3.69 revolutions. The drawing separately dimensions 2.005 overall height and Ø0.250 wire."
+spring_note: "The spring's 1.845 helix-height note and 2.005 overall-height dimension are both retained from the sheet. They should not be reported as the same free-height measurement. The drawing documents geometry; it does not establish a spring rate or damping coefficient."
 
 material_selection: |
-  **Steel Components:** Selected for all primary load-bearing and structural parts (bracket, shaft, pivot, U-support) due to high tensile strength and durability under dynamic suspension loads.
-  
-  **Bronze Bushings:** Specified for bearing surfaces to provide a low coefficient of friction and high wear resistance against the rotating steel shaft, eliminating the need for continuous external lubrication.
+  **Steel structure and hardware.** The bill of materials specifies steel for the bracket, spacer, shaft, U-support, pivot, spring, and all five hardware types. It does not identify steel grades, heat treatments, or coatings.
 
-manufacturing_processes: |
-  - **CNC Turning & Milling:** Required for custom machined components like the shaft, spacer, and pivot to achieve tight dimensional tolerances and precise surface finishes.
-  - **Fabrication:** The U-support and bracket utilize milled or laser-cut profiles with drilled mounting holes.
-  - **Standard Hardware:** Bolts, nuts, washers, and cotter pins are off-the-shelf McMaster-Carr components, reducing custom manufacturing complexity and cost.
-  - **Compression Spring:** Manufactured to specific geometric parameters (Height: 1.845", Pitch: 0.50", 3.69 revolutions).
+  **Bronze bearing interfaces.** Both bushings are listed as bronze. Their flanged geometry locates them at the pivot connection in the exploded assembly; the submission does not specify a bronze alloy or lubrication requirement.
 
-design_validation:
-  - title: "Assembly Verification"
-    description: "All 12 components were assembled in SolidWorks with appropriate mates (concentric, coincident, distance). The assembly is fully constrained with 0 degrees of freedom, confirming proper fit and function."
-  - title: "Drawing Accuracy"
-    description: "All 2D drawings were cross-checked against the 3D model using SolidWorks drawing views. Dimensions were verified to match model geometry, and GD&T callouts were validated per ASME Y14.5-2018 standards."
+manufacturing_considerations: |
+  The drawings communicate different fabrication needs: rotational geometry for the shaft, spacer, and bushings; formed profiles and hole locations for the bracket and U-support; and coil geometry for the spring.
 
-lessons_learned:
-  - challenge: "Properly dimensioning and tolerancing the 0.125\" x 0.125\" keyway for manufacturing."
-    resolution: "Researched standard ANSI keyway dimensions and applied appropriate geometric tolerances to the 2D drawing to ensure proper torque transmission and shaft fit."
-  - challenge: "Communicating complex internal geometries and thread specifications to a machinist."
-    resolution: "Utilized detailed section views and local detail callouts on the 2D drawings to clearly convey internal features and the 0.75-10 thread specification without cluttering the primary views."
-  - challenge: "Ensuring all 12 components assembled without physical interferences."
-    resolution: "Systematically applied mechanical mates (concentric, coincident, distance) and utilized SolidWorks interference detection tools to verify clearances before finalizing the drawing package."
+  A manufacturing release would still need material grades, general and fit tolerances, surface-finish requirements, and confirmed hardware catalog references. These are next steps beyond the submitted CAD drawing package.
+
+outcomes:
+  - title: "A traceable assembly package"
+    description: "The final submission contains an assembled model image, an exploded assembly/BOM sheet, and seven individually dimensioned component sheets. The numbered callouts connect every BOM item to its position in the assembly."
+  - title: "Component-to-assembly communication"
+    description: "Orthographic views capture dimensions and hole locations, while isometric views explain the shape of the formed supports, pivot, bushings, and spring. The shaft and spring sheets add their specific thread and coil callouts."
+validation_note: "This is a CAD modeling and documentation project. The supplied PDFs do not include a motion study, interference-detection results, load analysis, or physical testing, so vehicle fit, suspension performance, and compliance with the interference limits remain unverified here."
+next_steps:
+  - "Record an interference check against the brief's limits and demonstrate the intended assembly motion with the correct degrees of freedom."
+  - "Add catalog part numbers and dimensions for the five hardware types in the requested fastener appendix."
+  - "Resolve manufacturing fits and tolerances, then analyze spring stiffness, operating loads, and travel before any prototype testing."
 
 skills:
   - SolidWorks Part Modeling
-  - SolidWorks Assembly Design
-  - ASME Y14.5 Drafting Standards
-  - 2D Engineering Drawing Creation
-  - GD&T Application
-  - Section & Detail Views
-  - Thread Specification & Callouts
-  - Keyway Design
-  - Material Selection
-  - Standard Hardware Integration
-  - Parametric Modeling & Design Intent
-  - Interference Detection
-
-# resources:
-#  - label: "📄 Download Drawing PDFs"
-#    url: "/assets/pdfs/shock-absorber-drawings.pdf"
-#  - label: "🔧 View SolidWorks Files"
-#    url: "https://github.com/manwe-123/shock-absorber-cad"
+  - Assembly Design
+  - Exploded Views & BOMs
+  - Third-angle Drawing Layout
+  - Thread Callouts
+  - Helical Spring Geometry
+  - Material Documentation
+resources:
+  - label: "Download drawing package · 8 sheets (PDF)"
+    url: "/assets/files/shock-absorber-drawing-package.pdf"
 ---

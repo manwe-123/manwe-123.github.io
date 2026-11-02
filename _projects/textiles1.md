@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: projects/project-textiles
 theme: textiles
 title: "Hand-Stitched Leather Journal"
 date: 2025-08-10
@@ -10,6 +10,7 @@ display: false
 tags: [leather, bookbinding, hand-stitch]
 materials: [Vegetable-tanned leather, Waxed linen thread, Acid-free paper]
 description: "A hand-bound journal featuring traditional saddle stitching and a minimalist design."
+images_available: false
 images:
   - /assets/images/textiles/placeholder-sewing.jpg
 ---
@@ -27,9 +28,13 @@ This project combines traditional bookbinding techniques with modern aesthetic s
 
 ## Process
 
+{% if page.images_available != false %}
 <div class="textile-gallery">
   <img src="/assets/images/textiles/placeholder-sewing.jpg" alt="Finished leather journal with visible stitching">
 </div>
+{% else %}
+<p class="media-placeholder">No photographs have been published for this project yet.</p>
+{% endif %}
 
 1. **Pattern Cutting:** Leather pieces cut to size with precision knives
 2. **Punching:** Holes marked and punched for saddle stitching

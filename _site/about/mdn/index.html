@@ -18,168 +18,88 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="about-page ">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="/about" class="nav-link active">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link" aria-current="page">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <header class="page-header">
+    <header class="project-header about-detail-header">
   <div class="container">
-    <a href="/about" class="btn btn-outline btn-sm mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <span>←</span> Back to About
-    </a>
-    <h1 class="page-title">Marcos de Niza High School</h1>
-    <p class="page-subtitle">High School Diploma</p>
+    <div class="project-breadcrumb"><a href="/about/">← Back to About</a><span>Education</span></div>
+    <h1 class="project-title">Marcos de Niza High School</h1>
+    <p class="project-subtitle">High School Diploma</p>
+    
+    
+    
   </div>
 </header>
 
-<section class="section">
-  <div class="container">
+<div class="container section about-story">
+  <div class="about-story-intro"><p>A snapshot of the formal education and coursework that shaped my engineering foundation.</p>
+</div>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-1">
     
-    <p style="max-width: 70ch; margin-bottom: 2rem; color: var(--color-text-secondary);">A snapshot of the formal education and coursework that shaped my engineering foundation.</p>
-    
+    <h2 id="about-section-1">Marcos de Niza High School</h2>
+    <p class="about-section-subtitle">High School Diploma</p>
+    <p class="about-section-date">Graduated 2024</p>
+    <p>Completed high school with a focus on mathematics, science, and engineering principles.</p>
 
-    <div class="project-grid">
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">Marcos de Niza High School</h3>
-          
-          <p class="timeline-organization" style="margin-bottom: 0.5rem;">High School Diploma</p>
-          
-          
-          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Graduated 2024</p>
-          
-          <p class="project-card-excerpt">Completed high school with a focus on mathematics, science, and engineering principles.</p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">CAD</span>
-            
-            <span class="tag">Fabrication</span>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card-content">
-          
-          <h3 class="project-card-title">Engineering Design Coursework</h3>
-          
-          <p class="timeline-organization" style="margin-bottom: 0.5rem;">Product development, prototyping, and analysis</p>
-          
-          
-          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Ongoing</p>
-          
-          <p class="project-card-excerpt">Built experience working through concept development, evaluation, and physical implementation of engineering ideas.</p>
-          
-          <div class="project-card-tags">
-            
-            <span class="tag">Design</span>
-            
-            <span class="tag">Prototyping</span>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
+    <div class="project-tags"><span class="tag-cohesive">CAD</span><span class="tag-cohesive">Fabrication</span></div>
+  </section>
+  
+  <section class="about-detail-section" aria-labelledby="about-section-2">
+    
+    <h2 id="about-section-2">Engineering Design Coursework</h2>
+    <p class="about-section-subtitle">Product development, prototyping, and analysis</p>
+    <p class="about-section-date">Ongoing</p>
+    <p>Built experience working through concept development, evaluation, and physical implementation of engineering ideas.</p>
+
+    <div class="project-tags"><span class="tag-cohesive">Design</span><span class="tag-cohesive">Prototyping</span></div>
+  </section>
+  
+  
+</div>
 
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

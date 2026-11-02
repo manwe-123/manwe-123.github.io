@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Solar Panel Power Meter | Manwe Castro</title>
+  <meta name="description" content="Built and tested a solar panel power meter using a voltage divider, shunt resistor, op-amp, and Arduino to display live voltage, current, and power on an LCD.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+<body class="case-study-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  
+  <!-- Header -->
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link" aria-current="page">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+  
+  <!-- Main Content -->
+  <main id="main-content" tabindex="-1">
+    <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+<header class="project-header theme-circuits">
+  <div class="container">
+    <div class="project-breadcrumb"><a href="/projects/">← All projects</a><span>Engineering / Case study</span></div>
+    <h1 class="project-title">Solar Panel Power Meter</h1>
+    
+    <p class="project-subtitle">An Arduino-based instrument for measuring solar panel voltage, current, and power.</p>
+    <dl class="project-facts">
+      <div><dt>My role</dt><dd>Circuit Design &amp; Prototyping Lead</dd></div>
+      <div><dt>Timeline</dt><dd>May 2026</dd></div>
+      
+      
+      
+      
+      
+    </dl>
+    <div class="project-header-bottom">
+      <div class="project-tags"><span class="tag-cohesive">Arduino</span><span class="tag-cohesive">Analog Circuits</span><span class="tag-cohesive">Signal Conditioning</span><span class="tag-cohesive">TinkerCAD</span><span class="tag-cohesive">Calibration</span></div>
+      <div class="project-utilities"><span data-reading-time></span><button type="button" class="text-button" data-copy-link>Copy project link</button></div>
+    </div>
+  </div>
+</header>
+
+<div class="container case-study-layout" data-case-study>
+  <aside class="case-index" data-case-index hidden>
+    <details open>
+      <summary>On this page <span data-reading-position></span></summary>
+      <nav aria-label="Case study sections" data-section-nav></nav>
+    </details>
+    <a href="#main-content" class="case-back-top">↑ Back to top</a>
+  </aside>
+  <article class="case-study-content" id="case-study-content"><div class="circuits-project">
+  <section class="project-section">
+    <h2>Project Overview</h2>
+    <div class="circuits-overview">
+      <div class="project-content">
+        <h3>The Brief</h3>
+        <p>For the EEE 202 Circuits I Lab final project, our team built a portable power meter for the Sparky Solar client scenario. The goal was to help field technicians check a small solar panel without calculating voltage, current, and power by hand. Affordability, readily available components, compact size, and operation at elevated temperatures guided the design.
+</p>
+        <h3>The Prototype</h3>
+        <p>We combined a voltage divider, a shunt resistor with a non-inverting amplifier, and an Arduino Uno. The Arduino reconstructs the panel voltage and load current from two analog inputs, calculates power, and refreshes an LCD once per second. Lab 7 documents development from individual sensing stages through controller tests and LCD integration, followed by a prototype demonstration signed off on May 1, 2026.
+</p>
+        <a class="btn btn-outline mt-4" href="/assets/files/solar-power-meter-report.pdf">Read Final Report (PDF)</a>
+        <a class="btn btn-outline mt-4" href="/assets/files/solar-power-meter-lab7.pdf">Read Lab 7 (PDF)</a>
+      </div>
+      <figure class="circuits-figure">
+        <a href="/assets/images/projects/solar-power-meter/main.jpg" target="_blank" rel="noopener" aria-label="View full-size prototype photo in a new tab">
+          <img src="/assets/images/projects/solar-power-meter/main.jpg" alt="Solar panel connected to a breadboard circuit, Arduino Uno, and illuminated LCD displaying voltage, current, and power." width="1536" height="2048" decoding="async">
+        </a>
+        <figcaption>The working breadboard prototype, photographed for the final report. The solar panel feeds the sensing circuit, and the Arduino displays the calculated measurements on the LCD.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Panel Characterization</h2>
+    <div class="circuits-table-scroll" role="region" aria-label="Initial solar panel measurements by lighting condition" tabindex="0">
+      <table class="metrics-table">
+        <caption>Initial measurements with a 1 kΩ load, recorded in Lab 7, p. 1.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Lighting Condition</th>
+            <th scope="col">Panel Voltage</th>
+            <th scope="col">Panel Current</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <th scope="row">Full sunlight</th>
+            <td>6.83 V</td>
+            <td>6.76 mA</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Shaded sunlight</th>
+            <td>1.30 V</td>
+            <td>1.70 mA</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Lab lighting</th>
+            <td>0.190 V</td>
+            <td>0.191 mA</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Signal Chain &amp; Circuit Design</h2>
+    <div class="grid grid-3">
+      
+      <div class="circuits-stage project-content">
+        <h3>01 · Voltage Sensing</h3>
+        <p>A 47 kΩ / 100 kΩ divider scales the panel voltage for analog input A1. At the measured 6.83 V maximum, the calculated divider output is about 4.64 V, below the Arduino&#39;s 5 V input limit.</p>
+        <p class="circuits-equation"><code>Vout = Vin × 100 / (47 + 100)</code></p>
+      </div>
+      
+      <div class="circuits-stage project-content">
+        <h3>02 · Current Sensing</h3>
+        <p>A 50 Ω shunt in series with the 1 kΩ load converts current into a small voltage. A rail-to-rail, non-inverting op-amp with 22 kΩ input and 100 kΩ feedback resistors amplifies that signal before it reaches A0. The worksheet checks headroom at the load resistor&#39;s calculated 15.8 mA power limit: about 0.791 V across the shunt and 4.38 V after amplification.</p>
+        <p class="circuits-equation"><code>Gain = 1 + 100 / 22 ≈ 5.55</code></p>
+      </div>
+      
+      <div class="circuits-stage project-content">
+        <h3>03 · Processing &amp; Display</h3>
+        <p>The Arduino reverses the divider and amplifier scaling to recover voltage and current, then multiplies the values to calculate power. A diode prevents reverse current, and the LCD updates every second.</p>
+        <p class="circuits-equation"><code>I = Vshunt / 50 Ω; P = V × I</code></p>
+      </div>
+      
+    </div>
+    <div class="project-content">
+      <h3>Design Tradeoffs</h3>
+      <ul>
+        
+        <li>Selected resistor set 2 for both sensing stages. The worksheet ranks divider priorities as availability, cost, then size; amplifier priorities are temperature rating, availability, then cost.</li>
+        
+        <li>Chose high divider resistances to reduce power consumption, accepting greater sensitivity to noise and leakage.</li>
+        
+        <li>Balanced current sensitivity and signal headroom with a nominal op-amp gain of 5.55; the calculated full-sun output was approximately 1.87 V.</li>
+        
+        <li>Used a benchtop DC supply for steady indoor debugging before testing under changing outdoor light.</li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>From ADC Readings to Engineering Units</h2>
+    <p>Lab 7 explains how raw ADC readings become engineering units. Using the worksheet&#39;s nominal 5 V reference, a 1024-count conversion, and the selected resistor values:</p>
+    
+    <h3>Panel voltage (V)</h3>
+    <p class="circuits-equation"><code>Vpanel = ADC_A1 × (Vref / 1024) × (147 / 100)</code></p>
+    
+    <h3>Load current (mA)</h3>
+    <p class="circuits-equation"><code>Iload = ADC_A0 × (Vref / 1024) × 1000 / (5.545 × 50)</code></p>
+    
+    <h3>Power (mW)</h3>
+    <p class="circuits-equation"><code>P = Vpanel × Iload_mA</code></p>
+    
+    <p>The worksheet uses Vref = 5.00 V. The final report describes replacing that nominal value with a measured 4.97 V during calibration.</p>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>Capacitor Discharge Analysis</h2>
+    <p>Part 5 extends the project to first-order transient analysis. With the worksheet&#39;s equivalent resistance of 1 kΩ + 50 Ω = 1050 Ω, we solved for a capacitor that would discharge from 6 V to 1 mV in approximately 10 ms.</p>
+    <p class="circuits-equation"><code>Vc(t) = V0 × exp(−t / (R × C))</code></p>
+    <p class="circuits-equation"><code>C = −0.010 / (1050 × ln(0.001 / 6)) ≈ 1.1 µF</code></p>
+    <p>The worksheet documents the calculation. It does not include an oscilloscope discharge trace or a signed measurement for this optional test.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Simulation &amp; Bench Development</h2>
+    <div class="grid grid-3 circuits-gallery">
+      
+      <figure class="circuits-figure">
+        <a href="/assets/images/projects/solar-power-meter/voltage-divider-simulation.jpeg" target="_blank" rel="noopener" aria-label="TinkerCAD voltage-divider circuit connected to a solar panel and a multimeter reading 4.23 V. Open full-size image in a new tab.">
+          <img src="/assets/images/projects/solar-power-meter/voltage-divider-simulation.jpeg" alt="TinkerCAD voltage-divider circuit connected to a solar panel and a multimeter reading 4.23 V." width="844" height="1228" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Voltage-divider simulation: 4.23 V at the meter. The worksheet records 4.30 V for the physical build under this stage&#39;s test conditions (Lab 7, pp. 2 and 11).</figcaption>
+      </figure>
+      
+      <figure class="circuits-figure">
+        <a href="/assets/images/projects/solar-power-meter/lcd-simulation.jpeg" target="_blank" rel="noopener" aria-label="TinkerCAD Arduino and LCD circuit displaying 6.83 V, 5.95 mA, and 40.63 mW with a 6.83 V, 6.00 mA source. Open full-size image in a new tab.">
+          <img src="/assets/images/projects/solar-power-meter/lcd-simulation.jpeg" alt="TinkerCAD Arduino and LCD circuit displaying 6.83 V, 5.95 mA, and 40.63 mW with a 6.83 V, 6.00 mA source." width="1330" height="1114" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Integrated LCD simulation: a source set to 6.83 V and 6.00 mA produces displayed values of 6.83 V, 5.95 mA, and 40.63 mW in this screenshot (Lab 7, p. 17).</figcaption>
+      </figure>
+      
+      <figure class="circuits-figure">
+        <a href="/assets/images/projects/solar-power-meter/bench-testing.jpeg" target="_blank" rel="noopener" aria-label="Arduino Uno and breadboard sensing circuit connected to a benchtop multimeter and DC power supply. Open full-size image in a new tab.">
+          <img src="/assets/images/projects/solar-power-meter/bench-testing.jpeg" alt="Arduino Uno and breadboard sensing circuit connected to a benchtop multimeter and DC power supply." width="1244" height="930" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Bench testing the sensing and controller circuit with a DC supply and multimeter before completing the LCD prototype (Lab 7, p. 13).</figcaption>
+      </figure>
+      
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Troubleshooting &amp; Iteration</h2>
+    <div class="grid grid-2">
+      
+      <div class="project-content">
+        <h3>Correcting the ADC Reference</h3>
+        <p>In full sun, the serial monitor showed 6.71 V while the handheld meter read 6.83 V. The conversion code assumed an exact 5.00 V reference.</p>
+        <p>We measured the Arduino&#39;s actual 5 V rail at 4.97 V and updated the conversion constant. The report records a subsequent voltage error below 0.2%.</p>
+      </div>
+      
+      <div class="project-content">
+        <h3>Establishing a Common Ground</h3>
+        <p>During assembly, the LCD flickered and the readings jumped. Checking the power rails and tracing signals with an oscilloscope revealed that the op-amp stage and Arduino lacked a shared ground.</p>
+        <p>A jumper between the op-amp ground rail and Arduino GND stabilized the readings. This highlighted the importance of a consistent reference across analog and digital stages.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Validation &amp; Results</h2>
+    <h3>Circuit &amp; Display Checks</h3>
+    <div class="circuits-table-scroll" role="region" aria-label="Circuit validation measurements" tabindex="0">
+      <table class="metrics-table">
+        <caption>Selected stage tests from Lab 7 and the final report; each row identifies its source and test context.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Measurement</th>
+            <th scope="col">Design / Comparison</th>
+            <th scope="col">Observed Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <th scope="row">Divider output at 6.83 V input</th>
+            <td>4.64 V calculated</td>
+            <td>4.58–4.62 V measured (final report)</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Standalone divider test</th>
+            <td>4.23 V simulated</td>
+            <td>4.30 V physical; about 1.7% difference (Lab 7, p. 2)</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Non-inverting amplifier gain</th>
+            <td>5.55 calculated</td>
+            <td>5.48–5.52 measured (final report)</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Integrated LCD voltage in full sun</th>
+            <td>6.83 V panel measurement</td>
+            <td>6.86 V LCD readout; about 0.44% difference (Lab 7, p. 8)</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Voltage error after ADC-reference correction</th>
+            <td>Compare against a calibrated meter</td>
+            <td>Below 0.2%, reported after correction in the final report</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="project-content">
+      <p>The initial lighting survey, individual circuit tests, and integrated LCD tests are separate measurements. The worksheet&#39;s full-sun LCD voltage differs from the final report&#39;s calibration result; neither establishes accuracy across the full voltage and current range.</p>
+    </div>
+  </section>
+
+  <section class="project-section project-content">
+    <h2>Lessons &amp; Next Steps</h2>
+    <p>This build connected circuit theory to physical measurement: resistor tolerances, amplifier offset, the ADC reference, and breadboard wiring all affected the result. Comparing simulation, hand calculations, and bench readings helped us locate errors systematically instead of replacing components at random.
+</p>
+    <h3>Beyond the Breadboard</h3>
+    <p>The demonstrated result is a small-panel breadboard prototype. Next steps would include checking voltage and current calibration at multiple points, repeating tests under controlled inputs, and measuring the calculated capacitor discharge response. A field-ready version would also need a weather-resistant enclosure, corrosion-resistant terminals, and thermal validation. Larger installations would require a redesigned sensing and protection system and potentially data logging or remote readout.
+</p>
+    <a class="btn btn-outline mt-4" href="/assets/files/solar-power-meter-report.pdf" download>Download Final Report (PDF)</a>
+    <a class="btn btn-outline mt-4" href="/assets/files/solar-power-meter-lab7.pdf" download>Download Lab 7 (PDF)</a>
+  </section>
+</div>
+</article>
+</div>
+
+
+<section class="section related-projects" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">Keep exploring</span><h2 id="related-heading">More from the workshop.</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+    <div class="project-grid related-grid">
+      
+      
+      
+      
+
+
+<a href="/projects/chimera/" class="project-card" data-category="engineering" data-title="Chimera Research Terminal" data-search="ai-driven quantitative equity research &amp; portfolio optimization terminal a modular, asynchronous python pipeline integrating live data apis, local llm synthesis, and constraint-based optimization. python fastapi docker llm rag redis react" data-date="1784790000">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/chimera/main.jpg" alt="AI-Driven Quantitative Equity Research &amp; Portfolio Optimization Terminal" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2026</span></div>
+    <h3 class="project-card-title">Chimera Research Terminal</h3>
+    <p class="project-card-excerpt">A modular, asynchronous Python pipeline integrating live data APIs, local LLM synthesis, and constraint-based optimization.</p>
+    <div class="project-card-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">01 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+      
+      
+
+
+<a href="/projects/shock-absorber/" class="project-card" data-category="engineering" data-title="Shock Absorber Assembly" data-search="shock absorber assembly a solidworks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets. solidworks assembly design engineering drawings third-angle projection" data-date="1765263600">
+  <div class="project-card-media">
+    
+    <img src="/assets/images/projects/cad/assembly.jpg" alt="Shock Absorber Assembly" class="project-card-image" loading="lazy" decoding="async">
+    
+    <span class="project-card-open" aria-hidden="true">→</span>
+  </div>
+  <div class="project-card-content">
+    <div class="project-card-topline"><span class="project-card-category">engineering</span><span class="project-card-year">2025</span></div>
+    <h3 class="project-card-title">Shock Absorber Assembly</h3>
+    <p class="project-card-excerpt">A SolidWorks assembly developed from reference geometry, with an exploded bill of materials and seven component drawing sheets.</p>
+    <div class="project-card-tags"><span class="tag">SolidWorks</span><span class="tag">Assembly Design</span><span class="tag">Engineering Drawings</span></div>
+    <div class="project-card-bottom"><span>Explore case study</span><span class="mono" aria-hidden="true">02 / →</span></div>
+  </div>
+</a>
+
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<!-- Footer -->
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
+  </div>
+</footer>
+
+
+  <!-- Lightbox for image gallery -->
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
+
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

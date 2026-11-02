@@ -18,420 +18,575 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
-<body>
+<body class="about-page ">
   <a class="skip-link" href="#main-content">Skip to content</a>
   
   <!-- Header -->
-  <!-- Site Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="nav-container">
-      <!-- Logo / Site Title -->
-      <a href="/" class="nav-logo">
-        
-          Manwe Castro
-        
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="/about" class="nav-link active">About</a>
-        <a href="/contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo" aria-label="Manwe Castro home"><span class="brand-mark" aria-hidden="true">M<span>↗</span></span><span>Manwe Castro</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Main navigation" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link" aria-current="page">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/assets/files/Manwe%20Castro%20Resume.pdf" class="nav-resume">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
 
   
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <header class="page-header">
-  <div class="container">
-    <h1 class="page-title">About Me</h1>
-    <p class="page-subtitle">Mechanical engineering student focused on design, fabrication, and making ideas real.</p>
-  </div>
+    
+
+
+
+
+<header class="page-header">
+  <div class="container"><h1 class="page-title">About Me</h1><p class="page-subtitle">Mechanical engineering student focused on design, fabrication, and making ideas real.</p></div>
 </header>
 
-<section class="section">
-  <div class="container">
-    <div class="layout-two-col">
-      <div class="main-content">
-        <div class="content-section">
-          <h2 class="section-title">Biography</h2>
-          <div class="section-content">
-            <p>I am currently a Mechanical Engineering student at Arizona State University with
-              a focus on practical, hands-on execution. My path in engineering is driven by a 
-              desire to understand how complex physical systems operate and how to build 
-              mechanisms that solve real-world problems. Whether I am working through CAD 
+<section class="section about-introduction" aria-labelledby="about-biography">
+  <div class="container about-intro-layout">
+    <div class="section-content"><h2 id="about-biography">Biography</h2>
+      <p>I am currently a Mechanical Engineering student at Arizona State University with
+              a focus on practical, hands-on execution. My path in engineering is driven by a
+              desire to understand how complex physical systems operate and how to build
+              mechanisms that solve real-world problems. Whether I am working through CAD
               modeling in SolidWorks, wiring microcontrollers, or writing custom Python data
-              pipelines from scratch, I enjoy bridging the gap between theoretical calculations 
+              pipelines from scratch, I enjoy bridging the gap between theoretical calculations
               and functional tools.</p>
             <p>
-              At the center of my work is a core commitment to sustainability and environmental 
+              At the center of my work is a core commitment to sustainability and environmental
               design. I want to develop technology that works in harmony with natural resources
-              rather than depleting them, whether that means optimizing energy systems, reducing 
+              rather than depleting them, whether that means optimizing energy systems, reducing
               waste, or exploring smart urban infrastructure. After my EPICS in Spain experience,
               the concept of urban innovation,
               particularly how cities can be designed to be more walk-friendly, resource-efficient,
               and human-centered, strongly shapes the direction I want to take my career and my
               future graduate studies at UPC Barcelona.</p>
-            <p>Outside of engineering coursework and technical projects, I maintain a set of 
-              active, hands-on hobbies that keep me balanced. I play guitar and piano, spend 
-              time sewing and customizing garments or functional gear, and train in boxing during
-              the week. These activities challenge me in different ways, requiring physical 
-              discipline, creative patience, and attention to rhythm and detail. They serve
-              as a constant reminder that the process of refining a skill takes time, focus,
-              and iteration.</p>
-            <p>Ultimately, my goal is to live a life centered on meaningful experiences, travel, 
-              and genuine impact rather than pure material gain. I want to use my education to 
-              build solutions that help people and protect the environment, whether through 
+
+            <p>Ultimately, my goal is to live a life centered on meaningful experiences, travel,
+              and genuine impact rather than pure material gain. I want to use my education to
+              build solutions that help people and protect the environment, whether through
               designing sustainable hardware, teaching, or working on community-driven technical
               projects. As I work toward completing my degree at ASU and preparing for CSWA certification, I remain focused on growing into an adaptable engineer capable of making a positive, lasting
               contribution.</p>
-          </div>
-        </div>
+    </div>
+    <aside class="about-sidebar" aria-label="Profile and resources">
+      <div class="specs-sidebar">
+        <h2 class="specs-title">Quick Info</h2>
+        <dl class="about-quick-info"><div><dt>Current focus</dt><dd>Mechanical design, mechatronics, and systems-level data pipelines</dd></div><div><dt>Target impact</dt><dd>Clean energy infrastructure, sustainable tech, and smart city innovation</dd></div><div><dt>Location</dt><dd>Arizona, United States</dd></div></dl>
+        <div class="about-profile-links"><a href="/assets/files/Manwe%20Castro%20CV.pdf" class="btn btn-primary">View CV</a><a href="/contact/" class="btn btn-outline">Get in touch →</a></div>
+        <p class="about-profile-note">My CV has more detail on my skills, projects, and experience. Get in touch about opportunities or collaboration.</p>
+      </div>
+    </aside>
+  </div>
+</section>
 
-        <div class="content-section">
-          <div class="section-heading" style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem;">
-            <div>
-              <h2 class="section-title" style="margin-bottom: 0.5rem;">Sections</h2>
-              <p style="color: var(--color-text-muted); margin: 0;">Click any card to open more detail on its own page.</p>
-            </div>
+<section class="section about-directory" data-about-browser aria-labelledby="about-directory-title">
+  <div class="container">
+    <div class="section-heading-row"><div><span class="eyebrow">A closer look</span><h2 id="about-directory-title">Education, experience &amp; more.</h2></div><p>Explore the work, communities, and interests that shape me.</p></div>
+    <div class="filter-container about-filters" aria-label="Filter About entries">
+      <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true" aria-controls="about-results">All <span>16</span></button>
+      
+        
+        
+        <button type="button" class="filter-btn" data-filter="education" aria-pressed="false" aria-controls="about-results">Education <span>1</span></button>
+      
+        
+        
+        <button type="button" class="filter-btn" data-filter="experience" aria-pressed="false" aria-controls="about-results">Experience <span>3</span></button>
+      
+        
+        
+        <button type="button" class="filter-btn" data-filter="study-abroad" aria-pressed="false" aria-controls="about-results">Study Abroad <span>1</span></button>
+      
+        
+        
+        <button type="button" class="filter-btn" data-filter="activities-and-campus-involvement" aria-pressed="false" aria-controls="about-results">Campus involvement <span>1</span></button>
+      
+        
+        
+        
+      
+        
+        
+        <button type="button" class="filter-btn" data-filter="hobbies" aria-pressed="false" aria-controls="about-results">Hobbies <span>10</span></button>
+      
+    </div>
+    <p class="about-result-count" data-about-count role="status" aria-live="polite">16 entries</p>
+    <div id="about-results">
+      <div data-about-group="professional">
+        <div class="project-grid about-card-grid">
+          
+            
+              
+              
 
-            <div class="filter-container" aria-label="About section filters">
-              <button class="filter-btn active" data-filter="all">All</button>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <button class="filter-btn" data-filter="education">Education</button>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <button class="filter-btn" data-filter="experience">Experience</button>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <button class="filter-btn" data-filter="study-abroad">Study Abroad</button>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <button class="filter-btn" data-filter="activities-and-campus-involvement">Activities and Campus Involvement</button>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-            </div>
-          </div>
 
-          <div class="project-grid">
+<a href="/about/asu/" class="project-card about-entry-card" data-category="education">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Education</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Arizona State University</h3>
+    <p class="about-entry-meta">Graduating May 2028</p>
+    <p class="project-card-excerpt">Bachelor&#39;s Degree of Science in Mechanical Engineering</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+          
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+
+
+<a href="/about/idia/" class="project-card about-entry-card" data-category="experience">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Experience</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">IDIA</h3>
+    <p class="about-entry-meta">Digital Navigator</p>
+    <p class="project-card-excerpt">Digital Navigator · Technical instruction, curriculum development, and 3D printing at the Hive</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+            
+              
+              
+            
+              
+              
+
+
+<a href="/about/mobile-mechanic/" class="project-card about-entry-card" data-category="experience">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Experience</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Manwe&#39;s Mobile Mechanic</h3>
+    <p class="about-entry-meta">Owner &amp; Mechanic</p>
+    <p class="project-card-excerpt">Mobile automotive maintenance and light repair in Tempe and the surrounding area.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
             
+              
+              
             
+              
+              
             
+              
+              
             
-            <a href="/about/asu/" class="project-card" data-category="education">
-              <div class="project-card-content">
-                <span class="project-card-category">Education</span>
-                <h3 class="project-card-title">Arizona State University</h3>
-              </div>
-            </a>
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
+
+
+<a href="/about/sewing/" class="project-card about-entry-card" data-category="experience">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Experience</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Stitched by Manwe</h3>
+    <p class="about-entry-meta">Owner &amp; Tailor</p>
+    <p class="project-card-excerpt">Alterations, clothing repairs, and simple upcycles in Tempe, Arizona.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
             
+              
+              
             
+              
+              
             
+          
             
+              
+              
             
+              
+              
             
+              
+              
+
+
+<a href="/about/epics/" class="project-card about-entry-card" data-category="study-abroad">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Study Abroad</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">EPICS in Spain</h3>
+    <p class="about-entry-meta">Spring Break 2026</p>
+    <p class="project-card-excerpt">The Global Intensive Experience in human-centered design, smart cities, and community-driven engineering</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+          
             
+              
+              
             
+              
+              
             
+              
+              
             
-            <a href="/about/idia/" class="project-card" data-category="experience">
-              <div class="project-card-content">
-                <span class="project-card-category">Experience</span>
-                <h3 class="project-card-title">Institute for Digital Inclusion Acceleration (IDIA)</h3>
-              </div>
-            </a>
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
-            <a href="/about/mobile-mechanic/" class="project-card" data-category="experience">
-              <div class="project-card-content">
-                <span class="project-card-category">Experience</span>
-                <h3 class="project-card-title">Manwe's Mobile Mechanic</h3>
-              </div>
-            </a>
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
-            <a href="/about/sewing/" class="project-card" data-category="experience">
-              <div class="project-card-content">
-                <span class="project-card-category">Experience</span>
-                <h3 class="project-card-title">Stitched by Manwe</h3>
-              </div>
-            </a>
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
+
+
+<a href="/about/shpe/" class="project-card about-entry-card" data-category="activities-and-campus-involvement">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Activities and Campus Involvement</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">SHPE at ASU</h3>
+    <p class="about-entry-meta">August 2024 - Present</p>
+    <p class="project-card-excerpt">Community, culture, and professional growth for Hispanic engineers and their allies</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
             
+              
+              
             
+          
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
-            <a href="/about/epics/" class="project-card" data-category="study-abroad">
-              <div class="project-card-content">
-                <span class="project-card-category">Study Abroad</span>
-                <h3 class="project-card-title">EPICS in Spain</h3>
-              </div>
-            </a>
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
+              
+              
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <a href="/about/shpe/" class="project-card" data-category="activities-and-campus-involvement">
-              <div class="project-card-content">
-                <span class="project-card-category">Activities and Campus Involvement</span>
-                <h3 class="project-card-title">Society of Hispanic Professional Engineers (SHPE)</h3>
-              </div>
-            </a>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-          </div>
+          
         </div>
       </div>
+      <div class="about-hobbies" data-about-group="hobbies">
+        <div class="section-heading-row"><div><span class="eyebrow">Outside engineering</span><h2>My hobbies.</h2></div><a href="/about/hobbies/" class="text-link">Explore all hobbies →</a></div>
+        <div class="about-hobbies-intro"><p>Outside of engineering, I make time for music, movement, and making things.
+              I play violin, guitar, piano, jarana, and requinto; sew; and photograph the
+              places I visit with my Canon T2i. Salsa, boxing, and rock climbing keep me
+              active. I share guitar covers and travel photography on
+              <a href="https://www.instagram.com/manwesmiscellanea/" target="_blank" rel="noopener noreferrer">@manwesmiscellanea</a>.</p></div>
+        <div class="project-grid about-card-grid">
 
-      <aside class="sidebar">
-        <div class="specs-sidebar">
-          <h3 class="specs-title">CV</h3>
-          <p style="font-size: 0.875rem; color: var(--color-gray-900); margin-bottom: 1rem;">
-            View my full CV for a detailed PDF overview of my skills, projects, and experience.
-          </p>
-          <a href="/assets/files/Manwe%20Castro%20CV.pdf" class="btn btn-primary" style="width: 100%; text-align: center;">
-            View CV
-          </a>
-        </div>
 
-        <div class="specs-sidebar">
-          <h3 class="specs-title">Quick Info</h3>
-          <ul class="specs-list">
-            <li class="spec-item">
-              <span class="spec-label">Current Focus</span>
-              <span class="spec-value">Mechanical design, mechatronics, and systems-level data pipelines</span>
-            </li>
-            <li class="spec-item">
-              <span class="spec-label">Target Impact</span>
-              <span class="spec-value">Clean energy infrastructure, sustainable tech, and smart city innovation</span>
-            </li>
-            <li class="spec-item">
-              <span class="spec-label">Location</span>
-              <span class="spec-value">Arizona, United States</span>
-            </li>
-          </ul>
-        </div>
+<a href="/about/hobbies/sewing/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Making</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Sewing</h3>
+    <p class="about-entry-meta">About 2 years</p>
+    <p class="project-card-excerpt">Working with fabric, fit, and garment construction.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
 
-        <div class="specs-sidebar">
-          <h3 class="specs-title">Let's Connect</h3>
-          <p style="font-size: 0.875rem; color: var(--color-gray-900); margin-bottom: 1rem;">
-            Interested in discussing opportunities or collaboration?
-          </p>
-          <a href="/contact" class="btn btn-outline" style="width: 100%; text-align: center;">
-            Get In Touch →
-          </a>
-        </div>
-      </aside>
+
+
+
+<a href="/about/hobbies/violin/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Music</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Violin</h3>
+    <p class="about-entry-meta">About 10 years</p>
+    <p class="project-card-excerpt">The instrument I have spent the most time with.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/salsa/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Dance</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Salsa</h3>
+    <p class="about-entry-meta">Since January 2026</p>
+    <p class="project-card-excerpt">A newer way to spend time with rhythm and movement.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/guitar/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Music</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Guitar</h3>
+    <p class="about-entry-meta">About 3 years</p>
+    <p class="project-card-excerpt">Playing guitar and sharing covers on my creative account.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/piano/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Music</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Piano</h3>
+    <p class="about-entry-meta">About 5 years</p>
+    <p class="project-card-excerpt">Five years of playing, alongside my string instruments.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/jarana/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Music</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Jarana</h3>
+    <p class="about-entry-meta">About 1 year</p>
+    <p class="project-card-excerpt">One of the more recent additions to the instruments I play.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/requinto/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Music</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Requinto</h3>
+    <p class="about-entry-meta">About 1 year</p>
+    <p class="project-card-excerpt">Learning another instrument alongside jarana.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/boxing/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Sport</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Boxing</h3>
+    <p class="about-entry-meta">Since January 2025</p>
+    <p class="project-card-excerpt">Making time for training alongside engineering and creative work.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/rockclimbing/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Sport</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Rock Climbing</h3>
+    <p class="about-entry-meta">Since January 2026</p>
+    <p class="project-card-excerpt">A newer part of how I stay active outside engineering.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+
+
+
+<a href="/about/hobbies/photography/" class="project-card about-entry-card hobby-card" data-category="hobbies">
+  <div class="project-card-content">
+    <div class="about-entry-topline"><span class="project-card-category">Hobbies · Visual</span><span aria-hidden="true">→</span></div>
+    <h3 class="project-card-title">Photography</h3>
+    <p class="about-entry-meta">Since December 2025</p>
+    <p class="project-card-excerpt">Photographs from the places I visit, taken with my Canon T2i.</p>
+    <div class="project-card-bottom"><span>Read more</span><span aria-hidden="true">→</span></div>
+  </div>
+</a>
+
+</div>
+      </div>
     </div>
   </div>
 </section>
@@ -439,60 +594,24 @@
   </main>
   
 <!-- Footer -->
-  <!-- Site Footer -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul class="list-none">
-          <li><a href="mailto:manwe123@asu.edu">manwe123@asu.edu</a></li>
-          <li><a href="tel:+16023503164">(602) 350-3164</a></li>
-          <li>Tempe, AZ</li>
-        </ul>
-      </div>
-      
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="list-none">
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Social / Professional Links -->
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <ul class="list-none">
-          <li><a href="https://linkedin.com/in/manwe-castro" target="_blank" rel="noopener" class="spec-label">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Manwe Castro. Built with Jekyll for GitHub Pages.</p>
-    </div>
+    <div class="footer-top"><div><span class="eyebrow">Have something in mind?</span><h2>Let's make it work.</h2><a class="footer-email" href="mailto:manwe123@asu.edu">manwe123@asu.edu <span aria-hidden="true">↗</span></a></div><div class="footer-links"><a href="/projects/">Explore projects</a><a href="/about/">A little about me</a><a href="/contact/">Get in touch</a><a href="https://www.linkedin.com/in/manwe-castro" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/manwe-123" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2026 Manwe Castro</p><span>Tempe, AZ <span aria-hidden="true">·</span> Designed with intention.</span><a href="#main-content">Back to top ↑</a></div>
   </div>
 </footer>
 
 
   <!-- Lightbox for image gallery -->
-  <!-- Lightbox Modal for Image Gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-image" src="" alt="">
-    <p id="lightbox-caption" class="lightbox-caption"></p>
-  </div>
-</div>
+  <dialog class="image-viewer" id="image-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span data-viewer-count></span><div><button type="button" class="viewer-button" data-viewer-zoom aria-label="Zoom image" aria-pressed="false">Zoom +</button><a class="viewer-button" data-viewer-original target="_blank" rel="noopener">Open original ↗</a><button type="button" class="viewer-button" data-viewer-close aria-label="Close image viewer">Close ×</button></div></div>
+  <div class="viewer-stage"><button type="button" class="viewer-prev viewer-button" data-viewer-prev aria-label="Previous image">←</button><div class="viewer-image-scroll"><img id="viewer-image" alt=""></div><button type="button" class="viewer-next viewer-button" data-viewer-next aria-label="Next image">→</button></div>
+  <p class="viewer-caption" id="viewer-caption"></p>
+</dialog>
+<div class="ui-toast" role="status" aria-live="polite" data-toast></div>
 
   
   <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
